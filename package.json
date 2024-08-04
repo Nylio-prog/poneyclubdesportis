@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^14.2.5",
     "@radix-ui/react-popover": "^1.1.1",
     "@radix-ui/react-slot": "^1.1.0",
     "@tippyjs/react": "^4.2.6",
@@ -17,7 +18,7 @@
     "date-fns": "^3.6.0",
     "lucide-react": "^0.417.0",
     "moment": "^2.30.1",
-    "next": "14.2.5",
+    "next": "^14.2.5",
     "react": "^18",
     "react-big-calendar": "^1.13.1",
     "react-day-picker": "^8.10.1",

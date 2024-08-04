@@ -12,15 +12,16 @@ import {
 // Reusable AnimalCard component
 const AnimalCard: React.FC<Animal> = ({ name, image, description }) => (
   <Card className="flex flex-col items-center">
-    <CardHeader>
+    <CardHeader className="w-full">
       <Image
         src={image}
         alt={name}
         width={300}
         height={400}
-        className="object-cover"
+        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33.3vw, 25vw"
+        className="object-cover w-full"
         placeholder="blur"
-        blurDataURL={image}
+        blurDataURL="/blurred.avif"
       />
     </CardHeader>
     <CardContent className="text-center">
@@ -36,7 +37,7 @@ interface AnimalGridProps {
 }
 
 const AnimalGrid: React.FC<AnimalGridProps> = ({ animals }) => (
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
     {animals.map((animal, index) => (
       <AnimalCard key={index} {...animal} />
     ))}
@@ -46,7 +47,7 @@ const AnimalGrid: React.FC<AnimalGridProps> = ({ animals }) => (
 const CavaleriePage: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-16">
-      <h1 className="text-4xl font-bold text-center mb-4">Notre Cavalerie</h1>
+      <h1 className="text-4xl font-bold text-center mb-8">Notre Cavalerie</h1>
 
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-4">Nos Poneys</h2>
@@ -63,7 +64,7 @@ const CavaleriePage: React.FC = () => {
         <AnimalGrid animals={retiredAnimals} />
       </section>
 
-      <section className="mb-12">
+      <section>
         <h2 className="text-2xl font-semibold mb-4">Autres Animaux du Club</h2>
         <AnimalGrid animals={otherAnimals} />
       </section>

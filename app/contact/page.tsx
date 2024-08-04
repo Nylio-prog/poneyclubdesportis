@@ -1,5 +1,5 @@
 export default function ContactPage() {
-  const mapUrl = "https://www.google.com/maps?q=Poney+Club+Desportis";
+  const mapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2883.038558399275!2d5.397516076655587!3d43.73052584742539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ca1f4bcddefc0b%3A0x973c8086050cd94!2sPoney%20Club%20Desportis!5e0!3m2!1sfr!2sfr!4v1722784871710!5m2!1sfr!2sfr`;
 
   return (
     <div className="min-h-screen py-16 px-4 bg-gray-100">
