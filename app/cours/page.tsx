@@ -64,7 +64,9 @@ const schedule: WeekSchedule = {
 export default function PricesSchedulesPage() {
   return (
     <div className="min-h-screen py-16 px-4">
-      <h1 className="text-4xl font-bold mb-8 text-center">Prix et Horaires</h1>
+      <h1 className="text-4xl font-bold mb-8 text-center">
+        Nos tarifs et Horaires
+      </h1>
       <div className="max-w-6xl mx-auto grid gap-8">
         <div>
           <h2 className="text-2xl font-bold mb-4">Agenda</h2>
@@ -121,12 +123,12 @@ export default function PricesSchedulesPage() {
           </div>
         </div>
         <div>
-          <h2 className="text-2xl font-bold mb-4">Prix</h2>
+          <h2 className="text-2xl font-bold mb-4">Nos tarifs</h2>
           <Table>
             <TableHeader>
               <TableRow>
                 <TableHead>Service</TableHead>
-                <TableHead>Prix</TableHead>
+                <TableHead>Tarif</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>

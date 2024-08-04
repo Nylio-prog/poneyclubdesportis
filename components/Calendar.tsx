@@ -13,8 +13,11 @@ import "tippy.js/dist/tippy.css";
 const localizer = momentLocalizer(moment);
 
 interface Event {
-  date: Date;
+  startDate: string;
+  endDate: string;
   title: string;
+  description: string;
+  image: string;
 }
 
 interface CalendarProps {
@@ -27,8 +30,8 @@ const Calendar: React.FC<CalendarProps> = ({ events }) => {
   // Convert events to the format expected by react-big-calendar
   const calendarEvents = events.map((event) => ({
     title: event.title,
-    start: new Date(event.date),
-    end: new Date(event.date),
+    start: new Date(event.startDate),
+    end: new Date(event.endDate),
     allDay: true,
   }));
 
@@ -48,7 +51,7 @@ const Calendar: React.FC<CalendarProps> = ({ events }) => {
   );
 
   return (
-    <div className="h-[500px] w-full">
+    <div className="min-h-[500px] h-[90vh] md:h-[75vh] max-h-[900px] w-full">
       <BigCalendar
         messages={{
           next: "Suivant",
@@ -72,7 +75,7 @@ const Calendar: React.FC<CalendarProps> = ({ events }) => {
         }}
         eventPropGetter={(event) => ({
           style: {
-            backgroundColor: "transparent",
+            backgroundColor: "var(--deep-burgundy)",
             border: "none",
           },
         })}

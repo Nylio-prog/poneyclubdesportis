@@ -2,13 +2,9 @@ import Image from "next/image";
 import Calendar from "@/components/Calendar";
 import { Testimonial } from "@/components/Testimonial";
 
-export default function Accueil() {
-  const events = [
-    { date: new Date(2024, 6, 29), title: "Summer Show Jumping Competition" },
-    { date: new Date(2024, 8, 1), title: "Back to School Riding Camp" },
-    { date: new Date(2024, 8, 20), title: "Pony Grooming Workshop" },
-  ];
+import { events } from "@/data/events";
 
+export default function Accueil() {
   const testimonials = [
     {
       name: "Sarah J.",
@@ -40,7 +36,7 @@ export default function Accueil() {
         </div>
       </section>
       <section className="max-w-4xl mx-auto py-16 px-4">
-        <h2 className="text-4xl font-bold mb-8">À propos</h2>
+        <h2 className="text-4xl font-bold mb-8">Présentation</h2>
         <p className="text-lg mb-16">
           Le Poney Club Desportis est un centre équestre situé à Cadenet, dans
           un domaine de 30 hectares où l'attention et l'amour portés aux chevaux
@@ -52,11 +48,11 @@ export default function Accueil() {
         <Calendar events={events} />
       </section>
       <section className="bg-[var(--ivory)] pb-16">
-        <div className="max-w-4xl mx-auto px-4">
-          <h3 className="text-4xl font-bold mb-8">
+        <div className="max-w-6xl mx-auto px-4">
+          <h3 className="text-4xl font-bold mb-12 text-center">
             Ce que nos cavaliers disent
           </h3>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-3">
             {testimonials.map((testimonial, index) => (
               <Testimonial
                 key={index}

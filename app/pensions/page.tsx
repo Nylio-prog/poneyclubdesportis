@@ -108,7 +108,7 @@ export default function PensionsPage() {
           </p>
         </section>
 
-        <section className="bg-[--var(--deep-burgundy)] rounded-lg shadow-lg overflow-hidden p-8">
+        <section className="bg-[--var(--deep-burgundy)] rounded-lg overflow-hidden p-8">
           <h2 className="text-2xl font-bold mb-4 ">Nos Tarifs</h2>
           <Table>
             <TableHeader>
