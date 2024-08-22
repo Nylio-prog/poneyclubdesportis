@@ -61,12 +61,12 @@ export default function PresentationPage() {
       </h1>
 
       <div className="w-full mb-12">
-        <div className="relative w-full h-[50vh] mb-8">
+        <div className="relative max-w-7xl mx-auto h-[70vh] aspect-w-4 aspect-h-3 mb-12 overflow-hidden rounded-lg shadow-lg">
           <Image
             src="/presentation/poney-club.jpg"
-            alt="Poney Club Desportis"
+            alt="Installations Poney Club Desportis"
             fill
-            className="rounded-lg shadow-lg object-cover"
+            className="object-cover object-center rounded-lg"
           />
         </div>
         <div className="max-w-4xl mx-auto px-4">

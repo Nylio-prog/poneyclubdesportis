@@ -129,6 +129,11 @@ export const otherAnimals: Animal[] = [
     description: "Ulan est un animal amical qui adore l'attention.",
   },
   {
+    name: "Jingua",
+    image: "/animals/jingua.jpg",
+    description: "Jingua, la compagnone d'Ulan.",
+  },
+  {
     name: "Poules",
     image: "/animals/hens.jpg",
     description: "Nos poules sont une partie intégrante de la ferme.",
