@@ -34,9 +34,9 @@ export default function ContactPage() {
             href={mapUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[var(--deep-burgundy)] text-[var(--ivory)] px-6 py-3 rounded-lg hover:bg-opacity-90 transition-colors text-lg"
+            className="bg-[var(--deep-burgundy)] text-[var(--ivory)] px-6 py-3 rounded-lg hover:bg-[var(--vivid-burgundy)] transition-colors text-lg"
           >
-            Open in Google Maps
+            Ouvrir dans Google Maps
           </a>
         </div>
       </div>

@@ -13,7 +13,7 @@ const Header = () => {
 
   const navItems = [
     { href: "/", label: "Accueil" },
-    { href: "/presentation", label: "Présentation" },
+    { href: "/a-propos", label: "À Propos" },
     { href: "/cavalerie", label: "Cavalerie" },
     { href: "/actualites", label: "Actualités" },
     { href: "/cours", label: "Cours" },
