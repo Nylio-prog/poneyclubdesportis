@@ -1,3 +1,5 @@
+import React from "react";
+import Link from "next/link";
 import {
   Table,
   TableBody,
@@ -7,57 +9,76 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const prices = [
-  { service: "Leçon de groupe (1 heure)", price: "50 €" },
-  { service: "Leçon privée (1 heure)", price: "80 €" },
-  { service: "Stage demi-journée", price: "120 €" },
-  { service: "Stage journée complète", price: "200 €" },
-];
-
 type Activity = string;
 type HourSchedule = Partial<Record<(typeof hours)[number], Activity>>;
 type WeekSchedule = Record<(typeof days)[number], HourSchedule>;
 
-const days = [
-  "Lundi",
-  "Mardi",
-  "Mercredi",
-  "Jeudi",
-  "Vendredi",
-  "Samedi",
-  "Dimanche",
+const days = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+
+const tarifs_pdf = "/cours/tarifs.pdf";
+
+const hours = [
+  "9h30-10h30",
+  "10h30-11h30",
+  "11h30-12h30",
+  "13h30-14h00",
+  "14h00-15h00",
+  "15h00-16h00",
+  "16h00-17h00",
+  "17h00-18h00",
 ];
-const hours = ["10h", "11h", "12h", "13h", "14h", "15h", "16h", "17h"];
 
 const schedule: WeekSchedule = {
   Lundi: {
-    "10h": "Cours débutants",
-    "14h": "Cours intermédiaires",
-    "16h": "Cours avancés",
+    "9h30-10h30": "Réservation cours particulier",
+    "10h30-11h30": "Réservation cours particulier",
+    "11h30-12h30": "Réservation cours particulier",
+    "14h00-15h00": "Réservation cours particulier",
+    "15h00-16h00": "Réservation cours particulier",
+    "16h00-17h00": "Réservation cours particulier",
+    "17h00-18h00": "Réservation cours particulier",
   },
   Mardi: {
-    "11h": "Cours enfants",
-    "15h": "Cours adultes",
+    "9h30-10h30": "Réservation cours particulier",
+    "10h30-11h30": "Réservation cours particulier",
+    "11h30-12h30": "Réservation cours particulier",
+    "14h00-15h00": "Réservation cours particulier",
+    "15h00-16h00": "Réservation cours particulier",
+    "16h00-17h00": "Réservation cours particulier",
+    "17h00-18h00": "Réservation cours particulier",
   },
   Mercredi: {
-    "10h": "Stage demi-journée",
-    "14h": "Cours particuliers",
+    "9h30-10h30": "Enfants 4-10 ans",
+    "10h30-11h30": "Baby poney",
+    "14h00-15h00": "Ado galop 3-4 / Enfant 4-10 ans",
+    "15h00-16h00": "Ado galop 2-3 / Enfant 4-10 ans",
+    "16h00-17h00": "Ado galop 1-2",
   },
   Jeudi: {
-    "11h": "Cours seniors",
-    "16h": "Entraînement compétition",
+    "9h30-10h30": "Réservation cours particulier",
+    "10h30-11h30": "Réservation cours particulier",
+    "11h30-12h30": "Réservation cours particulier",
+    "14h00-15h00": "Réservation cours particulier",
+    "15h00-16h00": "Réservation cours particulier",
+    "16h00-17h00": "Réservation cours particulier",
+    "17h00-18h00": "Réservation cours particulier",
   },
   Vendredi: {
-    "10h": "Cours débutants",
-    "15h": "Cours intermédiaires",
+    "9h30-10h30": "Réservation cours particulier",
+    "10h30-11h30": "Réservation cours particulier",
+    "11h30-12h30": "Réservation cours particulier",
+    "14h00-15h00": "Réservation cours particulier",
+    "15h00-16h00": "Réservation cours particulier",
+    "16h00-17h00": "Réservation cours particulier",
+    "17h00-18h00": "Réservation cours particulier",
   },
   Samedi: {
-    "10h": "Stage journée complète",
-    "14h": "Cours familles",
-  },
-  Dimanche: {
-    "11h": "Balade à cheval",
-    "15h": "Cours particuliers",
+    "9h30-10h30": "Enfant 4-10 ans / Cours compétition",
+    "10h30-11h30": "Ado galop 2-3-4",
+    "11h30-12h30": "Ado galop 4-5-6 / Baby poney",
+    "14h00-15h00": "Ado galop 4-5-6 / Enfant 4-10 ans",
+    "15h00-16h00": "Ado galop 2-3",
+    "16h00-17h00": "Ado galop 1-2",
   },
 };
 
@@ -108,7 +129,7 @@ export default function PricesSchedulesPage() {
                             index < days.length - 1 ? "border-r" : ""
                           } ${
                             scheduleItem
-                              ? "rounded-lg bg-[var(--deep-burgundy)] text-[var(--ivory)]"
+                              ? "rounded-lg bg-[var(--deep-burgundy)] text-[var(--ivory)] font-semibold"
                               : ""
                           }`}
                         >
@@ -124,22 +145,14 @@ export default function PricesSchedulesPage() {
         </div>
         <div>
           <h2 className="text-2xl font-bold mb-4">Nos tarifs</h2>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Service</TableHead>
-                <TableHead>Tarif</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {prices.map((item, index) => (
-                <TableRow key={index}>
-                  <TableCell>{item.service}</TableCell>
-                  <TableCell>{item.price}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+          <Link
+            href={tarifs_pdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-[var(--deep-burgundy)] hover:underline"
+          >
+            Voir nos tarifs en PDF
+          </Link>
         </div>
       </div>
     </div>

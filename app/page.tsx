@@ -42,8 +42,8 @@ export default function Accueil() {
       text: "Un Poney Club où il fait bon vivre, où les animaux évoluent dans le respect, où les enfants s'épanouissent en apprenant à se responsabiliser au travers de ce merveilleux sport individuel qui se pratique à deux 🐎 et tout cela dans un cadre magnifique en pleine nature 🌱",
     },
     {
-      name: "Mike T.",
-      text: "Les installations sont excellentes et les poneys sont bien entretenus. C'est un environnement idéal pour apprendre ",
+      name: "Eugénie K.",
+      text: "Club très accueillant, deux superbes coachs, des cours pour les petits comme pour les grands, des cours variés, des super poneys et chevaux adaptés à tous les niveaux. De nombreuses balades et super point de vue !",
     },
     {
       name: " Emma L. ",
@@ -53,15 +53,18 @@ export default function Accueil() {
 
   return (
     <div className="min-h-screen">
-      <section className="h-screen relative">
-        <Image
-          src="/hero-image.jpg"
-          alt="Poney Club Desportis"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <h1 className="text-6xl font-bold text-[var(--ivory)]">
+      <section className="relative w-full h-screen md:h-[calc(100vh-80px)]">
+        <div className="absolute inset-0 overflow-hidden">
+          <Image
+            src="/hero-image.jpg"
+            alt="Poney Club Desportis"
+            fill
+            className="object-cover object-[70%_center] md:object-[center_30%]"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-[var(--ivory)] text-center">
             Bienvenue au Poney Club Desportis
           </h1>
         </div>

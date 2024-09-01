@@ -84,13 +84,15 @@ export default function AProposPage() {
       </h1>
 
       <div className="w-full mb-12">
-        <div className="relative max-w-7xl mx-auto h-[70vh] aspect-w-4 aspect-h-3 mb-12 overflow-hidden rounded-lg shadow-lg">
-          <Image
-            src="/a-propos/poney-club.jpg"
-            alt="Installations Poney Club Desportis"
-            fill
-            className="object-cover object-center rounded-lg"
-          />
+        <div className="max-w-[80%] w-full mx-auto mb-12">
+          <div className="relative w-full pt-[75%] rounded-lg shadow-lg overflow-hidden">
+            <Image
+              src="/a-propos/poney-club.jpg"
+              alt="Installations Poney Club Desportis"
+              fill
+              className="object-cover object-center rounded-lg"
+            />
+          </div>
         </div>
         <div className="max-w-4xl mx-auto px-4">
           <p className="text-lg mb-4">

@@ -9,10 +9,9 @@ import {
 } from "@/components/ui/table";
 
 const prix = [
-  { service: "Pension complète (par mois)", prix: "600€" },
-  { service: "Pension partielle (par mois)", prix: "450€" },
-  { service: "Pension poney (par mois)", prix: "500€" },
-  { service: "Séjour courte durée (par jour)", prix: "30€" },
+  { service: "Pension en groupe avec abris naturel", prix: "230€" },
+  { service: "Pension en groupe avec abris en dur", prix: "250€" },
+  { service: "Pension à 2 avec abris en dur individuel", prix: "265€" },
 ];
 
 export default function PensionsPage() {

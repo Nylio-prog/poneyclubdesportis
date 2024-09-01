@@ -39,7 +39,7 @@ const Header = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-4">
+        <ul className="hidden lg:flex space-x-4">
           {navItems.map(({ href, label }) => (
             <li key={href}>
               <Link
@@ -58,7 +58,7 @@ const Header = () => {
 
         {/* Hamburger Menu Icon */}
         <button
-          className="md:hidden text-[var(--ivory)] focus:outline-none"
+          className="lg:hidden text-[var(--ivory)] focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <svg
