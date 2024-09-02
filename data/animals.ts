@@ -10,18 +10,26 @@ export const horses: Animal[] = [
   {
     name: "Galapage",
     image: "/animals/galapage.jpg",
-    description: "Galapage est un beau cheval au tempérament calme.",
+    description:
+      "Pur sang de 23 ans très sensible et délicat, non monté par les élèves",
   },
   {
     name: "Keyshan",
     image: "/animals/keyshan.jpg",
-    description: "Keyshan est connu pour sa vitesse et son agilité.",
+    description:
+      "Jument anglo Arabe de 26 ans qui adore le travail à pied et les câlins. Retraitée depuis sa tendinite ",
   },
   {
     name: "Risa",
     image: "/animals/risa.jpg",
     description:
       "Très gentille Espagnole de 19 ans polyvalente tonique et très attachante",
+  },
+  {
+    name: "Kloé",
+    image: "/animals/kloe.jpg",
+    description:
+      "Très gentille jument New Forest de 26 ans polyvalente, calme, parfaite pour les débutants ",
   },
 ];
 
@@ -57,7 +65,7 @@ export const ponies: Animal[] = [
   {
     name: "Coco",
     image: "/animals/coco.jpg",
-    description: "Coco est petit mais plein d'énergie et de curiosité.",
+    description: "Shetland de 19 ans joueur et tonique ",
   },
   {
     name: "Ebene",
@@ -72,13 +80,8 @@ export const ponies: Animal[] = [
   {
     name: "Espoir",
     image: "/animals/espoir.jpg",
-    description: "Espoir est plein d'espoir et a une disposition douce.",
-  },
-  {
-    name: "Kloé",
-    image: "/animals/kloe.jpg",
     description:
-      "Très gentille jument New Forest de 26 ans polyvalente, calme, pour les débutants ",
+      "Très bon poney de 17 ans en pleine forme, polyvalent, affectueux, monté par des cavaliers débutants et confirmés ",
   },
   {
     name: "Malabar",
@@ -106,7 +109,8 @@ export const ponies: Animal[] = [
   {
     name: "Topcool",
     image: "/animals/topcool.jpg",
-    description: "Topcool est toujours calme et posé.",
+    description:
+      "Très bon poney Belge de sport, très tonique, il a du caractère. Surtout monté par des cavaliers confirmés ",
   },
 ];
 
@@ -115,18 +119,19 @@ export const retiredAnimals: Animal[] = [
     name: "Nuage",
     image: "/animals/nuage.jpg",
     description:
-      "Nuage est retraité mais aime toujours les promenades tranquilles.",
+      "Meilleur poney Camargue de voltige ! Aujourd'hui retraité de 30 ans ",
   },
   {
-    name: "Yuca",
-    image: "/animals/yuca.jpg",
+    name: "Yucca",
+    image: "/animals/yucca.jpg",
     description:
-      "Yuca est une favorite parmi les visiteurs pour sa nature douce.",
+      "Ponette B de 25 ans retraitée depuis cette année à cause d'une luxation de la hanche",
   },
   {
     name: "Faena",
     image: "/animals/faena.jpg",
-    description: "Faena est élégante et a un comportement très calme.",
+    description:
+      "Adorable jument Camargue de 31 ans retraitée depuis l'âge de 25 ans à cause d'une fourbure, aujourd'hui atteinte de la maladie de Cushing et d'une uvéite ",
   },
 ];
 
