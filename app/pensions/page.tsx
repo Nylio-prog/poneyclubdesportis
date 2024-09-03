@@ -101,27 +101,29 @@ export default function PensionsPage() {
           </div>
         </section>
 
-        <section className="bg-[--var(--deep-burgundy)] rounded-lg overflow-hidden p-8">
+        <section className="bg-[--var(--deep-burgundy)] rounded-lg p-8">
           <h2 className="text-2xl font-bold mb-4 ">Nos Tarifs</h2>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Service</TableHead>
-                <TableHead>Prix</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {prix.map((item, index) => (
-                <TableRow
-                  key={index}
-                  className="hover:bg-green-50 transition-colors duration-200"
-                >
-                  <TableCell>{item.service}</TableCell>
-                  <TableCell>{item.prix}</TableCell>
+          <div className="overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Service</TableHead>
+                  <TableHead>Prix</TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+              </TableHeader>
+              <TableBody>
+                {prix.map((item, index) => (
+                  <TableRow
+                    key={index}
+                    className="hover:bg-green-50 transition-colors duration-200"
+                  >
+                    <TableCell>{item.service}</TableCell>
+                    <TableCell>{item.prix}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
         </section>
       </div>
     </div>

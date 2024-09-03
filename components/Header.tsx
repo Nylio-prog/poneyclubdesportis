@@ -81,7 +81,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden fixed top-[68px] right-0 bottom-0 w-64 bg-[var(--deep-burgundy)] text-[var(--ivory)] p-4 transition-transform transform ease-in-out duration-300 z-10">
+        <div className="lg:hidden fixed top-[68px] right-0 bottom-0 w-64 bg-[var(--deep-burgundy)] text-[var(--ivory)] p-4 transition-transform transform ease-in-out duration-300 z-10">
           <ul className="space-y-4">
             {navItems.map(({ href, label }) => (
               <li key={href}>
