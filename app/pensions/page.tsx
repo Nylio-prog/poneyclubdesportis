@@ -22,17 +22,19 @@ export default function PensionsPage() {
       </h1>
 
       <div className="max-w-6xl mx-auto">
-        <section className="flex flex-col md:flex-row items-center mb-16 bg-[--var(--deep-burgundy)] rounded-lg shadow-lg overflow-hidden">
+        <section className="flex flex-col md:flex-row items-center mb-16 rounded-lg shadow-lg overflow-hidden">
           <div className="md:w-1/2 p-8">
-            <h2 className="text-2xl font-bold mb-4 ">
-              Notre Engagement pour le Bien-être Équin
+            <h2 className="text-2xl font-bold mb-4">
+              Un Engagement pour le Bien-être Équin
             </h2>
             <p className="mb-4 leading-relaxed">
-              Au Poney club Desportis, nous nous engageons à offrir un
-              environnement optimal pour le bien-être et l'épanouissement de vos
-              chevaux et poneys. Notre approche holistique combine des
-              installations modernes, des soins attentifs et une alimentation de
-              qualité supérieure.
+              Au Poney Club Desportis, le bien-être de vos chevaux et poneys est
+              notre identité. Nous mettons tout en œuvre pour offrir un cadre de
+              vie serein et respectueux, où chaque équidé peut s'épanouir en
+              toute tranquillité. Notre approche repose sur des soins attentifs,
+              une alimentation équilibrée, et des installations de qualité, le
+              tout encadré par une équipe de professionnels passionnés. Le club
+              est géré par la monitrice
             </p>
           </div>
           <div className="md:w-1/2">
@@ -46,16 +48,19 @@ export default function PensionsPage() {
           </div>
         </section>
 
-        <section className="flex flex-col md:flex-row-reverse items-center mb-16 bg-[--var(--deep-burgundy)] rounded-lg shadow-lg overflow-hidden">
+        <section className="flex flex-col md:flex-row-reverse items-center mb-16 rounded-lg shadow-lg overflow-hidden">
           <div className="md:w-1/2 p-8">
-            <h2 className="text-2xl font-bold mb-4 ">
+            <h2 className="text-2xl font-bold mb-4">
               Des Espaces Vastes et Naturels
             </h2>
             <p className="mb-4 leading-relaxed">
-              Nos pensionnaires profitent de vastes prairies verdoyantes et de
-              paddocks spacieux, leur permettant de se mouvoir librement et de
-              satisfaire leurs besoins naturels. Chaque espace est soigneusement
-              entretenu pour garantir sécurité et confort optimal à nos équidés.
+              Nos pensionnaires bénéficient de paddocks spacieux en petit groupe
+              ou à deux, situés en colline hors des zones inondables. Ces
+              espaces naturels leur permettent de se déplacer librement et de
+              satisfaire leurs besoins naturels dans un environnement sécurisé
+              et bien entretenu. De plus, les installations comme la carrière,
+              le rond de longe, ou bien le cross permettront de s'épanouir avec
+              son équidé dans la nature.
             </p>
           </div>
           <div className="md:w-1/2">
@@ -69,18 +74,20 @@ export default function PensionsPage() {
           </div>
         </section>
 
-        <section className="flex flex-col md:flex-row items-center mb-16 bg-[--var(--deep-burgundy)] rounded-lg shadow-lg overflow-hidden">
+        <section className="flex flex-col md:flex-row items-center mb-16 rounded-lg shadow-lg overflow-hidden">
           <div className="md:w-1/2 p-8">
-            <h2 className="text-2xl font-bold mb-4 ">
-              Une Alimentation de Première Qualité
+            <h2 className="text-2xl font-bold mb-4">
+              Une Alimentation et des Soins de Qualité
             </h2>
             <p className="mb-4 leading-relaxed">
-              Nous accordons une importance capitale à l'alimentation de nos
-              pensionnaires. Notre foin de haute qualité, produit localement,
-              est complété par une gamme de concentrés adaptés aux besoins
-              spécifiques de chaque équidé. Des compléments alimentaires sont
-              disponibles sur recommandation vétérinaire pour assurer une santé
-              optimale.
+              L’alimentation est un pilier essentiel de la santé de nos équidés,
+              c’est pourquoi nous fournissons un foin de haute qualité. Notre
+              équipe expérimentée assure des soins quotidiens minutieux,
+              incluant le pansage, la surveillance de la santé, et des contrôles
+              vétérinaires réguliers. Pour le bien-être complet de vos
+              compagnons, nous proposons également des services de maréchalerie
+              et d'ostéopathie équine directement sur place, garantissant une
+              prise en charge réactive et adaptée.
             </p>
           </div>
           <div className="md:w-1/2">
@@ -92,19 +99,6 @@ export default function PensionsPage() {
               className="object-cover h-full w-full"
             />
           </div>
-        </section>
-
-        <section className="bg-[--var(--deep-burgundy)] rounded-lg shadow-lg overflow-hidden p-8 mb-16">
-          <h2 className="text-2xl font-bold mb-4 ">
-            Des Soins Attentifs et Professionnels
-          </h2>
-          <p className="mb-4 leading-relaxed">
-            Notre équipe qualifiée assure des soins quotidiens minutieux,
-            incluant le pansage, la surveillance de la santé, et des contrôles
-            vétérinaires réguliers. Nous offrons également des services de
-            maréchalerie et d'ostéopathie équine sur place pour garantir le
-            bien-être complet de votre compagnon.
-          </p>
         </section>
 
         <section className="bg-[--var(--deep-burgundy)] rounded-lg overflow-hidden p-8">

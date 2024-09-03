@@ -68,7 +68,7 @@ export const ponies: Animal[] = [
     description: "Shetland de 19 ans joueur et tonique ",
   },
   {
-    name: "Ebene",
+    name: "Ebène",
     image: "/animals/ebene.jpg",
     description: "Gentil poney de 22 ans qui a du rebond pour les plus grands ",
   },
@@ -104,7 +104,8 @@ export const ponies: Animal[] = [
   {
     name: "Qaiwain",
     image: "/animals/qaiwain.jpg",
-    description: "Qaiwain est unique et aime explorer de nouveaux endroits.",
+    description:
+      "Beau New Forest de 20 ans, plein de force, intelligent. Généralement monté par des cavaliers confirmés ou pris pour du travail à pied",
   },
   {
     name: "Topcool",
@@ -145,12 +146,12 @@ export const otherAnimals: Animal[] = [
   {
     name: "Jingua",
     image: "/animals/jingua.jpg",
-    description: "Jingua, la compagnone d'Ulan.",
+    description: "Jingua, la compagnone d'Ulan, calme et très gentille.",
   },
   {
     name: "Poules",
     image: "/animals/hens.jpg",
-    description: "Nos poules",
+    description: "Nos poules du club, souvent avec Jason et Fanny",
   },
   {
     name: "Jason",

@@ -76,7 +76,7 @@ export default function Accueil() {
           <p>
             Bienvenue au Poney Club Desportis ! Créé en 2008, notre club est
             situé à Cadenet (84160), au cœur de 27 hectares de nature préservée
-            dans le Parc du Luberon. Nous proposons un large éventail
+            dans le Parc du Luberon (Vaucluse). Nous proposons un large éventail
             d'activités équestres pour tous les niveaux, dès 3 ans. Que vous
             soyez débutant ou cavalier confirmé, vous pouvez profiter de cours
             adaptés, de stages, de promenades, ainsi que de services de pension

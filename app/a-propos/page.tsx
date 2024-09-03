@@ -92,26 +92,42 @@ export default function AProposPage() {
             className="object-cover object-center rounded-lg"
           />
         </div>
-        <div className="max-w-4xl mx-auto px-4">
-          <p className="text-lg mb-4">
+        <div className="text-lg max-w-4xl mx-auto px-4">
+          <p className="mb-4">
             Depuis 2008, le Poney Club Desportis s'engage à offrir une
-            expérience équestre exceptionnelle au cœur de la campagne française.
-            Notre passion pour les poneys et l'équitation nous pousse chaque
-            jour à offrir le meilleur à nos cavaliers et nos équidés.
+            expérience équestre exceptionnelle au cœur de la campagne
+            vauclusienne, alliant passion, respect des animaux et expertise.
           </p>
-          <p className="text-lg mb-4">
-            Nous proposons une variété de services incluant :
+          <p className="mb-4">
+            Nous proposons une variété de services pour répondre aux besoins de
+            tous les cavaliers :
           </p>
           <ul className="list-disc list-inside mb-4">
-            <li>Des cours d'équitation pour enfants et adultes</li>
+            <li>
+              Des cours d'équitation pour enfants et adultes, adaptés à tous les
+              niveaux
+            </li>
             <li>Des stages pendant les vacances scolaires</li>
-            <li>Des services de pension complète</li>
-            <li>Des balades en forêt guidées</li>
+            <li>Des services de pension complète et demi-pension</li>
+            <li>Des balades guidées dans le domaine</li>
           </ul>
-          <p className="text-lg">
-            Notre foin de haute qualité, produit localement, et nos années
-            d'expérience font de nous un choix de confiance pour les passionnés
-            d'équitation de tous niveaux.
+          <p className="mb-4">
+            Nos installations comprennent une grande carrière de sable de 60m x
+            30m, un rond de longe de 18m, un parcours de cross, une douche fixe,
+            ainsi que de nombreux chemins de balades offrant un cadre naturel et
+            sécurisé pour vos sorties.
+          </p>
+          <p className="mb-4">
+            Le bien-être de nos animaux est notre priorité absolue. Nous leur
+            offrons les meilleurs soins tout au long de leur vie, y compris une
+            retraite paisible lorsqu'ils ne sont plus en activité. Notre foin,
+            produit proche du club et de très haute qualité, garantit une
+            alimentation saine et adaptée à leurs besoins.
+          </p>
+          <p>
+            Avec des années d'expérience et un cadre idéal, le Poney Club
+            Desportis est le choix de confiance pour tous les passionnés
+            d'équitation, qu'ils soient débutants ou confirmés.
           </p>
         </div>
       </div>
@@ -120,12 +136,12 @@ export default function AProposPage() {
         <h2 className="text-3xl font-semibold mb-8 text-center text-[var(--deep-burgundy)]">
           Nos Diplômes et Certifications
         </h2>
-        <p className="mb-4">
+        <p className="text-lg mb-4">
           Au Poney Club Desportis, nous sommes fiers de nos accomplissements et
           de la qualité de notre enseignement. Voici nos diplômes et
           certifications :
         </p>
-        <ul className="list-disc list-inside mb-4">
+        <ul className="text-lg list-disc list-inside mb-4">
           {diplomas.map((diploma, index) => (
             <li key={index}>
               <Link
@@ -139,17 +155,13 @@ export default function AProposPage() {
             </li>
           ))}
         </ul>
-        <p>
-          Ces diplômes témoignent de notre engagement envers l'excellence dans
-          l'enseignement de l'équitation et le bien-être des poneys.
-        </p>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 mb-12">
         <h2 className="text-3xl font-semibold mb-8 text-center text-[var(--deep-burgundy)]">
           Règlement Intérieur
         </h2>
-        <p>
+        <p className="text-lg">
           Pour assurer le bon fonctionnement de notre club et la sécurité de
           tous, nous vous invitons à consulter notre{" "}
           <Link
