@@ -40,11 +40,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} pt-header`}>
+        <Analytics />
+        <SpeedInsights />
         <Header />
         <main>{children}</main>
         <Footer />
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );
