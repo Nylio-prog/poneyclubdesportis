@@ -220,7 +220,7 @@ export default function AProposPage() {
           <div className="md:flex">
             <div className="md:flex-shrink-0">
               <Image
-                src="/a-propos/ford.jpg"
+                src="/a-propos/ford-sponsor.jpg"
                 alt="Ford - Notre partenaire officiel"
                 width={640}
                 height={427}
