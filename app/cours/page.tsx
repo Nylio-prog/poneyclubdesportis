@@ -17,6 +17,8 @@ const days = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
 
 const tarifs_pdf = "/cours/tarifs.pdf";
 
+const fiche_adhesion_pdf = "/cours/fiche_adhesion.pdf";
+
 const hours = [
   "9h30-10h30",
   "10h30-11h30",
@@ -144,7 +146,7 @@ export default function PricesSchedulesPage() {
           </div>
         </div>
         <div>
-          <h2 className="text-2xl font-bold mb-4">Nos tarifs</h2>
+          <h2 className="text-2xl font-bold my-4">Nos tarifs</h2>
           <Link
             href={tarifs_pdf}
             target="_blank"
@@ -152,6 +154,15 @@ export default function PricesSchedulesPage() {
             className="font-bold text-[var(--deep-burgundy)] hover:underline"
           >
             Voir nos tarifs en PDF
+          </Link>
+          <h2 className="text-2xl font-bold my-4">Fiche d'adhésion</h2>
+          <Link
+            href={fiche_adhesion_pdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-[var(--deep-burgundy)] hover:underline"
+          >
+            Voir notre fiche d'adhésion en PDF
           </Link>
         </div>
       </div>

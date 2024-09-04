@@ -43,7 +43,7 @@ export const ponies: Animal[] = [
     name: "Quaquou",
     image: "/animals/quaquou.jpg",
     description:
-      "Camargue de 20 ans très tonic, adore l'obstacle et le cross, parfois coquin pour les confirmés",
+      "Camargue de 20 ans très tonique, adore l'obstacle et le cross, parfois coquin pour les confirmés",
   },
   {
     name: "Karamel",
