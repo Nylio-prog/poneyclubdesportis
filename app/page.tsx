@@ -61,6 +61,8 @@ export default function Accueil() {
             fill
             className="object-cover object-[63%_center] md:object-[center_30%]"
             priority
+            placeholder="blur"
+            blurDataURL="/hero-image-blur.jpg"
           />
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4">
