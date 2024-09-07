@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import {
   Table,
   TableBody,
@@ -84,9 +85,17 @@ export default function PricesSchedulesPage() {
   return (
     <div className="min-h-screen py-16 px-4">
       <h1 className="text-4xl font-bold mb-8 text-center">
-        Nos tarifs et Horaires
+        Informations sur les cours
       </h1>
       <div className="max-w-6xl mx-auto grid gap-8">
+        <div className="w-[80%] relative mx-auto mb-12 max-h-[70vh] overflow-hidden rounded-lg shadow-lg aspect-[16/9]">
+          <Image
+            src="/cours/clemence_jump.jpg"
+            alt="Clemence Medail saut à cheval"
+            fill
+            className="object-cover object-[center_50%] rounded-lg"
+          />
+        </div>
         <div>
           <h2 className="text-2xl font-bold mb-4">Agenda</h2>
           <div className="overflow-x-auto">

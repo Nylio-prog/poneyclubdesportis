@@ -9,9 +9,9 @@ import {
 } from "@/components/ui/table";
 
 const prix = [
-  { service: "Pension en groupe avec abris naturel", prix: "230€" },
-  { service: "Pension en groupe avec abris en dur", prix: "250€" },
-  { service: "Pension à 2 avec abris en dur individuel", prix: "265€" },
+  { service: "En groupe avec abris naturel", prix: "230€" },
+  { service: "En groupe avec abris construit", prix: "250€" },
+  { service: "À 2 avec abris construit individuel", prix: "265€" },
 ];
 
 export default function PensionsPage() {
@@ -82,12 +82,11 @@ export default function PensionsPage() {
             <p className="mb-4 leading-relaxed">
               L’alimentation est un pilier essentiel de la santé de nos équidés,
               c’est pourquoi nous fournissons un foin de haute qualité. Notre
-              équipe expérimentée assure des soins quotidiens minutieux,
-              incluant le pansage, la surveillance de la santé, et des contrôles
-              vétérinaires réguliers. Pour le bien-être complet de vos
-              compagnons, nous proposons également des services de maréchalerie
-              et d'ostéopathie équine directement sur place, garantissant une
-              prise en charge réactive et adaptée.
+              équipe expérimentée assure la surveillance de la santé, et pourra
+              vous rediriger vers tous les corps de métier équins. Pour le
+              bien-être complet de vos compagnons, nous proposons également des
+              services de maréchalerie et d'ostéopathie équine directement sur
+              place, garantissant une prise en charge réactive et adaptée.
             </p>
           </div>
           <div className="md:w-1/2">
@@ -101,14 +100,16 @@ export default function PensionsPage() {
           </div>
         </section>
 
-        <section className="bg-[--var(--deep-burgundy)] rounded-lg p-8">
-          <h2 className="text-2xl font-bold mb-4 ">Nos Tarifs</h2>
+        <section className="bg-[--var(--deep-burgundy)] rounded-lg py-8">
+          <h2 className="text-2xl font-bold mb-4 pl-8">
+            Nos tarifs de pension
+          </h2>
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow>
                   <TableHead>Service</TableHead>
-                  <TableHead>Prix</TableHead>
+                  <TableHead>Prix/Mois</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
