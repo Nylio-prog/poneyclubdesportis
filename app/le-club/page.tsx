@@ -11,18 +11,18 @@ import "react-vertical-timeline-component/style.min.css";
 import { FaHorse, FaChild, FaHome, FaTools, FaHandshake } from "react-icons/fa";
 import { MdForest } from "react-icons/md";
 
-export default function AProposPage() {
+export default function LeClubPage() {
   const diplomas = [
     {
       title: "BPJEPS activité équestre Béatrice Bürkle",
-      url: "/a-propos/BPJEPS_BB.jpg",
+      url: "/le-club/BPJEPS_BB.jpg",
     },
     {
       title: "BPJEPS activité équestre Clémence Médail",
-      url: "/a-propos/BPJEPS_AE_A_CM.jpg",
+      url: "/le-club/BPJEPS_AE_A_CM.jpg",
     },
-    { title: "BFEEH Béatrice Bürkle", url: "/a-propos/BFEEH_BB.jpg" },
-    { title: "BFEE2 Béatrice Bürkle", url: "/a-propos/BFEE2_BB.jpg" },
+    { title: "BFEEH Béatrice Bürkle", url: "/le-club/BFEEH_BB.jpg" },
+    { title: "BFEE2 Béatrice Bürkle", url: "/le-club/BFEE2_BB.jpg" },
   ];
 
   const evenements = [
@@ -86,7 +86,7 @@ export default function AProposPage() {
       <div className="w-full mb-12">
         <div className="relative mb-12 mx-auto max-h-[70vh] overflow-hidden rounded-lg shadow-lg aspect-[16/9]">
           <Image
-            src="/a-propos/poney-club.jpg"
+            src="/le-club/poney-club.jpg"
             alt="Installations Poney Club Desportis"
             fill
             className="object-cover object-center rounded-lg"
@@ -165,7 +165,7 @@ export default function AProposPage() {
           Pour assurer le bon fonctionnement de notre club et la sécurité de
           tous, nous vous invitons à consulter notre{" "}
           <Link
-            href="/a-propos/reglement_interieur.pdf"
+            href="/le-club/reglement_interieur.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold text-[var(--deep-burgundy)] hover:underline"
@@ -218,18 +218,16 @@ export default function AProposPage() {
         </h2>
         <div className="bg-white shadow-lg rounded-lg overflow-hidden">
           <div className="md:flex">
-            <div className="md:flex-shrink-0">
-              <Image
-                src="/a-propos/ford-sponsor.jpg"
-                alt="Ford - Notre partenaire officiel"
-                width={640}
-                height={427}
-                className="h-full w-full object-cover"
-              />
-            </div>
+            <Image
+              src="/le-club/ford-sponsor.jpg"
+              alt="Ford - Notre partenaire officiel"
+              width={640}
+              height={427}
+              className="h-full w-full object-cover"
+            />
             <div className="p-8">
-              <div className="uppercase tracking-wide text-sm text-[var(--deep-burgundy)] font-semibold">
-                Ford Pertuis
+              <div className="uppercase tracking-wide text-sm text-[var(--deep-burgundy)] font-bold">
+                Ford Automobile Service du Luberon, Pertuis
               </div>
               <p className="mt-2 text-gray-500">
                 Partenaire du Poney Club Desportis depuis 2011

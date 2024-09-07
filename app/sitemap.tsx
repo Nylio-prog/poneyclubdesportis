@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const routes = [
     "",
-    "a-propos",
+    "le-club",
     "cavalerie",
     "actualites",
     "cours",
