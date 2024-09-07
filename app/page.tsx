@@ -72,7 +72,9 @@ export default function Accueil() {
         </div>
       </section>
       <section className="max-w-4xl mx-auto py-16 px-4">
-        <h2 className="text-4xl font-bold mb-8">Présentation</h2>
+        <h2 className="text-4xl font-bold mb-8">
+          Présentation du Poney Club Desportis à Cadenet
+        </h2>
         <CertificationLogos />
         <div className="space-y-4 text-lg mb-16">
           <p>
