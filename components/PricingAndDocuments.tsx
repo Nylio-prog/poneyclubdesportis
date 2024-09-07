@@ -25,11 +25,11 @@ const PricingAndDocuments = () => {
     },
     {
       href: "/cours/ffe_autoquestionnaire_majeurs.pdf",
-      text: "Auto-questionnaire pour les majeurs",
+      text: "Voir l'auto-questionnaire pour les majeurs en PDF",
     },
     {
       href: "/cours/ffe_autoquestionnaire_mineurs.pdf",
-      text: "Auto-questionnaire pour les mineurs",
+      text: "Voir l'auto-questionnaire pour les mineurs en PDF",
     },
   ];
 
