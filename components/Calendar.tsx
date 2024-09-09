@@ -134,7 +134,7 @@ const Calendar: React.FC<CalendarProps> = ({ events }) => {
     
     /* Higher cells with events in month view */
     .rbc-month-view .rbc-month-row {
-      min-height: 130px; /* Adjust this value for desired height */
+      min-height: 100px; /* Adjust this value for desired height */
     }
     .rbc-month-view .rbc-event {
       font-size: 12px;

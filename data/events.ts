@@ -22,8 +22,8 @@ export const events = [
   {
     title:
       "Forum des Associations à Cadenet – Samedi 14 septembre, dès 15h, devant la mairie",
-    startDate: "2024-09-09",
-    endDate: "2024-09-09",
+    startDate: "2024-09-14",
+    endDate: "2024-09-14",
     startHour: "15:00",
     endHour: "18:00",
     description:
