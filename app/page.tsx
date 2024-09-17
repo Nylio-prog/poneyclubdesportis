@@ -43,7 +43,7 @@ export default function Accueil() {
     },
     {
       name: " Audrey C. ",
-      text: "Je remercie Béatrice de s’occuper aussi bien de ma jument qui est en pension en groupe chez elle depuis 4 ans. Cadre magnifique au milieu de la colline de cadenet. Lieu apaisant et sécurisant. Béatrice assure quotidiennement le bien être de tous les chevaux, elle propose des cours poneys dans le respect des animaux et dans la bienveillance.",
+      text: "Je remercie Béatrice de s'occuper aussi bien de ma jument qui est en pension en groupe chez elle depuis 4 ans. Cadre magnifique au milieu de la colline de cadenet. Lieu apaisant et sécurisant. Béatrice assure quotidiennement le bien être de tous les chevaux, elle propose des cours poneys dans le respect des animaux et dans la bienveillance.",
     },
     {
       name: "Eugénie K.",
@@ -72,19 +72,17 @@ export default function Accueil() {
         </div>
       </section>
       <section className="max-w-4xl mx-auto py-16 px-4">
-        <h2 className="text-4xl font-bold mb-8">
-          Présentation du Poney Club Desportis à Cadenet
-        </h2>
+        <h2 className="text-4xl font-bold mb-8">Poney Club à Cadenet</h2>
         <CertificationLogos />
         <div className="space-y-4 text-lg mb-16">
           <p>
-            Bienvenue au Poney Club Desportis ! Créé en 2008, notre club est
-            situé à Cadenet (84160), au cœur de 27 hectares de nature préservée
-            dans le Parc du Luberon (Vaucluse). Nous proposons un large choix
-            d'activités équestres pour tous les niveaux, dès 3 ans. Que vous
-            soyez débutant ou cavalier confirmé, vous pouvez profiter de cours
-            adaptés, de stages, de promenades, ainsi que de services de pension
-            pour vos chevaux et poneys.
+            Bienvenue au Poney Club Desportis ! Créé en 2008, notre centre
+            équestre est situé à Cadenet (84160), au cœur de 27 hectares de
+            nature préservée dans le Parc du Luberon (Vaucluse). Nous proposons
+            un large choix d'activités équestres pour tous les niveaux, dès 3
+            ans. Que vous soyez débutant ou cavalier confirmé, vous pouvez
+            profiter de cours adaptés, de stages, de balades, ainsi que de
+            services de pension pour vos chevaux et poneys.
           </p>
           <p>
             Le bien-être de nos animaux est au cœur de nos préoccupations, comme
@@ -100,9 +98,11 @@ export default function Accueil() {
             conviviale.
           </p>
           <p>
-            Le Poney Club Desportis, c'est bien plus qu'un lieu de pratique
+            Le Poney Club Desportis, c'est bien plus qu'un simple centre
             équestre. C'est un espace où respect, sécurité et plaisir de
-            l'équitation se rencontrent pour offrir une expérience inoubliable.
+            l'équitation se rencontrent pour offrir une expérience inoubliable,
+            que ce soit pour une balade, un cours, ou la pension de votre
+            cheval.
           </p>
         </div>
         <h3 className="text-4xl font-bold mb-4">Évènements planifiés</h3>
