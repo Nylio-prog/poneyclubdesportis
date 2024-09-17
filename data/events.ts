@@ -6,7 +6,7 @@ export const events = [
     startHour: "15:00",
     endHour: "18:00",
     description:
-      "Nous vous invitons à découvrir notre poney club lors de nos portes ouvertes ! Venez visiter les installations, rencontrer notre équipe, et vous renseigner sur nos cours, tarifs et modalités d’inscription pour la saison à venir. Des baptêmes à poney seront également proposés pour les plus jeunes. Une belle occasion de passer un moment convivial en famille et de partager notre passion des chevaux. Nous vous attendons nombreux !",
+      "Nous vous invitons à découvrir notre poney club lors de nos portes ouvertes ! Venez visiter les installations, rencontrer notre équipe, et vous renseigner sur nos cours, tarifs et modalités d'inscription pour la saison à venir. Des baptêmes à poney seront également proposés pour les plus jeunes. Une belle occasion de passer un moment convivial en famille et de partager notre passion des chevaux. Nous vous attendons nombreux !",
     image: "/events/portes_ouvertes.jpg",
   },
   {
@@ -27,7 +27,67 @@ export const events = [
     startHour: "15:00",
     endHour: "18:00",
     description:
-      "Retrouvez-nous au forum des associations de Cadenet pour découvrir notre poney club ! Nous serons présents pour vous donner toutes les informations sur nos cours, nos tarifs et les inscriptions pour la saison à venir. C’est l’occasion idéale pour poser vos questions et préparer votre rentrée équestre. Venez nombreux nous rencontrer devant la mairie !",
+      "Retrouvez-nous au forum des associations de Cadenet pour découvrir notre poney club ! Nous serons présents pour vous donner toutes les informations sur nos cours, nos tarifs et les inscriptions pour la saison à venir. C'est l'occasion idéale pour poser vos questions et préparer votre rentrée équestre. Venez nombreux nous rencontrer devant la mairie !",
     image: "/events/place_mairie.jpg",
+  },
+  {
+    title: "Atelier Voltige - Samedi 28 septembre",
+    startDate: "2024-09-28",
+    endDate: "2024-09-28",
+    startHour: "14:00",
+    endHour: "15:00",
+    description:
+      "Découvrez l'art de la voltige équestre lors de notre atelier spécial ! Apprenez les bases de cette discipline spectaculaire qui allie gymnastique et équitation. Ouvert à tous les niveaux, cet atelier vous permettra de développer votre équilibre, votre souplesse et votre confiance à cheval. Places limitées, réservation obligatoire. Tarif : 20€ par personne.",
+    image: "",
+  },
+  {
+    title: "Atelier Éthologie à pied - Samedi 5 octobre",
+    startDate: "2024-10-05",
+    endDate: "2024-10-05",
+    startHour: "14:00",
+    endHour: "15:00",
+    description:
+      "Plongez dans le monde fascinant de l'éthologie équine ! Cet atelier vous enseignera les bases de la communication avec les chevaux au sol. Apprenez à mieux comprendre le langage corporel des équidés et à établir une relation de confiance. Une expérience enrichissante pour améliorer votre lien avec les chevaux. Tarif : 20€ par participant.",
+    image: "",
+  },
+  {
+    title: "Atelier Théorie équestre - Samedi 12 octobre",
+    startDate: "2024-10-12",
+    endDate: "2024-10-12",
+    startHour: "14:00",
+    endHour: "15:00",
+    description:
+      "Renforcez vos connaissances équestres lors de notre atelier théorique gratuit ! Au programme : anatomie du cheval, alimentation, équipement etc. Cet atelier est idéal pour les débutants comme pour les cavaliers confirmés souhaitant consolider leurs bases. Venez avec vos questions, nous seront ravis d'y répondre !",
+    image: "",
+  },
+  {
+    title: "Concours interne Equifun - Dimanche 6 octobre",
+    startDate: "2024-10-06",
+    endDate: "2024-10-06",
+    startHour: "09:00",
+    endHour: "17:00",
+    description:
+      "Participez à notre concours interne d'Equifun ! Une journée pleine de défis ludiques à cheval ou à poney, adaptés à tous les niveaux. Slaloms, parcours d'adresse, jeux d'équipe... Venez vous amuser et mettre en pratique vos acquis dans une ambiance conviviale. Ouvert à tous nos cavaliers, petits et grands. Réservation obligatoire.",
+    image: "",
+  },
+  {
+    title: "Concours de Hunter - Dimanche 3 novembre",
+    startDate: "2024-11-03",
+    endDate: "2024-11-03",
+    startHour: "09:00",
+    endHour: "18:00",
+    description:
+      "Rejoignez-nous pour notre concours de Hunter ! Cette discipline élégante qui allie précision, style et technique vous permettra de vous mesurer à d'autres cavaliers dans différentes catégories. Un excellent moyen de progresser et de se préparer pour les compétitions. Parcours adaptés à tous les niveaux. Inscription obligatoire.",
+    image: "",
+  },
+  {
+    title: "Concours de Saut d'Obstacles (CSO) - Dimanche 1er décembre",
+    startDate: "2024-12-01",
+    endDate: "2024-12-01",
+    startHour: "08:00",
+    endHour: "18:00",
+    description:
+      "Notre concours de Saut d'Obstacles vous attend ! Venez vous défier sur des parcours variés, conçus pour tous les niveaux, du débutant au confirmé. Une journée riche en émotions et en performances, avec de nombreux lots à gagner. Inscription obligatoire. Que le meilleur gagne !",
+    image: "",
   },
 ];

@@ -45,7 +45,7 @@ const PricingAndDocuments: React.FC = () => {
         ))}
       </section>
 
-      <section className="bg-gray-100 py-4 rounded-lg">
+      <section className="py-4 rounded-lg">
         <h2 className="text-2xl font-bold mb-4">
           Licence et attestations médicales
         </h2>
