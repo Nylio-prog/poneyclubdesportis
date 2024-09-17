@@ -12,11 +12,13 @@ export const metadata: Metadata = {
     "Découvrez le Poney Club Desportis à Cadenet, au cœur du Luberon. Cours d'équitation, pension pour poneys et chevaux, dans un cadre exceptionnel.",
   keywords: [
     "Poney Club Desportis",
+    "Centre équestre",
     "Cadenet",
     "Vaucluse",
     "Luberon",
     "Cours d'équitation",
     "Pension",
+    "Balade",
     "Poney",
     "Cheval",
     "Équitation",
@@ -37,6 +39,23 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png" }],
   },
   robots: "index, follow",
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: "https://www.poneyclubdesportis-cadenet.fr",
+    siteName: "Poney Club Desportis",
+    title: "Poney Club Desportis - Centre Équestre à Cadenet",
+    description:
+      "Centre équestre proposant cours, pension et balades à cheval dans le Luberon. Découvrez notre poney club à Cadenet, Vaucluse.",
+    images: [
+      {
+        url: "https://poneyclubdesportis-cadenet.fr/_next/image?url=%2Fhero-image.jpg&w=640&q=75",
+        width: 640,
+        height: 426,
+        alt: "Poney Club Desportis",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
