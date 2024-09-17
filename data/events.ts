@@ -90,4 +90,14 @@ export const events = [
       "Notre concours de Saut d'Obstacles vous attend ! Venez vous défier sur des parcours variés, conçus pour tous les niveaux, du débutant au confirmé. Une journée riche en émotions et en performances, avec de nombreux lots à gagner. Que le meilleur gagne ! De 10h à 12h, enfant de 3 à 10 ans. À partir de 13h30, les adolescents reprennent. Réservation obligatoire. Tarif : 20€ par participant.",
     image: "",
   },
+  {
+    title: "Stages vacances de Toussaint du 21 au 25 octobre",
+    startDate: "2024-10-21",
+    endDate: "2024-10-24",
+    startHour: "14:00",
+    endHour: "17:00",
+    description:
+      "Stages de poneys ouverts aux enfants de 3 à 10 ans où ils pourront chouchouter leurs poneys, découvrir les fondamentaux (ou les perfectionner) par le jeu, se promener en forêt et s'initier à la voltige ! Réservation obligatoire.",
+    image: "",
+  },
 ];
