@@ -37,7 +37,7 @@ export const events = [
     startHour: "14:00",
     endHour: "15:00",
     description:
-      "Découvrez l'art de la voltige équestre lors de notre atelier spécial ! Apprenez les bases de cette discipline spectaculaire qui allie gymnastique et équitation. Ouvert à tous les niveaux, cet atelier vous permettra de développer votre équilibre, votre souplesse et votre confiance à cheval. Places limitées, réservation obligatoire. Tarif : 20€ par personne.",
+      "Découvrez l'art de la voltige équestre lors de notre atelier de découverte ou de perfectionnement ! Apprenez les bases de cette discipline qui allie gymnastique et équitation. Ouvert à tous les niveaux, cet atelier vous permettra de développer votre équilibre, votre souplesse et votre confiance à cheval. Réservation obligatoire. Tarif : 20€ par personne.",
     image: "",
   },
   {
@@ -57,37 +57,37 @@ export const events = [
     startHour: "14:00",
     endHour: "15:00",
     description:
-      "Renforcez vos connaissances équestres lors de notre atelier théorique gratuit ! Au programme : anatomie du cheval, alimentation, équipement etc. Cet atelier est idéal pour les débutants comme pour les cavaliers confirmés souhaitant consolider leurs bases. Venez avec vos questions, nous seront ravis d'y répondre !",
+      "Renforcez vos connaissances équestres ou préparez vos galops lors de notre atelier théorique gratuit ! Au programme : anatomie du cheval, alimentation, équipement etc. Cet atelier est idéal pour les débutants comme pour les cavaliers confirmés souhaitant consolider leurs bases. Venez avec vos questions, nous seront ravis d'y répondre !",
     image: "",
   },
   {
     title: "Concours interne Equifun - Dimanche 6 octobre",
     startDate: "2024-10-06",
     endDate: "2024-10-06",
-    startHour: "09:00",
+    startHour: "10:00",
     endHour: "17:00",
     description:
-      "Participez à notre concours interne d'Equifun ! Une journée pleine de défis ludiques à cheval ou à poney, adaptés à tous les niveaux. Slaloms, parcours d'adresse, jeux d'équipe... Venez vous amuser et mettre en pratique vos acquis dans une ambiance conviviale. Ouvert à tous nos cavaliers, petits et grands. Réservation obligatoire.",
+      "Participez à notre concours interne d'Equifun ! Une journée pleine de défis ludiques à cheval ou à poney, adaptés à tous les niveaux. Slaloms, parcours d'adresse, jeux d'équipe... Venez vous amuser et mettre en pratique vos acquis dans une ambiance conviviale. Ouvert à tous nos cavaliers, petits et grands. De 10h à 12h, enfant de 3 à 10 ans. À partir de 13h30, les adolescents reprennent. Réservation obligatoire. Tarif : 20€ par participant.",
     image: "",
   },
   {
     title: "Concours de Hunter - Dimanche 3 novembre",
     startDate: "2024-11-03",
     endDate: "2024-11-03",
-    startHour: "09:00",
-    endHour: "18:00",
+    startHour: "10:00",
+    endHour: "17:00",
     description:
-      "Rejoignez-nous pour notre concours de Hunter ! Cette discipline élégante qui allie précision, style et technique vous permettra de vous mesurer à d'autres cavaliers dans différentes catégories. Un excellent moyen de progresser et de se préparer pour les compétitions. Parcours adaptés à tous les niveaux. Inscription obligatoire.",
+      "Rejoignez-nous pour notre concours de Hunter ! Cette discipline consiste à enchaîner un parcours d’obstacles avec la plus grande harmonie possible. Un excellent moyen de progresser et de se préparer pour les compétitions. Parcours adaptés à tous les niveaux. De 10h à 12h, enfant de 3 à 10 ans. À partir de 13h30, les adolescents reprennent. Inscription obligatoire. Tarif : 20€ par participant.",
     image: "",
   },
   {
     title: "Concours de Saut d'Obstacles (CSO) - Dimanche 1er décembre",
     startDate: "2024-12-01",
     endDate: "2024-12-01",
-    startHour: "08:00",
-    endHour: "18:00",
+    startHour: "10:00",
+    endHour: "17:00",
     description:
-      "Notre concours de Saut d'Obstacles vous attend ! Venez vous défier sur des parcours variés, conçus pour tous les niveaux, du débutant au confirmé. Une journée riche en émotions et en performances, avec de nombreux lots à gagner. Inscription obligatoire. Que le meilleur gagne !",
+      "Notre concours de Saut d'Obstacles vous attend ! Venez vous défier sur des parcours variés, conçus pour tous les niveaux, du débutant au confirmé. Une journée riche en émotions et en performances, avec de nombreux lots à gagner. Que le meilleur gagne ! De 10h à 12h, enfant de 3 à 10 ans. À partir de 13h30, les adolescents reprennent. Réservation obligatoire. Tarif : 20€ par participant.",
     image: "",
   },
 ];
