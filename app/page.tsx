@@ -1,39 +1,9 @@
 import Image from "next/image";
 import Calendar from "@/components/Calendar";
 import { Testimonial } from "@/components/Testimonial";
-
+import CertificationLogos from "@/components/CertificationLogos";
+import PassSportLogo from "@/components/PassportLogo";
 import { events } from "@/data/events";
-
-import logo_ffe from "@/public/logos/Logo_FFE.jpg";
-import logo_bien_etre_animal from "@/public/logos/Logo_bien_etre_animal.png";
-import logo_passport from "@/public/logos/Logo_passport.jpg";
-import logo_poney_de_france from "@/public/logos/Logo_poney_de_france.png";
-import logo_qualite from "@/public/logos/Logo_qualite.png";
-
-const CertificationLogos = () => {
-  const logos = [
-    { src: logo_ffe, alt: "Logo Fédération Française d'Équitation" },
-    { src: logo_bien_etre_animal, alt: "Logo Bien-être animal" },
-    { src: logo_passport, alt: "Logo Passport" },
-    { src: logo_poney_de_france, alt: "Logo Poney de France" },
-    { src: logo_qualite, alt: "Logo qualité" },
-  ];
-
-  return (
-    <div className="flex flex-wrap justify-center gap-4 my-8">
-      {logos.map((logo, index) => (
-        <Image
-          key={index}
-          src={logo.src}
-          alt={logo.alt}
-          width={100}
-          height={100}
-          className="object-contain"
-        />
-      ))}
-    </div>
-  );
-};
 
 export default function Accueil() {
   const testimonials = [
@@ -93,9 +63,8 @@ export default function Accueil() {
           </p>
           <p>
             Tout au long de l'année, nous organisons des événements comme des
-            journées portes ouvertes, des concours, et des fêtes du club. Ces
-            moments sont l'occasion de partager notre passion dans une ambiance
-            conviviale.
+            stages, des concours, et des fêtes du club. Ces moments sont
+            l'occasion de partager notre passion dans une ambiance conviviale.
           </p>
           <p>
             Le Poney Club Desportis, c'est bien plus qu'un simple centre
@@ -105,7 +74,8 @@ export default function Accueil() {
             cheval.
           </p>
         </div>
-        <h3 className="text-4xl font-bold mb-4">Évènements planifiés</h3>
+        <PassSportLogo />
+        <h3 className="text-4xl font-bold mb-4 mt-16">Évènements planifiés</h3>
         <Calendar events={events} />
       </section>
       <section className="bg-[var(--ivory)] pb-16">
