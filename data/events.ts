@@ -100,4 +100,54 @@ export const events = [
       "Stages de poneys ouverts aux enfants de 3 à 10 ans où ils pourront chouchouter leurs poneys, découvrir les fondamentaux (ou les perfectionner) par le jeu, se promener en forêt et s'initier à la voltige ! Réservation obligatoire.",
     image: "",
   },
+  {
+    title: "Atelier Cross - Samedi 19 octobre",
+    startDate: "2024-10-19",
+    endDate: "2024-10-19",
+    startHour: "14:00",
+    endHour: "16:00",
+    description:
+      "L'atelier Cross consiste à galoper sur un terrain varié avec montées, descentes et franchissement d'obstacles naturels comme des troncs, trous, buttes... Une excellente opportunité pour améliorer vos compétences tout en vous amusant. Tarif : 20€ par personne.",
+    image: "",
+  },
+  {
+    title: "Atelier Hobbyhorse - Samedi 16 novembre",
+    startDate: "2024-11-16",
+    endDate: "2024-11-16",
+    startHour: "14:00",
+    endHour: "15:00",
+    description:
+      "Cet atelier Hobbyhorse est une discipline où l'on reproduit les épreuves d'équitation en remplaçant le cheval par un bâton avec une tête de cheval. Une activité amusante et accessible à tous ! Tarif : 5€ par personne.",
+    image: "",
+  },
+  {
+    title: "Carrousel de Dressage - Samedi 23 novembre",
+    startDate: "2024-11-23",
+    endDate: "2024-11-23",
+    startHour: "14:00",
+    endHour: "16:00",
+    description:
+      "Participez à notre carrousel de dressage, un petit spectacle équestre durant lequel les cavaliers exécutent des figures en musique. Tarif : 20€ par personne.",
+    image: "",
+  },
+  {
+    title: "Atelier Théorie - Samedi 30 novembre",
+    startDate: "2024-11-30",
+    endDate: "2024-11-30",
+    startHour: "14:00",
+    endHour: "15:00",
+    description:
+      "Renforcez vos connaissances théoriques équestres avec cet atelier gratuit. Un moment de partage pour poser vos questions et améliorer vos compétences.",
+    image: "",
+  },
+  {
+    title: "Atelier Western - Samedi 7 décembre",
+    startDate: "2024-12-07",
+    endDate: "2024-12-07",
+    startHour: "14:00",
+    endHour: "16:00",
+    description:
+      "Découvrez l'équitation Western, une discipline venue des États-Unis. Initialement utilisée pour convoyer du bétail à travers le continent, elle est aujourd'hui pratiquée pour ses nombreuses formes : jeux, vitesse, maniabilité, et plus encore. Tarif : 20€ par personne.",
+    image: "",
+  },
 ];
