@@ -150,4 +150,14 @@ export const events = [
       "Découvrez l'équitation Western, une discipline venue des États-Unis. Initialement utilisée pour convoyer du bétail à travers le continent, elle est aujourd'hui pratiquée pour ses nombreuses formes : jeux, vitesse, maniabilité, et plus encore. Tarif : 20€ par personne.",
     image: "",
   },
+  {
+    title: "Concours CSO - Dimanche 24 novembre",
+    startDate: "2024-11-24",
+    endDate: "2024-11-24",
+    startHour: "10:00",
+    endHour: "17:00",
+    description:
+      "Notre concours de CSO arrive à grands pas ! Venez vous défier sur des parcours de saut, conçus pour tous les niveaux, du débutant au confirmé. Une journée riche en émotions et en performances, avec de nombreux lots à gagner. Que le meilleur gagne ! De 10h à 12h, enfants sur shetlands. De 13h00 jusqu'à 17h, les cavaliers à cheval reprennent. Réservation obligatoire. Tarif : 20€ par participant.",
+    image: "",
+  },
 ];
