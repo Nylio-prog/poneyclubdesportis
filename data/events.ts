@@ -160,4 +160,44 @@ export const events = [
       "Notre concours de CSO arrive à grands pas ! Venez vous défier sur des parcours de saut, conçus pour tous les niveaux, du débutant au confirmé. Une journée riche en émotions et en performances, avec de nombreux lots à gagner. Que le meilleur gagne ! De 10h à 12h, enfants sur shetlands. De 13h00 jusqu'à 17h, les cavaliers à cheval reprennent. Réservation obligatoire. Tarif : 20€ par participant.",
     image: "",
   },
+  {
+    title: "Stage 1/2 journée avec le Père Noël",
+    startDate: "2024-12-23",
+    endDate: "2024-12-23",
+    startHour: "14:00",
+    endHour: "17:00",
+    description:
+      "Venez passer une demi-journée magique avec le Père Noël au Poney Club Desportis Cadenet ! Activités équestres et surprises garanties !",
+    image: "/events/cheval-noel.webp",
+  },
+  {
+    title: "Atelier voltige",
+    startDate: "2025-01-11",
+    endDate: "2025-01-11",
+    startHour: "14:00",
+    endHour: "17:00",
+    description:
+      "Un atelier de voltige pour découvrir ou approfondir cette discipline impressionnante. Convient à tous les niveaux.",
+    image: "",
+  },
+  {
+    title: "Atelier cross-country",
+    startDate: "2025-01-18",
+    endDate: "2025-01-18",
+    startHour: "14:00",
+    endHour: "17:00",
+    description:
+      "Découvrez les bases ou perfectionnez-vous en cross-country avec cet atelier !",
+    image: "",
+  },
+  {
+    title: "Concours CSO - Écuries de la Durance",
+    startDate: "2025-01-26",
+    endDate: "2025-01-26",
+    startHour: "09:00",
+    endHour: "17:00",
+    description:
+      "Participez au concours CSO aux Écuries de la Durance. Une journée sportive pour cavaliers passionnés. Pensez à vous inscrire !",
+    image: "",
+  },
 ];
