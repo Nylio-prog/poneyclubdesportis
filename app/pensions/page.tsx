@@ -9,9 +9,9 @@ import {
 } from "@/components/ui/table";
 
 const prix = [
-  { service: "En groupe avec abris naturel", prix: "230€" },
-  { service: "En groupe avec abris construit", prix: "250€" },
-  { service: "À 2 avec abris construit individuel", prix: "265€" },
+  { service: "En groupe avec abris naturel", prix: "240€" },
+  { service: "En groupe avec abris construit", prix: "260€" },
+  { service: "Individuel ou à 2 avec abris construit", prix: "300€" },
 ];
 
 export default function PensionsPage() {
