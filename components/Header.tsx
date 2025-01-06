@@ -14,6 +14,7 @@ const Header = () => {
   const navItems = [
     { href: "/", label: "Accueil" },
     { href: "/le-club", label: "Le Club" },
+    { href: "/photos", label: "Photos" },
     { href: "/cavalerie", label: "Cavalerie" },
     { href: "/actualites", label: "Actualités" },
     { href: "/cours", label: "Cours" },
