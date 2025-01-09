@@ -65,11 +65,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${GeistSans.className} pt-header`}>
+      <body
+        className={`${GeistSans.className} pt-header flex flex-col min-h-screen`}
+      >
         <Analytics />
         <SpeedInsights />
         <Header />
-        <main>{children}</main>
+        <main className="flex-grow">{children}</main>
         <Footer />
       </body>
     </html>
