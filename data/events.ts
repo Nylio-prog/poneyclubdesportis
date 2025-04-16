@@ -200,4 +200,23 @@ export const events = [
       "Participez au concours CSO aux Écuries de la Durance. Une journée sportive pour cavaliers passionnés. Pensez à vous inscrire !",
     image: "",
   },
+  {
+    title: "Stages petits poneys - Vacances Pâques",
+    startDate: "2025-04-14",
+    endDate: "2025-04-18",
+    startHour: "14:00",
+    endHour: "17:00",
+    description:
+      "Chaque jour, le poney club Desportis vous propose des stages de 3 heures pour enfants avec des jeux de maniabilité, une ballade, de la voltige, etc. Pensez à vous inscrire ! ",
+    image: "",
+  },
+  {
+    title: "Spectacle de fin d'année",
+    startDate: "2025-06-22",
+    endDate: "2025-06-22",
+    startHour: "09:00",
+    endHour: "17:00",
+    description: "Spectacle de fin d'année. Pensez à vous inscrire !",
+    image: "",
+  },
 ];
