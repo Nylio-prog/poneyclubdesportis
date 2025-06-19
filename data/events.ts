@@ -214,9 +214,9 @@ export const events = [
     title: "Spectacle de fin d'année",
     startDate: "2025-06-22",
     endDate: "2025-06-22",
-    startHour: "09:00",
-    endHour: "17:00",
-    description: "Spectacle de fin d'année. Pensez à vous inscrire !",
+    startHour: "18:00",
+    endHour: "22:00",
+    description: "Spectacle de fin d'année. Venez nombreux !",
     image: "",
   },
 ];
