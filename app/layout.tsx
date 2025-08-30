@@ -5,6 +5,7 @@ import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AnnouncementBanner from "@/components/AnnouncementBanner";
 
 export const metadata: Metadata = {
   title: "Poney Club Desportis - Cours et Pension à Cadenet, Vaucluse",
@@ -71,6 +72,7 @@ export default function RootLayout({
         <Analytics />
         <SpeedInsights />
         <Header />
+        <AnnouncementBanner />
         <main className="flex-grow">{children}</main>
         <Footer />
       </body>

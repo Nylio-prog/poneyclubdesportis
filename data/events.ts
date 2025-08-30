@@ -219,4 +219,25 @@ export const events = [
     description: "Spectacle de fin d'année. Venez nombreux !",
     image: "",
   },
+  {
+    title: "Portes ouvertes - Samedi 6 Septembre",
+    startDate: "2025-09-06",
+    endDate: "2025-09-06",
+    startHour: "15:00",
+    endHour: "18:00",
+    description:
+      "Portes ouvertes pour venir découvrir le poney à partir de 15h jusqu'à 18h. Gratuit pour tout le monde, venez nombreux !",
+    image: "",
+  },
+  {
+    title:
+      "Forum des Associations à Cadenet – Samedi 13 septembre, dès 15h, devant la mairie",
+    startDate: "2025-09-13",
+    endDate: "2025-09-13",
+    startHour: "15:00",
+    endHour: "18:00",
+    description:
+      "Retrouvez-nous au forum des associations de Cadenet pour découvrir notre poney club ! Nous serons présents pour vous donner toutes les informations sur nos cours, nos tarifs et les inscriptions pour la saison à venir. C'est l'occasion idéale pour poser vos questions et préparer votre rentrée équestre. Venez nombreux nous rencontrer devant la mairie !",
+    image: "/events/place_mairie.jpg",
+  },
 ];
