@@ -32,8 +32,8 @@ const AnnouncementBanner = () => {
 
             {/* Announcement Text */}
             <p className="text-sm sm:text-base font-medium">
-              <span className="font-bold">Portes ouvertes</span> le 6 Septembre
-              de 15h à 18h avec baptêmes de poney
+              <span className="font-bold">Portes ouvertes</span> ce Samedi 6
+              Septembre de 15h à 18h avec baptêmes de poney
             </p>
 
             {/* Link to Actualités */}
