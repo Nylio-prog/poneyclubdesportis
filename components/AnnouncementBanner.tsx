@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { track } from "@vercel/analytics/react"; // Step 1
 
 const AnnouncementBanner = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -18,6 +19,14 @@ const AnnouncementBanner = () => {
     sessionStorage.setItem("announcementBannerClosed", "true");
   };
 
+  // Step 2: Create the handler function
+  const handleLinkClick = () => {
+    track("Click Banner Link", {
+      location: "Announcement Banner",
+      text: "En savoir plus",
+    });
+  };
+
   if (!isVisible) return null;
 
   return (
@@ -25,21 +34,18 @@ const AnnouncementBanner = () => {
       <div className="max-w-6xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 flex-1">
-            {/* Icon */}
             <span className="text-2xl animate-pulse" aria-hidden="true">
               🐴
             </span>
-
-            {/* Announcement Text */}
             <p className="text-sm sm:text-base font-medium">
               <span className="font-bold">Forum des associations</span> ce
               samedi 13 Septembre dès 15h à Cadenet
             </p>
-
-            {/* Link to Actualités */}
+            {/* Step 3: Attach the handler */}
             <Link
               href="/actualites"
               className="ml-2 inline-flex items-center text-sm sm:text-base font-semibold underline hover:no-underline transition-all duration-200 whitespace-nowrap"
+              onClick={handleLinkClick}
             >
               En savoir plus
               <svg
@@ -58,8 +64,6 @@ const AnnouncementBanner = () => {
               </svg>
             </Link>
           </div>
-
-          {/* Close Button */}
           <button
             onClick={handleClose}
             className="ml-4 text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-amber-400 rounded-full p-1"
