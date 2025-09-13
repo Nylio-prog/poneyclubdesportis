@@ -72,7 +72,7 @@ export default function RootLayout({
         <Analytics />
         <SpeedInsights />
         <Header />
-        <AnnouncementBanner />
+        {/* <AnnouncementBanner /> */}
         <main className="flex-grow">{children}</main>
         <Footer />
       </body>
