@@ -212,40 +212,44 @@ export default function LeClubPage() {
         ))}
       </VerticalTimeline>
 
-      <div className="max-w-4xl mx-auto px-4 my-16">
-        <h2 className="text-3xl font-semibold mb-12 text-center text-[var(--deep-burgundy)]">
+      <div className="max-w-2xl mx-auto px-4 my-20">
+        <h2 className="text-4xl font-bold mb-16 text-center text-[var(--deep-burgundy)] tracking-wide">
           Notre Partenaire Officiel
         </h2>
-        <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-          <div className="md:flex">
-            <Image
-              src="/le-club/ford-sponsor.jpg"
-              alt="Ford - Notre partenaire officiel"
-              width={640}
-              height={427}
-              className="h-full w-full object-cover"
-            />
-            <div className="p-8">
-              <div className="uppercase tracking-wide text-sm text-[var(--deep-burgundy)] font-bold">
-                Ford Automobile Service du Luberon, Pertuis
+        <div className="bg-white shadow-2xl rounded-2xl overflow-hidden border border-gray-100">
+          <div className="p-10 text-center">
+            <div className="mb-6">
+              <div className="inline-block bg-gradient-to-r from-[var(--deep-burgundy)] to-[var(--vivid-burgundy)] text-white px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg">
+                Automobile Service du Luberon
               </div>
-              <p className="mt-2 text-gray-500">
+              <div className="text-lg text-gray-600 mt-3 font-medium">
+                Pertuis
+              </div>
+            </div>
+
+            <div className=" rounded-xl p-4 mb-8">
+              <p className="text-[var(--deep-burgundy)] font-semibold text-lg mb-2">
                 Partenaire du Poney Club Desportis depuis 2011
               </p>
-              <div className="mt-4">
-                <p className="text-gray-600">79 Rue Denis Papin</p>
-                <p className="text-gray-600">84120 Pertuis</p>
-                <p className="mt-2 text-gray-600">
-                  <span className="font-semibold">Tél :</span> 04 90 09 73 33
-                </p>
-              </div>
-              <a
-                href="tel:+33490097333"
-                className="mt-4 inline-block bg-[var(--deep-burgundy)] text-white py-2 px-4 rounded hover:bg-[var(--vivid-burgundy)] transition duration-300"
-              >
-                Contacter
-              </a>
+              {/* <div className="w-20 h-1 bg-gradient-to-r from-[var(--deep-burgundy)] to-[var(--vivid-burgundy)] mx-auto rounded-full"></div> */}
             </div>
+
+            <div className="space-y-2 mb-8 text-gray-700">
+              <p className="text-lg font-medium">79 Rue Denis Papin</p>
+              <p className="text-lg font-medium">84120 Pertuis</p>
+              <p className="text-lg font-semibold text-[var(--deep-burgundy)] mt-4">
+                <span className="inline-block mr-2">📞</span>
+                04 90 09 73 33
+              </p>
+            </div>
+
+            <a
+              href="tel:+33490097333"
+              className="inline-flex items-center bg-gradient-to-r from-[var(--deep-burgundy)] to-[var(--vivid-burgundy)] text-white py-3 px-8 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 font-semibold text-lg"
+            >
+              <span className="mr-2"></span>
+              Contacter
+            </a>
           </div>
         </div>
       </div>
