@@ -5,6 +5,11 @@ import Image from "next/image";
 const CertificationBar = () => {
   const certifications = [
     {
+      src: "/logos/Logo_FFE.jpg",
+      alt: "Label FFE",
+      label: "FFE",
+    },
+    {
       src: "/logos/Logo_bien_etre_animal.png",
       alt: "Label Bien-être animal",
       label: "Bien-être Animal",
@@ -16,8 +21,8 @@ const CertificationBar = () => {
     },
     {
       src: "/logos/Logo_qualite.png",
-      alt: "Label Qualité",
-      label: "Qualité",
+      alt: "Label École Française d'Équitation",
+      label: "École Française d'Équitation",
     },
   ];
 

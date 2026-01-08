@@ -24,31 +24,27 @@ export default function Accueil() {
   ];
 
   return (
-  <div className="min-h-screen">
-    <section className="relative w-full h-screen md:h-[100vh]">
-      <div className="absolute inset-0 overflow-hidden z-0">
-        <Image
-          src="/hero-image.jpg"
-          alt="Poney Club Desportis"
-          fill
-          className="object-cover object-[63%_center] md:object-[center_30%]"
-          priority
-          placeholder="blur"
-          blurDataURL="/hero-image-blur.jpg"
-        />
-      </div>
-      <div className="absolute inset-0 bg-black bg-opacity-50 z-10" />
-      <div className="absolute top-0 left-0 right-0 z-20">
-        <CertificationBar />
-      </div>
-
-      <div className="absolute inset-0 flex items-center justify-center px-4 z-20 pointer-events-none">
-        {/* pointer-events-none ensures the text container doesn't block clicks on the bar if they overlap */}
-        <h1 className="text-4xl md:text-6xl font-bold text-[var(--ivory)] text-center drop-shadow-md">
-          Bienvenue au Poney Club Desportis
-        </h1>
-      </div>
-    </section>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <CertificationBar />
+      <section className="relative w-full h-screen md:h-100vh">
+        <div className="absolute inset-0 overflow-hidden">
+          <Image
+            src="/hero-image.jpg"
+            alt="Poney Club Desportis"
+            fill
+            className="object-cover object-[63%_center] md:object-[center_30%]"
+            priority
+            placeholder="blur"
+            blurDataURL="/hero-image-blur.jpg"
+          />
+        </div>
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-[var(--ivory)] text-center">
+            Bienvenue au Poney Club Desportis
+          </h1>
+        </div>
+      </section>
 
       <section className="max-w-4xl mx-auto py-16 px-4">
         <h2 className="text-4xl font-bold mb-8">Poney Club à Cadenet</h2>
