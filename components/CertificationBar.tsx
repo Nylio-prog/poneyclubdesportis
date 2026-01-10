@@ -26,69 +26,60 @@ const CertificationBar = () => {
     },
   ];
 
-  // We double the data to create the seamless infinite loop effect
-  const marqueeCertifications = [...certifications, ...certifications];
+  const marqueeCertifications = [
+    ...certifications,
+    ...certifications,
+    ...certifications,
+  ];
 
   return (
-    <section className="w-full border-b border-[var(--ivory)]/20 bg-[var(--deep-burgundy)] text-[var(--ivory)] pt-7 pb-3 md:pt-8 md:pb-4">
-      <div className="max-w-6xl mx-auto px-4">
-        {/* Desktop View (Static) */}
-        <div className="hidden md:flex items-center justify-center gap-8">
-          <span className="text-sm font-bold whitespace-nowrap mr-3">
-            Nos labels :
+    <section className="w-full bg-[var(--ivory)] text-[var(--deep-burgundy)] py-2 pt-6 shadow-md relative z-40 border-b border-[#5A0F1D]/10">
+      
+      {/* Container matched to Header width (max-w-6xl) */}
+      <div className="max-w-6xl mx-auto px-4 flex items-center justify-center h-12">
+        
+        {/* UNIFIED LABEL BLOCK (Mobile & Desktop) */}
+        {/* - 'flex': Visible on all screens
+           - 'border-r-2': Vertical line on all screens
+           - 'pr-4 mr-4': Slightly tighter spacing on mobile
+           - 'md:pr-6 md:mr-6': Wider spacing on desktop 
+        */}
+        <div className="flex items-center border-r-2 border-[#5A0F1D]/10 pr-4 mr-4 md:pr-6 md:mr-6 h-full flex-shrink-0">
+           <span className="text-xs md:text-sm font-black uppercase tracking-widest opacity-80">
+            Nos Labels
           </span>
-          {certifications.map((cert, index) => (
-            <div key={index} className="flex items-center gap-3">
-              <div className="relative w-12 h-12 bg-[var(--ivory)] rounded-lg p-1.5 flex items-center justify-center">
-                <Image
-                  src={cert.src}
-                  alt={cert.alt}
-                  width={48}
-                  height={48}
-                  className="object-contain max-w-full max-h-full"
-                />
-              </div>
-              <span className="text-sm font-medium opacity-90">
-                {cert.label}
-              </span>
-            </div>
-          ))}
         </div>
+        
+        {/* Marquee Window */}
+        <div className="relative overflow-hidden flex-1 h-full flex items-center">
+          
+          {/* Gradients */}
+          <div className="absolute top-0 bottom-0 left-0 w-8 bg-gradient-to-r from-[#FDFBF7] to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute top-0 bottom-0 right-0 w-8 bg-gradient-to-l from-[#FDFBF7] to-transparent z-10 pointer-events-none"></div>
 
-        {/* Mobile View - Static Text + Auto Scrolling Carousel */}
-        <div className="md:hidden flex items-center w-full">
-          {/* Static Label */}
-          <span className="text-sm font-bold whitespace-nowrap mr-3 z-20">
-            Nos labels :
-          </span>
-
-          {/* Marquee Container */}
-          <div className="relative overflow-hidden flex-1">
-            {/* Gradient Fades */}
-            <div className="absolute top-0 bottom-0 left-0 w-4 bg-gradient-to-r from-[var(--deep-burgundy)] to-transparent z-10"></div>
-            <div className="absolute top-0 bottom-0 right-0 w-4 bg-gradient-to-l from-[var(--deep-burgundy)] to-transparent z-10"></div>
-
-            <div className="flex w-max animate-marquee">
-              {marqueeCertifications.map((cert, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-2 flex-shrink-0 mx-4"
-                >
-                  <div className="relative w-9 h-9 bg-[var(--ivory)] rounded-lg p-1 flex items-center justify-center flex-shrink-0">
-                    <Image
-                      src={cert.src}
-                      alt={cert.alt}
-                      width={36}
-                      height={36}
-                      className="object-contain max-w-full max-h-full"
-                    />
-                  </div>
-                  <span className="text-xs opacity-90 whitespace-normal leading-tight">
-                    {cert.label}
-                  </span>
+          {/* Scrolling Track */}
+          <div className="flex w-max animate-marquee hover:pause items-center">
+            {marqueeCertifications.map((cert, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-3 flex-shrink-0 mx-6 md:mx-8 group cursor-default"
+              >
+                {/* Logo Image */}
+                <div className="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center flex-shrink-0">
+                  <Image
+                    src={cert.src}
+                    alt={cert.alt}
+                    width={40}
+                    height={40}
+                    className="object-contain max-w-full max-h-full mix-blend-multiply"
+                  />
                 </div>
-              ))}
-            </div>
+                {/* Text Label */}
+                <span className="text-xs md:text-sm font-semibold whitespace-nowrap">
+                  {cert.label}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -99,13 +90,13 @@ const CertificationBar = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-33.33%);
           }
         }
         .animate-marquee {
-          animation: marquee 20s linear infinite;
+          animation: marquee 40s linear infinite;
         }
-        .animate-marquee:hover {
+        .hover\:pause:hover {
           animation-play-state: paused;
         }
       `}</style>
