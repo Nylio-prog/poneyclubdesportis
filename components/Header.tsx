@@ -22,32 +22,12 @@ const Header = () => {
     { href: "/contact", label: "Contact" },
   ];
 
-  const certifications = [
-    {
-      src: "/logos/Logo_FFE.jpg",
-      alt: "Label FFE",
-    },
-    {
-      src: "/logos/Logo_bien_etre_animal.png",
-      alt: "Label Bien-être animal",
-    },
-    {
-      src: "/logos/Logo_poney_de_france.png",
-      alt: "Label Poney de France",
-    },
-    {
-      src: "/logos/Logo_qualite.png",
-      alt: "Label École Française d'Équitation",
-    },
-  ];
-
   return (
     <header className="fixed top-0 left-0 right-0 bg-[var(--deep-burgundy)] text-[var(--ivory)] z-50 border-b border-[var(--ivory)]/10 shadow-md">
       {/* Main Navigation */}
       <nav className="p-4">
-        <div className="flex justify-between items-center max-w-7xl mx-auto">
-          {/* LEFT: Logo & Title */}
-          <Link href="/" className="text-2xl font-bold z-50">
+        <div className="flex justify-between items-center max-w-6xl mx-auto">
+          <Link href="/" className="text-2xl font-bold">
             <div className="flex items-center">
               <Image
                 src="/icon-ivory.png"
@@ -61,50 +41,27 @@ const Header = () => {
             </div>
           </Link>
 
-          {/* RIGHT (Desktop): Nav + Certifications */}
-          <div className="hidden lg:flex items-center gap-6">
-            <ul className="flex space-x-4">
-              {navItems.map(({ href, label }) => (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    className={`${
-                      isActive(href)
-                        ? "underline decoration-2 underline-offset-4"
-                        : "hover:underline hover:decoration-2 hover:underline-offset-4"
-                    } transition-all duration-200`}
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            {/* Vertical Separator */}
-            <div className="h-6 w-px bg-[var(--ivory)]/20"></div>
-
-            {/* Certification Logos (No Text) */}
-            <div className="flex items-center gap-2">
-              {certifications.map((cert, index) => (
-                <div
-                  key={index}
-                  className="bg-[var(--ivory)] rounded p-0.5 flex items-center justify-center w-8 h-8"
+          {/* Desktop Menu */}
+          <ul className="hidden lg:flex space-x-4">
+            {navItems.map(({ href, label }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className={`${
+                    isActive(href)
+                      ? "underline decoration-2 underline-offset-4"
+                      : "hover:underline hover:decoration-2 hover:underline-offset-4"
+                  } transition-all duration-200`}
                 >
-                  <Image
-                    src={cert.src}
-                    alt={cert.alt}
-                    width={32}
-                    height={32}
-                    className="object-contain max-w-full max-h-full"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-          {/* Hamburger Menu Icon (Mobile Only) */}
+          {/* Hamburger Menu Icon */}
           <button
-            className="lg:hidden text-[var(--ivory)] focus:outline-none z-50"
+            className="lg:hidden text-[var(--ivory)] focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg
@@ -128,11 +85,9 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden fixed top-[82px] right-0 bottom-0 w-64 bg-[var(--deep-burgundy)] text-[var(--ivory)] border-t border-[var(--ivory)]/10 transition-transform transform ease-in-out duration-300 z-40 flex flex-col justify-between p-4 pb-8">
-          
-          {/* Top: Navigation Links */}
+        <div className="lg:hidden fixed top-[82px] right-0 bottom-0 w-64 bg-[var(--deep-burgundy)] text-[var(--ivory)] p-4 border-t border-[var(--ivory)]/10 transition-transform transform ease-in-out duration-300 z-10">
           <ul className="space-y-4">
             {navItems.map(({ href, label }) => (
               <li key={href}>
@@ -150,28 +105,6 @@ const Header = () => {
               </li>
             ))}
           </ul>
-
-          {/* Bottom: Certifications Logos */}
-          <div>
-            <div className="border-t border-[var(--ivory)]/10 mb-4"></div>
-            <p className="text-xs text-[var(--ivory)]/70 mb-2 text-center">Nos labels</p>
-            <div className="flex items-center justify-center gap-3">
-              {certifications.map((cert, index) => (
-                <div
-                  key={index}
-                  className="bg-[var(--ivory)] rounded p-1 flex items-center justify-center w-10 h-10"
-                >
-                  <Image
-                    src={cert.src}
-                    alt={cert.alt}
-                    width={40}
-                    height={40}
-                    className="object-contain max-w-full max-h-full"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       )}
     </header>

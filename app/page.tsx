@@ -4,6 +4,8 @@ import { Testimonial } from "@/components/Testimonial";
 import CertificationLogos from "@/components/CertificationLogos";
 import PassSportLogo from "@/components/PassportLogo";
 import { events } from "@/data/events";
+import Link from "next/link";
+import CertificationBar from "@/components/CertificationBar";
 
 export default function Accueil() {
   const testimonials = [
@@ -24,6 +26,7 @@ export default function Accueil() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
+      <CertificationBar />
       <section className="relative w-full h-screen md:h-100vh">
         <div className="absolute inset-0 overflow-hidden">
           <Image
