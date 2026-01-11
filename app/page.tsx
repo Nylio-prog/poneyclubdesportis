@@ -4,7 +4,6 @@ import { Testimonial } from "@/components/Testimonial";
 import CertificationLogos from "@/components/CertificationLogos";
 import PassSportLogo from "@/components/PassportLogo";
 import { events } from "@/data/events";
-import Link from "next/link";
 import CertificationBar from "@/components/CertificationBar";
 
 export default function Accueil() {
@@ -39,10 +38,16 @@ export default function Accueil() {
             blurDataURL="/hero-image-blur.jpg"
           />
         </div>
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4">
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center px-4">
+          {/* Main Title */}
           <h1 className="text-4xl md:text-6xl font-bold text-[var(--ivory)] text-center">
             Bienvenue au Poney Club Desportis
           </h1>
+          
+          {/* New year 2026 */}
+          <p className="mt-6 text-lg md:text-2xl font-light uppercase tracking-[0.25em] text-[var(--ivory)] text-center opacity-90">
+            Joyeuse Année 2026 ! 
+          </p>
         </div>
       </section>
 
