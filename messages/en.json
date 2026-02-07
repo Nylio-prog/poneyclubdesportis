@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "home": "Home",
+    "club": "The Club",
+    "photos": "Photos",
+    "horses": "Horses",
+    "news": "News",
+    "lessons": "Lessons",
+    "boarding": "Boarding",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Welcome to Poney Club Desportis",
+      "subtitle": "Happy New Year 2026!"
+    },
+    "about": {
+      "title": "Pony Club in Cadenet",
+      "description1": "Welcome to Poney Club Desportis! Established in 2008, our equestrian center is located in Cadenet (84160), in the heart of 27 hectares of preserved nature in the Luberon Park (Vaucluse). We offer a wide range of equestrian activities for all levels, from age 3. Whether you are a beginner or an experienced rider, you can enjoy adapted lessons, training courses, trail rides, as well as boarding services for your horses and ponies.",
+      "description2": "The welfare of our animals is at the heart of our concerns, as evidenced by our \"Animal Welfare\" certification. We are also proud of our \"Poney de France\" and \"Quality\" labels, which guarantee high-quality teaching in adapted and secure facilities.",
+      "description3": "Throughout the year, we organize events such as training courses, competitions, and club celebrations. These moments are an opportunity to share our passion in a friendly atmosphere.",
+      "description4": "Poney Club Desportis is much more than just an equestrian center. It's a space where respect, safety, and the pleasure of horse riding come together to offer an unforgettable experience, whether for a trail ride, a lesson, or boarding your horse."
+    },
+    "events": {
+      "title": "Upcoming Events"
+    },
+    "testimonials": {
+      "title": "What Our Riders Say"
+    }
+  },
+  "calendar": {
+    "title": "Upcoming Events",
+    "viewMonth": "Month",
+    "viewWeek": "Week",
+    "viewAgenda": "Agenda",
+    "noEvents": "No events scheduled for the selected period",
+    "next": "Next",
+    "previous": "Previous",
+    "today": "Today",
+    "allDay": "All day"
+  },
+  "animals": {
+    "horses": "Horses",
+    "ponies": "Ponies",
+    "retired": "Retired",
+    "other": "Other Animals",
+    "age": "years old"
+  },
+  "contact": {
+    "title": "Contact",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "hours": "Hours",
+    "location": "Location",
+    "socialMedia": "Social Media",
+    "callUs": "Call us",
+    "emailUs": "Email us",
+    "visitUs": "Visit us",
+    "mapTitle": "Poney Club Desportis location map",
+    "openMaps": "Open in Google Maps",
+    "followUs": "Follow Us"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "contact": "Contact",
+    "address": "Address"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "close": "Close",
+    "open": "Open",
+    "menu": "Menu"
+  }
+}

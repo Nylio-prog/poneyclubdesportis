@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "club": "Le Club",
+    "photos": "Photos",
+    "horses": "Cavalerie",
+    "news": "Actualités",
+    "lessons": "Cours",
+    "boarding": "Pensions",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Bienvenue au Poney Club Desportis",
+      "subtitle": "Joyeuse Année 2026 !"
+    },
+    "about": {
+      "title": "Poney Club à Cadenet",
+      "description1": "Bienvenue au Poney Club Desportis ! Créé en 2008, notre centre équestre est situé à Cadenet (84160), au cœur de 27 hectares de nature préservée dans le Parc du Luberon (Vaucluse). Nous proposons un large choix d'activités équestres pour tous les niveaux, dès 3 ans. Que vous soyez débutant ou cavalier confirmé, vous pouvez profiter de cours adaptés, de stages, de balades, ainsi que de services de pension pour vos chevaux et poneys.",
+      "description2": "Le bien-être de nos animaux est au cœur de nos préoccupations, comme en témoigne notre certification \"Bien-être animal\". Nous sommes également fiers de nos labels \"Poney de France\" et \"Qualité\", qui garantissent un enseignement de haute qualité dans des installations adaptées et sécurisées.",
+      "description3": "Tout au long de l'année, nous organisons des événements comme des stages, des concours, et des fêtes du club. Ces moments sont l'occasion de partager notre passion dans une ambiance conviviale.",
+      "description4": "Le Poney Club Desportis, c'est bien plus qu'un simple centre équestre. C'est un espace où respect, sécurité et plaisir de l'équitation se rencontrent pour offrir une expérience inoubliable, que ce soit pour une balade, un cours, ou la pension de votre cheval."
+    },
+    "events": {
+      "title": "Évènements planifiés"
+    },
+    "testimonials": {
+      "title": "Ce que nos cavaliers disent"
+    }
+  },
+  "calendar": {
+    "title": "Évènements planifiés",
+    "viewMonth": "Mois",
+    "viewWeek": "Semaine",
+    "viewAgenda": "Agenda",
+    "noEvents": "Aucun événement de prévu sur la période sélectionnée",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "today": "Aujourd'hui",
+    "allDay": "Toute la journée"
+  },
+  "animals": {
+    "horses": "Chevaux",
+    "ponies": "Poneys",
+    "retired": "Retraités",
+    "other": "Autres animaux",
+    "age": "ans"
+  },
+  "contact": {
+    "title": "Contact",
+    "phone": "Téléphone",
+    "email": "Email",
+    "address": "Adresse",
+    "hours": "Horaires",
+    "location": "Localisation",
+    "socialMedia": "Réseaux sociaux",
+    "callUs": "Appelez-nous",
+    "emailUs": "Envoyez-nous un email",
+    "visitUs": "Rendez-nous visite",
+    "mapTitle": "Carte de localisation du Poney Club Desportis",
+    "openMaps": "Ouvrir dans Google Maps",
+    "followUs": "Suivez-nous"
+  },
+  "footer": {
+    "rights": "Tous droits réservés",
+    "contact": "Contact",
+    "address": "Adresse"
+  },
+  "common": {
+    "learnMore": "En savoir plus",
+    "close": "Fermer",
+    "open": "Ouvrir",
+    "menu": "Menu"
+  }
+}
