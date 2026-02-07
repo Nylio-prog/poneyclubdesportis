@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
+import ResponsiveImage from "@/components/ResponsiveImage";
 
 type Photo = {
   src: string;
@@ -13,7 +13,7 @@ export default function MasonryPhotoGallery(): JSX.Element {
   useEffect(() => {
     const importPhotos = () => {
       const context = require.context(
-        "../../public/photos",
+        "../../../public/photos",
         false,
         /\.(png|jpe?g|webp)$/
       );
@@ -39,13 +39,13 @@ export default function MasonryPhotoGallery(): JSX.Element {
               animation: `fadeIn 0.5s ease-out ${index * 0.1}s both`,
             }}
           >
-            <Image
+            <ResponsiveImage
               src={photo.src}
               alt={`Gallery photo ${index + 1}`}
               width={300}
               height={200}
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="w-full rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105"
-              loading={photo.loading}
             />
           </div>
         ))}

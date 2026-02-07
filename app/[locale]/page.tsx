@@ -1,4 +1,5 @@
-import Image from "next/image";
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { useTranslations } from 'next-intl';
 import Calendar from "@/components/Calendar";
 import { Testimonial } from "@/components/Testimonial";
 import CertificationLogos from "@/components/CertificationLogos";
@@ -7,6 +8,8 @@ import { events } from "@/data/events";
 import CertificationBar from "@/components/CertificationBar";
 
 export default function Accueil() {
+  const t = useTranslations('home');
+  
   const testimonials = [
     {
       name: "Charlie K.",
@@ -28,72 +31,50 @@ export default function Accueil() {
       <CertificationBar />
       <section className="relative w-full h-screen md:h-100vh">
         <div className="absolute inset-0 overflow-hidden">
-          <Image
+          <ResponsiveImage
             src="/hero-image.jpg"
             alt="Poney Club Desportis"
             fill
-            className="object-cover object-[63%_center] md:object-[center_30%]"
+            objectFit="cover"
+            objectPosition="63% center"
             priority
             placeholder="blur"
             blurDataURL="/hero-image-blur.jpg"
+            sizes="100vw"
           />
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center px-4">
           {/* Main Title */}
           <h1 className="text-4xl md:text-6xl font-bold text-[var(--ivory)] text-center">
-            Bienvenue au Poney Club Desportis
+            {t('hero.title')}
           </h1>
           
           {/* New year 2026 */}
           <p className="mt-6 text-lg md:text-2xl font-light uppercase tracking-[0.25em] text-[var(--ivory)] text-center opacity-90">
-            Joyeuse Année 2026 ! 
+            {t('hero.subtitle')}
           </p>
         </div>
       </section>
 
       <section className="max-w-4xl mx-auto py-16 px-4">
-        <h2 className="text-4xl font-bold mb-8">Poney Club à Cadenet</h2>
+        <h2 className="text-4xl font-bold mb-8">{t('about.title')}</h2>
         <CertificationLogos />
         <div className="space-y-4 text-lg mb-16">
-          <p>
-            Bienvenue au Poney Club Desportis ! Créé en 2008, notre centre
-            équestre est situé à Cadenet (84160), au cœur de 27 hectares de
-            nature préservée dans le Parc du Luberon (Vaucluse). Nous proposons
-            un large choix d'activités équestres pour tous les niveaux, dès 3
-            ans. Que vous soyez débutant ou cavalier confirmé, vous pouvez
-            profiter de cours adaptés, de stages, de balades, ainsi que de
-            services de pension pour vos chevaux et poneys.
-          </p>
-          <p>
-            Le bien-être de nos animaux est au cœur de nos préoccupations, comme
-            en témoigne notre certification "Bien-être animal". Nous sommes
-            également fiers de nos labels "Poney de France" et "Qualité", qui
-            garantissent un enseignement de haute qualité dans des installations
-            adaptées et sécurisées.
-          </p>
-          <p>
-            Tout au long de l'année, nous organisons des événements comme des
-            stages, des concours, et des fêtes du club. Ces moments sont
-            l'occasion de partager notre passion dans une ambiance conviviale.
-          </p>
-          <p>
-            Le Poney Club Desportis, c'est bien plus qu'un simple centre
-            équestre. C'est un espace où respect, sécurité et plaisir de
-            l'équitation se rencontrent pour offrir une expérience inoubliable,
-            que ce soit pour une balade, un cours, ou la pension de votre
-            cheval.
-          </p>
+          <p>{t('about.description1')}</p>
+          <p>{t('about.description2')}</p>
+          <p>{t('about.description3')}</p>
+          <p>{t('about.description4')}</p>
         </div>
 
         <PassSportLogo />
-        <h3 className="text-4xl font-bold mb-4 mt-16">Évènements planifiés</h3>
+        <h3 className="text-4xl font-bold mb-4 mt-16">{t('events.title')}</h3>
         <Calendar events={events} />
       </section>
 
       <section className="bg-[var(--ivory)] pb-16">
         <div className="max-w-6xl mx-auto px-4">
           <h3 className="text-4xl font-bold mb-12 text-center">
-            Ce que nos cavaliers disent
+            {t('testimonials.title')}
           </h3>
           <div className="grid gap-8 md:grid-cols-3">
             {testimonials.map((testimonial, index) => (

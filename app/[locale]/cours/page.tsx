@@ -1,5 +1,4 @@
-import React from "react";
-import Image from "next/image";
+import ResponsiveImage from "@/components/ResponsiveImage";
 import {
   Table,
   TableBody,
@@ -89,11 +88,13 @@ export default function PricesSchedulesPage() {
       </h1>
       <div className="max-w-6xl mx-auto grid gap-8">
         <div className="w-[80%] relative mx-auto mb-12 max-h-[70vh] overflow-hidden rounded-lg shadow-lg aspect-[16/9]">
-          <Image
+          <ResponsiveImage
             src="/cours/clemence_jump.jpg"
             alt="Clemence Medail saut à cheval"
             fill
-            className="object-cover object-[center_50%] rounded-lg"
+            sizes="80vw"
+            objectFit="cover"
+            objectPosition="center 50%"
           />
         </div>
         <div>

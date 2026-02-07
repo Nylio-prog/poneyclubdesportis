@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
+import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from "next/link";
 import {
   VerticalTimeline,
@@ -85,11 +84,13 @@ export default function LeClubPage() {
 
       <div className="w-full mb-12">
         <div className="relative mb-12 mx-auto max-h-[70vh] overflow-hidden rounded-lg shadow-lg aspect-[16/9]">
-          <Image
+          <ResponsiveImage
             src="/le-club/poney-club.jpg"
             alt="Installations Poney Club Desportis"
             fill
-            className="object-cover object-center rounded-lg"
+            sizes="100vw"
+            objectFit="cover"
+            objectPosition="center"
           />
         </div>
         <div className="text-lg max-w-4xl mx-auto px-4">

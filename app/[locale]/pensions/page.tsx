@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ResponsiveImage from "@/components/ResponsiveImage";
 import {
   Table,
   TableBody,
@@ -38,12 +38,13 @@ export default function PensionsPage() {
             </p>
           </div>
           <div className="md:w-1/2">
-            <Image
+            <ResponsiveImage
               src="/pensions/box.jpg"
               alt="Nos paddocks spacieux"
               width={600}
               height={400}
-              className="object-cover h-full w-full"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              objectFit="cover"
             />
           </div>
         </section>
@@ -64,12 +65,13 @@ export default function PensionsPage() {
             </p>
           </div>
           <div className="md:w-1/2">
-            <Image
+            <ResponsiveImage
               src="/pensions/parcs.jpg"
               alt="Nos prairies verdoyantes"
               width={600}
               height={400}
-              className="object-cover h-full w-full"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              objectFit="cover"
             />
           </div>
         </section>
@@ -90,17 +92,18 @@ export default function PensionsPage() {
             </p>
           </div>
           <div className="md:w-1/2">
-            <Image
+            <ResponsiveImage
               src="/pensions/hay.jpg"
               alt="Alimentation de qualité"
               width={600}
               height={400}
-              className="object-cover h-full w-full"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              objectFit="cover"
             />
           </div>
         </section>
 
-        <section className="bg-[--var(--deep-burgundy)] rounded-lg py-8">
+        <section className="bg-white rounded-lg py-8">
           <h2 className="text-2xl font-bold mb-4 pl-8">
             Nos tarifs de pension
           </h2>
