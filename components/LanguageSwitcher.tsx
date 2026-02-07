@@ -31,14 +31,23 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
     let pathWithoutLocale = currentPath;
     
     // Remove current locale prefix if it exists
-    if (currentPath.startsWith('/fr/')) {
-      pathWithoutLocale = currentPath.slice(3);
-    } else if (currentPath === '/fr') {
-      pathWithoutLocale = '/';
-    } else if (currentPath.startsWith('/en/')) {
-      pathWithoutLocale = currentPath.slice(3);
+    // Handle both /en and /fr prefixes (even though /fr shouldn't exist with as-needed)
+    if (currentPath.startsWith('/en/')) {
+      pathWithoutLocale = currentPath.slice(3); // Remove '/en'
     } else if (currentPath === '/en') {
       pathWithoutLocale = '/';
+    } else if (currentPath.startsWith('/fr/')) {
+      pathWithoutLocale = currentPath.slice(3); // Remove '/fr'
+    } else if (currentPath === '/fr') {
+      pathWithoutLocale = '/';
+    } else {
+      // Already on French (no prefix), keep the path as is
+      pathWithoutLocale = currentPath;
+    }
+    
+    // Ensure pathWithoutLocale starts with /
+    if (!pathWithoutLocale.startsWith('/')) {
+      pathWithoutLocale = '/' + pathWithoutLocale;
     }
     
     // Build new URL: French (default) has no prefix, English has /en prefix
