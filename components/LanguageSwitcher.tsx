@@ -26,9 +26,11 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
         : `Language changed to ${newLanguageName}`
     );
     
+    setIsOpen(false);
+    
     startTransition(() => {
-      router.replace(pathname, { locale: newLocale });
-      setIsOpen(false);
+      // Use push instead of replace to ensure navigation works
+      router.push(pathname, { locale: newLocale });
     });
   };
 
