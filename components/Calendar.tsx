@@ -6,8 +6,6 @@ import moment from "moment";
 import "moment/locale/fr";
 import "moment/locale/en-gb";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import Tippy from "@tippyjs/react";
-import "tippy.js/dist/tippy.css";
 import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 import { useLocale, useTranslations } from 'next-intl';
 import EventListView from "./EventListView";
@@ -99,25 +97,22 @@ const Calendar = ({ events, view: initialView }: CalendarProps) => {
 
   const EventComponent = ({ event }: { event: any }) => {
     const past = isPastEvent(event.end);
+    const tooltipText = `${event.title}\n${moment(event.start).format(
+      locale === 'fr' ? 'HH:mm' : 'h:mm a'
+    )} - ${moment(event.end).format(locale === 'fr' ? 'HH:mm' : 'h:mm a')}`;
     
     return (
-      <Tippy
-        content={`${event.title}\n${moment(event.start).format(
-          locale === 'fr' ? 'HH:mm' : 'h:mm a'
-        )} - ${moment(event.end).format(locale === 'fr' ? 'HH:mm' : 'h:mm a')}`}
+      <button
+        title={tooltipText}
+        className={`bg-[var(--deep-burgundy)] text-[var(--ivory)] p-1 rounded max-w-full overflow-hidden text-ellipsis break-words ${
+          past ? 'opacity-60 grayscale' : ''
+        }`}
       >
-        <button
-          title=""
-          className={`bg-[var(--deep-burgundy)] text-[var(--ivory)] p-1 rounded max-w-full overflow-hidden text-ellipsis break-words ${
-            past ? 'opacity-60 grayscale' : ''
-          }`}
-        >
-          {event.title}
-          <br />
-          {moment(event.start).format(locale === 'fr' ? 'HH:mm' : 'h:mm a')} -{" "}
-          {moment(event.end).format(locale === 'fr' ? 'HH:mm' : 'h:mm a')}
-        </button>
-      </Tippy>
+        {event.title}
+        <br />
+        {moment(event.start).format(locale === 'fr' ? 'HH:mm' : 'h:mm a')} -{" "}
+        {moment(event.end).format(locale === 'fr' ? 'HH:mm' : 'h:mm a')}
+      </button>
     );
   };
 
