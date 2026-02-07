@@ -66,7 +66,7 @@
 3. ✅ **Fixed hydration error** - Removed duplicate HTML/body tags
 4. ✅ **Fixed language switcher** - Now uses window.location for reliable navigation
 5. ✅ **Fixed locale prefix** - Using 'as-needed' to prevent hydration mismatches
-6. ✅ **Fixed bidirectional switching** - French ↔ English now works correctly
+6. ✅ **Fixed bidirectional switching** - Improved path handling for French ↔ English switching
 
 ---
 
@@ -138,7 +138,7 @@
 
 ### Git Status
 - **Branch:** `kiro`
-- **Commits:** 17 commits
+- **Commits:** 19 commits
 - **Status:** All changes committed
 - **Ready to:** Merge to main and deploy
 
@@ -147,6 +147,7 @@
 ## 📝 Git Commit History
 
 ```
+6da6e5b fix: improve language switcher path handling for bidirectional switching
 19867b9 fix: use window.location.pathname for reliable locale switching
 1401a06 fix: revert to as-needed locale prefix to fix hydration error
 ca3b4bd fix: language switcher now uses window.location and always prefix
@@ -303,7 +304,7 @@ All required tasks have been successfully completed. The Poney Club Desportis we
 
 The website is **production-ready** and can be deployed immediately.
 
-**Total Implementation:** ~100+ files, ~10,000+ lines of code, 17 commits  
+**Total Implementation:** ~100+ files, ~10,000+ lines of code, 19 commits  
 **Status:** ✅ **COMPLETE AND READY FOR DEPLOYMENT**
 
 ---
