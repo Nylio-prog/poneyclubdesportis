@@ -26,7 +26,7 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
     
     setIsOpen(false);
     
-    // Build the new URL - always use locale prefix
+    // Build the new URL with as-needed prefix
     let newPathname = pathname;
     
     // Remove current locale from pathname if it exists
@@ -36,8 +36,8 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
       newPathname = pathname.slice(3) || '/';
     }
     
-    // Always add locale prefix
-    const newUrl = `/${newLocale}${newPathname}`;
+    // Add locale prefix only for non-default locale (English)
+    const newUrl = newLocale === 'fr' ? newPathname : `/${newLocale}${newPathname}`;
     
     // Navigate to new URL
     window.location.href = newUrl;
