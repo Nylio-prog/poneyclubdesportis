@@ -26,18 +26,23 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
     
     setIsOpen(false);
     
-    // Build the new URL with as-needed prefix
-    let newPathname = pathname;
+    // Get the current full pathname from window.location
+    const currentPath = window.location.pathname;
+    let pathWithoutLocale = currentPath;
     
-    // Remove current locale from pathname if it exists
-    if (pathname.startsWith('/fr/') || pathname === '/fr') {
-      newPathname = pathname.slice(3) || '/';
-    } else if (pathname.startsWith('/en/') || pathname === '/en') {
-      newPathname = pathname.slice(3) || '/';
+    // Remove current locale prefix if it exists
+    if (currentPath.startsWith('/fr/')) {
+      pathWithoutLocale = currentPath.slice(3);
+    } else if (currentPath === '/fr') {
+      pathWithoutLocale = '/';
+    } else if (currentPath.startsWith('/en/')) {
+      pathWithoutLocale = currentPath.slice(3);
+    } else if (currentPath === '/en') {
+      pathWithoutLocale = '/';
     }
     
-    // Add locale prefix only for non-default locale (English)
-    const newUrl = newLocale === 'fr' ? newPathname : `/${newLocale}${newPathname}`;
+    // Build new URL: French (default) has no prefix, English has /en prefix
+    const newUrl = newLocale === 'fr' ? pathWithoutLocale : `/en${pathWithoutLocale}`;
     
     // Navigate to new URL
     window.location.href = newUrl;
