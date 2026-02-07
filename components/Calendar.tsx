@@ -220,7 +220,7 @@ const Calendar = ({ events, view: initialView }: CalendarProps) => {
       <style>{customStyles}</style>
       
       {/* View toggle buttons */}
-      <div className="flex justify-end gap-2 mb-4">
+      <div className="flex justify-end gap-2 mb-4" role="group" aria-label={locale === 'fr' ? 'Sélection de la vue du calendrier' : 'Calendar view selection'}>
         <button
           onClick={() => setUserViewPreference('month')}
           className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
@@ -229,8 +229,9 @@ const Calendar = ({ events, view: initialView }: CalendarProps) => {
               : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
           }`}
           aria-label={t('viewMonth')}
+          aria-pressed={shouldShowMonthView}
         >
-          <Monitor className="w-4 h-4" />
+          <Monitor className="w-4 h-4" aria-hidden="true" />
           <span className="hidden sm:inline">{t('viewMonth')}</span>
         </button>
         <button
@@ -241,8 +242,9 @@ const Calendar = ({ events, view: initialView }: CalendarProps) => {
               : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
           }`}
           aria-label={t('viewAgenda')}
+          aria-pressed={!shouldShowMonthView}
         >
-          <List className="w-4 h-4" />
+          <List className="w-4 h-4" aria-hidden="true" />
           <span className="hidden sm:inline">{t('viewAgenda')}</span>
         </button>
       </div>

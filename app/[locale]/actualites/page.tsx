@@ -3,6 +3,8 @@ import { useTranslations, useLocale } from 'next-intl';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { events } from "@/data/events";
 import { formatDate, formatTime } from "@/lib/utils";
+import Script from 'next/script';
+import { getEventSchema } from "@/lib/structured-data";
 
 interface Event {
   title: string;
@@ -67,34 +69,49 @@ export default function ActualitesPage() {
     (event) => new Date(event.endDate) < currentDate
   );
 
-  return (
-    <div className="min-h-screen py-16 px-4">
-      <h1 className="text-4xl font-bold mb-8 text-center">
-        {locale === 'fr' ? 'Actualités et Événements' : 'News and Events'}
-      </h1>
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl font-semibold mb-4">
-          {locale === 'fr' ? 'Événements à venir' : 'Upcoming Events'}
-        </h2>
-        <div className="grid gap-6 mb-12">
-          {upcomingEvents.map((event, index) => (
-            <EventCard key={index} event={event} locale={locale} />
-          ))}
-        </div>
+  // Generate structured data for upcoming events
+  const eventSchemas = upcomingEvents.map((event) => getEventSchema(event, locale as any));
 
-        {pastEvents.length > 0 && (
-          <>
-            <h2 className="text-2xl font-semibold mb-4">
-              {locale === 'fr' ? 'Événements passés' : 'Past Events'}
-            </h2>
-            <div className="grid gap-6 opacity-60">
-              {pastEvents.reverse().map((event, index) => (
-                <EventCard key={index} event={event} locale={locale} />
-              ))}
-            </div>
-          </>
-        )}
+  return (
+    <>
+      {eventSchemas.map((schema, index) => (
+        <Script
+          key={index}
+          id={`event-schema-${index}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema),
+          }}
+        />
+      ))}
+      <div className="min-h-screen py-16 px-4">
+        <h1 className="text-4xl font-bold mb-8 text-center">
+          {locale === 'fr' ? 'Actualités et Événements' : 'News and Events'}
+        </h1>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-semibold mb-4">
+            {locale === 'fr' ? 'Événements à venir' : 'Upcoming Events'}
+          </h2>
+          <div className="grid gap-6 mb-12">
+            {upcomingEvents.map((event, index) => (
+              <EventCard key={index} event={event} locale={locale} />
+            ))}
+          </div>
+
+          {pastEvents.length > 0 && (
+            <>
+              <h2 className="text-2xl font-semibold mb-4">
+                {locale === 'fr' ? 'Événements passés' : 'Past Events'}
+              </h2>
+              <div className="grid gap-6 opacity-60">
+                {pastEvents.reverse().map((event, index) => (
+                  <EventCard key={index} event={event} locale={locale} />
+                ))}
+              </div>
+            </>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

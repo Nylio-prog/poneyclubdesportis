@@ -3,7 +3,7 @@
 import { useLocale } from 'next-intl';
 import { useRouter, usePathname } from '@/lib/i18n/routing';
 import { locales, localeFlags, localeNames } from '@/lib/i18n/config';
-import { useState, useTransition } from 'react';
+import { useState, useTransition, useEffect } from 'react';
 
 interface LanguageSwitcherProps {
   className?: string;
@@ -15,16 +15,44 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
   const [isOpen, setIsOpen] = useState(false);
+  const [announcement, setAnnouncement] = useState('');
 
   const handleLocaleChange = (newLocale: string) => {
+    // Set announcement for screen readers
+    const newLanguageName = localeNames[newLocale as keyof typeof localeNames];
+    setAnnouncement(
+      locale === 'fr' 
+        ? `Langue changée en ${newLanguageName}` 
+        : `Language changed to ${newLanguageName}`
+    );
+    
     startTransition(() => {
       router.replace(pathname, { locale: newLocale });
       setIsOpen(false);
     });
   };
 
+  // Clear announcement after it's been read
+  useEffect(() => {
+    if (announcement) {
+      const timer = setTimeout(() => setAnnouncement(''), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [announcement]);
+
   return (
-    <div className={`relative ${className}`}>
+    <>
+      {/* Screen reader announcement for language changes */}
+      <div 
+        role="status" 
+        aria-live="polite" 
+        aria-atomic="true"
+        className="sr-only"
+      >
+        {announcement}
+      </div>
+      
+      <div className={`relative ${className}`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-[var(--ivory)]/10 hover:bg-[var(--ivory)]/20 transition-colors duration-200"
@@ -88,5 +116,6 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
         </>
       )}
     </div>
+    </>
   );
 }

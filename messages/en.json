@@ -71,5 +71,43 @@
     "close": "Close",
     "open": "Open",
     "menu": "Menu"
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main content"
+  },
+  "metadata": {
+    "home": {
+      "title": "Poney Club Desportis - Lessons & Boarding in Cadenet",
+      "description": "Equestrian center in Cadenet, Luberon. Horse riding lessons, boarding for ponies and horses, courses and trail rides."
+    },
+    "club": {
+      "title": "The Club - Poney Club Desportis",
+      "description": "Discover the history and facilities of Poney Club Desportis, equestrian center in Cadenet since 2008."
+    },
+    "photos": {
+      "title": "Photos - Poney Club Desportis",
+      "description": "Photo gallery of Poney Club Desportis: our facilities, our ponies and horses, and our activities."
+    },
+    "cavalerie": {
+      "title": "Our Horses - Poney Club Desportis",
+      "description": "Discover our ponies and horses: a selection adapted to all levels and all ages."
+    },
+    "actualites": {
+      "title": "News - Poney Club Desportis",
+      "description": "Follow the news and events of Poney Club Desportis: courses, competitions and activities."
+    },
+    "cours": {
+      "title": "Riding Lessons - Poney Club Desportis",
+      "description": "Horse riding lessons for all levels in Cadenet. Baby pony, children, teens and adult lessons."
+    },
+    "pensions": {
+      "title": "Boarding - Poney Club Desportis",
+      "description": "Full and half boarding services for horses and ponies in Luberon."
+    },
+    "contact": {
+      "title": "Contact - Poney Club Desportis",
+      "description": "Contact Poney Club Desportis in Cadenet. Phone, email, address and directions."
+    },
+    "siteName": "Poney Club Desportis"
   }
 }

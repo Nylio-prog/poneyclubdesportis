@@ -4,63 +4,28 @@ import { getMessages } from 'next-intl/server';
 import { setRequestLocale } from 'next-intl/server';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { locales } from "@/lib/i18n/config";
+import SkipToContent from "@/components/SkipToContent";
+import { locales, Locale } from "@/lib/i18n/config";
+import { generatePageMetadata } from "@/lib/metadata";
+import { getOrganizationSchema, getLocalBusinessSchema } from "@/lib/structured-data";
+import Script from 'next/script';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export const metadata: Metadata = {
-  title: "Poney Club Desportis - Cours et Pension à Cadenet, Vaucluse",
-  description:
-    "Découvrez le Poney Club Desportis à Cadenet, au cœur du Luberon. Cours d'équitation, pension pour poneys et chevaux, dans un cadre exceptionnel.",
-  keywords: [
-    "Poney Club Desportis",
-    "Centre équestre",
-    "Cadenet",
-    "Vaucluse",
-    "Luberon",
-    "Cours d'équitation",
-    "Pension",
-    "Balade",
-    "Poney",
-    "Cheval",
-    "Équitation",
-  ],
-  authors: [
-    { name: "Poney Club Desportis" },
-    {
-      name: "Béatrice Bürkle",
-      url: "https://www.instagram.com/poneyclubdesportis/",
-    },
-  ],
-  icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png" }],
-  },
-  robots: "index, follow",
-  openGraph: {
-    type: "website",
-    locale: "fr_FR",
-    url: "https://www.poneyclubdesportis-cadenet.fr",
-    siteName: "Poney Club Desportis",
-    title: "Poney Club Desportis - Centre Équestre à Cadenet",
-    description:
-      "Centre équestre proposant cours, pension et balades à cheval dans le Luberon. Découvrez notre poney club à Cadenet, Vaucluse.",
-    images: [
-      {
-        url: "https://poneyclubdesportis-cadenet.fr/_next/image?url=%2Fhero-image.jpg&w=640&q=75",
-        width: 640,
-        height: 426,
-        alt: "Poney Club Desportis",
-      },
-    ],
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return generatePageMetadata({
+    locale: locale as Locale,
+    page: 'home',
+    path: '',
+  });
+}
 
 export default async function LocaleLayout({
   children,
@@ -76,11 +41,32 @@ export default async function LocaleLayout({
   
   const messages = await getMessages();
   
+  // Generate structured data
+  const organizationSchema = getOrganizationSchema(locale as Locale);
+  const localBusinessSchema = getLocalBusinessSchema(locale as Locale);
+  
   return (
-    <NextIntlClientProvider messages={messages} locale={locale}>
-      <Header />
-      <main className="flex-grow pt-header">{children}</main>
-      <Footer />
-    </NextIntlClientProvider>
+    <>
+      <Script
+        id="organization-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema),
+        }}
+      />
+      <Script
+        id="local-business-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
+      />
+      <NextIntlClientProvider messages={messages} locale={locale}>
+        <SkipToContent />
+        <Header />
+        <main id="main-content" className="flex-grow pt-header">{children}</main>
+        <Footer />
+      </NextIntlClientProvider>
+    </>
   );
 }

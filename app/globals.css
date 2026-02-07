@@ -74,7 +74,163 @@ body {
   * {
     @apply border-border;
   }
+  
   body {
     @apply bg-background text-foreground;
+    /* Ensure minimum 16px font size on mobile for body text */
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+  
+  /* Typography hierarchy with consistent sizing */
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+    line-height: 1.1;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl font-bold;
+    line-height: 1.2;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold;
+    line-height: 1.3;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl font-semibold;
+    line-height: 1.4;
+  }
+  
+  h5 {
+    @apply text-lg md:text-xl font-medium;
+    line-height: 1.5;
+  }
+  
+  h6 {
+    @apply text-base md:text-lg font-medium;
+    line-height: 1.5;
+  }
+  
+  p {
+    @apply text-base;
+    line-height: 1.6;
+  }
+  
+  /* Ensure all text elements meet minimum size on mobile */
+  @media (max-width: 767px) {
+    body, p, li, td, th, span, div {
+      font-size: 16px;
+    }
+    
+    small {
+      font-size: 14px;
+    }
+  }
+  
+  /* Smooth hover transitions for interactive elements */
+  a, button, [role="button"] {
+    transition-property: color, background-color, border-color, transform, opacity, box-shadow;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+  }
+  
+  /* Enhanced focus visible styles for accessibility */
+  /* Ensure keyboard focus indicators are visible with sufficient contrast */
+  a:focus-visible, 
+  button:focus-visible, 
+  [role="button"]:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 3px solid var(--vivid-burgundy);
+    outline-offset: 2px;
+    /* Add a subtle box shadow for additional visibility */
+    box-shadow: 0 0 0 4px rgba(144, 0, 30, 0.1);
+  }
+  
+  /* Special focus style for elements with dark backgrounds */
+  .dark-bg:focus-visible,
+  [data-dark-bg]:focus-visible {
+    outline: 3px solid var(--ivory);
+    box-shadow: 0 0 0 4px rgba(255, 255, 240, 0.2);
+  }
+  
+  /* Ensure focus is never hidden */
+  *:focus {
+    outline: none;
+  }
+  
+  *:focus-visible {
+    outline: 3px solid var(--vivid-burgundy);
+    outline-offset: 2px;
   }
 }
+
+@layer components {
+  /* Screen reader only utility - hides content visually but keeps it accessible to screen readers */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  /* Remove sr-only when focused */
+  .focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+  
+  /* Utility class for interactive elements with hover effects */
+  .interactive-hover {
+    @apply transition-all duration-200 ease-in-out;
+  }
+  
+  .interactive-hover:hover {
+    @apply transform scale-[1.02];
+  }
+  
+  /* Button hover effects */
+  .btn-hover {
+    @apply transition-all duration-200 ease-in-out;
+  }
+  
+  .btn-hover:hover {
+    @apply brightness-110 shadow-md;
+  }
+  
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-200 ease-in-out;
+  }
+  
+  .card-hover:hover {
+    @apply shadow-lg transform scale-[1.02];
+  }
+  
+  /* Link hover effects */
+  .link-hover {
+    @apply transition-colors duration-200 ease-in-out;
+  }
+  
+  .link-hover:hover {
+    @apply text-burgundy-vivid;
+  }
+}
+
+

@@ -66,6 +66,9 @@ export default function EventModal({ isOpen, onClose, event, locale }: EventModa
     <div 
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm"
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="event-modal-title"
     >
       <div 
         className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
@@ -73,13 +76,13 @@ export default function EventModal({ isOpen, onClose, event, locale }: EventModa
       >
         {/* Header with close button */}
         <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-start">
-          <h2 className="text-2xl font-bold text-gray-900 pr-8">{title}</h2>
+          <h2 id="event-modal-title" className="text-2xl font-bold text-gray-900 pr-8">{title}</h2>
           <button
             onClick={onClose}
             className="flex-shrink-0 p-2 hover:bg-gray-100 rounded-full transition-colors"
             aria-label="Close modal"
           >
-            <X className="w-6 h-6" />
+            <X className="w-6 h-6" aria-hidden="true" />
           </button>
         </div>
 

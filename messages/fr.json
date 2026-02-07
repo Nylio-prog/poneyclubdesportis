@@ -71,5 +71,43 @@
     "close": "Fermer",
     "open": "Ouvrir",
     "menu": "Menu"
+  },
+  "accessibility": {
+    "skipToContent": "Aller au contenu principal"
+  },
+  "metadata": {
+    "home": {
+      "title": "Poney Club Desportis - Cours et Pension à Cadenet",
+      "description": "Centre équestre à Cadenet dans le Luberon. Cours d'équitation, pension pour poneys et chevaux, stages et balades."
+    },
+    "club": {
+      "title": "Le Club - Poney Club Desportis",
+      "description": "Découvrez l'histoire et les installations du Poney Club Desportis, centre équestre à Cadenet depuis 2008."
+    },
+    "photos": {
+      "title": "Photos - Poney Club Desportis",
+      "description": "Galerie photos du Poney Club Desportis : nos installations, nos poneys et chevaux, et nos activités."
+    },
+    "cavalerie": {
+      "title": "Notre Cavalerie - Poney Club Desportis",
+      "description": "Découvrez nos poneys et chevaux : une cavalerie adaptée à tous les niveaux et tous les âges."
+    },
+    "actualites": {
+      "title": "Actualités - Poney Club Desportis",
+      "description": "Suivez les actualités et événements du Poney Club Desportis : stages, concours et animations."
+    },
+    "cours": {
+      "title": "Cours d'Équitation - Poney Club Desportis",
+      "description": "Cours d'équitation pour tous niveaux à Cadenet. Baby poney, cours enfants, ados et adultes."
+    },
+    "pensions": {
+      "title": "Pensions - Poney Club Desportis",
+      "description": "Services de pension complète et demi-pension pour chevaux et poneys dans le Luberon."
+    },
+    "contact": {
+      "title": "Contact - Poney Club Desportis",
+      "description": "Contactez le Poney Club Desportis à Cadenet. Téléphone, email, adresse et plan d'accès."
+    },
+    "siteName": "Poney Club Desportis"
   }
 }

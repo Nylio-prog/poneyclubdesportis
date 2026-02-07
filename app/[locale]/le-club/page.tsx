@@ -10,6 +10,9 @@ import "react-vertical-timeline-component/style.min.css";
 import { FaHorse, FaChild, FaHome, FaTools, FaHandshake } from "react-icons/fa";
 import { MdForest } from "react-icons/md";
 
+// Note: Metadata is generated in a separate metadata file due to "use client" directive
+// See app/[locale]/le-club/metadata.ts
+
 export default function LeClubPage() {
   const diplomas = [
     {

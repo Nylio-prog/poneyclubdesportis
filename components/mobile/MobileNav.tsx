@@ -124,6 +124,7 @@ const MobileNav = ({ isOpen, onClose, currentPath }: MobileNavProps) => {
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation menu"
+            id="mobile-navigation"
           >
             {/* Close button */}
             <div className="flex justify-end p-4 border-b border-[var(--ivory)]/10">

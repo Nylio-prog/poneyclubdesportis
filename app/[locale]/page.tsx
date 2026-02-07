@@ -1,11 +1,18 @@
 import ResponsiveImage from "@/components/ResponsiveImage";
 import { useTranslations } from 'next-intl';
-import Calendar from "@/components/Calendar";
+import dynamic from 'next/dynamic';
 import { Testimonial } from "@/components/Testimonial";
 import CertificationLogos from "@/components/CertificationLogos";
 import PassSportLogo from "@/components/PassportLogo";
+import ScrollAnimation from "@/components/ScrollAnimation";
 import { events } from "@/data/events";
 import CertificationBar from "@/components/CertificationBar";
+
+// Dynamically import Calendar component for code splitting
+// This reduces the initial bundle size by loading the calendar only when needed
+const Calendar = dynamic(() => import("@/components/Calendar"), {
+  loading: () => <div className="h-96 flex items-center justify-center">Loading calendar...</div>,
+});
 
 export default function Accueil() {
   const t = useTranslations('home');
@@ -43,46 +50,70 @@ export default function Accueil() {
             sizes="100vw"
           />
         </div>
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center px-4">
-          {/* Main Title */}
-          <h1 className="text-4xl md:text-6xl font-bold text-[var(--ivory)] text-center">
+        {/* Overlay with increased opacity for better contrast (WCAG 4.5:1) */}
+        <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center px-4">
+          {/* Main Title with text shadow for enhanced readability */}
+          <h1 className="text-4xl md:text-6xl font-bold text-[var(--ivory)] text-center" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}>
             {t('hero.title')}
           </h1>
           
-          {/* New year 2026 */}
-          <p className="mt-6 text-lg md:text-2xl font-light uppercase tracking-[0.25em] text-[var(--ivory)] text-center opacity-90">
+          {/* Subtitle with text shadow */}
+          <p className="mt-6 text-lg md:text-2xl font-light uppercase tracking-[0.25em] text-[var(--ivory)] text-center opacity-90" style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)' }}>
             {t('hero.subtitle')}
           </p>
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto py-16 px-4">
-        <h2 className="text-4xl font-bold mb-8">{t('about.title')}</h2>
-        <CertificationLogos />
-        <div className="space-y-4 text-lg mb-16">
-          <p>{t('about.description1')}</p>
-          <p>{t('about.description2')}</p>
-          <p>{t('about.description3')}</p>
-          <p>{t('about.description4')}</p>
-        </div>
+      <ScrollAnimation variant="fade-in">
+        <section className="max-w-4xl mx-auto py-16 px-4">
+          <ScrollAnimation variant="slide-up" delay={0.1}>
+            <h2 className="text-4xl font-bold mb-8">{t('about.title')}</h2>
+          </ScrollAnimation>
+          
+          <ScrollAnimation variant="slide-up" delay={0.2}>
+            <CertificationLogos />
+          </ScrollAnimation>
+          
+          <ScrollAnimation variant="slide-up" delay={0.3}>
+            <div className="space-y-4 text-lg mb-16">
+              <p>{t('about.description1')}</p>
+              <p>{t('about.description2')}</p>
+              <p>{t('about.description3')}</p>
+              <p>{t('about.description4')}</p>
+            </div>
+          </ScrollAnimation>
 
-        <PassSportLogo />
-        <h3 className="text-4xl font-bold mb-4 mt-16">{t('events.title')}</h3>
-        <Calendar events={events} />
-      </section>
+          <ScrollAnimation variant="slide-up" delay={0.4}>
+            <PassSportLogo />
+          </ScrollAnimation>
+          
+          <ScrollAnimation variant="slide-up" delay={0.5}>
+            <h3 className="text-4xl font-bold mb-4 mt-16">{t('events.title')}</h3>
+            <Calendar events={events} />
+          </ScrollAnimation>
+        </section>
+      </ScrollAnimation>
 
       <section className="bg-[var(--ivory)] pb-16">
         <div className="max-w-6xl mx-auto px-4">
-          <h3 className="text-4xl font-bold mb-12 text-center">
-            {t('testimonials.title')}
-          </h3>
+          <ScrollAnimation variant="slide-up">
+            <h3 className="text-4xl font-bold mb-12 text-center">
+              {t('testimonials.title')}
+            </h3>
+          </ScrollAnimation>
+          
           <div className="grid gap-8 md:grid-cols-3">
             {testimonials.map((testimonial, index) => (
-              <Testimonial
-                key={index}
-                name={testimonial.name}
-                text={testimonial.text}
-              />
+              <ScrollAnimation 
+                key={index} 
+                variant="scale-in" 
+                delay={index * 0.1}
+              >
+                <Testimonial
+                  name={testimonial.name}
+                  text={testimonial.text}
+                />
+              </ScrollAnimation>
             ))}
           </div>
         </div>
