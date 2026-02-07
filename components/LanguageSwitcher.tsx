@@ -1,9 +1,9 @@
 "use client";
 
 import { useLocale } from 'next-intl';
-import { useRouter, usePathname } from '@/lib/i18n/routing';
+import { usePathname } from 'next/navigation';
 import { locales, localeFlags, localeNames } from '@/lib/i18n/config';
-import { useState, useTransition, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 interface LanguageSwitcherProps {
   className?: string;
@@ -11,9 +11,7 @@ interface LanguageSwitcherProps {
 
 export default function LanguageSwitcher({ className = '' }: LanguageSwitcherProps) {
   const locale = useLocale();
-  const router = useRouter();
   const pathname = usePathname();
-  const [isPending, startTransition] = useTransition();
   const [isOpen, setIsOpen] = useState(false);
   const [announcement, setAnnouncement] = useState('');
 
@@ -28,10 +26,21 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
     
     setIsOpen(false);
     
-    startTransition(() => {
-      // Use push instead of replace to ensure navigation works
-      router.push(pathname, { locale: newLocale });
-    });
+    // Build the new URL - always use locale prefix
+    let newPathname = pathname;
+    
+    // Remove current locale from pathname if it exists
+    if (pathname.startsWith('/fr/') || pathname === '/fr') {
+      newPathname = pathname.slice(3) || '/';
+    } else if (pathname.startsWith('/en/') || pathname === '/en') {
+      newPathname = pathname.slice(3) || '/';
+    }
+    
+    // Always add locale prefix
+    const newUrl = `/${newLocale}${newPathname}`;
+    
+    // Navigate to new URL
+    window.location.href = newUrl;
   };
 
   // Clear announcement after it's been read
@@ -61,7 +70,6 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
         aria-label="Change language"
         aria-expanded={isOpen}
         aria-haspopup="true"
-        disabled={isPending}
       >
         <span className="text-2xl">{localeFlags[locale as keyof typeof localeFlags]}</span>
         <span className="hidden sm:inline text-sm font-medium">{localeNames[locale as keyof typeof localeNames]}</span>
@@ -94,7 +102,6 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
                   className={`w-full flex items-center space-x-3 px-4 py-2 text-sm hover:bg-[var(--ivory)]/10 transition-colors ${
                     locale === loc ? 'bg-[var(--ivory)]/5' : ''
                   }`}
-                  disabled={isPending}
                 >
                   <span className="text-2xl">{localeFlags[loc]}</span>
                   <span className="font-medium">{localeNames[loc]}</span>
