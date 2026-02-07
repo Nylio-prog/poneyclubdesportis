@@ -61,7 +61,8 @@ interface ResponsiveImageProps extends Omit<ImageProps, 'sizes'> {
   
   /**
    * Whether to use blur placeholder
-   * @default true
+   * Only works if blurDataURL is provided
+   * @default "empty"
    */
   placeholder?: 'blur' | 'empty';
 }
@@ -75,7 +76,7 @@ export default function ResponsiveImage({
   objectPosition = "center",
   className = "",
   blurDataURL,
-  placeholder = "blur",
+  placeholder = "empty",
   ...props
 }: ResponsiveImageProps) {
   // Build the object-fit and object-position classes
@@ -93,13 +94,13 @@ export default function ResponsiveImage({
     ...props,
   };
   
-  // Add blur placeholder if enabled
-  if (placeholder === "blur") {
+  // Add blur placeholder only if blurDataURL is provided
+  if (placeholder === "blur" && blurDataURL) {
     imageProps.placeholder = "blur";
-    // Use provided blurDataURL or a default one
-    if (blurDataURL) {
-      imageProps.blurDataURL = blurDataURL;
-    }
+    imageProps.blurDataURL = blurDataURL;
+  } else {
+    // Use empty placeholder if no blurDataURL provided
+    imageProps.placeholder = "empty";
   }
   
   // Add custom object position as inline style if not center
