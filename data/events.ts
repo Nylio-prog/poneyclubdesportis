@@ -240,4 +240,15 @@ export const events = [
       "Retrouvez-nous au forum des associations de Cadenet pour découvrir notre poney club ! Nous serons présents pour vous donner toutes les informations sur nos cours, nos tarifs et les inscriptions pour la saison à venir. C'est l'occasion idéale pour poser vos questions et préparer votre rentrée équestre. Venez nombreux nous rencontrer devant la mairie !",
     image: "/events/place_mairie.jpg",
   },
+  {
+    title:
+      "Concours Équifun et CSO - Dimanche 8 février",
+    startDate: "2026-02-08",
+    endDate: "2026-02-08",
+    startHour: "09:00",
+    endHour: "12:00",
+    description:
+      "On se retrouve dimanche matin pour les épreuves d'équifun (petits poneys) et de CSO (ados).",
+    image: "",
+  },
 ];
