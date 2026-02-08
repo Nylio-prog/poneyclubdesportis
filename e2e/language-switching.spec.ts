@@ -37,6 +37,9 @@ test.describe('Language Switching', () => {
     // Verify URL has /en prefix
     expect(page.url()).toBe('http://localhost:3000/en');
     
+    // Wait for HTML lang attribute to update
+    await page.waitForFunction(() => document.documentElement.lang === 'en', { timeout: 5000 });
+    
     // Verify HTML lang attribute changed
     const htmlLang = await page.getAttribute('html', 'lang');
     expect(htmlLang).toBe('en');
@@ -89,6 +92,10 @@ test.describe('Language Switching', () => {
     
     // Verify still on English
     expect(page.url()).toContain('/en/cours');
+    
+    // Wait for HTML lang attribute to update
+    await page.waitForFunction(() => document.documentElement.lang === 'en', { timeout: 5000 });
+    
     const htmlLang = await page.getAttribute('html', 'lang');
     expect(htmlLang).toBe('en');
   });

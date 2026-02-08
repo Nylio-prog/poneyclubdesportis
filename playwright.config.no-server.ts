@@ -1,5 +1,11 @@
 import { defineConfig, devices } from '@playwright/test';
 
+/**
+ * Playwright config for running tests against an already-running dev server.
+ * Use this when you have `npm run dev` running in a separate terminal.
+ * 
+ * Usage: npm run test:e2e:no-server
+ */
 export default defineConfig({
   testDir: './e2e',
   fullyParallel: true,
@@ -23,10 +29,5 @@ export default defineConfig({
     },
   ],
 
-  webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:3000',
-    reuseExistingServer: !process.env.CI, // Reuse in dev, start fresh in CI
-    timeout: 120000,
-  },
+  // No webServer config - assumes server is already running
 });
