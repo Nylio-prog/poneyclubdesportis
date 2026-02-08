@@ -40,6 +40,7 @@
     "allDay": "All day"
   },
   "animals": {
+    "title": "Our Horses",
     "horses": "Horses",
     "ponies": "Ponies",
     "retired": "Retired",
@@ -109,5 +110,45 @@
       "description": "Contact Poney Club Desportis in Cadenet. Phone, email, address and directions."
     },
     "siteName": "Poney Club Desportis"
+  }
+}
+,
+  "cours": {
+    "title": "Lesson Information",
+    "schedule": "Schedule",
+    "hours": "Hours",
+    "days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday"
+    },
+    "activities": {
+      "private": "Private lesson booking",
+      "children": "Children 4-10 years",
+      "babyPony": "Baby pony",
+      "teens": "Teens",
+      "competition": "Competition class"
+    }
+  },
+  "leClub": {
+    "title": "About Poney Club Desportis",
+    "diplomas": "Our Diplomas and Certifications",
+    "rules": "Internal Rules",
+    "history": "Our History",
+    "partner": "Our Official Partner",
+    "since": "Partner of Poney Club Desportis since 2011",
+    "contact": "Contact"
+  },
+  "pensions": {
+    "title": "Full Boarding for Horses and Ponies",
+    "wellbeing": "A Commitment to Equine Welfare",
+    "spaces": "Vast and Natural Spaces",
+    "food": "Quality Food and Care",
+    "pricing": "Our boarding rates",
+    "service": "Service",
+    "pricePerMonth": "Price/Month"
   }
 }

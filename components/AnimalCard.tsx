@@ -45,18 +45,20 @@ const AnimalCard: React.FC<AnimalCardProps> = ({ animal, locale, category }) => 
           </div>
         )}
         
-        <CardHeader className="w-full p-0">
-          <ResponsiveImage
-            src={image}
-            alt={name}
-            width={300}
-            height={400}
-            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33.3vw, 25vw"
-            objectFit="cover"
-            placeholder="blur"
-            blurDataURL="/blurred.avif"
-            className="rounded-t-lg"
-          />
+        <CardHeader className="w-full p-0 flex items-center justify-center overflow-hidden">
+          <div className="relative w-full aspect-[3/4]">
+            <ResponsiveImage
+              src={image}
+              alt={name}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33.3vw, 25vw"
+              objectFit="cover"
+              objectPosition="center center"
+              placeholder="blur"
+              blurDataURL="/blurred.avif"
+              className="rounded-t-lg"
+            />
+          </div>
         </CardHeader>
         
         <CardContent className="flex-1 flex flex-col p-4">

@@ -40,6 +40,7 @@
     "allDay": "Toute la journée"
   },
   "animals": {
+    "title": "Notre Cavalerie",
     "horses": "Chevaux",
     "ponies": "Poneys",
     "retired": "Retraités",
@@ -109,5 +110,45 @@
       "description": "Contactez le Poney Club Desportis à Cadenet. Téléphone, email, adresse et plan d'accès."
     },
     "siteName": "Poney Club Desportis"
+  }
+}
+,
+  "cours": {
+    "title": "Informations sur les cours",
+    "schedule": "Agenda",
+    "hours": "Heures",
+    "days": {
+      "monday": "Lundi",
+      "tuesday": "Mardi",
+      "wednesday": "Mercredi",
+      "thursday": "Jeudi",
+      "friday": "Vendredi",
+      "saturday": "Samedi"
+    },
+    "activities": {
+      "private": "Réservation cours particulier",
+      "children": "Enfants 4-10 ans",
+      "babyPony": "Baby poney",
+      "teens": "Ado",
+      "competition": "Cours compétition"
+    }
+  },
+  "leClub": {
+    "title": "Présentation du Poney Club Desportis",
+    "diplomas": "Nos Diplômes et Certifications",
+    "rules": "Règlement Intérieur",
+    "history": "Notre Histoire",
+    "partner": "Notre Partenaire Officiel",
+    "since": "Partenaire du Poney Club Desportis depuis 2011",
+    "contact": "Contacter"
+  },
+  "pensions": {
+    "title": "Pension Complète pour Chevaux et Poneys",
+    "wellbeing": "Un Engagement pour le Bien-être Équin",
+    "spaces": "Des Espaces Vastes et Naturels",
+    "food": "Une Alimentation et des Soins de Qualité",
+    "pricing": "Nos tarifs de pension",
+    "service": "Service",
+    "pricePerMonth": "Prix/Mois"
   }
 }

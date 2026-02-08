@@ -34,7 +34,7 @@ const CavaleriePage: React.FC = () => {
   
   return (
     <div className="container mx-auto px-4 py-16">
-      <h1 className="text-4xl font-bold text-center mb-8">Notre Cavalerie</h1>
+      <h1 className="text-4xl font-bold text-center mb-8">{t('title')}</h1>
 
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-4">{t('ponies')}</h2>

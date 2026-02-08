@@ -83,12 +83,12 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
       <div className={`relative ${className}`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-[var(--ivory)]/10 hover:bg-[var(--ivory)]/20 transition-colors duration-200"
+        className="flex items-center justify-center space-x-2 px-3 py-2 rounded-lg bg-[var(--ivory)]/10 hover:bg-[var(--ivory)]/20 transition-colors duration-200"
         aria-label="Change language"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
-        <span className="text-2xl">{localeFlags[locale as keyof typeof localeFlags]}</span>
+        <span className="text-sm font-bold">{localeFlags[locale as keyof typeof localeFlags]}</span>
         <span className="hidden sm:inline text-sm font-medium">{localeNames[locale as keyof typeof localeNames]}</span>
         <svg
           className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
@@ -120,7 +120,7 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
                     locale === loc ? 'bg-[var(--ivory)]/5' : ''
                   }`}
                 >
-                  <span className="text-2xl">{localeFlags[loc]}</span>
+                  <span className="text-sm font-bold">{localeFlags[loc]}</span>
                   <span className="font-medium">{localeNames[loc]}</span>
                   {locale === loc && (
                     <svg

@@ -43,7 +43,7 @@ export default function Accueil() {
             alt="Poney Club Desportis"
             fill
             objectFit="cover"
-            objectPosition="63% center"
+            objectPosition="center center"
             priority
             placeholder="blur"
             blurDataURL="/hero-image-blur.jpg"
