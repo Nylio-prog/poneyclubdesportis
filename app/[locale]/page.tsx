@@ -19,16 +19,16 @@ export default function Accueil() {
   
   const testimonials = [
     {
-      name: "Charlie K.",
-      text: "Un Poney Club où il fait bon vivre, où les animaux évoluent dans le respect, où les enfants s'épanouissent en apprenant à se responsabiliser au travers de ce merveilleux sport individuel qui se pratique à deux 🐎 et tout cela dans un cadre magnifique en pleine nature 🌱",
+      name: t('testimonials.testimonial1.name'),
+      text: t('testimonials.testimonial1.text'),
     },
     {
-      name: " Audrey C. ",
-      text: "Je remercie Béatrice de s'occuper aussi bien de ma jument qui est en pension en groupe chez elle depuis 4 ans. Cadre magnifique au milieu de la colline de cadenet. Lieu apaisant et sécurisant. Béatrice assure quotidiennement le bien être de tous les chevaux, elle propose des cours poneys dans le respect des animaux et dans la bienveillance.",
+      name: t('testimonials.testimonial2.name'),
+      text: t('testimonials.testimonial2.text'),
     },
     {
-      name: "Eugénie K.",
-      text: "Club très accueillant, deux superbes coachs, des cours pour les petits comme pour les grands, des cours variés, des super poneys et chevaux adaptés à tous les niveaux. De nombreuses balades et super point de vue !",
+      name: t('testimonials.testimonial3.name'),
+      text: t('testimonials.testimonial3.text'),
     },
   ];
 

@@ -25,7 +25,19 @@
       "title": "Upcoming Events"
     },
     "testimonials": {
-      "title": "What Our Riders Say"
+      "title": "What Our Riders Say",
+      "testimonial1": {
+        "name": "Charlie K.",
+        "text": "A Pony Club where it's good to live, where animals evolve with respect, where children flourish by learning to take responsibility through this wonderful individual sport practiced as a pair 🐎 and all this in a magnificent setting in the heart of nature 🌱"
+      },
+      "testimonial2": {
+        "name": "Audrey C.",
+        "text": "I thank Béatrice for taking such good care of my mare who has been in group boarding with her for 4 years. Magnificent setting in the middle of the Cadenet hills. A soothing and secure place. Béatrice ensures the daily well-being of all horses, she offers pony lessons with respect for animals and kindness."
+      },
+      "testimonial3": {
+        "name": "Eugénie K.",
+        "text": "Very welcoming club, two superb coaches, lessons for young and old, varied lessons, great ponies and horses adapted to all levels. Many trail rides and great viewpoints!"
+      }
     },
     "certifications": {
       "ourLabels": "Our Labels",
