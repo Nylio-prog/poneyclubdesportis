@@ -107,17 +107,18 @@ test.describe('Basic Website Functionality', () => {
     await expect(emailLink).toBeVisible();
   });
 
-  test('should load calendar on actualites page', async ({ page }) => {
+  test('should load events on actualites page', async ({ page }) => {
     await page.goto('/actualites');
     await page.waitForLoadState('networkidle');
     
     // Page title should be visible
     const pageTitle = page.locator('h1');
     await expect(pageTitle).toBeVisible();
+    await expect(pageTitle).toContainText(/Actualités|News/);
     
-    // Calendar component should be visible (look for react-big-calendar elements)
-    const calendar = page.locator('.rbc-calendar, .rbc-month-view, .rbc-toolbar').first();
-    await expect(calendar).toBeVisible({ timeout: 10000 });
+    // Should have event cards (look for Card components)
+    const eventCards = page.locator('[class*="card"]').first();
+    await expect(eventCards).toBeVisible({ timeout: 10000 });
   });
 
   test('should display animal cards on cavalerie page', async ({ page }) => {

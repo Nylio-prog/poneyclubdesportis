@@ -40,7 +40,7 @@
                 - /url: /contact
           - status [ref=e28]
           - button "Change language" [ref=e30] [cursor=pointer]:
-            - generic [ref=e31]: 🇫🇷
+            - generic [ref=e31]: FR
             - generic [ref=e32]: Français
             - img [ref=e33]
   - main [ref=e35]:
