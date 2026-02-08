@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import ResponsiveImage from "@/components/ResponsiveImage";
+import { useTranslations } from 'next-intl';
 
 type Photo = {
   src: string;
@@ -8,6 +9,7 @@ type Photo = {
 };
 
 export default function MasonryPhotoGallery(): JSX.Element {
+  const t = useTranslations('photos');
   const [photos, setPhotos] = useState<Photo[]>([]);
 
   useEffect(() => {
@@ -29,7 +31,7 @@ export default function MasonryPhotoGallery(): JSX.Element {
 
   return (
     <div className="container mx-auto py-16 px-4">
-      <h1 className="text-4xl font-bold mb-12 text-center">Galerie Photo</h1>
+      <h1 className="text-4xl font-bold mb-12 text-center">{t('title')}</h1>
       <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
         {photos.map((photo, index) => (
           <div
@@ -41,7 +43,7 @@ export default function MasonryPhotoGallery(): JSX.Element {
           >
             <ResponsiveImage
               src={photo.src}
-              alt={`Gallery photo ${index + 1}`}
+              alt={`${t('altText')} ${index + 1}`}
               width={300}
               height={200}
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"

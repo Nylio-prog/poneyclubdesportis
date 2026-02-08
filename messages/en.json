@@ -110,13 +110,12 @@
       "description": "Contact Poney Club Desportis in Cadenet. Phone, email, address and directions."
     },
     "siteName": "Poney Club Desportis"
-  }
-}
-,
+  },
   "cours": {
     "title": "Lesson Information",
     "schedule": "Schedule",
     "hours": "Hours",
+    "imageAlt": "Clemence Medail horse jumping",
     "days": {
       "monday": "Monday",
       "tuesday": "Tuesday",
@@ -130,25 +129,104 @@
       "children": "Children 4-10 years",
       "babyPony": "Baby pony",
       "teens": "Teens",
-      "competition": "Competition class"
+      "teensLevel1": "Teens level 1-2",
+      "teensLevel2": "Teens level 2-3",
+      "teensLevel3": "Teens level 2-3-4",
+      "teensLevel4": "Teens level 3-4",
+      "teensLevel5": "Teens level 4-5-6",
+      "competition": "Competition class",
+      "childrenTeens": "Teens level 3-4 / Children 4-10 years",
+      "childrenTeens2": "Teens level 2-3 / Children 4-10 years",
+      "teensChildren": "Teens level 4-5-6 / Children 4-10 years",
+      "childrenCompetition": "Children 4-10 years / Competition class",
+      "teensBaby": "Teens level 4-5-6 / Baby pony"
     }
   },
   "leClub": {
     "title": "About Poney Club Desportis",
     "diplomas": "Our Diplomas and Certifications",
+    "diplomasIntro": "At Poney Club Desportis, we are proud of our achievements and the quality of our teaching. Here are our diplomas and certifications:",
     "rules": "Internal Rules",
+    "rulesText": "To ensure the proper functioning of our club and the safety of everyone, we invite you to consult our",
+    "rulesLink": "internal rules",
+    "rulesText2": ". This document details the rules and procedures to follow within our establishment.",
     "history": "Our History",
     "partner": "Our Official Partner",
+    "partnerName": "Automobile Service du Luberon",
+    "partnerCity": "Pertuis",
     "since": "Partner of Poney Club Desportis since 2011",
-    "contact": "Contact"
+    "contact": "Contact",
+    "imageAlt": "Poney Club Desportis facilities",
+    "intro1": "Since 2008, Poney Club Desportis has been committed to offering an exceptional equestrian experience in the heart of the Vaucluse countryside, combining passion, respect for animals, and expertise.",
+    "intro2": "We offer a variety of services to meet the needs of all riders:",
+    "service1": "Riding lessons for children and adults, adapted to all levels",
+    "service2": "Training courses during school holidays",
+    "service3": "Full and half boarding services",
+    "service4": "Guided trail rides on the property",
+    "facilities": "Our facilities include a large sand arena of 60m x 30m, an 18m round pen, a cross-country course, a fixed shower, as well as numerous trail paths offering a natural and secure setting for your outings.",
+    "welfare": "The welfare of our animals is our absolute priority. We provide them with the best care throughout their lives, including a peaceful retirement when they are no longer active. Our hay, produced near the club and of very high quality, guarantees healthy nutrition adapted to their needs.",
+    "conclusion": "With years of experience and an ideal setting, Poney Club Desportis is the trusted choice for all horse riding enthusiasts, whether beginners or experienced riders.",
+    "timeline": {
+      "2008": {
+        "title": "Foundation of Poney Club Desportis",
+        "description": "Beginning of our adventure with a passion for horse riding and pony welfare. Our club opened its doors with 4 small Shetland ponies (Coco, Elite, Malabar, Cookie) for children's lessons."
+      },
+      "2009": {
+        "title": "Launch of lessons for teenagers",
+        "description": "Rentals and purchases of large ponies to introduce teenage riders to horse riding."
+      },
+      "2010": {
+        "title": "Creation of boarding services",
+        "description": "Opening of our full boarding service, offering superior quality care to our boarders."
+      },
+      "2014": {
+        "title": "Improvement of our facilities",
+        "description": "Renovation of our stables with the installation of a round pen, centralization of activities around the pony (tack room, paddocks, etc.)"
+      },
+      "2016": {
+        "title": "Extension of the trail system",
+        "description": "Expansion of internal forest trails. Installation of fences for safety and signage for riders."
+      },
+      "2017": {
+        "title": "Creation of a cross-country course",
+        "description": "Inauguration of a course including a mound, drop, bank, tree trunks of different sizes and a hedge."
+      },
+      "2020": {
+        "title": "Collaboration with a riding instructor",
+        "description": "Hiring of Clémence Médail for civic service followed by a pony instructor apprenticeship contract and assistance with her riding instructor training."
+      }
+    },
+    "diplomas": {
+      "bpjepsBB": "BPJEPS equestrian activity Béatrice Bürkle",
+      "bpjepsCM": "BPJEPS equestrian activity Clémence Médail",
+      "bfeehBB": "BFEEH Béatrice Bürkle",
+      "bfee2BB": "BFEE2 Béatrice Bürkle"
+    }
   },
   "pensions": {
     "title": "Full Boarding for Horses and Ponies",
     "wellbeing": "A Commitment to Equine Welfare",
+    "wellbeingText": "At Poney Club Desportis, the welfare of your horses and ponies is our identity. We do everything possible to offer a serene and respectful living environment, where each equine can thrive in complete tranquility. Our approach is based on attentive care, balanced nutrition, and quality facilities, all supervised by a team of passionate professionals. The club is managed by the instructor",
     "spaces": "Vast and Natural Spaces",
+    "spacesText": "Our boarders benefit from spacious paddocks in small groups or pairs, located on hillsides outside flood zones. These natural spaces allow them to move freely and satisfy their natural needs in a secure and well-maintained environment. In addition, facilities such as the arena, round pen, or cross-country course will allow you to thrive with your equine in nature.",
     "food": "Quality Food and Care",
+    "foodText": "Nutrition is an essential pillar of our equines' health, which is why we provide high-quality hay. Our experienced team ensures health monitoring and can direct you to all equine professionals. For the complete well-being of your companions, we also offer farrier and equine osteopathy services directly on site, guaranteeing responsive and adapted care.",
     "pricing": "Our boarding rates",
     "service": "Service",
-    "pricePerMonth": "Price/Month"
+    "pricePerMonth": "Price/Month",
+    "services": {
+      "groupNatural": "Group with natural shelter",
+      "groupBuilt": "Group with built shelter",
+      "individual": "Individual or pair with built shelter"
+    },
+    "imageAlt": {
+      "box": "Our spacious paddocks",
+      "parcs": "Our green pastures",
+      "hay": "Quality nutrition"
+    }
+  },
+  "photos": {
+    "title": "Photo Gallery",
+    "altText": "Gallery photo"
   }
 }

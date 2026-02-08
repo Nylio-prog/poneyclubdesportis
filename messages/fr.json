@@ -110,13 +110,12 @@
       "description": "Contactez le Poney Club Desportis à Cadenet. Téléphone, email, adresse et plan d'accès."
     },
     "siteName": "Poney Club Desportis"
-  }
-}
-,
+  },
   "cours": {
     "title": "Informations sur les cours",
     "schedule": "Agenda",
     "hours": "Heures",
+    "imageAlt": "Clemence Medail saut à cheval",
     "days": {
       "monday": "Lundi",
       "tuesday": "Mardi",
@@ -130,25 +129,104 @@
       "children": "Enfants 4-10 ans",
       "babyPony": "Baby poney",
       "teens": "Ado",
-      "competition": "Cours compétition"
+      "teensLevel1": "Ado galop 1-2",
+      "teensLevel2": "Ado galop 2-3",
+      "teensLevel3": "Ado galop 2-3-4",
+      "teensLevel4": "Ado galop 3-4",
+      "teensLevel5": "Ado galop 4-5-6",
+      "competition": "Cours compétition",
+      "childrenTeens": "Ado galop 3-4 / Enfant 4-10 ans",
+      "childrenTeens2": "Ado galop 2-3 / Enfant 4-10 ans",
+      "teensChildren": "Ado galop 4-5-6 / Enfant 4-10 ans",
+      "childrenCompetition": "Enfant 4-10 ans / Cours compétition",
+      "teensBaby": "Ado galop 4-5-6 / Baby poney"
     }
   },
   "leClub": {
     "title": "Présentation du Poney Club Desportis",
     "diplomas": "Nos Diplômes et Certifications",
+    "diplomasIntro": "Au Poney Club Desportis, nous sommes fiers de nos accomplissements et de la qualité de notre enseignement. Voici nos diplômes et certifications :",
     "rules": "Règlement Intérieur",
+    "rulesText": "Pour assurer le bon fonctionnement de notre club et la sécurité de tous, nous vous invitons à consulter notre",
+    "rulesLink": "règlement intérieur",
+    "rulesText2": ". Ce document détaille les règles et procédures à suivre au sein de notre établissement.",
     "history": "Notre Histoire",
     "partner": "Notre Partenaire Officiel",
+    "partnerName": "Automobile Service du Luberon",
+    "partnerCity": "Pertuis",
     "since": "Partenaire du Poney Club Desportis depuis 2011",
-    "contact": "Contacter"
+    "contact": "Contacter",
+    "imageAlt": "Installations Poney Club Desportis",
+    "intro1": "Depuis 2008, le Poney Club Desportis s'engage à offrir une expérience équestre exceptionnelle au cœur de la campagne vauclusienne, alliant passion, respect des animaux et expertise.",
+    "intro2": "Nous proposons une variété de services pour répondre aux besoins de tous les cavaliers :",
+    "service1": "Des cours d'équitation pour enfants et adultes, adaptés à tous les niveaux",
+    "service2": "Des stages pendant les vacances scolaires",
+    "service3": "Des services de pension complète et demi-pension",
+    "service4": "Des balades guidées dans le domaine",
+    "facilities": "Nos installations comprennent une grande carrière de sable de 60m x 30m, un rond de longe de 18m, un parcours de cross, une douche fixe, ainsi que de nombreux chemins de balades offrant un cadre naturel et sécurisé pour vos sorties.",
+    "welfare": "Le bien-être de nos animaux est notre priorité absolue. Nous leur offrons les meilleurs soins tout au long de leur vie, y compris une retraite paisible lorsqu'ils ne sont plus en activité. Notre foin, produit proche du club et de très haute qualité, garantit une alimentation saine et adaptée à leurs besoins.",
+    "conclusion": "Avec des années d'expérience et un cadre idéal, le Poney Club Desportis est le choix de confiance pour tous les passionnés d'équitation, qu'ils soient débutants ou confirmés.",
+    "timeline": {
+      "2008": {
+        "title": "Fondation du Poney Club Desportis",
+        "description": "Début de notre aventure avec une passion pour l'équitation et le bien-être des poneys. Notre club a ouvert ses portes avec 4 petits poneys shetlands (Coco, Elite, Malabar, Cookie) pour les cours enfants."
+      },
+      "2009": {
+        "title": "Lancement des cours pour adolescents",
+        "description": "Locations et achats de grands poneys pour initier les cavaliers adolescents à l'équitation."
+      },
+      "2010": {
+        "title": "Création des services de pension",
+        "description": "Ouverture de notre service de pension complète, offrant des soins de qualité supérieure à nos pensionnaires."
+      },
+      "2014": {
+        "title": "Amélioration de nos installations",
+        "description": "Rénovation de nos écuries avec l'installation d'un rond de longe, une centralisation des activités autour du poney (sellerie, parcs, etc)"
+      },
+      "2016": {
+        "title": "Extension de la promenade",
+        "description": "Agrandissement des promenades internes en forêt. Aménagement des clotûres pour la sécurité et le fléchage des cavaliers."
+      },
+      "2017": {
+        "title": "Création d'un terrain de cross",
+        "description": "Inauguration d'un terrain comprenant une bute, un contre-haut, contre-bas, troncs d'arbre de différentes taille et une haie."
+      },
+      "2020": {
+        "title": "Collaboration avec une monitrice d'équitation",
+        "description": "Embauche de Clémence Médail pour un service civique suivi d'un contrat d'apprentissage animateur poney et aide à sa formation de monitrice d'équitation."
+      }
+    },
+    "diplomas": {
+      "bpjepsBB": "BPJEPS activité équestre Béatrice Bürkle",
+      "bpjepsCM": "BPJEPS activité équestre Clémence Médail",
+      "bfeehBB": "BFEEH Béatrice Bürkle",
+      "bfee2BB": "BFEE2 Béatrice Bürkle"
+    }
   },
   "pensions": {
     "title": "Pension Complète pour Chevaux et Poneys",
     "wellbeing": "Un Engagement pour le Bien-être Équin",
+    "wellbeingText": "Au Poney Club Desportis, le bien-être de vos chevaux et poneys est notre identité. Nous mettons tout en œuvre pour offrir un cadre de vie serein et respectueux, où chaque équidé peut s'épanouir en toute tranquillité. Notre approche repose sur des soins attentifs, une alimentation équilibrée, et des installations de qualité, le tout encadré par une équipe de professionnels passionnés. Le club est géré par la monitrice",
     "spaces": "Des Espaces Vastes et Naturels",
+    "spacesText": "Nos pensionnaires bénéficient de paddocks spacieux en petit groupe ou à deux, situés en colline hors des zones inondables. Ces espaces naturels leur permettent de se déplacer librement et de satisfaire leurs besoins naturels dans un environnement sécurisé et bien entretenu. De plus, les installations comme la carrière, le rond de longe, ou bien le cross permettront de s'épanouir avec son équidé dans la nature.",
     "food": "Une Alimentation et des Soins de Qualité",
+    "foodText": "L'alimentation est un pilier essentiel de la santé de nos équidés, c'est pourquoi nous fournissons un foin de haute qualité. Notre équipe expérimentée assure la surveillance de la santé, et pourra vous rediriger vers tous les corps de métier équins. Pour le bien-être complet de vos compagnons, nous proposons également des services de maréchalerie et d'ostéopathie équine directement sur place, garantissant une prise en charge réactive et adaptée.",
     "pricing": "Nos tarifs de pension",
     "service": "Service",
-    "pricePerMonth": "Prix/Mois"
+    "pricePerMonth": "Prix/Mois",
+    "services": {
+      "groupNatural": "En groupe avec abris naturel",
+      "groupBuilt": "En groupe avec abris construit",
+      "individual": "Individuel ou à 2 avec abris construit"
+    },
+    "imageAlt": {
+      "box": "Nos paddocks spacieux",
+      "parcs": "Nos prairies verdoyantes",
+      "hay": "Alimentation de qualité"
+    }
+  },
+  "photos": {
+    "title": "Galerie Photo",
+    "altText": "Photo de galerie"
   }
 }

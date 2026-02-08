@@ -7,40 +7,37 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-
-const prix = [
-  { service: "En groupe avec abris naturel", prix: "240€" },
-  { service: "En groupe avec abris construit", prix: "260€" },
-  { service: "Individuel ou à 2 avec abris construit", prix: "300€" },
-];
+import { useTranslations } from 'next-intl';
 
 export default function PensionsPage() {
+  const t = useTranslations('pensions');
+  
+  const prix = [
+    { service: t('services.groupNatural'), prix: "240€" },
+    { service: t('services.groupBuilt'), prix: "260€" },
+    { service: t('services.individual'), prix: "300€" },
+  ];
+
   return (
     <div className="min-h-screen py-16 px-4">
       <h1 className="text-4xl font-bold mb-12 text-center">
-        Pension Complète pour Chevaux et Poneys
+        {t('title')}
       </h1>
 
       <div className="max-w-6xl mx-auto">
         <section className="flex flex-col md:flex-row items-center mb-16 rounded-lg shadow-lg overflow-hidden">
           <div className="md:w-1/2 p-8">
             <h2 className="text-2xl font-bold mb-4">
-              Un Engagement pour le Bien-être Équin
+              {t('wellbeing')}
             </h2>
             <p className="mb-4 leading-relaxed">
-              Au Poney Club Desportis, le bien-être de vos chevaux et poneys est
-              notre identité. Nous mettons tout en œuvre pour offrir un cadre de
-              vie serein et respectueux, où chaque équidé peut s'épanouir en
-              toute tranquillité. Notre approche repose sur des soins attentifs,
-              une alimentation équilibrée, et des installations de qualité, le
-              tout encadré par une équipe de professionnels passionnés. Le club
-              est géré par la monitrice
+              {t('wellbeingText')}
             </p>
           </div>
           <div className="md:w-1/2">
             <ResponsiveImage
               src="/pensions/box.jpg"
-              alt="Nos paddocks spacieux"
+              alt={t('imageAlt.box')}
               width={600}
               height={400}
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -52,22 +49,16 @@ export default function PensionsPage() {
         <section className="flex flex-col md:flex-row-reverse items-center mb-16 rounded-lg shadow-lg overflow-hidden">
           <div className="md:w-1/2 p-8">
             <h2 className="text-2xl font-bold mb-4">
-              Des Espaces Vastes et Naturels
+              {t('spaces')}
             </h2>
             <p className="mb-4 leading-relaxed">
-              Nos pensionnaires bénéficient de paddocks spacieux en petit groupe
-              ou à deux, situés en colline hors des zones inondables. Ces
-              espaces naturels leur permettent de se déplacer librement et de
-              satisfaire leurs besoins naturels dans un environnement sécurisé
-              et bien entretenu. De plus, les installations comme la carrière,
-              le rond de longe, ou bien le cross permettront de s'épanouir avec
-              son équidé dans la nature.
+              {t('spacesText')}
             </p>
           </div>
           <div className="md:w-1/2">
             <ResponsiveImage
               src="/pensions/parcs.jpg"
-              alt="Nos prairies verdoyantes"
+              alt={t('imageAlt.parcs')}
               width={600}
               height={400}
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -79,22 +70,16 @@ export default function PensionsPage() {
         <section className="flex flex-col md:flex-row items-center mb-16 rounded-lg shadow-lg overflow-hidden">
           <div className="md:w-1/2 p-8">
             <h2 className="text-2xl font-bold mb-4">
-              Une Alimentation et des Soins de Qualité
+              {t('food')}
             </h2>
             <p className="mb-4 leading-relaxed">
-              L’alimentation est un pilier essentiel de la santé de nos équidés,
-              c’est pourquoi nous fournissons un foin de haute qualité. Notre
-              équipe expérimentée assure la surveillance de la santé, et pourra
-              vous rediriger vers tous les corps de métier équins. Pour le
-              bien-être complet de vos compagnons, nous proposons également des
-              services de maréchalerie et d'ostéopathie équine directement sur
-              place, garantissant une prise en charge réactive et adaptée.
+              {t('foodText')}
             </p>
           </div>
           <div className="md:w-1/2">
             <ResponsiveImage
               src="/pensions/hay.jpg"
-              alt="Alimentation de qualité"
+              alt={t('imageAlt.hay')}
               width={600}
               height={400}
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -105,14 +90,14 @@ export default function PensionsPage() {
 
         <section className="bg-white rounded-lg py-8">
           <h2 className="text-2xl font-bold mb-4 pl-8">
-            Nos tarifs de pension
+            {t('pricing')}
           </h2>
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Service</TableHead>
-                  <TableHead>Prix/Mois</TableHead>
+                  <TableHead>{t('service')}</TableHead>
+                  <TableHead>{t('pricePerMonth')}</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>

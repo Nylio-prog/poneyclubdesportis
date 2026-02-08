@@ -79,18 +79,18 @@ export default function ResponsiveImage({
   placeholder = "empty",
   ...props
 }: ResponsiveImageProps) {
-  // Build the object-fit and object-position classes
-  const objectFitClass = `object-${objectFit}`;
-  const objectPositionClass = objectPosition !== "center" ? "" : ""; // Let inline style handle custom positions
-  const combinedClassName = `${objectFitClass} ${objectPositionClass} ${className}`.trim();
-  
   // Prepare image props
   const imageProps: ImageProps = {
     src,
     alt,
     sizes,
-    className: combinedClassName,
+    className,
     priority,
+    style: {
+      objectFit,
+      objectPosition,
+      ...props.style,
+    },
     ...props,
   };
   
@@ -101,14 +101,6 @@ export default function ResponsiveImage({
   } else {
     // Use empty placeholder if no blurDataURL provided
     imageProps.placeholder = "empty";
-  }
-  
-  // Add custom object position as inline style if not center
-  if (objectPosition !== "center") {
-    imageProps.style = {
-      ...imageProps.style,
-      objectPosition,
-    };
   }
   
   return <Image {...imageProps} />;
