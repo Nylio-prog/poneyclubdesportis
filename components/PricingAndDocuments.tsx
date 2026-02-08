@@ -1,4 +1,7 @@
+'use client';
+
 import Link from "next/link";
+import { useTranslations } from 'next-intl';
 
 interface PDFLinkProps {
   href: string;
@@ -17,29 +20,31 @@ const PDFLink: React.FC<PDFLinkProps> = ({ href, text }) => (
 );
 
 const PricingAndDocuments: React.FC = () => {
+  const t = useTranslations('cours');
+  
   const pricingDocuments: PDFLinkProps[] = [
-    { href: "/cours/tarifs.pdf", text: "Voir nos tarifs en PDF" },
+    { href: "/cours/tarifs.pdf", text: t('pricing.viewRates') },
     {
       href: "/cours/fiche_adhesion.pdf",
-      text: "Voir notre fiche d'adhésion en PDF",
+      text: t('pricing.viewMembership'),
     },
   ];
 
   const licenseDocuments: PDFLinkProps[] = [
     {
       href: "/cours/ffe_autoquestionnaire_majeurs.pdf",
-      text: "Voir l'auto-questionnaire FFE / attestation pour les majeurs en PDF",
+      text: t('license.viewAdults'),
     },
     {
       href: "/cours/ffe_autoquestionnaire_mineurs.pdf",
-      text: "Voir l'auto-questionnaire FFE / attestation pour les mineurs en PDF",
+      text: t('license.viewMinors'),
     },
   ];
 
   return (
     <div className="space-y-8">
       <section>
-        <h2 className="text-2xl font-bold mb-4">Nos tarifs et inscription</h2>
+        <h2 className="text-2xl font-bold mb-4">{t('pricing.title')}</h2>
         {pricingDocuments.map((doc, index) => (
           <PDFLink key={index} {...doc} />
         ))}
@@ -47,12 +52,12 @@ const PricingAndDocuments: React.FC = () => {
 
       <section className="py-4 rounded-lg">
         <h2 className="text-2xl font-bold mb-4">
-          Licence et attestations médicales
+          {t('license.title')}
         </h2>
 
         <div className="mb-6">
           <h3 className="text-xl font-semibold mb-2">
-            Documents d'auto-questionnaire
+            {t('license.questionnairesTitle')}
           </h3>
           {licenseDocuments.map((doc, index) => (
             <PDFLink key={index} {...doc} />
@@ -60,40 +65,33 @@ const PricingAndDocuments: React.FC = () => {
         </div>
 
         <div>
-          <h3 className="text-xl font-semibold mb-2">Exigences médicales</h3>
+          <h3 className="text-xl font-semibold mb-2">{t('license.medicalTitle')}</h3>
           <p className="mb-4">
-            Le cavalier souscrivant ou renouvelant une licence de pratiquant
-            atteste avoir recueilli un avis médical favorable selon les
-            modalités suivantes :
+            {t('license.medicalIntro')}
           </p>
           <ul className="list-disc pl-6 space-y-2">
             <li>
-              <strong>Mineurs :</strong> Attestation de réponse négative à
-              l'auto-questionnaire.
+              <strong>{t('license.minors')}</strong> {t('license.minorsText')}
             </li>
             <li>
-              <strong>Majeurs de moins de 40 ans :</strong>
+              <strong>{t('license.adultsUnder40')}</strong>
               <ul className="list-circle pl-6 mt-1">
                 <li>
-                  Première demande : Certificat médical de non
-                  contre-indication.
+                  {t('license.adultsUnder40First')}
                 </li>
                 <li>
-                  Renouvellement : Attestation de réponse négative à
-                  l'auto-questionnaire.
+                  {t('license.adultsUnder40Renewal')}
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Majeurs de 40 ans et plus :</strong>
+              <strong>{t('license.adults40Plus')}</strong>
               <ul className="list-circle pl-6 mt-1">
                 <li>
-                  Première demande et tous les trois ans : Certificat médical de
-                  non contre-indication.
+                  {t('license.adults40PlusFirst')}
                 </li>
                 <li>
-                  Entre deux certificats : Attestation de réponse négative à
-                  l'auto-questionnaire.
+                  {t('license.adults40PlusBetween')}
                 </li>
               </ul>
             </li>
@@ -101,14 +99,14 @@ const PricingAndDocuments: React.FC = () => {
         </div>
 
         <p className="text-sm text-gray-600 italic mt-6">
-          Source :{" "}
+          {t('license.source')}{" "}
           <Link
             href="https://www.ffe.com/faq/La-licence"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[var(--deep-burgundy)] hover:underline"
           >
-            Fédération Française d'Equitation (FFE) - FAQ sur la licence
+            {t('license.ffeLink')}
           </Link>
         </p>
       </section>

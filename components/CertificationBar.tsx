@@ -1,8 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from 'next-intl';
 
 const CertificationBar = () => {
+  const t = useTranslations('home.certifications');
+  
   const certifications = [
     {
       src: "/logos/Logo_FFE.jpg",
@@ -46,7 +49,7 @@ const CertificationBar = () => {
         */}
         <div className="flex items-center border-r-2 border-[#5A0F1D]/10 pr-4 mr-4 md:pr-6 md:mr-6 h-full flex-shrink-0">
            <span className="text-xs md:text-sm font-black uppercase tracking-widest opacity-80">
-            Nos Labels
+            {t('ourLabels')}
           </span>
         </div>
         

@@ -245,10 +245,21 @@ export const events = [
       "Concours Équifun et CSO - Dimanche 8 février",
     startDate: "2026-02-08",
     endDate: "2026-02-08",
-    startHour: "09:00",
-    endHour: "12:00",
+    startHour: "09:30",
+    endHour: "12:30",
     description:
       "On se retrouve dimanche matin pour les épreuves d'équifun (petits poneys) et de CSO (ados).",
+    image: "",
+  },
+  {
+    title:
+      "Stages shetlands",
+    startDate: "2026-02-16",
+    endDate: "2026-02-23",
+    startHour: "14:00",
+    endHour: "17:00",
+    description:
+      "Du 16 au 23 Février, le Poney club Desportis vous propose des stages de 3 heures pour enfants avec préparation du poney, des jeux, une promenade et de la voltige, etc. Pensez à vous inscrire !",
     image: "",
   },
 ];

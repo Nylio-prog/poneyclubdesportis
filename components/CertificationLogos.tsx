@@ -1,4 +1,7 @@
+'use client';
+
 import Image from "next/image";
+import { useTranslations } from 'next-intl';
 
 import logo_poney_de_france from "@/public/logos/Logo_poney_de_france.png";
 import logo_qualite from "@/public/logos/Logo_qualite.png";
@@ -6,6 +9,8 @@ import logo_ffe from "@/public/logos/Logo_FFE.jpg";
 import logo_bien_etre_animal from "@/public/logos/Logo_bien_etre_animal.png";
 
 const CertificationLogos = () => {
+  const t = useTranslations('home.certifications');
+  
   const ffeLogos = [
     { src: logo_ffe, alt: "Logo Fédération Française d'Équitation" },
   ];
@@ -20,7 +25,7 @@ const CertificationLogos = () => {
     <div className="mb-12">
       <div className="flex justify-around items-center">
         <div className="flex-1 text-center">
-          <p className="mb-4 font-semibold">Notre affiliation</p>
+          <p className="mb-4 font-semibold">{t('ourAffiliation')}</p>
           {ffeLogos.map((logo, index) => (
             <Image
               key={index}
@@ -35,7 +40,7 @@ const CertificationLogos = () => {
         <div className="flex-1">
           <div className=" p-4 rounded-lg max-w-sm mx-auto">
             <p className="text-center mb-4 font-semibold">
-              Fiers de nos labels obtenus depuis 2020
+              {t('proudOfLabels')}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               {labels.map((logo, index) => (
