@@ -1,0 +1,223 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Aller au contenu principal" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link "Poney Club Desportis logo Poney Club Desportis" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e7]:
+            - img "Poney Club Desportis logo" [ref=e8]
+            - generic [ref=e9]: Poney Club Desportis
+        - generic [ref=e10]:
+          - list [ref=e11]:
+            - listitem [ref=e12]:
+              - link "Accueil" [ref=e13] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e14]:
+              - link "Le Club" [ref=e15] [cursor=pointer]:
+                - /url: /le-club
+            - listitem [ref=e16]:
+              - link "Photos" [ref=e17] [cursor=pointer]:
+                - /url: /photos
+            - listitem [ref=e18]:
+              - link "Cavalerie" [ref=e19] [cursor=pointer]:
+                - /url: /cavalerie
+            - listitem [ref=e20]:
+              - link "Actualités" [ref=e21] [cursor=pointer]:
+                - /url: /actualites
+            - listitem [ref=e22]:
+              - link "Cours" [ref=e23] [cursor=pointer]:
+                - /url: /cours
+            - listitem [ref=e24]:
+              - link "Pensions" [ref=e25] [cursor=pointer]:
+                - /url: /pensions
+            - listitem [ref=e26]:
+              - link "Contact" [ref=e27] [cursor=pointer]:
+                - /url: /contact
+          - status [ref=e28]
+          - button "Change language" [ref=e30] [cursor=pointer]:
+            - generic [ref=e31]: 🇫🇷
+            - generic [ref=e32]: Français
+            - img [ref=e33]
+  - main [ref=e35]:
+    - generic [ref=e36]:
+      - heading "Actualités et Événements" [level=1] [ref=e37]
+      - generic [ref=e38]:
+        - heading "Événements à venir" [level=2] [ref=e39]
+        - heading "Événements passés" [level=2] [ref=e40]
+        - generic [ref=e41]:
+          - generic [ref=e42]:
+            - heading "Concours Équifun et CSO - Dimanche 8 février" [level=3] [ref=e44]
+            - generic [ref=e47]:
+              - paragraph [ref=e48]: 08/02/2026 09:30 - 12:30
+              - paragraph [ref=e49]: On se retrouve dimanche matin pour les épreuves d'équifun (petits poneys) et de CSO (ados).
+          - generic [ref=e50]:
+            - heading "Forum des Associations à Cadenet – Samedi 13 septembre, dès 15h, devant la mairie" [level=3] [ref=e52]
+            - generic [ref=e54]:
+              - img "Forum des Associations à Cadenet – Samedi 13 septembre, dès 15h, devant la mairie" [ref=e56]
+              - generic [ref=e57]:
+                - paragraph [ref=e58]: 13/09/2025 15:00 - 18:00
+                - paragraph [ref=e59]: Retrouvez-nous au forum des associations de Cadenet pour découvrir notre poney club ! Nous serons présents pour vous donner toutes les informations sur nos cours, nos tarifs et les inscriptions pour la saison à venir. C'est l'occasion idéale pour poser vos questions et préparer votre rentrée équestre. Venez nombreux nous rencontrer devant la mairie !
+          - generic [ref=e60]:
+            - heading "Portes ouvertes - Samedi 6 Septembre" [level=3] [ref=e62]
+            - generic [ref=e65]:
+              - paragraph [ref=e66]: 06/09/2025 15:00 - 18:00
+              - paragraph [ref=e67]: Portes ouvertes pour venir découvrir le poney à partir de 15h jusqu'à 18h. Gratuit pour tout le monde, venez nombreux !
+          - generic [ref=e68]:
+            - heading "Spectacle de fin d'année" [level=3] [ref=e70]
+            - generic [ref=e73]:
+              - paragraph [ref=e74]: 22/06/2025 18:00 - 22:00
+              - paragraph [ref=e75]: Spectacle de fin d'année. Venez nombreux !
+          - generic [ref=e76]:
+            - heading "Stages petits poneys - Vacances Pâques" [level=3] [ref=e78]
+            - generic [ref=e81]:
+              - paragraph [ref=e82]: 14/04/2025 - 18/04/2025
+              - paragraph [ref=e83]: Chaque jour, le poney club Desportis vous propose des stages de 3 heures pour enfants avec des jeux de maniabilité, une ballade, de la voltige, etc. Pensez à vous inscrire !
+          - generic [ref=e84]:
+            - heading "Concours CSO - Écuries de la Durance" [level=3] [ref=e86]
+            - generic [ref=e89]:
+              - paragraph [ref=e90]: 26/01/2025 09:00 - 17:00
+              - paragraph [ref=e91]: Participez au concours CSO aux Écuries de la Durance. Une journée sportive pour cavaliers passionnés. Pensez à vous inscrire !
+          - generic [ref=e92]:
+            - heading "Atelier cross-country" [level=3] [ref=e94]
+            - generic [ref=e97]:
+              - paragraph [ref=e98]: 18/01/2025 14:00 - 17:00
+              - paragraph [ref=e99]: Découvrez les bases ou perfectionnez-vous en cross-country avec cet atelier !
+          - generic [ref=e100]:
+            - heading "Atelier voltige" [level=3] [ref=e102]
+            - generic [ref=e105]:
+              - paragraph [ref=e106]: 11/01/2025 14:00 - 17:00
+              - paragraph [ref=e107]: Un atelier de voltige pour découvrir ou approfondir cette discipline impressionnante. Convient à tous les niveaux.
+          - generic [ref=e108]:
+            - heading "Stage 1/2 journée avec le Père Noël" [level=3] [ref=e110]
+            - generic [ref=e112]:
+              - img "Stage 1/2 journée avec le Père Noël" [ref=e114]
+              - generic [ref=e115]:
+                - paragraph [ref=e116]: 23/12/2024 14:00 - 17:00
+                - paragraph [ref=e117]: Venez passer une demi-journée magique avec le Père Noël au Poney Club Desportis Cadenet ! Activités équestres et surprises garanties !
+          - generic [ref=e118]:
+            - heading "Atelier Western - Samedi 7 décembre" [level=3] [ref=e120]
+            - generic [ref=e123]:
+              - paragraph [ref=e124]: 07/12/2024 14:00 - 16:00
+              - paragraph [ref=e125]: "Découvrez l'équitation Western, une discipline venue des États-Unis. Initialement utilisée pour convoyer du bétail à travers le continent, elle est aujourd'hui pratiquée pour ses nombreuses formes : jeux, vitesse, maniabilité, et plus encore. Tarif : 20€ par personne."
+          - generic [ref=e126]:
+            - heading "Concours de Saut d'Obstacles (CSO) - Dimanche 1er décembre" [level=3] [ref=e128]
+            - generic [ref=e131]:
+              - paragraph [ref=e132]: 01/12/2024 10:00 - 17:00
+              - paragraph [ref=e133]: "Notre concours de Saut d'Obstacles vous attend ! Venez vous défier sur des parcours variés, conçus pour tous les niveaux, du débutant au confirmé. Une journée riche en émotions et en performances, avec de nombreux lots à gagner. Que le meilleur gagne ! De 10h à 12h, enfant de 3 à 10 ans. À partir de 13h30, les adolescents reprennent. Réservation obligatoire. Tarif : 20€ par participant."
+          - generic [ref=e134]:
+            - heading "Atelier Théorie - Samedi 30 novembre" [level=3] [ref=e136]
+            - generic [ref=e139]:
+              - paragraph [ref=e140]: 30/11/2024 14:00 - 15:00
+              - paragraph [ref=e141]: Renforcez vos connaissances théoriques équestres avec cet atelier gratuit. Un moment de partage pour poser vos questions et améliorer vos compétences.
+          - generic [ref=e142]:
+            - heading "Concours CSO - Dimanche 24 novembre" [level=3] [ref=e144]
+            - generic [ref=e147]:
+              - paragraph [ref=e148]: 24/11/2024 10:00 - 17:00
+              - paragraph [ref=e149]: "Notre concours de CSO arrive à grands pas ! Venez vous défier sur des parcours de saut, conçus pour tous les niveaux, du débutant au confirmé. Une journée riche en émotions et en performances, avec de nombreux lots à gagner. Que le meilleur gagne ! De 10h à 12h, enfants sur shetlands. De 13h00 jusqu'à 17h, les cavaliers à cheval reprennent. Réservation obligatoire. Tarif : 20€ par participant."
+          - generic [ref=e150]:
+            - heading "Carrousel de Dressage - Samedi 23 novembre" [level=3] [ref=e152]
+            - generic [ref=e155]:
+              - paragraph [ref=e156]: 23/11/2024 14:00 - 16:00
+              - paragraph [ref=e157]: "Participez à notre carrousel de dressage, un petit spectacle équestre durant lequel les cavaliers exécutent des figures en musique. Tarif : 20€ par personne."
+          - generic [ref=e158]:
+            - heading "Atelier Hobbyhorse - Samedi 16 novembre" [level=3] [ref=e160]
+            - generic [ref=e163]:
+              - paragraph [ref=e164]: 16/11/2024 14:00 - 15:00
+              - paragraph [ref=e165]: "Cet atelier Hobbyhorse est une discipline où l'on reproduit les épreuves d'équitation en remplaçant le cheval par un bâton avec une tête de cheval. Une activité amusante et accessible à tous ! Tarif : 5€ par personne."
+          - generic [ref=e166]:
+            - heading "Concours de Hunter - Dimanche 3 novembre" [level=3] [ref=e168]
+            - generic [ref=e171]:
+              - paragraph [ref=e172]: 03/11/2024 10:00 - 17:00
+              - paragraph [ref=e173]: "Rejoignez-nous pour notre concours de Hunter ! Cette discipline consiste à enchaîner un parcours d’obstacles avec la plus grande harmonie possible. Un excellent moyen de progresser et de se préparer pour les compétitions. Parcours adaptés à tous les niveaux. De 10h à 12h, enfant de 3 à 10 ans. À partir de 13h30, les adolescents reprennent. Inscription obligatoire. Tarif : 20€ par participant."
+          - generic [ref=e174]:
+            - heading "Stages vacances de Toussaint du 21 au 25 octobre" [level=3] [ref=e176]
+            - generic [ref=e179]:
+              - paragraph [ref=e180]: 21/10/2024 - 24/10/2024
+              - paragraph [ref=e181]: Stages de poneys ouverts aux enfants de 3 à 10 ans où ils pourront chouchouter leurs poneys, découvrir les fondamentaux (ou les perfectionner) par le jeu, se promener en forêt et s'initier à la voltige ! Réservation obligatoire.
+          - generic [ref=e182]:
+            - heading "Atelier Cross - Samedi 19 octobre" [level=3] [ref=e184]
+            - generic [ref=e187]:
+              - paragraph [ref=e188]: 19/10/2024 14:00 - 16:00
+              - paragraph [ref=e189]: "L'atelier Cross consiste à galoper sur un terrain varié avec montées, descentes et franchissement d'obstacles naturels comme des troncs, trous, buttes... Une excellente opportunité pour améliorer vos compétences tout en vous amusant. Tarif : 20€ par personne."
+          - generic [ref=e190]:
+            - heading "Atelier Théorie équestre - Samedi 12 octobre" [level=3] [ref=e192]
+            - generic [ref=e195]:
+              - paragraph [ref=e196]: 12/10/2024 14:00 - 15:00
+              - paragraph [ref=e197]: "Renforcez vos connaissances équestres ou préparez vos galops lors de notre atelier théorique gratuit ! Au programme : anatomie du cheval, alimentation, équipement etc. Cet atelier est idéal pour les débutants comme pour les cavaliers confirmés souhaitant consolider leurs bases. Venez avec vos questions, nous seront ravis d'y répondre !"
+          - generic [ref=e198]:
+            - heading "Concours interne Equifun - Dimanche 6 octobre" [level=3] [ref=e200]
+            - generic [ref=e203]:
+              - paragraph [ref=e204]: 06/10/2024 10:00 - 17:00
+              - paragraph [ref=e205]: "Participez à notre concours interne d'Equifun ! Une journée pleine de défis ludiques à cheval ou à poney, adaptés à tous les niveaux. Slaloms, parcours d'adresse, jeux d'équipe... Venez vous amuser et mettre en pratique vos acquis dans une ambiance conviviale. Ouvert à tous nos cavaliers, petits et grands. De 10h à 12h, enfant de 3 à 10 ans. À partir de 13h30, les adolescents reprennent. Réservation obligatoire. Tarif : 20€ par participant."
+          - generic [ref=e206]:
+            - heading "Atelier Éthologie à pied - Samedi 5 octobre" [level=3] [ref=e208]
+            - generic [ref=e211]:
+              - paragraph [ref=e212]: 05/10/2024 14:00 - 15:00
+              - paragraph [ref=e213]: "Plongez dans le monde fascinant de l'éthologie équine ! Cet atelier vous enseignera les bases de la communication avec les chevaux au sol. Apprenez à mieux comprendre le langage corporel des équidés et à établir une relation de confiance. Une expérience enrichissante pour améliorer votre lien avec les chevaux. Tarif : 20€ par participant."
+          - generic [ref=e214]:
+            - heading "Atelier Voltige - Samedi 28 septembre" [level=3] [ref=e216]
+            - generic [ref=e219]:
+              - paragraph [ref=e220]: 28/09/2024 14:00 - 15:00
+              - paragraph [ref=e221]: "Découvrez l'art de la voltige équestre lors de notre atelier de découverte ou de perfectionnement ! Apprenez les bases de cette discipline qui allie gymnastique et équitation. Ouvert à tous les niveaux, cet atelier vous permettra de développer votre équilibre, votre souplesse et votre confiance à cheval. Réservation obligatoire. Tarif : 20€ par personne."
+          - generic [ref=e222]:
+            - heading "Forum des Associations à Cadenet – Samedi 14 septembre, dès 15h, devant la mairie" [level=3] [ref=e224]
+            - generic [ref=e226]:
+              - img "Forum des Associations à Cadenet – Samedi 14 septembre, dès 15h, devant la mairie" [ref=e228]
+              - generic [ref=e229]:
+                - paragraph [ref=e230]: 14/09/2024 15:00 - 18:00
+                - paragraph [ref=e231]: Retrouvez-nous au forum des associations de Cadenet pour découvrir notre poney club ! Nous serons présents pour vous donner toutes les informations sur nos cours, nos tarifs et les inscriptions pour la saison à venir. C'est l'occasion idéale pour poser vos questions et préparer votre rentrée équestre. Venez nombreux nous rencontrer devant la mairie !
+          - generic [ref=e232]:
+            - heading "Début des cours le 9 Septembre" [level=3] [ref=e234]
+            - generic [ref=e236]:
+              - img "Début des cours le 9 Septembre" [ref=e238]
+              - generic [ref=e239]:
+                - paragraph [ref=e240]: 09/09/2024 08:00 - 18:00
+                - paragraph [ref=e241]: Nous reprenons les cours à partir du 9 Septembre, nous espèrons vous retrouver !
+          - generic [ref=e242]:
+            - heading "Portes ouvertes Dimanche 8 Septembre de 15h à 18h" [level=3] [ref=e244]
+            - generic [ref=e246]:
+              - img "Portes ouvertes Dimanche 8 Septembre de 15h à 18h" [ref=e248]
+              - generic [ref=e249]:
+                - paragraph [ref=e250]: 08/09/2024 15:00 - 18:00
+                - paragraph [ref=e251]: Nous vous invitons à découvrir notre poney club lors de nos portes ouvertes ! Venez visiter les installations, rencontrer notre équipe, et vous renseigner sur nos cours, tarifs et modalités d'inscription pour la saison à venir. Des baptêmes à poney seront également proposés pour les plus jeunes. Une belle occasion de passer un moment convivial en famille et de partager notre passion des chevaux. Nous vous attendons nombreux !
+  - contentinfo [ref=e252]:
+    - generic [ref=e253]:
+      - generic [ref=e254]:
+        - generic [ref=e255]:
+          - heading "Poney Club Desportis" [level=2] [ref=e256]
+          - generic [ref=e257]:
+            - link "Facebook" [ref=e258] [cursor=pointer]:
+              - /url: https://www.facebook.com/p/Poney-Club-Desportis-100027924560857/
+              - img [ref=e259]
+            - link "Instagram" [ref=e261] [cursor=pointer]:
+              - /url: https://www.instagram.com/poneyclubdesportis/
+              - img [ref=e262]
+        - generic [ref=e265]:
+          - heading "Contact" [level=3] [ref=e266]
+          - generic [ref=e267]:
+            - generic [ref=e268]:
+              - img [ref=e269]
+              - link "+33 6 42 87 89 58" [ref=e271] [cursor=pointer]:
+                - /url: tel:+33642878958
+            - generic [ref=e272]:
+              - img [ref=e273]
+              - link "poneyclub.desportis@free.fr" [ref=e276] [cursor=pointer]:
+                - /url: mailto:poneyclub.desportis@free.fr
+        - generic [ref=e277]:
+          - heading "Adresse" [level=3] [ref=e278]
+          - generic [ref=e279]:
+            - img [ref=e280]
+            - generic [ref=e283]:
+              - text: 1070, Chemin Vidau
+              - text: 84160 Cadenet
+              - text: France
+      - paragraph [ref=e285]: © 2026 Poney Club Desportis. Tous droits réservés
+  - button "Open Next.js Dev Tools" [ref=e291] [cursor=pointer]:
+    - img [ref=e292]
+  - alert [ref=e295]
+```

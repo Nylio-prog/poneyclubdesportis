@@ -1,0 +1,275 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Aller au contenu principal" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link "Poney Club Desportis logo Poney Club Desportis" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e7]:
+            - img "Poney Club Desportis logo" [ref=e8]
+            - generic [ref=e9]: Poney Club Desportis
+        - generic [ref=e10]:
+          - list [ref=e11]:
+            - listitem [ref=e12]:
+              - link "Accueil" [ref=e13] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e14]:
+              - link "Le Club" [ref=e15] [cursor=pointer]:
+                - /url: /le-club
+            - listitem [ref=e16]:
+              - link "Photos" [ref=e17] [cursor=pointer]:
+                - /url: /photos
+            - listitem [ref=e18]:
+              - link "Cavalerie" [ref=e19] [cursor=pointer]:
+                - /url: /cavalerie
+            - listitem [ref=e20]:
+              - link "Actualités" [ref=e21] [cursor=pointer]:
+                - /url: /actualites
+            - listitem [ref=e22]:
+              - link "Cours" [ref=e23] [cursor=pointer]:
+                - /url: /cours
+            - listitem [ref=e24]:
+              - link "Pensions" [ref=e25] [cursor=pointer]:
+                - /url: /pensions
+            - listitem [ref=e26]:
+              - link "Contact" [ref=e27] [cursor=pointer]:
+                - /url: /contact
+          - status [ref=e28]
+          - button "Change language" [ref=e30] [cursor=pointer]:
+            - generic [ref=e31]: 🇫🇷
+            - generic [ref=e32]: Français
+            - img [ref=e33]
+  - main [ref=e35]:
+    - generic [ref=e36]:
+      - heading "Notre Cavalerie" [level=1] [ref=e37]
+      - generic [ref=e38]:
+        - heading "Poneys" [level=2] [ref=e39]
+        - generic [ref=e40]:
+          - generic [ref=e42]:
+            - img "Bamby" [ref=e44]
+            - generic [ref=e45]:
+              - heading "Bamby" [level=3] [ref=e46]
+              - generic [ref=e48]: 20 ans
+              - paragraph [ref=e49]: 20 ans, sensible, il a besoin d'un cavalier calme
+          - generic [ref=e51]:
+            - img "Quaquou" [ref=e53]
+            - generic [ref=e54]:
+              - heading "Quaquou" [level=3] [ref=e55]
+              - generic [ref=e56]:
+                - generic [ref=e57]: 20 ans
+                - text: • Camargue
+              - paragraph [ref=e58]: Camargue de 20 ans très tonique, adore l'obstacle et le cross, parfois coquin pour les confirmés
+          - generic [ref=e60]:
+            - img "Karamel" [ref=e62]
+            - generic [ref=e63]:
+              - heading "Karamel" [level=3] [ref=e64]
+              - generic [ref=e66]: 20 ans
+              - paragraph [ref=e67]: 20 ans, c'est le plus câlin du club. Poney adorable et polyvalent pour les plus grands
+          - generic [ref=e69]:
+            - img "Casper" [ref=e71]
+            - generic [ref=e72]:
+              - heading "Casper" [level=3] [ref=e73]
+              - generic [ref=e74]:
+                - generic [ref=e75]: 7 ans
+                - text: • Irish Cob
+              - paragraph [ref=e76]: Jeune Irish Cob de 7ans polyvalent, parfois coquin en exterieur et très câlin
+          - generic [ref=e78]:
+            - img "Clochette" [ref=e80]
+            - generic [ref=e81]:
+              - heading "Clochette" [level=3] [ref=e82]
+              - generic [ref=e84]: 13 ans
+              - paragraph [ref=e85]: Ponette de 13 ans qui a du caractère et est très tonique
+          - generic [ref=e87]:
+            - img "Coco" [ref=e89]
+            - generic [ref=e90]:
+              - heading "Coco" [level=3] [ref=e91]
+              - generic [ref=e92]:
+                - generic [ref=e93]: 19 ans
+                - text: • Shetland
+              - paragraph [ref=e94]: Shetland de 19 ans joueur et tonique
+          - generic [ref=e96]:
+            - img "Ebène" [ref=e98]
+            - generic [ref=e99]:
+              - heading "Ebène" [level=3] [ref=e100]
+              - generic [ref=e102]: 22 ans
+              - paragraph [ref=e103]: Gentil poney de 22 ans qui a du rebond pour les plus grands
+          - generic [ref=e105]:
+            - img "Elite" [ref=e107]
+            - generic [ref=e108]:
+              - heading "Elite" [level=3] [ref=e109]
+              - generic [ref=e110]:
+                - generic [ref=e111]: 19 ans
+                - text: • Shetland
+              - paragraph [ref=e112]: Très gentil shetland de 19 ans, calme et appliqué
+          - generic [ref=e114]:
+            - img "Espoir" [ref=e116]
+            - generic [ref=e117]:
+              - heading "Espoir" [level=3] [ref=e118]
+              - generic [ref=e120]: 17 ans
+              - paragraph [ref=e121]: Très bon poney de 17 ans en pleine forme, polyvalent, affectueux, monté par des cavaliers débutants et confirmés
+          - generic [ref=e123]:
+            - img "Malabar" [ref=e125]
+            - generic [ref=e126]:
+              - heading "Malabar" [level=3] [ref=e127]
+              - generic [ref=e129]: 26 ans
+              - paragraph [ref=e130]: 26 ans, c'est le plus petit poney du club. Il est tonique et facile à diriger pour les plus petits
+          - generic [ref=e132]:
+            - img "Mirah" [ref=e134]
+            - generic [ref=e135]:
+              - heading "Mirah" [level=3] [ref=e136]
+              - generic [ref=e137]:
+                - generic [ref=e138]: 8 ans
+                - text: • Irish Cob
+              - paragraph [ref=e139]: Jeune Irish Cob de 8 ans une valeur sûre pour mettre en confiance, tous niveaux
+          - generic [ref=e141]:
+            - img "Paillette" [ref=e143]
+            - generic [ref=e144]:
+              - heading "Paillette" [level=3] [ref=e145]
+              - generic [ref=e147]: 21 ans
+              - paragraph [ref=e148]: Ponette de 21 ans, très compétente mais qui a de l'arthrose au jarret, ne fait plus que des promenades en main
+          - generic [ref=e150]:
+            - img "Qaiwain" [ref=e152]
+            - generic [ref=e153]:
+              - heading "Qaiwain" [level=3] [ref=e154]
+              - generic [ref=e155]:
+                - generic [ref=e156]: 20 ans
+                - text: • New Forest
+              - paragraph [ref=e157]: Beau New Forest de 20 ans, plein de force, intelligent. Généralement monté par des cavaliers confirmés ou pris pour du travail à pied
+          - generic [ref=e159]:
+            - img "Topcool" [ref=e161]
+            - generic [ref=e162]:
+              - heading "Topcool" [level=3] [ref=e163]
+              - generic [ref=e164]: Belge de sport
+              - paragraph [ref=e165]: Très bon poney Belge de sport, très tonique, il a du caractère. Surtout monté par des cavaliers confirmés
+      - generic [ref=e166]:
+        - heading "Chevaux" [level=2] [ref=e167]
+        - generic [ref=e168]:
+          - generic [ref=e170]:
+            - img "Galapage" [ref=e172]
+            - generic [ref=e173]:
+              - heading "Galapage" [level=3] [ref=e174]
+              - generic [ref=e175]:
+                - generic [ref=e176]: 23 ans
+                - text: • Pur sang
+              - paragraph [ref=e177]: Pur sang de 23 ans très sensible et délicat, non monté par les élèves
+          - generic [ref=e179]:
+            - img "Keyshan" [ref=e181]
+            - generic [ref=e182]:
+              - heading "Keyshan" [level=3] [ref=e183]
+              - generic [ref=e184]:
+                - generic [ref=e185]: 26 ans
+                - text: • Anglo Arabe
+              - paragraph [ref=e186]: Jument anglo Arabe de 26 ans qui adore le travail à pied et les câlins. Retraitée depuis sa tendinite
+          - generic [ref=e188]:
+            - img "Risa" [ref=e190]
+            - generic [ref=e191]:
+              - heading "Risa" [level=3] [ref=e192]
+              - generic [ref=e193]:
+                - generic [ref=e194]: 19 ans
+                - text: • Espagnole
+              - paragraph [ref=e195]: Très gentille Espagnole de 19 ans polyvalente tonique et très attachante
+          - generic [ref=e197]:
+            - img "Kloé" [ref=e199]
+            - generic [ref=e200]:
+              - heading "Kloé" [level=3] [ref=e201]
+              - generic [ref=e202]:
+                - generic [ref=e203]: 26 ans
+                - text: • New Forest
+              - paragraph [ref=e204]: Très gentille jument New Forest de 26 ans polyvalente, calme, parfaite pour les débutants
+      - generic [ref=e205]:
+        - heading "Retraités" [level=2] [ref=e206]
+        - generic [ref=e207]:
+          - generic [ref=e209]:
+            - generic [ref=e210]: Retraité
+            - img "Nuage" [ref=e212]
+            - generic [ref=e213]:
+              - heading "Nuage" [level=3] [ref=e214]
+              - generic [ref=e215]:
+                - generic [ref=e216]: 30 ans
+                - text: • Camargue
+              - paragraph [ref=e217]: Meilleur poney Camargue de voltige ! Aujourd'hui retraité de 30 ans
+          - generic [ref=e219]:
+            - generic [ref=e220]: Retraité
+            - img "Yucca" [ref=e222]
+            - generic [ref=e223]:
+              - heading "Yucca" [level=3] [ref=e224]
+              - generic [ref=e226]: 25 ans
+              - paragraph [ref=e227]: Ponette B de 25 ans retraitée depuis cette année à cause d'une luxation de la hanche
+          - generic [ref=e229]:
+            - generic [ref=e230]: Retraité
+            - img "Faena" [ref=e232]
+            - generic [ref=e233]:
+              - heading "Faena" [level=3] [ref=e234]
+              - generic [ref=e235]:
+                - generic [ref=e236]: 31 ans
+                - text: • Camargue
+              - paragraph [ref=e237]: Adorable jument Camargue de 31 ans retraitée depuis l'âge de 25 ans à cause d'une fourbure, aujourd'hui atteinte de la maladie de Cushing et d'une uvéite
+      - generic [ref=e238]:
+        - heading "Autres animaux" [level=2] [ref=e239]
+        - generic [ref=e240]:
+          - generic [ref=e242]:
+            - img "Ulan" [ref=e244]
+            - generic [ref=e245]:
+              - heading "Ulan" [level=3] [ref=e246]
+              - generic [ref=e247]: Berger du Caucase
+              - paragraph [ref=e248]: Ulan est un berger du Caucase, toujours avec Jingua et très doux malgré sa taille imposante
+          - generic [ref=e250]:
+            - img "Jingua" [ref=e252]
+            - generic [ref=e253]:
+              - heading "Jingua" [level=3] [ref=e254]
+              - paragraph [ref=e255]: Jingua, la compagnone d'Ulan, calme et très gentille.
+          - generic [ref=e257]:
+            - img "Poules" [ref=e259]
+            - generic [ref=e260]:
+              - heading "Poules" [level=3] [ref=e261]
+              - paragraph [ref=e262]: Nos poules du club, souvent avec Jason et Fanny
+          - generic [ref=e264]:
+            - img "Jason" [ref=e266]
+            - generic [ref=e267]:
+              - heading "Jason" [level=3] [ref=e268]
+              - paragraph [ref=e269]: Jason est le bouc du club, toujours accompagné de Fanny
+          - generic [ref=e271]:
+            - img "Fanny" [ref=e273]
+            - generic [ref=e274]:
+              - heading "Fanny" [level=3] [ref=e275]
+              - paragraph [ref=e276]: Fanny est la chèvre du club, adore les câlins
+  - contentinfo [ref=e277]:
+    - generic [ref=e278]:
+      - generic [ref=e279]:
+        - generic [ref=e280]:
+          - heading "Poney Club Desportis" [level=2] [ref=e281]
+          - generic [ref=e282]:
+            - link "Facebook" [ref=e283] [cursor=pointer]:
+              - /url: https://www.facebook.com/p/Poney-Club-Desportis-100027924560857/
+              - img [ref=e284]
+            - link "Instagram" [ref=e286] [cursor=pointer]:
+              - /url: https://www.instagram.com/poneyclubdesportis/
+              - img [ref=e287]
+        - generic [ref=e290]:
+          - heading "Contact" [level=3] [ref=e291]
+          - generic [ref=e292]:
+            - generic [ref=e293]:
+              - img [ref=e294]
+              - link "+33 6 42 87 89 58" [ref=e296] [cursor=pointer]:
+                - /url: tel:+33642878958
+            - generic [ref=e297]:
+              - img [ref=e298]
+              - link "poneyclub.desportis@free.fr" [ref=e301] [cursor=pointer]:
+                - /url: mailto:poneyclub.desportis@free.fr
+        - generic [ref=e302]:
+          - heading "Adresse" [level=3] [ref=e303]
+          - generic [ref=e304]:
+            - img [ref=e305]
+            - generic [ref=e308]:
+              - text: 1070, Chemin Vidau
+              - text: 84160 Cadenet
+              - text: France
+      - paragraph [ref=e310]: © 2026 Poney Club Desportis. Tous droits réservés
+  - button "Open Next.js Dev Tools" [ref=e316] [cursor=pointer]:
+    - img [ref=e317]
+  - alert [ref=e320]
+```

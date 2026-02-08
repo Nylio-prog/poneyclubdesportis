@@ -1,0 +1,297 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link "Poney Club Desportis logo Poney Club Desportis" [ref=e6] [cursor=pointer]:
+          - /url: /en
+          - generic [ref=e7]:
+            - img "Poney Club Desportis logo" [ref=e8]
+            - generic [ref=e9]: Poney Club Desportis
+        - generic [ref=e10]:
+          - list [ref=e11]:
+            - listitem [ref=e12]:
+              - link "Home" [ref=e13] [cursor=pointer]:
+                - /url: /en
+            - listitem [ref=e14]:
+              - link "The Club" [ref=e15] [cursor=pointer]:
+                - /url: /en/le-club
+            - listitem [ref=e16]:
+              - link "Photos" [ref=e17] [cursor=pointer]:
+                - /url: /en/photos
+            - listitem [ref=e18]:
+              - link "Horses" [ref=e19] [cursor=pointer]:
+                - /url: /en/cavalerie
+            - listitem [ref=e20]:
+              - link "News" [ref=e21] [cursor=pointer]:
+                - /url: /en/actualites
+            - listitem [ref=e22]:
+              - link "Lessons" [ref=e23] [cursor=pointer]:
+                - /url: /en/cours
+            - listitem [ref=e24]:
+              - link "Boarding" [ref=e25] [cursor=pointer]:
+                - /url: /en/pensions
+            - listitem [ref=e26]:
+              - link "Contact" [ref=e27] [cursor=pointer]:
+                - /url: /en/contact
+          - status [ref=e28]
+          - button "Change language" [ref=e30] [cursor=pointer]:
+            - generic [ref=e31]: 🇬🇧
+            - generic [ref=e32]: English
+            - img [ref=e33]
+  - main [ref=e35]:
+    - generic [ref=e36]:
+      - generic [ref=e38]:
+        - generic [ref=e40]: Nos Labels
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - img "Label FFE" [ref=e45]
+            - generic [ref=e46]: FFE
+          - generic [ref=e47]:
+            - img "Label Bien-être animal" [ref=e49]
+            - generic [ref=e50]: Bien-être Animal
+          - generic [ref=e51]:
+            - img "Label Poney de France" [ref=e53]
+            - generic [ref=e54]: Poney de France
+          - generic [ref=e55]:
+            - img "Label École Française d'Équitation" [ref=e57]
+            - generic [ref=e58]: École Française d'Équitation
+          - generic [ref=e59]:
+            - img "Label FFE" [ref=e61]
+            - generic [ref=e62]: FFE
+          - generic [ref=e63]:
+            - img "Label Bien-être animal" [ref=e65]
+            - generic [ref=e66]: Bien-être Animal
+          - generic [ref=e67]:
+            - img "Label Poney de France" [ref=e69]
+            - generic [ref=e70]: Poney de France
+          - generic [ref=e71]:
+            - img "Label École Française d'Équitation" [ref=e73]
+            - generic [ref=e74]: École Française d'Équitation
+          - generic [ref=e75]:
+            - img "Label FFE" [ref=e77]
+            - generic [ref=e78]: FFE
+          - generic [ref=e79]:
+            - img "Label Bien-être animal" [ref=e81]
+            - generic [ref=e82]: Bien-être Animal
+          - generic [ref=e83]:
+            - img "Label Poney de France" [ref=e85]
+            - generic [ref=e86]: Poney de France
+          - generic [ref=e87]:
+            - img "Label École Française d'Équitation" [ref=e89]
+            - generic [ref=e90]: École Française d'Équitation
+      - generic [ref=e91]:
+        - img "Poney Club Desportis" [ref=e93]
+        - generic [ref=e94]:
+          - heading "Welcome to Poney Club Desportis" [level=1] [ref=e95]
+          - paragraph [ref=e96]: Happy New Year 2026!
+      - generic [ref=e98]:
+        - heading "Pony Club in Cadenet" [level=2] [ref=e100]
+        - generic [ref=e103]:
+          - generic [ref=e104]:
+            - paragraph [ref=e105]: Notre affiliation
+            - img "Logo Fédération Française d'Équitation" [ref=e106]
+          - generic [ref=e108]:
+            - paragraph [ref=e109]: Fiers de nos labels obtenus depuis 2020
+            - generic [ref=e110]:
+              - img "Logo Bien-être animal" [ref=e111]
+              - img "Logo Poney de France" [ref=e112]
+              - img "Logo qualité" [ref=e113]
+        - generic [ref=e115]:
+          - paragraph [ref=e116]: Welcome to Poney Club Desportis! Established in 2008, our equestrian center is located in Cadenet (84160), in the heart of 27 hectares of preserved nature in the Luberon Park (Vaucluse). We offer a wide range of equestrian activities for all levels, from age 3. Whether you are a beginner or an experienced rider, you can enjoy adapted lessons, training courses, trail rides, as well as boarding services for your horses and ponies.
+          - paragraph [ref=e117]: The welfare of our animals is at the heart of our concerns, as evidenced by our "Animal Welfare" certification. We are also proud of our "Poney de France" and "Quality" labels, which guarantee high-quality teaching in adapted and secure facilities.
+          - paragraph [ref=e118]: Throughout the year, we organize events such as training courses, competitions, and club celebrations. These moments are an opportunity to share our passion in a friendly atmosphere.
+          - paragraph [ref=e119]: Poney Club Desportis is much more than just an equestrian center. It's a space where respect, safety, and the pleasure of horse riding come together to offer an unforgettable experience, whether for a trail ride, a lesson, or boarding your horse.
+        - generic [ref=e121]:
+          - heading "Pass'Sport" [level=3] [ref=e122]
+          - paragraph [ref=e123]: Nous sommes éligibles au dispositif Pass'Sport
+          - img "Logo Pass'Sport" [ref=e124]
+        - generic [ref=e125]:
+          - heading "Upcoming Events" [level=3] [ref=e126]
+          - generic [ref=e127]:
+            - group "Calendar view selection" [ref=e128]:
+              - button "Month" [pressed] [ref=e129] [cursor=pointer]:
+                - img [ref=e130]
+                - generic [ref=e132]: Month
+              - button "Agenda" [ref=e133] [cursor=pointer]:
+                - img [ref=e134]
+                - generic [ref=e135]: Agenda
+            - generic [ref=e137]:
+              - generic [ref=e138]:
+                - generic [ref=e139]:
+                  - button "Today" [ref=e140] [cursor=pointer]
+                  - button "Previous" [ref=e141] [cursor=pointer]
+                  - button "Next" [ref=e142] [cursor=pointer]
+                - generic [ref=e143]: February 2026
+                - generic [ref=e144]:
+                  - button "Month" [ref=e145] [cursor=pointer]
+                  - button "Week" [ref=e146] [cursor=pointer]
+                  - button "Agenda" [ref=e147] [cursor=pointer]
+              - table "Month View" [ref=e148]:
+                - row "Mon Tue Wed Thu Fri Sat Sun" [ref=e149]:
+                  - columnheader "Mon" [ref=e151]
+                  - columnheader "Tue" [ref=e153]
+                  - columnheader "Wed" [ref=e155]
+                  - columnheader "Thu" [ref=e157]
+                  - columnheader "Fri" [ref=e159]
+                  - columnheader "Sat" [ref=e161]
+                  - columnheader "Sun" [ref=e163]
+                - rowgroup [ref=e164]:
+                  - row "26 27 28 29 30 31 01" [ref=e173]:
+                    - generic [ref=e174]:
+                      - cell "26" [ref=e175]:
+                        - button "26" [ref=e176] [cursor=pointer]
+                      - cell "27" [ref=e177]:
+                        - button "27" [ref=e178] [cursor=pointer]
+                      - cell "28" [ref=e179]:
+                        - button "28" [ref=e180] [cursor=pointer]
+                      - cell "29" [ref=e181]:
+                        - button "29" [ref=e182] [cursor=pointer]
+                      - cell "30" [ref=e183]:
+                        - button "30" [ref=e184] [cursor=pointer]
+                      - cell "31" [ref=e185]:
+                        - button "31" [ref=e186] [cursor=pointer]
+                      - cell "01" [ref=e187]:
+                        - button "01" [ref=e188] [cursor=pointer]
+                - rowgroup [ref=e189]:
+                  - row "02 03 04 05 06 07 08 Concours Équifun et CSO - Dimanche 8 février 9:30 am - 12:30 pm" [ref=e198]:
+                    - generic [ref=e199]:
+                      - cell "02" [ref=e200]:
+                        - button "02" [ref=e201] [cursor=pointer]
+                      - cell "03" [ref=e202]:
+                        - button "03" [ref=e203] [cursor=pointer]
+                      - cell "04" [ref=e204]:
+                        - button "04" [ref=e205] [cursor=pointer]
+                      - cell "05" [ref=e206]:
+                        - button "05" [ref=e207] [cursor=pointer]
+                      - cell "06" [ref=e208]:
+                        - button "06" [ref=e209] [cursor=pointer]
+                      - cell "07" [ref=e210]:
+                        - button "07" [ref=e211] [cursor=pointer]
+                      - cell "08" [ref=e212]:
+                        - button "08" [ref=e213] [cursor=pointer]
+                    - generic "Concours Équifun et CSO - Dimanche 8 février" [ref=e218] [cursor=pointer]:
+                      - button "Concours Équifun et CSO - Dimanche 8 février 9:30 am - 12:30 pm" [ref=e219]:
+                        - text: Concours Équifun et CSO - Dimanche 8 février
+                        - text: 9:30 am - 12:30 pm
+                - rowgroup [ref=e220]:
+                  - row "09 10 11 12 13 14 15" [ref=e229]:
+                    - generic [ref=e230]:
+                      - cell "09" [ref=e231]:
+                        - button "09" [ref=e232] [cursor=pointer]
+                      - cell "10" [ref=e233]:
+                        - button "10" [ref=e234] [cursor=pointer]
+                      - cell "11" [ref=e235]:
+                        - button "11" [ref=e236] [cursor=pointer]
+                      - cell "12" [ref=e237]:
+                        - button "12" [ref=e238] [cursor=pointer]
+                      - cell "13" [ref=e239]:
+                        - button "13" [ref=e240] [cursor=pointer]
+                      - cell "14" [ref=e241]:
+                        - button "14" [ref=e242] [cursor=pointer]
+                      - cell "15" [ref=e243]:
+                        - button "15" [ref=e244] [cursor=pointer]
+                - rowgroup [ref=e245]:
+                  - row "16 17 18 19 20 21 22" [ref=e254]:
+                    - generic [ref=e255]:
+                      - cell "16" [ref=e256]:
+                        - button "16" [ref=e257] [cursor=pointer]
+                      - cell "17" [ref=e258]:
+                        - button "17" [ref=e259] [cursor=pointer]
+                      - cell "18" [ref=e260]:
+                        - button "18" [ref=e261] [cursor=pointer]
+                      - cell "19" [ref=e262]:
+                        - button "19" [ref=e263] [cursor=pointer]
+                      - cell "20" [ref=e264]:
+                        - button "20" [ref=e265] [cursor=pointer]
+                      - cell "21" [ref=e266]:
+                        - button "21" [ref=e267] [cursor=pointer]
+                      - cell "22" [ref=e268]:
+                        - button "22" [ref=e269] [cursor=pointer]
+                - rowgroup [ref=e270]:
+                  - row "23 24 25 26 27 28 01" [ref=e279]:
+                    - generic [ref=e280]:
+                      - cell "23" [ref=e281]:
+                        - button "23" [ref=e282] [cursor=pointer]
+                      - cell "24" [ref=e283]:
+                        - button "24" [ref=e284] [cursor=pointer]
+                      - cell "25" [ref=e285]:
+                        - button "25" [ref=e286] [cursor=pointer]
+                      - cell "26" [ref=e287]:
+                        - button "26" [ref=e288] [cursor=pointer]
+                      - cell "27" [ref=e289]:
+                        - button "27" [ref=e290] [cursor=pointer]
+                      - cell "28" [ref=e291]:
+                        - button "28" [ref=e292] [cursor=pointer]
+                      - cell "01" [ref=e293]:
+                        - button "01" [ref=e294] [cursor=pointer]
+      - generic [ref=e296]:
+        - heading "What Our Riders Say" [level=3] [ref=e298]
+        - generic [ref=e299]:
+          - generic [ref=e302]:
+            - paragraph [ref=e305]: Charlie K.
+            - paragraph [ref=e306]: "\"Un Poney Club où il fait bon vivre, où les animaux évoluent dans le respect, où les enfants s'épanouissent en apprenant à se responsabiliser au travers de ce merveilleux sport individuel qui se pratique à deux 🐎 et tout cela dans un cadre magnifique en pleine nature 🌱\""
+            - generic [ref=e307]:
+              - img [ref=e308]
+              - img [ref=e310]
+              - img [ref=e312]
+              - img [ref=e314]
+              - img [ref=e316]
+          - generic [ref=e320]:
+            - paragraph [ref=e323]: Audrey C.
+            - paragraph [ref=e324]: "\"Je remercie Béatrice de s'occuper aussi bien de ma jument qui est en pension en groupe chez elle depuis 4 ans. Cadre magnifique au milieu de la colline de cadenet. Lieu apaisant et sécurisant. Béatrice assure quotidiennement le bien être de tous les chevaux, elle propose des cours poneys dans le respect des animaux et dans la bienveillance.\""
+            - generic [ref=e325]:
+              - img [ref=e326]
+              - img [ref=e328]
+              - img [ref=e330]
+              - img [ref=e332]
+              - img [ref=e334]
+          - generic [ref=e338]:
+            - paragraph [ref=e341]: Eugénie K.
+            - paragraph [ref=e342]: "\"Club très accueillant, deux superbes coachs, des cours pour les petits comme pour les grands, des cours variés, des super poneys et chevaux adaptés à tous les niveaux. De nombreuses balades et super point de vue !\""
+            - generic [ref=e343]:
+              - img [ref=e344]
+              - img [ref=e346]
+              - img [ref=e348]
+              - img [ref=e350]
+              - img [ref=e352]
+  - contentinfo [ref=e354]:
+    - generic [ref=e355]:
+      - generic [ref=e356]:
+        - generic [ref=e357]:
+          - heading "Poney Club Desportis" [level=2] [ref=e358]
+          - generic [ref=e359]:
+            - link "Facebook" [ref=e360] [cursor=pointer]:
+              - /url: https://www.facebook.com/p/Poney-Club-Desportis-100027924560857/
+              - img [ref=e361]
+            - link "Instagram" [ref=e363] [cursor=pointer]:
+              - /url: https://www.instagram.com/poneyclubdesportis/
+              - img [ref=e364]
+        - generic [ref=e367]:
+          - heading "Contact" [level=3] [ref=e368]
+          - generic [ref=e369]:
+            - generic [ref=e370]:
+              - img [ref=e371]
+              - link "+33 6 42 87 89 58" [ref=e373] [cursor=pointer]:
+                - /url: tel:+33642878958
+            - generic [ref=e374]:
+              - img [ref=e375]
+              - link "poneyclub.desportis@free.fr" [ref=e378] [cursor=pointer]:
+                - /url: mailto:poneyclub.desportis@free.fr
+        - generic [ref=e379]:
+          - heading "Address" [level=3] [ref=e380]
+          - generic [ref=e381]:
+            - img [ref=e382]
+            - generic [ref=e385]:
+              - text: 1070, Chemin Vidau
+              - text: 84160 Cadenet
+              - text: France
+      - paragraph [ref=e387]: © 2026 Poney Club Desportis. All rights reserved
+  - button "Open Next.js Dev Tools" [ref=e393] [cursor=pointer]:
+    - img [ref=e394]
+  - alert [ref=e397]
+```
