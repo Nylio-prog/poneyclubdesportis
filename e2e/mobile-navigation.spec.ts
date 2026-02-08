@@ -23,8 +23,8 @@ test.describe('Mobile Navigation', () => {
     const mobileNav = page.locator('#mobile-navigation');
     await expect(mobileNav).toBeVisible();
     
-    // Close menu by clicking toggle again
-    await page.click('button[aria-label="Toggle menu"]');
+    // Close menu by clicking the close button inside the menu
+    await page.locator('button[aria-label="Close menu"]').click();
     
     // Menu should be hidden
     await expect(mobileNav).not.toBeVisible();
