@@ -28,13 +28,6 @@ export default function EventListView({ events, locale, onEventClick }: EventLis
   const timeFormat = locale === 'fr' ? 'HH:mm' : 'h:mm a';
   const dateFormat = locale === 'fr' ? 'dd/MM/yyyy' : 'MM/dd/yyyy';
 
-  // Sort events chronologically
-  const sortedEvents = [...events].sort((a, b) => {
-    const dateA = new Date(`${a.startDate} ${a.startHour}`);
-    const dateB = new Date(`${b.startDate} ${b.startHour}`);
-    return dateA.getTime() - dateB.getTime();
-  });
-
   const isPastEvent = (event: Event) => {
     const endDateTime = new Date(`${event.endDate} ${event.endHour}`);
     return isPast(endDateTime) && !isToday(endDateTime);
@@ -44,6 +37,61 @@ export default function EventListView({ events, locale, onEventClick }: EventLis
     const startDate = new Date(event.startDate);
     return isToday(startDate);
   };
+
+  // Get the 3 nearest events: upcoming first, then future, then past
+  const getNearestEvents = (events: Event[], limit: number = 3): Event[] => {
+    const now = new Date();
+    
+    // Separate events into categories
+    const upcomingEvents: Event[] = [];
+    const futureEvents: Event[] = [];
+    const pastEvents: Event[] = [];
+    
+    events.forEach(event => {
+      const startDateTime = new Date(`${event.startDate} ${event.startHour}`);
+      const endDateTime = new Date(`${event.endDate} ${event.endHour}`);
+      
+      if (isPast(endDateTime) && !isToday(endDateTime)) {
+        // Past event
+        pastEvents.push(event);
+      } else if (startDateTime <= now && endDateTime >= now) {
+        // Ongoing event (happening now or today)
+        upcomingEvents.push(event);
+      } else {
+        // Future event
+        futureEvents.push(event);
+      }
+    });
+    
+    // Sort upcoming events by start time (closest first)
+    upcomingEvents.sort((a, b) => {
+      const dateA = new Date(`${a.startDate} ${a.startHour}`);
+      const dateB = new Date(`${b.startDate} ${b.startHour}`);
+      return dateA.getTime() - dateB.getTime();
+    });
+    
+    // Sort future events by start time (closest first)
+    futureEvents.sort((a, b) => {
+      const dateA = new Date(`${a.startDate} ${a.startHour}`);
+      const dateB = new Date(`${b.startDate} ${b.startHour}`);
+      return dateA.getTime() - dateB.getTime();
+    });
+    
+    // Sort past events by end time (most recent first)
+    pastEvents.sort((a, b) => {
+      const dateA = new Date(`${a.endDate} ${a.endHour}`);
+      const dateB = new Date(`${b.endDate} ${b.endHour}`);
+      return dateB.getTime() - dateA.getTime();
+    });
+    
+    // Combine: upcoming first, then future, then past
+    const combined = [...upcomingEvents, ...futureEvents, ...pastEvents];
+    
+    // Return only the first 'limit' events
+    return combined.slice(0, limit);
+  };
+
+  const sortedEvents = getNearestEvents(events, 3);
 
   if (sortedEvents.length === 0) {
     return (
