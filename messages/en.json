@@ -26,6 +26,11 @@
     },
     "testimonials": {
       "title": "What Our Riders Say"
+    },
+    "certifications": {
+      "ourLabels": "Our Labels",
+      "ourAffiliation": "Our Affiliation",
+      "proudOfLabels": "Proud of our labels obtained since 2020"
     }
   },
   "calendar": {
