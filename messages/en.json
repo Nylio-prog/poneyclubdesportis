@@ -140,11 +140,34 @@
       "teensChildren": "Teens level 4-5-6 / Children 4-10 years",
       "childrenCompetition": "Children 4-10 years / Competition class",
       "teensBaby": "Teens level 4-5-6 / Baby pony"
+    },
+    "pricing": {
+      "title": "Our Rates and Registration",
+      "viewRates": "View our rates in PDF",
+      "viewMembership": "View our membership form in PDF"
+    },
+    "license": {
+      "title": "License and Medical Certificates",
+      "questionnairesTitle": "Self-Assessment Documents",
+      "viewAdults": "View FFE self-assessment / certificate for adults in PDF",
+      "viewMinors": "View FFE self-assessment / certificate for minors in PDF",
+      "medicalTitle": "Medical Requirements",
+      "medicalIntro": "The rider subscribing to or renewing a practitioner's license certifies having obtained a favorable medical opinion according to the following procedures:",
+      "minors": "Minors:",
+      "minorsText": "Certificate of negative response to the self-assessment.",
+      "adultsUnder40": "Adults under 40 years:",
+      "adultsUnder40First": "First application: Medical certificate of no contraindication.",
+      "adultsUnder40Renewal": "Renewal: Certificate of negative response to the self-assessment.",
+      "adults40Plus": "Adults 40 years and over:",
+      "adults40PlusFirst": "First application and every three years: Medical certificate of no contraindication.",
+      "adults40PlusBetween": "Between two certificates: Certificate of negative response to the self-assessment.",
+      "source": "Source:",
+      "ffeLink": "French Equestrian Federation (FFE) - License FAQ"
     }
   },
   "leClub": {
     "title": "About Poney Club Desportis",
-    "diplomas": "Our Diplomas and Certifications",
+    "diplomasTitle": "Our Diplomas and Certifications",
     "diplomasIntro": "At Poney Club Desportis, we are proud of our achievements and the quality of our teaching. Here are our diplomas and certifications:",
     "rules": "Internal Rules",
     "rulesText": "To ensure the proper functioning of our club and the safety of everyone, we invite you to consult our",

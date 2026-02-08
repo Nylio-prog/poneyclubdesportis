@@ -140,11 +140,34 @@
       "teensChildren": "Ado galop 4-5-6 / Enfant 4-10 ans",
       "childrenCompetition": "Enfant 4-10 ans / Cours compétition",
       "teensBaby": "Ado galop 4-5-6 / Baby poney"
+    },
+    "pricing": {
+      "title": "Nos tarifs et inscription",
+      "viewRates": "Voir nos tarifs en PDF",
+      "viewMembership": "Voir notre fiche d'adhésion en PDF"
+    },
+    "license": {
+      "title": "Licence et attestations médicales",
+      "questionnairesTitle": "Documents d'auto-questionnaire",
+      "viewAdults": "Voir l'auto-questionnaire FFE / attestation pour les majeurs en PDF",
+      "viewMinors": "Voir l'auto-questionnaire FFE / attestation pour les mineurs en PDF",
+      "medicalTitle": "Exigences médicales",
+      "medicalIntro": "Le cavalier souscrivant ou renouvelant une licence de pratiquant atteste avoir recueilli un avis médical favorable selon les modalités suivantes :",
+      "minors": "Mineurs :",
+      "minorsText": "Attestation de réponse négative à l'auto-questionnaire.",
+      "adultsUnder40": "Majeurs de moins de 40 ans :",
+      "adultsUnder40First": "Première demande : Certificat médical de non contre-indication.",
+      "adultsUnder40Renewal": "Renouvellement : Attestation de réponse négative à l'auto-questionnaire.",
+      "adults40Plus": "Majeurs de 40 ans et plus :",
+      "adults40PlusFirst": "Première demande et tous les trois ans : Certificat médical de non contre-indication.",
+      "adults40PlusBetween": "Entre deux certificats : Attestation de réponse négative à l'auto-questionnaire.",
+      "source": "Source :",
+      "ffeLink": "Fédération Française d'Equitation (FFE) - FAQ sur la licence"
     }
   },
   "leClub": {
     "title": "Présentation du Poney Club Desportis",
-    "diplomas": "Nos Diplômes et Certifications",
+    "diplomasTitle": "Nos Diplômes et Certifications",
     "diplomasIntro": "Au Poney Club Desportis, nous sommes fiers de nos accomplissements et de la qualité de notre enseignement. Voici nos diplômes et certifications :",
     "rules": "Règlement Intérieur",
     "rulesText": "Pour assurer le bon fonctionnement de notre club et la sécurité de tous, nous vous invitons à consulter notre",

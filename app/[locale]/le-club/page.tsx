@@ -125,7 +125,7 @@ export default function LeClubPage() {
 
       <div className="max-w-4xl mx-auto px-4 my-12">
         <h2 className="text-3xl font-semibold mb-8 text-center text-[var(--deep-burgundy)]">
-          {t('diplomas')}
+          {t('diplomasTitle')}
         </h2>
         <p className="text-lg mb-4">
           {t('diplomasIntro')}
