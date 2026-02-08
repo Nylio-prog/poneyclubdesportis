@@ -14,10 +14,10 @@ test.describe('Language Switching', () => {
     const htmlLang = await page.getAttribute('html', 'lang');
     expect(htmlLang).toBe('fr');
     
-    // Check French flag is visible in language switcher
+    // Check FR text is visible in language switcher
     const languageSwitcher = page.locator('button[aria-label="Change language"]');
     await expect(languageSwitcher).toBeVisible();
-    await expect(languageSwitcher).toContainText('🇫🇷');
+    await expect(languageSwitcher).toContainText('FR');
   });
 
   test('should switch from French to English', async ({ page }) => {
@@ -44,9 +44,9 @@ test.describe('Language Switching', () => {
     const htmlLang = await page.getAttribute('html', 'lang');
     expect(htmlLang).toBe('en');
     
-    // Verify English flag is now shown
+    // Verify EN text is now shown
     const languageSwitcher = page.locator('button[aria-label="Change language"]');
-    await expect(languageSwitcher).toContainText('🇬🇧');
+    await expect(languageSwitcher).toContainText('EN');
   });
 
   test('should switch from English back to French', async ({ page }) => {
@@ -77,9 +77,9 @@ test.describe('Language Switching', () => {
     const htmlLang = await page.getAttribute('html', 'lang');
     expect(htmlLang).toBe('fr');
     
-    // Verify French flag is now shown
+    // Verify FR text is now shown
     const languageSwitcher = page.locator('button[aria-label="Change language"]');
-    await expect(languageSwitcher).toContainText('🇫🇷');
+    await expect(languageSwitcher).toContainText('FR');
   });
 
   test('should maintain language when navigating between pages', async ({ page }) => {
