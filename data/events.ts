@@ -251,4 +251,15 @@ export const events = [
       "On se retrouve dimanche matin pour les épreuves d'équifun (petits poneys) et de CSO (ados).",
     image: "",
   },
+  {
+    title:
+      "Stages shetlands",
+    startDate: "2026-02-16",
+    endDate: "2026-02-23",
+    startHour: "14:00",
+    endHour: "17:00",
+    description:
+      "Du 16 au 23 Février, le Poney club Desportis vous propose des stages de 3 heures pour enfants avec préparation du poney, des jeux, une promenade et de la voltige, etc. Pensez à vous inscrire !",
+    image: "",
+  },
 ];
