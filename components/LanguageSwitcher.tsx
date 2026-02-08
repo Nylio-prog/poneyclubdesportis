@@ -26,6 +26,9 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
     
     setIsOpen(false);
     
+    // Set cookie to persist language choice
+    document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;
+    
     // Get the current full pathname from window.location
     const currentPath = window.location.pathname;
     let pathWithoutLocale = currentPath;
