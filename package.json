@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "analyze": "ANALYZE=true next build"
+    "analyze": "ANALYZE=true next build",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:report": "playwright show-report"
   },
   "dependencies": {
     "@next/third-parties": "^14.2.5",
@@ -38,6 +42,7 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^16.1.6",
+    "@playwright/test": "^1.58.2",
     "@types/node": "^20.17.12",
     "@types/react": "^18.3.18",
     "@types/react-big-calendar": "^1.8.9",
