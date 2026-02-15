@@ -74,6 +74,9 @@ const CertificationBar = () => {
                     alt={cert.alt}
                     width={40}
                     height={40}
+                    loading="lazy"
+                    fetchPriority="low"
+                    quality={60}
                     className="object-contain max-w-full max-h-full mix-blend-multiply"
                   />
                 </div>

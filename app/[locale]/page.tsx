@@ -7,6 +7,7 @@ import PassSportLogo from "@/components/PassportLogo";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import { events } from "@/data/events";
 import CertificationBar from "@/components/CertificationBar";
+import heroImage from "@/public/hero-image.jpg";
 
 // Dynamically import Calendar component for code splitting
 // This reduces the initial bundle size by loading the calendar only when needed
@@ -39,14 +40,16 @@ export default function Accueil() {
       <section className="relative w-full h-screen md:h-100vh">
         <div className="absolute inset-0 overflow-hidden">
           <ResponsiveImage
-            src="/hero-image.jpg"
+            src={heroImage}
             alt="Poney Club Desportis"
             fill
             objectFit="cover"
             objectPosition="center center"
-            priority
+            preload
+            fetchPriority="high"
             placeholder="blur"
-            blurDataURL="/hero-image-blur.jpg"
+            quality={60}
+            decoding="async"
             sizes="100vw"
           />
         </div>
