@@ -343,4 +343,17 @@ export const events = [
       "From February 16 to 23, Poney Club Desportis offers 3-hour courses for children with pony preparation, games, a walk and vaulting, etc. Remember to register!",
     image: "",
   },
+  {
+    title: "Semaine de stages shetlands - Vacances de Pâques",
+    titleEn: "Shetland Course Week - Easter Holidays",
+    startDate: "2026-04-13",
+    endDate: "2026-04-17",
+    startHour: "14:00",
+    endHour: "17:00",
+    description:
+      "Pendant les vacances de Pâques, le Poney Club Desportis propose une semaine de stages shetlands du 13 au 17 avril, de 14h à 17h, pour les enfants de 3 à 10 ans. Au programme : préparation des poneys, jeux, balade et découverte ludique de l'équitation. Une chasse aux oeufs sera organisée le mardi 14 avril. Tarif : 45 EUR la demi-journée, ou 40 EUR par demi-journée pour 3 stages réservés.",
+    descriptionEn:
+      "During the Easter holidays, Poney Club Desportis is offering a week of Shetland courses from April 13 to 17, from 2pm to 5pm, for children aged 3 to 10. The program includes pony grooming, games, rides and a fun introduction to horse riding. An egg hunt will be held on Tuesday, April 14. Price: EUR45 per half-day, or EUR40 per half-day when booking 3 courses.",
+    image: "",
+  },
 ];
