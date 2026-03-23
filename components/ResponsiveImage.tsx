@@ -17,7 +17,7 @@ interface ResponsiveImageProps extends Omit<ImageProps, 'sizes'> {
   /**
    * Image source URL
    */
-  src: string;
+  src: ImageProps['src'];
   
   /**
    * Alt text for accessibility
@@ -71,6 +71,7 @@ export default function ResponsiveImage({
   src,
   alt,
   priority = false,
+  preload = false,
   sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
   objectFit = "cover",
   objectPosition = "center",
@@ -85,7 +86,7 @@ export default function ResponsiveImage({
     alt,
     sizes,
     className,
-    priority,
+    ...(preload ? { preload: true } : { priority }),
     style: {
       objectFit,
       objectPosition,
@@ -94,12 +95,13 @@ export default function ResponsiveImage({
     ...props,
   };
   
-  // Add blur placeholder only if blurDataURL is provided
-  if (placeholder === "blur" && blurDataURL) {
+  // Allow static imports to use Next.js auto-generated blur placeholders.
+  if (placeholder === "blur") {
     imageProps.placeholder = "blur";
-    imageProps.blurDataURL = blurDataURL;
+    if (blurDataURL) {
+      imageProps.blurDataURL = blurDataURL;
+    }
   } else {
-    // Use empty placeholder if no blurDataURL provided
     imageProps.placeholder = "empty";
   }
   

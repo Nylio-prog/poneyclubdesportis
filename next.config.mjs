@@ -12,8 +12,10 @@ const withBundleAnalyzer = bundleAnalyzer({
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    // Enable modern image formats for better compression
-    formats: ["image/avif", "image/webp"],
+    // Prefer WebP first to reduce first-request image encoding time.
+    formats: ["image/webp", "image/avif"],
+    // Allow explicit quality levels used by next/image in this project
+    qualities: [60, 75],
     
     // Configure image domains (add external domains if needed)
     remotePatterns: [
@@ -32,7 +34,7 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     
     // Minimize layout shift with proper sizing
-    minimumCacheTTL: 60,
+    minimumCacheTTL: 2678400,
     
     // Enable image optimization
     unoptimized: false,
