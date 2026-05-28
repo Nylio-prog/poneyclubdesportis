@@ -356,4 +356,17 @@ export const events = [
       "During the Easter holidays, Poney Club Desportis is offering a week of Shetland courses from April 13 to 17, from 2pm to 5pm, for children aged 3 to 10. The program includes pony grooming, games, rides and a fun introduction to horse riding. An egg hunt will be held on Tuesday, April 14. Price: EUR45 per half-day, or EUR40 per half-day when booking 3 courses.",
     image: "",
   },
+  {
+    title: "Concours interne hunter et CSO",
+    titleEn: "Internal Hunter and Show Jumping Competition",
+    startDate: "2026-05-24",
+    endDate: "2026-05-24",
+    startHour: "10:00",
+    endHour: "17:00",
+    description:
+      "Le dimanche 24 mai, le Poney Club Desportis organise un concours interne. Au programme : hunter le matin pour les petits à shetlands, et CSO pour les cavaliers à double poney ou cheval. Participation : 20 EUR.",
+    descriptionEn:
+      "On Sunday, May 24, Poney Club Desportis is organizing an internal competition. The program includes hunter in the morning for young riders on Shetlands, and show jumping for riders on double ponies or horses. Participation fee: EUR20.",
+    image: "",
+},
 ];
