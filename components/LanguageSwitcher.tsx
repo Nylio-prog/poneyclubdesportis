@@ -1,9 +1,9 @@
 "use client";
 
 import { useLocale } from 'next-intl';
-import { usePathname } from 'next/navigation';
 import { locales, localeFlags, localeNames } from '@/lib/i18n/config';
 import { useState, useEffect } from 'react';
+import { usePathname, useRouter } from '@/lib/i18n/routing';
 
 interface LanguageSwitcherProps {
   className?: string;
@@ -12,6 +12,7 @@ interface LanguageSwitcherProps {
 export default function LanguageSwitcher({ className = '' }: LanguageSwitcherProps) {
   const locale = useLocale();
   const pathname = usePathname();
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [announcement, setAnnouncement] = useState('');
 
@@ -25,39 +26,7 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
     );
     
     setIsOpen(false);
-    
-    // Set cookie to persist language choice
-    document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;
-    
-    // Get the current full pathname from window.location
-    const currentPath = window.location.pathname;
-    let pathWithoutLocale = currentPath;
-    
-    // Remove current locale prefix if it exists
-    // Handle both /en and /fr prefixes (even though /fr shouldn't exist with as-needed)
-    if (currentPath.startsWith('/en/')) {
-      pathWithoutLocale = currentPath.slice(3); // Remove '/en'
-    } else if (currentPath === '/en') {
-      pathWithoutLocale = '/';
-    } else if (currentPath.startsWith('/fr/')) {
-      pathWithoutLocale = currentPath.slice(3); // Remove '/fr'
-    } else if (currentPath === '/fr') {
-      pathWithoutLocale = '/';
-    } else {
-      // Already on French (no prefix), keep the path as is
-      pathWithoutLocale = currentPath;
-    }
-    
-    // Ensure pathWithoutLocale starts with /
-    if (!pathWithoutLocale.startsWith('/')) {
-      pathWithoutLocale = '/' + pathWithoutLocale;
-    }
-    
-    // Build new URL: French (default) has no prefix, English has /en prefix
-    const newUrl = newLocale === 'fr' ? pathWithoutLocale : `/en${pathWithoutLocale}`;
-    
-    // Navigate to new URL
-    window.location.href = newUrl;
+    router.replace(pathname, { locale: newLocale });
   };
 
   // Clear announcement after it's been read

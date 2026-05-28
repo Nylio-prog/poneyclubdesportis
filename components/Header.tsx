@@ -5,13 +5,11 @@ import { usePathname } from "next/navigation";
 import { Link } from "@/lib/i18n/routing";
 import { useTranslations } from 'next-intl';
 import { useState } from "react";
-import { useLocale } from 'next-intl';
 import LanguageSwitcher from "./LanguageSwitcher";
 import MobileNav from "./mobile/MobileNav";
 
 const Header = () => {
   const pathname = usePathname();
-  const locale = useLocale();
   const t = useTranslations('nav');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -29,7 +27,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-[var(--deep-burgundy)] text-[var(--ivory)] z-50 border-b border-[var(--ivory)]/10 shadow-md">
+    <header className="sticky top-0 bg-[var(--deep-burgundy)] text-[var(--ivory)] z-50 border-b border-[var(--ivory)]/10 shadow-md">
       {/* Main Navigation */}
       <nav className="p-4">
         <div className="flex justify-between items-center max-w-6xl mx-auto">

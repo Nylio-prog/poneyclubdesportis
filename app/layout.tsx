@@ -22,6 +22,7 @@ export default async function RootLayout({
     <html lang={locale || 'fr'} suppressHydrationWarning>
       <body
         className={`${GeistSans.className} flex flex-col min-h-screen`}
+        suppressHydrationWarning
       >
         <Analytics />
         <SpeedInsights />

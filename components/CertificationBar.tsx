@@ -36,10 +36,10 @@ const CertificationBar = () => {
   ];
 
   return (
-    <section className="w-full bg-[var(--ivory)] text-[var(--deep-burgundy)] py-2 pt-6 shadow-md relative z-40 border-b border-[#5A0F1D]/10">
+    <section className="w-full bg-[var(--ivory)] text-[var(--deep-burgundy)] py-2 shadow-md relative z-40 border-b border-[#5A0F1D]/10">
       
       {/* Container matched to Header width (max-w-6xl) */}
-      <div className="max-w-6xl mx-auto px-4 flex items-center justify-center h-12">
+      <div className="max-w-6xl mx-auto px-4 flex items-center justify-center h-10">
         
         {/* UNIFIED LABEL BLOCK (Mobile & Desktop) */}
         {/* - 'flex': Visible on all screens
@@ -68,7 +68,7 @@ const CertificationBar = () => {
                 className="flex items-center gap-3 flex-shrink-0 mx-6 md:mx-8 group cursor-default"
               >
                 {/* Logo Image */}
-                <div className="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center flex-shrink-0">
+                <div className="relative w-8 h-8 md:w-9 md:h-9 flex items-center justify-center flex-shrink-0">
                   <Image
                     src={cert.src}
                     alt={cert.alt}

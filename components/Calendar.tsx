@@ -1,7 +1,13 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Calendar as BigCalendar, momentLocalizer } from "react-big-calendar";
+import {
+  Calendar as BigCalendar,
+  momentLocalizer,
+  type EventProps,
+  type EventPropGetter,
+  type View,
+} from "react-big-calendar";
 import moment from "moment";
 import "moment/locale/fr";
 import "moment/locale/en-gb";
@@ -33,14 +39,22 @@ interface CalendarProps {
   view?: 'month' | 'agenda';
 }
 
-const Calendar = ({ events, view: initialView }: CalendarProps) => {
+type CalendarEvent = {
+  title: string;
+  start: Date;
+  end: Date;
+  allDay: boolean;
+  resource: Event;
+};
+
+const Calendar = ({ events }: CalendarProps) => {
   const locale = useLocale();
   const t = useTranslations('calendar');
   const isDesktop = useMediaQuery('(min-width: 768px)');
   
   // User preference for view (can override responsive default)
   const [userViewPreference, setUserViewPreference] = useState<'month' | 'list' | null>(null);
-  const [currentView, setCurrentView] = useState("month");
+  const [currentView, setCurrentView] = useState<View>("month");
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -76,7 +90,7 @@ const Calendar = ({ events, view: initialView }: CalendarProps) => {
     });
   }, [events, locale]);
 
-  const handleSelectEvent = (calendarEvent: any) => {
+  const handleSelectEvent = (calendarEvent: CalendarEvent) => {
     setSelectedEvent(calendarEvent.resource);
     setIsModalOpen(true);
   };
@@ -95,7 +109,7 @@ const Calendar = ({ events, view: initialView }: CalendarProps) => {
     return isPast(date) && !isToday(date);
   };
 
-  const EventComponent = ({ event }: { event: any }) => {
+  const EventComponent = ({ event }: EventProps<CalendarEvent>) => {
     const past = isPastEvent(event.end);
     const tooltipText = `${event.title}\n${moment(event.start).format(
       locale === 'fr' ? 'HH:mm' : 'h:mm a'
@@ -138,11 +152,10 @@ const Calendar = ({ events, view: initialView }: CalendarProps) => {
     return {};
   };
 
-  const customEventPropGetter = (
-    event: any,
+  const customEventPropGetter: EventPropGetter<CalendarEvent> = (
+    _event,
     start: Date,
     end: Date,
-    isSelected: boolean
   ) => {
     const past = isPastEvent(end);
     

@@ -9,7 +9,7 @@ const PassSportLogo = () => {
   
   return (
     <div className="flex flex-col items-center mt-8">
-      <h3 className="text-2xl font-bold mb-4">Pass'Sport</h3>
+      <h3 className="text-2xl font-bold mb-4">Pass&apos;Sport</h3>
       <p className="text-center mb-4">
         {t('eligible')}
       </p>

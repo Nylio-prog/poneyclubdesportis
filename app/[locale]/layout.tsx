@@ -4,6 +4,7 @@ import { getMessages } from 'next-intl/server';
 import { setRequestLocale } from 'next-intl/server';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AnnouncementBanner from "@/components/AnnouncementBanner";
 import SkipToContent from "@/components/SkipToContent";
 import { locales, Locale } from "@/lib/i18n/config";
 import { generatePageMetadata } from "@/lib/metadata";
@@ -64,7 +65,10 @@ export default async function LocaleLayout({
       <NextIntlClientProvider messages={messages} locale={locale}>
         <SkipToContent />
         <Header />
-        <main id="main-content" className="flex-grow pt-header">{children}</main>
+        <main id="main-content" className="flex-grow">
+          <AnnouncementBanner />
+          {children}
+        </main>
         <Footer />
       </NextIntlClientProvider>
     </>

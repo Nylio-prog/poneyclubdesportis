@@ -1,89 +1,44 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useState, useEffect } from "react";
-import { track } from "@vercel/analytics/react"; // Step 1
+import { CalendarDays, ChevronRight } from 'lucide-react';
+import { track } from '@vercel/analytics/react';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/lib/i18n/routing';
 
 const AnnouncementBanner = () => {
-  const [isVisible, setIsVisible] = useState(true);
+  const t = useTranslations('announcement');
 
-  useEffect(() => {
-    const bannerClosed = sessionStorage.getItem("announcementBannerClosed");
-    if (bannerClosed === "true") {
-      setIsVisible(false);
-    }
-  }, []);
-
-  const handleClose = () => {
-    setIsVisible(false);
-    sessionStorage.setItem("announcementBannerClosed", "true");
-  };
-
-  // Step 2: Create the handler function
   const handleLinkClick = () => {
-    track("Click Banner Link", {
-      location: "Announcement Banner",
-      text: "En savoir plus",
+    track('Click Banner Link', {
+      location: 'Announcement Banner',
+      text: t('cta'),
+      event: 'ride-and-run-2026',
     });
   };
 
-  if (!isVisible) return null;
-
   return (
-    <div className="fixed top-[82px] left-0 right-0 bg-gradient-to-r from-amber-300 to-amber-500 text-gray-900 z-40 shadow-md">
-      <div className="max-w-6xl mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2 flex-1">
-            <span className="text-2xl animate-pulse" aria-hidden="true">
-              🐴
+    <div className="border-b border-amber-700/20 bg-amber-100 text-gray-900 shadow-sm">
+      <div className="mx-auto max-w-6xl px-4 py-5 sm:py-6">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
+          <div className="flex min-w-0 items-start gap-3 sm:flex-1">
+            <span className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-amber-200 text-amber-900">
+              <CalendarDays className="h-5 w-5" aria-hidden="true" />
             </span>
-            <p className="text-sm sm:text-base font-medium">
-              <span className="font-bold">Forum des associations</span> ce
-              samedi 13 Septembre dès 15h à Cadenet
-            </p>
-            {/* Step 3: Attach the handler */}
+            <div className="min-w-0">
+              <p className="text-sm font-bold leading-5 sm:text-base">{t('title')}</p>
+              <p className="mt-1 text-sm leading-5 sm:text-base">{t('summary')}</p>
+            </div>
+          </div>
+          <div className="flex flex-shrink-0 items-center sm:justify-end">
             <Link
               href="/actualites"
-              className="ml-2 inline-flex items-center text-sm sm:text-base font-semibold underline hover:no-underline transition-all duration-200 whitespace-nowrap"
+              className="inline-flex h-11 min-w-40 flex-shrink-0 items-center justify-center rounded-md bg-[var(--deep-burgundy)] px-5 text-sm font-semibold leading-none text-white transition-colors hover:bg-[var(--vivid-burgundy)]"
               onClick={handleLinkClick}
             >
-              En savoir plus
-              <svg
-                className="ml-1 w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
+              {t('cta')}
+              <ChevronRight className="ml-1 h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
-          <button
-            onClick={handleClose}
-            className="ml-4 text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-amber-400 rounded-full p-1"
-            aria-label="Fermer l'annonce"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
         </div>
       </div>
     </div>

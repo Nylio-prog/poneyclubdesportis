@@ -1,10 +1,11 @@
 import ResponsiveImage from "@/components/ResponsiveImage";
-import { useTranslations, useLocale } from 'next-intl';
+import { useLocale } from 'next-intl';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { events } from "@/data/events";
 import { formatDate, formatTime } from "@/lib/utils";
 import Script from 'next/script';
 import { getEventSchema } from "@/lib/structured-data";
+import { Locale } from "@/lib/i18n/config";
 
 interface Event {
   title: string;
@@ -56,7 +57,6 @@ const EventCard: React.FC<{ event: Event; locale: string }> = ({ event, locale }
 
 export default function ActualitesPage() {
   const locale = useLocale();
-  const t = useTranslations('home.events');
   const currentDate = new Date();
   const sortedEvents = [...events].sort(
     (a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
@@ -70,7 +70,7 @@ export default function ActualitesPage() {
   );
 
   // Generate structured data for upcoming events
-  const eventSchemas = upcomingEvents.map((event) => getEventSchema(event, locale as any));
+  const eventSchemas = upcomingEvents.map((event) => getEventSchema(event, locale as Locale));
 
   return (
     <>

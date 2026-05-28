@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useSyncExternalStore } from 'react';
 
 /**
  * Custom hook to detect media query matches
@@ -6,42 +6,31 @@ import { useState, useEffect } from 'react';
  * @returns boolean indicating if the media query matches
  */
 export function useMediaQuery(query: string): boolean {
-  const [matches, setMatches] = useState(false);
-
-  useEffect(() => {
-    // Check if window is defined (client-side)
+  const subscribe = (callback: () => void) => {
     if (typeof window === 'undefined') {
-      return;
+      return () => {};
     }
 
     const media = window.matchMedia(query);
-    
-    // Set initial value
-    setMatches(media.matches);
 
-    // Create event listener
-    const listener = (event: MediaQueryListEvent) => {
-      setMatches(event.matches);
-    };
-
-    // Add listener (use deprecated addListener for older browsers)
     if (media.addEventListener) {
-      media.addEventListener('change', listener);
+      media.addEventListener('change', callback);
     } else {
-      // Fallback for older browsers
-      media.addListener(listener);
+      media.addListener(callback);
     }
 
-    // Cleanup
     return () => {
       if (media.removeEventListener) {
-        media.removeEventListener('change', listener);
+        media.removeEventListener('change', callback);
       } else {
-        // Fallback for older browsers
-        media.removeListener(listener);
+        media.removeListener(callback);
       }
     };
-  }, [query]);
+  };
 
-  return matches;
+  const getSnapshot = () => (
+    typeof window !== 'undefined' && window.matchMedia(query).matches
+  );
+
+  return useSyncExternalStore(subscribe, getSnapshot, () => false);
 }

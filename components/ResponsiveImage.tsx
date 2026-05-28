@@ -82,6 +82,7 @@ export default function ResponsiveImage({
 }: ResponsiveImageProps) {
   // Prepare image props
   const imageProps: ImageProps = {
+    ...props,
     src,
     alt,
     sizes,
@@ -92,7 +93,6 @@ export default function ResponsiveImage({
       objectPosition,
       ...props.style,
     },
-    ...props,
   };
   
   // Allow static imports to use Next.js auto-generated blur placeholders.
@@ -105,5 +105,7 @@ export default function ResponsiveImage({
     imageProps.placeholder = "empty";
   }
   
+  // The wrapper requires alt in ResponsiveImageProps, but jsx-a11y cannot infer it through the spread.
+  // eslint-disable-next-line jsx-a11y/alt-text
   return <Image {...imageProps} />;
 }

@@ -55,8 +55,6 @@ export default function EventModal({ isOpen, onClose, event, locale }: EventModa
   const endDate = new Date(event.endDate);
   const isSameDay = event.startDate === event.endDate;
 
-  // Format time according to locale (24h for French, 12h for English)
-  const timeFormat = locale === 'fr' ? 'HH:mm' : 'h:mm a';
   const dateFormat = locale === 'fr' ? 'dd/MM/yyyy' : 'MM/dd/yyyy';
 
   const formattedStartDate = format(startDate, dateFormat, { locale: dateLocale });

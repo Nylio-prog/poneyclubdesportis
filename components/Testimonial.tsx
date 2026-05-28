@@ -15,7 +15,7 @@ export function Testimonial({ name, text }: TestimonialProps) {
             <p className="font-semibold text-lg text-gray-800">{name}</p>
           </div>
         </div>
-        <p className="text-gray-600 italic mb-4">"{text}"</p>
+        <p className="text-gray-600 italic mb-4">&quot;{text}&quot;</p>
         <div className="mt-4 flex">
           {Array.from({ length: 5 }).map((_, index) => (
             <Star key={index} />

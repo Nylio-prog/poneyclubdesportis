@@ -59,6 +59,12 @@
     "today": "Today",
     "allDay": "All day"
   },
+  "announcement": {
+    "title": "Club Celebration",
+    "summary": "Ride and Run on Sunday, June 14 from 4pm, aperitif around 7pm.",
+    "cta": "View event",
+    "close": "Close announcement"
+  },
   "animals": {
     "title": "Our Horses",
     "horses": "Horses",

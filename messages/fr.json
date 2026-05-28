@@ -59,6 +59,12 @@
     "today": "Aujourd'hui",
     "allDay": "Toute la journée"
   },
+  "announcement": {
+    "title": "Fête du club",
+    "summary": "Ride and Run dimanche 14 juin dès 16h, apéritif vers 19h.",
+    "cta": "Voir l'événement",
+    "close": "Fermer l'annonce"
+  },
   "animals": {
     "title": "Notre Cavalerie",
     "horses": "Chevaux",

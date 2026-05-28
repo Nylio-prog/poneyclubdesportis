@@ -368,5 +368,18 @@ export const events = [
     descriptionEn:
       "On Sunday, May 24, Poney Club Desportis is organizing an internal competition. The program includes hunter in the morning for young riders on Shetlands, and show jumping for riders on double ponies or horses. Participation fee: EUR20.",
     image: "",
-},
+  },
+  {
+    title: "Fête du club - Ride and Run",
+    titleEn: "Club Celebration - Ride and Run",
+    startDate: "2026-06-14",
+    endDate: "2026-06-14",
+    startHour: "16:00",
+    endHour: "20:00",
+    description:
+      "Nous vous proposons de célébrer la fin d'année dimanche 14 juin autour d'une activité Ride and Run à partir de 16h.\n\nLe principe : des équipes de 2 participants réalisent un parcours en alternant entre le poney et la course à pied.\n\nUn apéritif convivial sera ensuite proposé vers 19h. La participation à l'animation est libre, et vous pouvez également apporter quelque chose à partager pour l'apéritif.\n\nMerci de vous inscrire à l'avance pour l'animation poney.",
+    descriptionEn:
+      "Join us to celebrate the end of the year on Sunday, June 14 with a Ride and Run activity from 4pm.\n\nThe idea: teams of 2 participants complete a course, alternating between riding the pony and running.\n\nA friendly aperitif will then be offered around 7pm. Participation in the activity is free, and you are also welcome to bring something to share for the aperitif.\n\nPlease register in advance for the pony activity.",
+    image: "",
+  },
 ];

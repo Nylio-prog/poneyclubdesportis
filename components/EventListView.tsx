@@ -25,7 +25,6 @@ interface EventListViewProps {
 
 export default function EventListView({ events, locale, onEventClick }: EventListViewProps) {
   const dateLocale = locale === 'fr' ? fr : enUS;
-  const timeFormat = locale === 'fr' ? 'HH:mm' : 'h:mm a';
   const dateFormat = locale === 'fr' ? 'dd/MM/yyyy' : 'MM/dd/yyyy';
 
   const isPastEvent = (event: Event) => {
