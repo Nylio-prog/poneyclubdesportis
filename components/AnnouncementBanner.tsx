@@ -29,7 +29,7 @@ const AnnouncementBanner = () => {
               <p className="mt-1 text-sm leading-5 sm:text-base">{t('summary')}</p>
             </div>
           </div>
-          <div className="flex flex-shrink-0 items-center sm:justify-end">
+          <div className="flex flex-shrink-0 items-center justify-center sm:justify-end">
             <Link
               href="/actualites"
               className="inline-flex h-11 min-w-40 flex-shrink-0 items-center justify-center rounded-md bg-[var(--deep-burgundy)] px-5 text-sm font-semibold leading-none text-white transition-colors hover:bg-[var(--vivid-burgundy)]"
