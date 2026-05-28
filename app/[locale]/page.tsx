@@ -17,6 +17,10 @@ const Calendar = dynamic(() => import("@/components/Calendar"), {
 
 export default function Accueil() {
   const t = useTranslations('home');
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth();
+  const currentYear = currentDate.getFullYear();
+  const showNewYearMessage = currentMonth === 0 || currentMonth === 1;
   
   const testimonials = [
     {
@@ -60,10 +64,11 @@ export default function Accueil() {
             {t('hero.title')}
           </h1>
           
-          {/* Subtitle with text shadow */}
-          <p className="mt-6 text-lg md:text-2xl font-light uppercase tracking-[0.25em] text-[var(--ivory)] text-center opacity-90" style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)' }}>
-            {t('hero.subtitle')}
-          </p>
+          {showNewYearMessage && (
+            <p className="mt-6 text-lg md:text-2xl font-light uppercase tracking-[0.25em] text-[var(--ivory)] text-center opacity-90" style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)' }}>
+              {t('hero.newYear', { year: currentYear })}
+            </p>
+          )}
         </div>
       </section>
 

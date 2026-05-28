@@ -12,7 +12,7 @@
   "home": {
     "hero": {
       "title": "Welcome to Poney Club Desportis",
-      "subtitle": "Happy New Year 2026!"
+      "newYear": "Happy New Year {year}!"
     },
     "about": {
       "title": "Pony Club in Cadenet",
