@@ -382,4 +382,17 @@ export const events = [
       "Join us to celebrate the end of the year on Sunday, June 14 with a Ride and Run activity from 4pm.\n\nThe idea: teams of 2 participants complete a course, alternating between riding the pony and running.\n\nA friendly aperitif will then be offered around 7pm. Participation in the activity is free, and you are also welcome to bring something to share for the aperitif.\n\nPlease register in advance for the pony activity.",
     image: "",
   },
+  {
+    title: "Stages enfants shetlands - Vacances d'été",
+    titleEn: "Children's Shetland Courses - Summer Holidays",
+    startDate: "2026-07-06",
+    endDate: "2026-08-14",
+    startHour: "09:30",
+    endHour: "12:30",
+    description:
+      "Pendant les vacances d'été, le Poney Club Desportis propose des stages enfants à shetlands du 6 juillet au 14 août, de 9h30 à 12h30, pour les enfants de 3 à 10 ans.\n\nIl est possible de réserver une seule demi-journée.\n\nTarif : 45 EUR la demi-journée, ou 40 EUR par demi-journée pour toute réservation d'au moins 3 stages.",
+    descriptionEn:
+      "During the summer holidays, Poney Club Desportis is offering Shetland courses from July 6 to August 14, from 9:30am to 12:30pm, for children aged 3 to 10.\n\nIt is possible to book just one half-day.\n\nPrice: EUR45 per half-day, or EUR40 per half-day when booking at least 3 courses.",
+    image: "",
+  },
 ];
