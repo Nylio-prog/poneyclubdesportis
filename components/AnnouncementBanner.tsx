@@ -12,7 +12,7 @@ const AnnouncementBanner = () => {
     track('Click Banner Link', {
       location: 'Announcement Banner',
       text: t('cta'),
-      event: 'ride-and-run-2026',
+      event: 'summer-offers-2026',
     });
   };
 

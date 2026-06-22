@@ -383,6 +383,32 @@ export const events = [
     image: "",
   },
   {
+    title: "Forfait demi-pension été - Juillet et août",
+    titleEn: "Summer Half-Board Package - July and August",
+    startDate: "2026-07-01",
+    endDate: "2026-08-31",
+    startHour: "09:00",
+    endHour: "18:00",
+    description:
+      "Cet été, nous proposons un forfait demi-pension d'un mois avec votre poney préféré. Il comprend chaque semaine un cours d'une heure, une séance en autonomie et une promenade. Offre disponible en juillet et en août. Tarif : 220 EUR par mois.",
+    descriptionEn:
+      "This summer, we are offering a one-month half-board package with your favorite pony. Each week includes a one-hour lesson, one independent riding session and one trail ride. Available in July and August. Price: EUR220 per month.",
+    image: "",
+  },
+  {
+    title: "Stages de préparation et validation des Galops",
+    titleEn: "Galop Preparation and Assessment Courses",
+    startDate: "2026-07-01",
+    endDate: "2026-08-14",
+    startHour: "09:00",
+    endHour: "11:00",
+    description:
+      "Jusqu'au 14 août inclus, nous proposons des stages répartis sur 3 matinées de 2 heures pour travailler et passer toutes les épreuves nécessaires à la validation de votre Galop. Tarif : 140 EUR, cours et validation du Galop inclus.",
+    descriptionEn:
+      "Until August 14 inclusive, we are offering courses spread over three 2-hour mornings to prepare for and complete all the tests required to validate your Galop level. Price: EUR140, including lessons and Galop assessment.",
+    image: "",
+  },
+  {
     title: "Stages enfants shetlands - Vacances d'été",
     titleEn: "Children's Shetland Courses - Summer Holidays",
     startDate: "2026-07-06",
