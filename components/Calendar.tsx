@@ -3,40 +3,44 @@
 import { useState, useMemo } from "react";
 import {
   Calendar as BigCalendar,
-  momentLocalizer,
+  dateFnsLocalizer,
   type EventProps,
   type EventPropGetter,
   type View,
 } from "react-big-calendar";
-import moment from "moment";
-import "moment/locale/fr";
-import "moment/locale/en-gb";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 import { useLocale, useTranslations } from 'next-intl';
 import EventListView from "./EventListView";
 import EventModal from "./EventModal";
 import { Monitor, List } from 'lucide-react';
-import { isPast, isToday } from 'date-fns';
+import {
+  format,
+  getDay,
+  isPast,
+  isToday,
+  parse,
+  startOfWeek,
+} from 'date-fns';
+import { enUS, fr } from 'date-fns/locale';
+import type { Locale } from '@/lib/i18n/config';
+import { ClubEvent, getEventDateTime, getEventTitle } from '@/lib/events';
 
-// Setup the localizer for react-big-calendar
-const localizer = momentLocalizer(moment);
+const dateLocales = {
+  'en-US': enUS,
+  fr,
+};
 
-interface Event {
-  startDate: string;
-  endDate: string;
-  startHour: string;
-  endHour: string;
-  title: string;
-  titleEn?: string;
-  description: string;
-  descriptionEn?: string;
-  image?: string;
-}
+const localizer = dateFnsLocalizer({
+  format,
+  parse,
+  startOfWeek,
+  getDay,
+  locales: dateLocales,
+});
 
 interface CalendarProps {
-  events: Event[];
-  view?: 'month' | 'agenda';
+  events: ClubEvent[];
 }
 
 type CalendarEvent = {
@@ -44,22 +48,25 @@ type CalendarEvent = {
   start: Date;
   end: Date;
   allDay: boolean;
-  resource: Event;
+  resource: ClubEvent;
 };
 
 const Calendar = ({ events }: CalendarProps) => {
-  const locale = useLocale();
+  const locale = useLocale() as Locale;
   const t = useTranslations('calendar');
   const isDesktop = useMediaQuery('(min-width: 768px)');
+  const dateLocale = locale === 'fr' ? fr : enUS;
   
   // User preference for view (can override responsive default)
   const [userViewPreference, setUserViewPreference] = useState<'month' | 'list' | null>(null);
   const [currentView, setCurrentView] = useState<View>("month");
-  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<ClubEvent | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Set moment locale
-  moment.locale(locale === 'fr' ? 'fr' : 'en-gb');
+  const visibleEvents = useMemo(
+    () => events.filter((event) => event.showInCalendar !== false),
+    [events],
+  );
 
   // Determine which view to show based on screen size and user preference
   const shouldShowMonthView = userViewPreference 
@@ -68,17 +75,10 @@ const Calendar = ({ events }: CalendarProps) => {
 
   // Convert events to the format expected by react-big-calendar
   const calendarEvents = useMemo(() => {
-    return events.map((event) => {
-      const startDateTime = moment(
-        `${event.startDate} ${event.startHour}`,
-        "YYYY-MM-DD HH:mm"
-      ).toDate();
-      const endDateTime = moment(
-        `${event.endDate} ${event.endHour}`,
-        "YYYY-MM-DD HH:mm"
-      ).toDate();
-      
-      const title = locale === 'en' && event.titleEn ? event.titleEn : event.title;
+    return visibleEvents.map((event) => {
+      const startDateTime = getEventDateTime(event.startDate, event.startHour);
+      const endDateTime = getEventDateTime(event.endDate, event.endHour);
+      const title = getEventTitle(event, locale);
       
       return {
         title,
@@ -88,14 +88,14 @@ const Calendar = ({ events }: CalendarProps) => {
         resource: event, // Store original event data
       };
     });
-  }, [events, locale]);
+  }, [visibleEvents, locale]);
 
   const handleSelectEvent = (calendarEvent: CalendarEvent) => {
     setSelectedEvent(calendarEvent.resource);
     setIsModalOpen(true);
   };
 
-  const handleEventClick = (event: Event) => {
+  const handleEventClick = (event: ClubEvent) => {
     setSelectedEvent(event);
     setIsModalOpen(true);
   };
@@ -111,9 +111,10 @@ const Calendar = ({ events }: CalendarProps) => {
 
   const EventComponent = ({ event }: EventProps<CalendarEvent>) => {
     const past = isPastEvent(event.end);
-    const tooltipText = `${event.title}\n${moment(event.start).format(
-      locale === 'fr' ? 'HH:mm' : 'h:mm a'
-    )} - ${moment(event.end).format(locale === 'fr' ? 'HH:mm' : 'h:mm a')}`;
+    const timeFormat = locale === 'fr' ? 'HH:mm' : 'h:mm a';
+    const startTime = format(event.start, timeFormat, { locale: dateLocale });
+    const endTime = format(event.end, timeFormat, { locale: dateLocale });
+    const tooltipText = `${event.title}\n${startTime} - ${endTime}`;
     
     return (
       <button
@@ -124,8 +125,7 @@ const Calendar = ({ events }: CalendarProps) => {
       >
         {event.title}
         <br />
-        {moment(event.start).format(locale === 'fr' ? 'HH:mm' : 'h:mm a')} -{" "}
-        {moment(event.end).format(locale === 'fr' ? 'HH:mm' : 'h:mm a')}
+        {startTime} - {endTime}
       </button>
     );
   };
@@ -271,6 +271,7 @@ const Calendar = ({ events }: CalendarProps) => {
               allDay: t('allDay'),
               noEventsInRange: t('noEvents'),
             }}
+            culture={locale === 'fr' ? 'fr' : 'en-US'}
             localizer={localizer}
             events={calendarEvents}
             startAccessor="start"
@@ -288,7 +289,7 @@ const Calendar = ({ events }: CalendarProps) => {
         </div>
       ) : (
         <EventListView 
-          events={events} 
+          events={visibleEvents}
           locale={locale}
           onEventClick={handleEventClick}
         />

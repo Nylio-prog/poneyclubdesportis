@@ -1,4 +1,5 @@
 import { Locale } from './i18n/config';
+import { ClubEvent, getEventDescription, getEventTitle } from './events';
 
 const SITE_URL = 'https://poneyclubdesportis-cadenet.fr';
 
@@ -98,21 +99,9 @@ export function getLocalBusinessSchema(locale: Locale) {
 }
 
 // Event structured data
-interface EventData {
-  title: string;
-  titleEn?: string;
-  startDate: string;
-  endDate: string;
-  startHour: string;
-  endHour: string;
-  description: string;
-  descriptionEn?: string;
-  image?: string;
-}
-
-export function getEventSchema(event: EventData, locale: Locale) {
-  const title = locale === 'en' && event.titleEn ? event.titleEn : event.title;
-  const description = locale === 'en' && event.descriptionEn ? event.descriptionEn : event.description;
+export function getEventSchema(event: ClubEvent, locale: Locale) {
+  const title = getEventTitle(event, locale);
+  const description = getEventDescription(event, locale);
   
   // Combine date and time for ISO format
   const startDateTime = `${event.startDate}T${event.startHour}:00`;

@@ -3,31 +3,24 @@
 import { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@/lib/i18n/routing";
-import { useTranslations } from "next-intl";
 import { X } from "lucide-react";
+
+interface NavItem {
+  href: string;
+  label: string;
+}
 
 interface MobileNavProps {
   isOpen: boolean;
   onClose: () => void;
   currentPath: string;
+  navItems: NavItem[];
 }
 
-const MobileNav = ({ isOpen, onClose, currentPath }: MobileNavProps) => {
-  const t = useTranslations('nav');
+const MobileNav = ({ isOpen, onClose, currentPath, navItems }: MobileNavProps) => {
   const menuRef = useRef<HTMLDivElement>(null);
   const firstFocusableRef = useRef<HTMLButtonElement>(null);
   const lastFocusableRef = useRef<HTMLAnchorElement>(null);
-
-  const navItems = [
-    { href: "/", label: t('home') },
-    { href: "/le-club", label: t('club') },
-    { href: "/photos", label: t('photos') },
-    { href: "/cavalerie", label: t('horses') },
-    { href: "/actualites", label: t('news') },
-    { href: "/cours", label: t('lessons') },
-    { href: "/pensions", label: t('boarding') },
-    { href: "/contact", label: t('contact') },
-  ];
 
   // Prevent body scroll when menu is open
   useEffect(() => {

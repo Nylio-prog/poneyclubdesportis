@@ -6,9 +6,6 @@
       "esnext"
     ],
     "allowJs": true,
-    "types": [
-      "webpack-env"
-    ],
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,

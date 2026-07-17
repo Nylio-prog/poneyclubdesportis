@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocale } from 'next-intl';
-import { locales, localeFlags, localeNames } from '@/lib/i18n/config';
+import { Locale, locales, localeFlags, localeNames } from '@/lib/i18n/config';
 import { useState, useEffect } from 'react';
 import { usePathname, useRouter } from '@/lib/i18n/routing';
 
@@ -16,9 +16,14 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
   const [isOpen, setIsOpen] = useState(false);
   const [announcement, setAnnouncement] = useState('');
 
-  const handleLocaleChange = (newLocale: string) => {
+  const handleLocaleChange = (newLocale: Locale) => {
+    if (newLocale === locale) {
+      setIsOpen(false);
+      return;
+    }
+
     // Set announcement for screen readers
-    const newLanguageName = localeNames[newLocale as keyof typeof localeNames];
+    const newLanguageName = localeNames[newLocale];
     setAnnouncement(
       locale === 'fr' 
         ? `Langue changée en ${newLanguageName}` 
@@ -51,6 +56,7 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
       
       <div className={`relative ${className}`}>
       <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center justify-center space-x-2 px-3 py-2 rounded-lg bg-[var(--ivory)]/10 hover:bg-[var(--ivory)]/20 transition-colors duration-200"
         aria-label="Change language"
@@ -83,6 +89,7 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
             <div className="py-1">
               {locales.map((loc) => (
                 <button
+                  type="button"
                   key={loc}
                   onClick={() => handleLocaleChange(loc)}
                   className={`w-full flex items-center space-x-3 px-4 py-2 text-sm hover:bg-[var(--ivory)]/10 transition-colors ${

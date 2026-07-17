@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { Link } from "@/lib/i18n/routing";
+import { Link, usePathname } from "@/lib/i18n/routing";
 import { useTranslations } from 'next-intl';
 import { useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -104,6 +103,7 @@ const Header = () => {
         isOpen={isMenuOpen} 
         onClose={() => setIsMenuOpen(false)} 
         currentPath={pathname}
+        navItems={navItems}
       />
     </header>
   );

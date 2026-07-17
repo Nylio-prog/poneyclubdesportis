@@ -1,33 +1,45 @@
-"use client";
-import { useEffect, useState } from "react";
 import ResponsiveImage from "@/components/ResponsiveImage";
-import { useTranslations } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import photo5975 from '@/public/photos/IMG_5975.jpeg';
+import photo5981 from '@/public/photos/IMG_5981.jpeg';
+import photo6056 from '@/public/photos/IMG_6056.jpeg';
+import photo20250216A from '@/public/photos/IMG-20250216-WA0000.jpg';
+import photo20250216B from '@/public/photos/IMG-20250216-WA0001.jpg';
+import photo20260502 from '@/public/photos/IMG-20260502-WA0000.jpg';
+import photo20260628A from '@/public/photos/IMG-20260628-WA0000.jpg';
+import photo20260628B from '@/public/photos/IMG-20260628-WA0002.jpg';
+import photo20260628C from '@/public/photos/IMG-20260628-WA0003.jpg';
+import photo20260628D from '@/public/photos/IMG-20260628-WA0004.jpg';
+import photo20260628E from '@/public/photos/IMG-20260628-WA0005.jpg';
+import photo20260628F from '@/public/photos/IMG-20260628-WA0008.jpg';
+import photo20260628G from '@/public/photos/IMG-20260628-WA0009.jpg';
+import photoCollage from '@/public/photos/Minimal Square Photo Collage Photography Instagram Post.png';
 
-type Photo = {
-  src: string;
-  loading: "lazy";
-};
+const photos = [
+  photo5975,
+  photo5981,
+  photo6056,
+  photo20250216A,
+  photo20250216B,
+  photo20260502,
+  photo20260628A,
+  photo20260628B,
+  photo20260628C,
+  photo20260628D,
+  photo20260628E,
+  photo20260628F,
+  photo20260628G,
+  photoCollage,
+];
 
-export default function MasonryPhotoGallery(): JSX.Element {
-  const t = useTranslations('photos');
-  const [photos, setPhotos] = useState<Photo[]>([]);
-
-  useEffect(() => {
-    const importPhotos = () => {
-      const context = require.context(
-        "../../../public/photos",
-        false,
-        /\.(png|jpe?g|webp)$/
-      );
-      const keys = context.keys();
-      const images = keys.map((key) => ({
-        src: `/photos/${key.replace("./", "")}`,
-        loading: "lazy" as const,
-      }));
-      setPhotos(images);
-    };
-    importPhotos();
-  }, []);
+export default async function MasonryPhotoGallery({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations('photos');
 
   return (
     <div className="container mx-auto py-16 px-4">
@@ -36,38 +48,20 @@ export default function MasonryPhotoGallery(): JSX.Element {
         {photos.map((photo, index) => (
           <div
             key={photo.src}
-            className="relative mb-4 break-inside-avoid group"
+            className="photo-fade-in relative mb-4 break-inside-avoid group"
             style={{
-              animation: `fadeIn 0.5s ease-out ${index * 0.1}s both`,
+              animationDelay: `${index * 0.1}s`,
             }}
           >
             <ResponsiveImage
-              src={photo.src}
+              src={photo}
               alt={`${t('altText')} ${index + 1}`}
-              width={300}
-              height={200}
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="w-full rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105"
+              className="h-auto w-full rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105"
             />
           </div>
         ))}
       </div>
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .group:hover img {
-          transform: scale(1.05);
-        }
-      `}</style>
     </div>
   );
 }

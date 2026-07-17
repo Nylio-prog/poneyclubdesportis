@@ -72,12 +72,12 @@ const CertificationBar = () => {
                   <Image
                     src={cert.src}
                     alt={cert.alt}
-                    width={40}
-                    height={40}
+                    fill
+                    sizes="36px"
                     loading="lazy"
                     fetchPriority="low"
                     quality={60}
-                    className="object-contain max-w-full max-h-full mix-blend-multiply"
+                    className="object-contain mix-blend-multiply"
                   />
                 </div>
                 {/* Text Label */}

@@ -1,4 +1,6 @@
-export const events = [
+import type { ClubEvent } from '@/lib/events';
+
+export const events: ClubEvent[] = [
   {
     title: "Portes ouvertes Dimanche 8 Septembre de 15h à 18h",
     titleEn: "Open House Sunday September 8 from 3pm to 6pm",
@@ -386,6 +388,7 @@ export const events = [
     id: "offre-rentree-2026",
     title: "Offre spéciale rentrée 2026",
     titleEn: "Special 2026 Registration Offer",
+    showInCalendar: false,
     startDate: "2026-07-17",
     endDate: "2026-08-15",
     startHour: "09:00",
@@ -399,6 +402,7 @@ export const events = [
   {
     title: "Forfait demi-pension été - Juillet et août",
     titleEn: "Summer Half-Board Package - July and August",
+    showInCalendar: false,
     startDate: "2026-07-01",
     endDate: "2026-08-31",
     startHour: "09:00",
@@ -412,6 +416,7 @@ export const events = [
   {
     title: "Stages de préparation et validation des Galops",
     titleEn: "Galop Preparation and Assessment Courses",
+    showInCalendar: false,
     startDate: "2026-07-01",
     endDate: "2026-08-14",
     startHour: "09:00",
