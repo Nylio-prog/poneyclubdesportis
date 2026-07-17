@@ -5,54 +5,56 @@ import { X } from 'lucide-react';
 import ResponsiveImage from './ResponsiveImage';
 import { format } from 'date-fns';
 import { fr, enUS } from 'date-fns/locale';
+import { useTranslations } from 'next-intl';
+import type { Locale } from '@/lib/i18n/config';
+import {
+  ClubEvent,
+  getEventDateTime,
+  getEventDescription,
+  getEventTitle,
+} from '@/lib/events';
 
 interface EventModalProps {
   isOpen: boolean;
   onClose: () => void;
-  event: {
-    title: string;
-    titleEn?: string;
-    startDate: string;
-    endDate: string;
-    startHour: string;
-    endHour: string;
-    description: string;
-    descriptionEn?: string;
-    image?: string;
-  } | null;
-  locale: string;
+  event: ClubEvent | null;
+  locale: Locale;
 }
 
 export default function EventModal({ isOpen, onClose, event, locale }: EventModalProps) {
+  const t = useTranslations('common');
+
   // Close on escape key
   useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         onClose();
       }
     };
 
-    if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
-      // Prevent body scroll when modal is open
-      document.body.style.overflow = 'hidden';
-    }
+    document.addEventListener('keydown', handleEscape);
+    document.body.style.overflow = 'hidden';
 
     return () => {
       document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = previousOverflow;
     };
   }, [isOpen, onClose]);
 
   if (!isOpen || !event) return null;
 
   const dateLocale = locale === 'fr' ? fr : enUS;
-  const title = locale === 'en' && event.titleEn ? event.titleEn : event.title;
-  const description = locale === 'en' && event.descriptionEn ? event.descriptionEn : event.description;
+  const title = getEventTitle(event, locale);
+  const description = getEventDescription(event, locale);
 
   // Format dates according to locale
-  const startDate = new Date(event.startDate);
-  const endDate = new Date(event.endDate);
+  const startDate = getEventDateTime(event.startDate);
+  const endDate = getEventDateTime(event.endDate);
   const isSameDay = event.startDate === event.endDate;
 
   const dateFormat = locale === 'fr' ? 'dd/MM/yyyy' : 'MM/dd/yyyy';
@@ -78,7 +80,7 @@ export default function EventModal({ isOpen, onClose, event, locale }: EventModa
           <button
             onClick={onClose}
             className="flex-shrink-0 p-2 hover:bg-gray-100 rounded-full transition-colors"
-            aria-label="Close modal"
+            aria-label={t('close')}
           >
             <X className="w-6 h-6" aria-hidden="true" />
           </button>

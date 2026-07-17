@@ -1,121 +1,97 @@
 "use client";
 
+import { useMemo } from 'react';
 import { format, isPast, isToday } from 'date-fns';
 import { fr, enUS } from 'date-fns/locale';
 import ResponsiveImage from './ResponsiveImage';
 import { Calendar, Clock } from 'lucide-react';
-
-interface Event {
-  title: string;
-  titleEn?: string;
-  startDate: string;
-  endDate: string;
-  startHour: string;
-  endHour: string;
-  description: string;
-  descriptionEn?: string;
-  image?: string;
-}
+import { useTranslations } from 'next-intl';
+import type { Locale } from '@/lib/i18n/config';
+import {
+  ClubEvent,
+  getEventDateTime,
+  getEventDescription,
+  getEventTitle,
+} from '@/lib/events';
 
 interface EventListViewProps {
-  events: Event[];
-  locale: string;
-  onEventClick: (event: Event) => void;
+  events: ClubEvent[];
+  locale: Locale;
+  onEventClick: (event: ClubEvent) => void;
+}
+
+const isPastEvent = (event: ClubEvent) => {
+  const endDateTime = getEventDateTime(event.endDate, event.endHour);
+  return isPast(endDateTime) && !isToday(endDateTime);
+};
+
+const isTodayEvent = (event: ClubEvent) => (
+  isToday(getEventDateTime(event.startDate))
+);
+
+function getNearestEvents(events: ClubEvent[], limit = 3): ClubEvent[] {
+  const now = new Date();
+  const ongoingEvents: ClubEvent[] = [];
+  const futureEvents: ClubEvent[] = [];
+  const pastEvents: ClubEvent[] = [];
+
+  events.forEach((event) => {
+    const startDateTime = getEventDateTime(event.startDate, event.startHour);
+    const endDateTime = getEventDateTime(event.endDate, event.endHour);
+
+    if (isPast(endDateTime) && !isToday(endDateTime)) {
+      pastEvents.push(event);
+    } else if (startDateTime <= now && endDateTime >= now) {
+      ongoingEvents.push(event);
+    } else {
+      futureEvents.push(event);
+    }
+  });
+
+  ongoingEvents.sort((a, b) => (
+    getEventDateTime(a.startDate, a.startHour).getTime() -
+    getEventDateTime(b.startDate, b.startHour).getTime()
+  ));
+  futureEvents.sort((a, b) => (
+    getEventDateTime(a.startDate, a.startHour).getTime() -
+    getEventDateTime(b.startDate, b.startHour).getTime()
+  ));
+  pastEvents.sort((a, b) => (
+    getEventDateTime(b.endDate, b.endHour).getTime() -
+    getEventDateTime(a.endDate, a.endHour).getTime()
+  ));
+
+  return [...ongoingEvents, ...futureEvents, ...pastEvents].slice(0, limit);
 }
 
 export default function EventListView({ events, locale, onEventClick }: EventListViewProps) {
+  const t = useTranslations('calendar');
   const dateLocale = locale === 'fr' ? fr : enUS;
   const dateFormat = locale === 'fr' ? 'dd/MM/yyyy' : 'MM/dd/yyyy';
-
-  const isPastEvent = (event: Event) => {
-    const endDateTime = new Date(`${event.endDate} ${event.endHour}`);
-    return isPast(endDateTime) && !isToday(endDateTime);
-  };
-
-  const isTodayEvent = (event: Event) => {
-    const startDate = new Date(event.startDate);
-    return isToday(startDate);
-  };
-
-  // Get the 3 nearest events: upcoming first, then future, then past
-  const getNearestEvents = (events: Event[], limit: number = 3): Event[] => {
-    const now = new Date();
-    
-    // Separate events into categories
-    const upcomingEvents: Event[] = [];
-    const futureEvents: Event[] = [];
-    const pastEvents: Event[] = [];
-    
-    events.forEach(event => {
-      const startDateTime = new Date(`${event.startDate} ${event.startHour}`);
-      const endDateTime = new Date(`${event.endDate} ${event.endHour}`);
-      
-      if (isPast(endDateTime) && !isToday(endDateTime)) {
-        // Past event
-        pastEvents.push(event);
-      } else if (startDateTime <= now && endDateTime >= now) {
-        // Ongoing event (happening now or today)
-        upcomingEvents.push(event);
-      } else {
-        // Future event
-        futureEvents.push(event);
-      }
-    });
-    
-    // Sort upcoming events by start time (closest first)
-    upcomingEvents.sort((a, b) => {
-      const dateA = new Date(`${a.startDate} ${a.startHour}`);
-      const dateB = new Date(`${b.startDate} ${b.startHour}`);
-      return dateA.getTime() - dateB.getTime();
-    });
-    
-    // Sort future events by start time (closest first)
-    futureEvents.sort((a, b) => {
-      const dateA = new Date(`${a.startDate} ${a.startHour}`);
-      const dateB = new Date(`${b.startDate} ${b.startHour}`);
-      return dateA.getTime() - dateB.getTime();
-    });
-    
-    // Sort past events by end time (most recent first)
-    pastEvents.sort((a, b) => {
-      const dateA = new Date(`${a.endDate} ${a.endHour}`);
-      const dateB = new Date(`${b.endDate} ${b.endHour}`);
-      return dateB.getTime() - dateA.getTime();
-    });
-    
-    // Combine: upcoming first, then future, then past
-    const combined = [...upcomingEvents, ...futureEvents, ...pastEvents];
-    
-    // Return only the first 'limit' events
-    return combined.slice(0, limit);
-  };
-
-  const sortedEvents = getNearestEvents(events, 3);
+  const sortedEvents = useMemo(() => getNearestEvents(events), [events]);
 
   if (sortedEvents.length === 0) {
     return (
       <div className="text-center py-12 text-gray-500">
-        {locale === 'fr' 
-          ? 'Aucun événement de prévu sur la période sélectionnée'
-          : 'No events scheduled for the selected period'}
+        {t('noEvents')}
       </div>
     );
   }
 
   return (
     <div className="space-y-4">
-      {sortedEvents.map((event, index) => {
-        const title = locale === 'en' && event.titleEn ? event.titleEn : event.title;
-        const description = locale === 'en' && event.descriptionEn ? event.descriptionEn : event.description;
-        const startDate = new Date(event.startDate);
-        const endDate = new Date(event.endDate);
+      {sortedEvents.map((event) => {
+        const title = getEventTitle(event, locale);
+        const description = getEventDescription(event, locale);
+        const startDate = getEventDateTime(event.startDate);
+        const endDate = getEventDateTime(event.endDate);
         const isSameDay = event.startDate === event.endDate;
         const past = isPastEvent(event);
         const today = isTodayEvent(event);
 
         return (
           <button
-            key={index}
+            key={event.id ?? `${event.startDate}-${event.title}`}
             onClick={() => onEventClick(event)}
             className={`w-full text-left bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200 overflow-hidden ${
               past ? 'opacity-60 grayscale' : ''

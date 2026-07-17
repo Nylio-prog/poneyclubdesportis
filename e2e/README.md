@@ -120,7 +120,7 @@ This will:
 
 ## Best Practices
 
-1. **Wait for network idle**: Use `await page.waitForLoadState('networkidle')` after navigation
+1. **Wait for observable state**: Prefer URL or element assertions after navigation; use `domcontentloaded` only when an explicit load-state wait is needed
 2. **Use semantic selectors**: Prefer `text=`, `role=`, `aria-label` over CSS selectors
 3. **Check for visibility**: Use `await expect(element).toBeVisible()` before interacting
 4. **Handle timeouts**: Increase timeout for slow operations: `{ timeout: 10000 }`
@@ -133,7 +133,7 @@ This will:
 - Increase timeout in `playwright.config.ts`
 
 ### Tests fail with "Element not found"
-- Add `await page.waitForLoadState('networkidle')`
+- Wait for the destination URL or the specific element that proves navigation completed
 - Increase timeout for slow-loading elements
 
 ### Hydration errors in tests

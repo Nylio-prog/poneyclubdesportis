@@ -34,6 +34,7 @@ const CertificationLogos = () => {
               width={120}
               height={120}
               className="object-contain mx-auto"
+              style={{ width: 'auto', height: 'auto' }}
             />
           ))}
         </div>
@@ -51,6 +52,7 @@ const CertificationLogos = () => {
                   width={80}
                   height={80}
                   className="object-contain"
+                  style={{ width: 'auto', height: 'auto' }}
                 />
               ))}
             </div>

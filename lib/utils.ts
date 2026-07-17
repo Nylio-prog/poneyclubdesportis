@@ -12,7 +12,7 @@ export function formatDate(dateString: string, locale: string = 'fr'): string {
     year: "numeric",
   };
   const localeCode = locale === 'fr' ? 'fr-FR' : 'en-US';
-  return new Date(dateString).toLocaleDateString(localeCode, options);
+  return new Date(`${dateString}T00:00:00`).toLocaleDateString(localeCode, options);
 }
 
 export function formatTime(timeString: string, locale: string = 'fr'): string {

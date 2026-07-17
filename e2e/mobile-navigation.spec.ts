@@ -5,7 +5,7 @@ test.describe('Mobile Navigation', () => {
 
   test('should show hamburger menu on mobile', async ({ page }) => {
     await page.goto('/');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Hamburger button should be visible (using correct aria-label)
     const hamburger = page.locator('button[aria-label="Toggle menu"]');
@@ -14,7 +14,7 @@ test.describe('Mobile Navigation', () => {
 
   test('should open and close mobile menu', async ({ page }) => {
     await page.goto('/');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Open menu
     await page.click('button[aria-label="Toggle menu"]');
@@ -32,7 +32,7 @@ test.describe('Mobile Navigation', () => {
 
   test('should navigate to pages from mobile menu', async ({ page }) => {
     await page.goto('/');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Open menu
     await page.click('button[aria-label="Toggle menu"]');
@@ -50,7 +50,7 @@ test.describe('Mobile Navigation', () => {
 
   test('should close menu on escape key', async ({ page }) => {
     await page.goto('/');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Open menu
     await page.click('button[aria-label="Toggle menu"]');
@@ -68,7 +68,7 @@ test.describe('Mobile Navigation', () => {
 
   test('should have touch-friendly menu items (min 44px)', async ({ page }) => {
     await page.goto('/');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Open menu
     await page.click('button[aria-label="Toggle menu"]');

@@ -6,23 +6,16 @@ import { formatDate, formatTime } from "@/lib/utils";
 import Script from 'next/script';
 import { getEventSchema } from "@/lib/structured-data";
 import { Locale } from "@/lib/i18n/config";
+import {
+  ClubEvent,
+  getEventDateTime,
+  getEventDescription,
+  getEventTitle,
+} from '@/lib/events';
 
-interface Event {
-  id?: string;
-  title: string;
-  titleEn?: string;
-  startDate: string;
-  endDate: string;
-  startHour: string;
-  endHour: string;
-  description: string;
-  descriptionEn?: string;
-  image?: string;
-}
-
-const EventCard: React.FC<{ event: Event; locale: string }> = ({ event, locale }) => {
-  const title = locale === 'en' && event.titleEn ? event.titleEn : event.title;
-  const description = locale === 'en' && event.descriptionEn ? event.descriptionEn : event.description;
+const EventCard: React.FC<{ event: ClubEvent; locale: Locale }> = ({ event, locale }) => {
+  const title = getEventTitle(event, locale);
+  const description = getEventDescription(event, locale);
   
   return (
     <Card id={event.id} className="overflow-hidden" style={{ scrollMarginTop: '7rem' }}>
@@ -57,21 +50,23 @@ const EventCard: React.FC<{ event: Event; locale: string }> = ({ event, locale }
 };
 
 export default function ActualitesPage() {
-  const locale = useLocale();
+  const locale = useLocale() as Locale;
   const currentDate = new Date();
   const sortedEvents = [...events].sort(
-    (a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
+    (a, b) =>
+      getEventDateTime(a.startDate, a.startHour).getTime() -
+      getEventDateTime(b.startDate, b.startHour).getTime()
   );
 
   const upcomingEvents = sortedEvents.filter(
-    (event) => new Date(event.endDate) >= currentDate
+    (event) => getEventDateTime(event.endDate, event.endHour) >= currentDate
   );
   const pastEvents = sortedEvents.filter(
-    (event) => new Date(event.endDate) < currentDate
+    (event) => getEventDateTime(event.endDate, event.endHour) < currentDate
   );
 
   // Generate structured data for upcoming events
-  const eventSchemas = upcomingEvents.map((event) => getEventSchema(event, locale as Locale));
+  const eventSchemas = upcomingEvents.map((event) => getEventSchema(event, locale));
 
   return (
     <>
@@ -94,8 +89,12 @@ export default function ActualitesPage() {
             {locale === 'fr' ? 'Événements à venir' : 'Upcoming Events'}
           </h2>
           <div className="grid gap-6 mb-12">
-            {upcomingEvents.map((event, index) => (
-              <EventCard key={index} event={event} locale={locale} />
+            {upcomingEvents.map((event) => (
+              <EventCard
+                key={event.id ?? `${event.startDate}-${event.title}`}
+                event={event}
+                locale={locale}
+              />
             ))}
           </div>
 
@@ -105,8 +104,12 @@ export default function ActualitesPage() {
                 {locale === 'fr' ? 'Événements passés' : 'Past Events'}
               </h2>
               <div className="grid gap-6 opacity-60">
-                {pastEvents.reverse().map((event, index) => (
-                  <EventCard key={index} event={event} locale={locale} />
+                {pastEvents.reverse().map((event) => (
+                  <EventCard
+                    key={event.id ?? `${event.startDate}-${event.title}`}
+                    event={event}
+                    locale={locale}
+                  />
                 ))}
               </div>
             </>

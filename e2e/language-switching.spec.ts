@@ -5,10 +5,11 @@ test.describe('Language Switching', () => {
     await page.goto('/');
     
     // Wait for page to load
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Check URL is French (no /en prefix)
     expect(page.url()).toBe('http://localhost:3000/');
+    await expect(page.locator('html')).toHaveAttribute('lang', 'fr');
     
     // Check FR text is visible in language switcher (use .first() since there are 2 - desktop and mobile)
     const languageSwitcher = page.locator('button[aria-label="Change language"]').first();
@@ -21,7 +22,7 @@ test.describe('Language Switching', () => {
 
   test('should switch from French to English', async ({ page }) => {
     await page.goto('/');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Click language switcher (use .first() for desktop version)
     await page.locator('button[aria-label="Change language"]').first().click();
@@ -31,10 +32,11 @@ test.describe('Language Switching', () => {
     
     // Wait for navigation (full page reload happens)
     await page.waitForURL('**/en', { timeout: 10000 });
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Verify URL has /en prefix
     expect(page.url()).toBe('http://localhost:3000/en');
+    await expect(page.locator('html')).toHaveAttribute('lang', 'en');
     
     // Verify EN text is now shown in language switcher
     const languageSwitcher = page.locator('button[aria-label="Change language"]').first();
@@ -47,7 +49,7 @@ test.describe('Language Switching', () => {
   test('should switch from English back to French', async ({ page }) => {
     // Start on English page
     await page.goto('/en');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Verify we're on English
     expect(page.url()).toBe('http://localhost:3000/en');
@@ -60,7 +62,7 @@ test.describe('Language Switching', () => {
     
     // Wait for navigation
     await page.waitForURL('http://localhost:3000/', { timeout: 10000 });
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Verify URL has no /en prefix (French default)
     expect(page.url()).toBe('http://localhost:3000/');
@@ -79,13 +81,13 @@ test.describe('Language Switching', () => {
     await page.locator('button[aria-label="Change language"]').first().click();
     await page.locator('button:has-text("English")').click();
     await page.waitForURL('**/en', { timeout: 10000 });
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Navigate to another page by clicking a navigation link
     // Find any link in the navigation and click it
     const navLink = page.locator('nav a').first();
     await navLink.click();
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Verify still on English version (URL should contain /en)
     expect(page.url()).toContain('/en');
@@ -98,7 +100,7 @@ test.describe('Language Switching', () => {
   test('should work on subpages (cours page)', async ({ page }) => {
     // Go to French cours page
     await page.goto('/cours');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Switch to English
     await page.locator('button[aria-label="Change language"]').first().click();
@@ -111,7 +113,7 @@ test.describe('Language Switching', () => {
     // Switch back to French
     await page.locator('button[aria-label="Change language"]').first().click();
     await page.locator('button:has-text("Français")').click();
-    await page.waitForURL('**/cours', { timeout: 5000 });
+    await page.waitForURL('http://localhost:3000/cours', { timeout: 5000 });
     
     // Verify back on French cours page (no /en prefix)
     expect(page.url()).toBe('http://localhost:3000/cours');
