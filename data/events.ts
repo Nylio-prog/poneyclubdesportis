@@ -383,6 +383,20 @@ export const events = [
     image: "",
   },
   {
+    id: "offre-rentree-2026",
+    title: "Offre spéciale rentrée 2026",
+    titleEn: "Special 2026 Registration Offer",
+    startDate: "2026-07-17",
+    endDate: "2026-08-15",
+    startHour: "09:00",
+    endHour: "18:00",
+    description:
+      "Pour bien préparer la nouvelle saison, nous vous proposons une offre de rentrée : 10 % de réduction sur la carte annuelle pour toute inscription validée avant le 15 août 2026.\n\nC'est l'occasion de réserver votre place et de profiter d'un tarif avantageux pour une année pleine de découvertes, de progrès et de bons moments avec les poneys et chevaux du club.\n\nN'hésitez pas à nous contacter pour toute question ou pour finaliser votre inscription.",
+    descriptionEn:
+      "To help you get ready for the new season, we are offering 10% off the annual riding card for all registrations confirmed by August 15, 2026.\n\nThis is your chance to secure your place and enjoy a special rate for a year full of discoveries, progress, and great moments with the club's ponies and horses.\n\nPlease contact us with any questions or to complete your registration.",
+    image: "",
+  },
+  {
     title: "Forfait demi-pension été - Juillet et août",
     titleEn: "Summer Half-Board Package - July and August",
     startDate: "2026-07-01",

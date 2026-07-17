@@ -8,6 +8,7 @@ import { getEventSchema } from "@/lib/structured-data";
 import { Locale } from "@/lib/i18n/config";
 
 interface Event {
+  id?: string;
   title: string;
   titleEn?: string;
   startDate: string;
@@ -24,7 +25,7 @@ const EventCard: React.FC<{ event: Event; locale: string }> = ({ event, locale }
   const description = locale === 'en' && event.descriptionEn ? event.descriptionEn : event.description;
   
   return (
-    <Card className="overflow-hidden">
+    <Card id={event.id} className="overflow-hidden" style={{ scrollMarginTop: '7rem' }}>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
       </CardHeader>

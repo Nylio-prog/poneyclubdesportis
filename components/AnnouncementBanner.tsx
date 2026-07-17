@@ -12,7 +12,7 @@ const AnnouncementBanner = () => {
     track('Click Banner Link', {
       location: 'Announcement Banner',
       text: t('cta'),
-      event: 'summer-offers-2026',
+      event: 'back-to-school-offer-2026',
     });
   };
 
@@ -31,7 +31,7 @@ const AnnouncementBanner = () => {
           </div>
           <div className="flex flex-shrink-0 items-center justify-center sm:justify-end">
             <Link
-              href="/actualites"
+              href="/actualites#offre-rentree-2026"
               className="inline-flex h-11 min-w-40 flex-shrink-0 items-center justify-center rounded-md bg-[var(--deep-burgundy)] px-5 text-sm font-semibold leading-none text-white transition-colors hover:bg-[var(--vivid-burgundy)]"
               onClick={handleLinkClick}
             >
