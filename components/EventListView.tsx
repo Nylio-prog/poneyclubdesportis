@@ -11,6 +11,9 @@ import {
   ClubEvent,
   getEventDateTime,
   getEventDescription,
+  getEventEndDateTime,
+  getEventStartDateTime,
+  getEventTimeLabel,
   getEventTitle,
 } from '@/lib/events';
 
@@ -21,7 +24,7 @@ interface EventListViewProps {
 }
 
 const isPastEvent = (event: ClubEvent) => {
-  const endDateTime = getEventDateTime(event.endDate, event.endHour);
+  const endDateTime = getEventEndDateTime(event);
   return isPast(endDateTime) && !isToday(endDateTime);
 };
 
@@ -36,8 +39,8 @@ function getNearestEvents(events: ClubEvent[], limit = 3): ClubEvent[] {
   const pastEvents: ClubEvent[] = [];
 
   events.forEach((event) => {
-    const startDateTime = getEventDateTime(event.startDate, event.startHour);
-    const endDateTime = getEventDateTime(event.endDate, event.endHour);
+    const startDateTime = getEventStartDateTime(event);
+    const endDateTime = getEventEndDateTime(event);
 
     if (isPast(endDateTime) && !isToday(endDateTime)) {
       pastEvents.push(event);
@@ -49,16 +52,16 @@ function getNearestEvents(events: ClubEvent[], limit = 3): ClubEvent[] {
   });
 
   ongoingEvents.sort((a, b) => (
-    getEventDateTime(a.startDate, a.startHour).getTime() -
-    getEventDateTime(b.startDate, b.startHour).getTime()
+    getEventStartDateTime(a).getTime() -
+    getEventStartDateTime(b).getTime()
   ));
   futureEvents.sort((a, b) => (
-    getEventDateTime(a.startDate, a.startHour).getTime() -
-    getEventDateTime(b.startDate, b.startHour).getTime()
+    getEventStartDateTime(a).getTime() -
+    getEventStartDateTime(b).getTime()
   ));
   pastEvents.sort((a, b) => (
-    getEventDateTime(b.endDate, b.endHour).getTime() -
-    getEventDateTime(a.endDate, a.endHour).getTime()
+    getEventEndDateTime(b).getTime() -
+    getEventEndDateTime(a).getTime()
   ));
 
   return [...ongoingEvents, ...futureEvents, ...pastEvents].slice(0, limit);
@@ -132,7 +135,7 @@ export default function EventListView({ events, locale, onEventClick }: EventLis
                 {/* Time */}
                 <div className="flex items-center text-sm text-gray-600 mb-2">
                   <Clock className="w-4 h-4 mr-2 flex-shrink-0" />
-                  <span>{event.startHour} - {event.endHour}</span>
+                  <span>{getEventTimeLabel(event, locale)}</span>
                 </div>
 
                 {/* Description preview */}

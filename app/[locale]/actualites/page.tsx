@@ -2,14 +2,16 @@ import ResponsiveImage from "@/components/ResponsiveImage";
 import { useLocale } from 'next-intl';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { events } from "@/data/events";
-import { formatDate, formatTime } from "@/lib/utils";
+import { formatDate } from "@/lib/utils";
 import Script from 'next/script';
 import { getEventSchema } from "@/lib/structured-data";
 import { Locale } from "@/lib/i18n/config";
 import {
   ClubEvent,
-  getEventDateTime,
   getEventDescription,
+  getEventEndDateTime,
+  getEventStartDateTime,
+  getEventTimeLabel,
   getEventTitle,
 } from '@/lib/events';
 
@@ -38,7 +40,7 @@ const EventCard: React.FC<{ event: ClubEvent; locale: Locale }> = ({ event, loca
           <div className={event.image ? "" : "w-full"}>
             <p className="text-sm text-gray-500 mb-2">
               {event.startDate === event.endDate
-                ? `${formatDate(event.startDate, locale)} ${formatTime(event.startHour, locale)} - ${formatTime(event.endHour, locale)}`
+                ? `${formatDate(event.startDate, locale)} · ${getEventTimeLabel(event, locale)}`
                 : `${formatDate(event.startDate, locale)} - ${formatDate(event.endDate, locale)}`}
             </p>
             <p className="whitespace-pre-line">{description}</p>
@@ -54,15 +56,15 @@ export default function ActualitesPage() {
   const currentDate = new Date();
   const sortedEvents = [...events].sort(
     (a, b) =>
-      getEventDateTime(a.startDate, a.startHour).getTime() -
-      getEventDateTime(b.startDate, b.startHour).getTime()
+      getEventStartDateTime(a).getTime() -
+      getEventStartDateTime(b).getTime()
   );
 
   const upcomingEvents = sortedEvents.filter(
-    (event) => getEventDateTime(event.endDate, event.endHour) >= currentDate
+    (event) => getEventEndDateTime(event) >= currentDate
   );
   const pastEvents = sortedEvents.filter(
-    (event) => getEventDateTime(event.endDate, event.endHour) < currentDate
+    (event) => getEventEndDateTime(event) < currentDate
   );
 
   // Generate structured data for upcoming events

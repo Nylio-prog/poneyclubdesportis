@@ -178,6 +178,28 @@ test.describe('Basic Website Functionality', () => {
     await expect(eventCards).toBeVisible({ timeout: 10000 });
   });
 
+  test('should display the September events in French and English', async ({ page }) => {
+    await page.goto('/actualites');
+
+    const frenchForum = page.locator('#forum-associations-cadenet-2026');
+    await expect(frenchForum).toContainText('Forum des associations de Cadenet');
+    await expect(frenchForum).toContainText('Horaires à venir');
+
+    const frenchOpenHouse = page.locator('#portes-ouvertes-2026');
+    await expect(frenchOpenHouse).toContainText('Portes ouvertes au club');
+    await expect(frenchOpenHouse).toContainText('Dès 14:30');
+
+    await page.goto('/en/actualites');
+
+    const englishForum = page.locator('#forum-associations-cadenet-2026');
+    await expect(englishForum).toContainText('Cadenet Associations Forum');
+    await expect(englishForum).toContainText('Time to be announced');
+
+    const englishOpenHouse = page.locator('#portes-ouvertes-2026');
+    await expect(englishOpenHouse).toContainText('Pony Club Open House');
+    await expect(englishOpenHouse).toContainText('From 2:30 PM');
+  });
+
   test('should display animal cards on cavalerie page', async ({ page }) => {
     await page.goto('/cavalerie');
     await page.waitForLoadState('domcontentloaded');

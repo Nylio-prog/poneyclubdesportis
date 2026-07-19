@@ -24,7 +24,13 @@ import {
 } from 'date-fns';
 import { enUS, fr } from 'date-fns/locale';
 import type { Locale } from '@/lib/i18n/config';
-import { ClubEvent, getEventDateTime, getEventTitle } from '@/lib/events';
+import {
+  ClubEvent,
+  getEventEndDateTime,
+  getEventStartDateTime,
+  getEventTimeLabel,
+  getEventTitle,
+} from '@/lib/events';
 
 const dateLocales = {
   'en-US': enUS,
@@ -55,7 +61,6 @@ const Calendar = ({ events }: CalendarProps) => {
   const locale = useLocale() as Locale;
   const t = useTranslations('calendar');
   const isDesktop = useMediaQuery('(min-width: 768px)');
-  const dateLocale = locale === 'fr' ? fr : enUS;
   
   // User preference for view (can override responsive default)
   const [userViewPreference, setUserViewPreference] = useState<'month' | 'list' | null>(null);
@@ -76,15 +81,15 @@ const Calendar = ({ events }: CalendarProps) => {
   // Convert events to the format expected by react-big-calendar
   const calendarEvents = useMemo(() => {
     return visibleEvents.map((event) => {
-      const startDateTime = getEventDateTime(event.startDate, event.startHour);
-      const endDateTime = getEventDateTime(event.endDate, event.endHour);
+      const startDateTime = getEventStartDateTime(event);
+      const endDateTime = getEventEndDateTime(event);
       const title = getEventTitle(event, locale);
       
       return {
         title,
         start: startDateTime,
         end: endDateTime,
-        allDay: false,
+        allDay: !event.startHour,
         resource: event, // Store original event data
       };
     });
@@ -111,10 +116,8 @@ const Calendar = ({ events }: CalendarProps) => {
 
   const EventComponent = ({ event }: EventProps<CalendarEvent>) => {
     const past = isPastEvent(event.end);
-    const timeFormat = locale === 'fr' ? 'HH:mm' : 'h:mm a';
-    const startTime = format(event.start, timeFormat, { locale: dateLocale });
-    const endTime = format(event.end, timeFormat, { locale: dateLocale });
-    const tooltipText = `${event.title}\n${startTime} - ${endTime}`;
+    const timeLabel = getEventTimeLabel(event.resource, locale);
+    const tooltipText = `${event.title}\n${timeLabel}`;
     
     return (
       <button
@@ -125,7 +128,7 @@ const Calendar = ({ events }: CalendarProps) => {
       >
         {event.title}
         <br />
-        {startTime} - {endTime}
+        {timeLabel}
       </button>
     );
   };

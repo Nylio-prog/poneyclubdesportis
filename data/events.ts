@@ -440,4 +440,29 @@ export const events: ClubEvent[] = [
       "During the summer holidays, Poney Club Desportis is offering Shetland courses from July 6 to August 14, from 9:30am to 12:30pm, for children aged 3 to 10.\n\nIt is possible to book just one half-day.\n\nPrice: EUR45 per half-day, or EUR40 per half-day when booking at least 3 courses.",
     image: "",
   },
+  {
+    id: "forum-associations-cadenet-2026",
+    title: "Forum des associations de Cadenet",
+    titleEn: "Cadenet Associations Forum",
+    startDate: "2026-09-05",
+    endDate: "2026-09-05",
+    description:
+      "Le Poney Club Desportis participera au forum des associations de Cadenet le samedi 5 septembre. Venez nous rencontrer pour découvrir le club et obtenir toutes les informations sur nos cours et les inscriptions pour la nouvelle saison. Les horaires seront communiqués prochainement.",
+    descriptionEn:
+      "Poney Club Desportis will be taking part in the Cadenet Associations Forum on Saturday, September 5. Come and meet us to discover the club and find out everything you need to know about our lessons and registration for the new season. The event times will be announced soon.",
+    image: "/events/place_mairie.jpg",
+  },
+  {
+    id: "portes-ouvertes-2026",
+    title: "Portes ouvertes au club",
+    titleEn: "Pony Club Open House",
+    startDate: "2026-09-06",
+    endDate: "2026-09-06",
+    startHour: "14:30",
+    description:
+      "Nous vous invitons aux portes ouvertes du Poney Club Desportis le dimanche 6 septembre dès 14h30. Venez découvrir le club, visiter les installations, rencontrer notre équipe et vous renseigner sur les cours et les inscriptions pour la nouvelle saison. Nous vous attendons nombreux !",
+    descriptionEn:
+      "Join us for the Poney Club Desportis open house on Sunday, September 6 from 2:30pm. Come and discover the club, tour the facilities, meet our team, and find out more about lessons and registration for the new season. We look forward to seeing you!",
+    image: "/events/portes_ouvertes.jpg",
+  },
 ];

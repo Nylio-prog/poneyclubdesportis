@@ -103,9 +103,12 @@ export function getEventSchema(event: ClubEvent, locale: Locale) {
   const title = getEventTitle(event, locale);
   const description = getEventDescription(event, locale);
   
-  // Combine date and time for ISO format
-  const startDateTime = `${event.startDate}T${event.startHour}:00`;
-  const endDateTime = `${event.endDate}T${event.endHour}:00`;
+  const startDateTime = event.startHour
+    ? `${event.startDate}T${event.startHour}:00`
+    : event.startDate;
+  const endDateTime = event.endHour
+    ? `${event.endDate}T${event.endHour}:00`
+    : undefined;
   
   return {
     '@context': 'https://schema.org',
@@ -113,7 +116,7 @@ export function getEventSchema(event: ClubEvent, locale: Locale) {
     name: title,
     description: description,
     startDate: startDateTime,
-    endDate: endDateTime,
+    ...(endDateTime && { endDate: endDateTime }),
     eventStatus: 'https://schema.org/EventScheduled',
     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
     location: {

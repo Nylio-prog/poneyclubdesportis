@@ -11,6 +11,7 @@ import {
   ClubEvent,
   getEventDateTime,
   getEventDescription,
+  getEventTimeLabel,
   getEventTitle,
 } from '@/lib/events';
 
@@ -108,13 +109,13 @@ export default function EventModal({ isOpen, onClose, event, locale }: EventModa
                 <>
                   {formattedStartDate}
                   <br />
-                  {event.startHour} - {event.endHour}
+                  {getEventTimeLabel(event, locale)}
                 </>
               ) : (
                 <>
                   {formattedStartDate} - {formattedEndDate}
                   <br />
-                  {event.startHour} - {event.endHour}
+                  {getEventTimeLabel(event, locale)}
                 </>
               )}
             </p>
