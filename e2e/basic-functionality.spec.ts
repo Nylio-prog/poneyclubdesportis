@@ -42,26 +42,22 @@ test.describe('Basic Website Functionality', () => {
     }
   });
 
-  test('should link the bilingual registration banner to its full event', async ({ page }) => {
+  test('should show the bilingual course restart banner without a link', async ({ page }) => {
     await page.goto('/');
-    const frenchOfferLink = page.getByRole('link', { name: "Découvrir l'offre" });
-    await expect(frenchOfferLink).toHaveAttribute(
-      'href',
-      '/actualites#offre-rentree-2026'
-    );
-    await frenchOfferLink.click();
-    await page.waitForURL('**/actualites#offre-rentree-2026');
-    await expect(page.locator('#offre-rentree-2026')).toContainText('10 % de réduction');
+    const frenchBanner = page.getByRole('complementary', { name: 'Rentrée des cours' });
+    await expect(frenchBanner.getByText('Rentrée des cours', { exact: true })).toBeVisible();
+    await expect(
+      frenchBanner.getByText('Les cours reprennent le mercredi 9 septembre 2026.', { exact: true })
+    ).toBeVisible();
+    await expect(frenchBanner.getByRole('link')).toHaveCount(0);
 
     await page.goto('/en');
-    const englishOfferLink = page.getByRole('link', { name: 'View the offer' });
-    await expect(englishOfferLink).toHaveAttribute(
-      'href',
-      '/en/actualites#offre-rentree-2026'
-    );
-    await englishOfferLink.click();
-    await page.waitForURL('**/en/actualites#offre-rentree-2026');
-    await expect(page.locator('#offre-rentree-2026')).toContainText('10% off');
+    const englishBanner = page.getByRole('complementary', { name: 'Lessons are back' });
+    await expect(englishBanner.getByText('Lessons are back', { exact: true })).toBeVisible();
+    await expect(
+      englishBanner.getByText('Lessons resume on Wednesday, September 9, 2026.', { exact: true })
+    ).toBeVisible();
+    await expect(englishBanner.getByRole('link')).toHaveCount(0);
   });
 
   test('should only show calendar-enabled events in the calendar', async ({ page }) => {
@@ -80,10 +76,6 @@ test.describe('Basic Website Functionality', () => {
     await expect(
       calendarSection.getByText('Galop Preparation and Assessment Courses', { exact: true })
     ).toHaveCount(0);
-    await expect(
-      calendarSection.getByText('Special 2026 Registration Offer', { exact: true })
-    ).toHaveCount(0);
-
     const defaultVisibleEvent = calendarSection.getByText(
       "Children's Shetland Courses - Summer Holidays",
       { exact: true }
