@@ -42,22 +42,14 @@ test.describe('Basic Website Functionality', () => {
     }
   });
 
-  test('should show the bilingual course restart banner without a link', async ({ page }) => {
+  test('should hide the outdated course restart banner in both languages', async ({ page }) => {
     await page.goto('/');
-    const frenchBanner = page.getByRole('complementary', { name: 'Rentrée des cours' });
-    await expect(frenchBanner.getByText('Rentrée des cours', { exact: true })).toBeVisible();
-    await expect(
-      frenchBanner.getByText('Les cours reprennent le mercredi 9 septembre 2026.', { exact: true })
-    ).toBeVisible();
-    await expect(frenchBanner.getByRole('link')).toHaveCount(0);
+    await expect(page.getByRole('complementary', { name: 'Rentrée des cours' })).toHaveCount(0);
+    await expect(page.getByText('Les cours reprennent le mercredi 9 septembre 2026.')).toHaveCount(0);
 
     await page.goto('/en');
-    const englishBanner = page.getByRole('complementary', { name: 'Lessons are back' });
-    await expect(englishBanner.getByText('Lessons are back', { exact: true })).toBeVisible();
-    await expect(
-      englishBanner.getByText('Lessons resume on Wednesday, September 9, 2026.', { exact: true })
-    ).toBeVisible();
-    await expect(englishBanner.getByRole('link')).toHaveCount(0);
+    await expect(page.getByRole('complementary', { name: 'Lessons are back' })).toHaveCount(0);
+    await expect(page.getByText('Lessons resume on Wednesday, September 9, 2026.')).toHaveCount(0);
   });
 
   test('should only show calendar-enabled events in the calendar', async ({ page }) => {

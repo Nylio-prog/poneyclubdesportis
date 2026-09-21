@@ -15,6 +15,9 @@ import { getOrganizationSchema, getLocalBusinessSchema } from "@/lib/structured-
 import Script from 'next/script';
 import '../globals.css';
 
+// Keep the announcement available for future use, but hide the September 9 notice.
+const showAnnouncementBanner = false;
+
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
@@ -81,7 +84,7 @@ export default async function LocaleLayout({
           <SkipToContent />
           <Header />
           <main id="main-content" className="flex-grow">
-            <AnnouncementBanner />
+            {showAnnouncementBanner && <AnnouncementBanner />}
             {children}
           </main>
           <Footer />
