@@ -48,7 +48,7 @@
       "lessons": {
         "kicker": "From age 3",
         "title": "Lessons",
-        "text": "Baby pony, children 4-10, teens from level 1 to 6, competition classes, private lessons, groundwork and horsemanship."
+        "text": "Baby pony, children 4-10, teens from level 1 to 6, private lessons, groundwork and horsemanship."
       },
       "camps": {
         "kicker": "School holidays",
@@ -245,9 +245,6 @@
       "teensLevel2": "Teens level 2-3",
       "teensLevel4": "Teens level 3-4",
       "teensLevel5": "Teens level 4-5-6",
-      "competition": "Competition class",
-      "teensChildren": "Teens level 4-5-6 / Children 4-10 years",
-      "childrenCompetition": "Children 4-10 years / Competition class",
       "teensGalop1": "Teens level 1",
       "teensGalop45": "Teens level 4-5"
     },

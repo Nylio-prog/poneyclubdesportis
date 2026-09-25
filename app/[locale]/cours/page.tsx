@@ -77,10 +77,10 @@ export default function PricesSchedulesPage() {
       "17h00-18h00": t('activities.private'),
     },
     [t('days.saturday')]: {
-      "9h30-10h30": t('activities.childrenCompetition'),
+      "9h30-10h30": t('activities.children'),
       "10h30-11h30": t('activities.teensLevel2'),
       "11h30-12h30": t('activities.teensGalop45'),
-      "14h00-15h00": t('activities.teensChildren'),
+      "14h00-15h00": t('activities.children'),
       "15h00-16h00": t('activities.teensLevel4'),
       "16h00-17h00": t('activities.teensLevel1'),
     },
