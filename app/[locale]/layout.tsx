@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { GeistSans } from 'geist/font/sans';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { setRequestLocale } from 'next-intl/server';
@@ -11,6 +10,7 @@ import AnnouncementBanner from "@/components/AnnouncementBanner";
 import SkipToContent from "@/components/SkipToContent";
 import { locales, Locale } from "@/lib/i18n/config";
 import { generatePageMetadata } from "@/lib/metadata";
+import { sans, serif } from "@/lib/fonts";
 import { getOrganizationSchema, getLocalBusinessSchema } from "@/lib/structured-data";
 import Script from 'next/script';
 import '../globals.css';
@@ -57,7 +57,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${GeistSans.className} flex min-h-screen flex-col`}
+        className={`${serif.variable} ${sans.variable} flex min-h-screen flex-col font-sans`}
         suppressHydrationWarning
       >
         {isVercelDeployment && (

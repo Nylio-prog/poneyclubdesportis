@@ -12,7 +12,72 @@
   "home": {
     "hero": {
       "title": "Welcome to Poney Club Desportis",
-      "newYear": "Happy New Year {year}!"
+      "newYear": "Happy New Year {year}!",
+      "kicker": "Cadenet · Luberon Regional Park",
+      "headline": "Riding, the natural way.",
+      "lead": "A family pony club set in 27 hectares of hills and pine forest. Lessons from age 3, holiday camps, trail rides and livery, always respectful of the horse.",
+      "cta": "Explore lessons",
+      "imageAlt": "Two riders walking their horses in the Poney Club Desportis arena"
+    },
+    "intro": {
+      "eyebrow": "Since 2008",
+      "lead": "Walk, trot and canter in the heart of the Luberon.",
+      "aside": "Our ponies and horses live outdoors in groups, and enjoy a peaceful retirement at the club when they stop working."
+    },
+    "stats": {
+      "founded": {
+        "value": "2008",
+        "label": "Founded"
+      },
+      "area": {
+        "value": "27 ha",
+        "label": "Of preserved nature"
+      },
+      "age": {
+        "value": "Age 3",
+        "label": "Minimum riding age"
+      },
+      "labels": {
+        "value": "4",
+        "label": "Labels & affiliation"
+      }
+    },
+    "offers": {
+      "title": "What we offer",
+      "lead": "From a first encounter with a pony all the way to competition, and for your own horse.",
+      "lessons": {
+        "kicker": "From age 3",
+        "title": "Lessons",
+        "text": "Baby pony, children 4-10, teens from level 1 to 6, competition classes and private weekday lessons."
+      },
+      "camps": {
+        "kicker": "School holidays",
+        "title": "Camps",
+        "text": "Shetland camps for the youngest, plus riding level preparation and exams during the holidays."
+      },
+      "rides": {
+        "kicker": "On the estate",
+        "title": "Trail rides",
+        "text": "Marked forest trails, a cross-country course and views over the Cadenet hillside."
+      },
+      "boarding": {
+        "kicker": "From €240 / month",
+        "title": "Livery",
+        "text": "Spacious hillside paddocks in small groups or pairs, away from flood zones, with top-quality local hay."
+      }
+    },
+    "domain": {
+      "title": "A 27-hectare estate",
+      "lead": "Facilities designed for safe progress, and trails for getting away from it all.",
+      "facilities": [
+        "60 × 30 m sand arena",
+        "18 m round pen",
+        "Cross-country course",
+        "Forest trails",
+        "Hillside paddocks",
+        "Horse shower"
+      ],
+      "imageAlt": "Aerial view of the estate and the arena"
     },
     "about": {
       "title": "Pony Club in Cadenet",
@@ -22,7 +87,14 @@
       "description4": "Poney Club Desportis is much more than just an equestrian center. It's a space where respect, safety, and the pleasure of horse riding come together to offer an unforgettable experience, whether for a trail ride, a lesson, or boarding your horse."
     },
     "events": {
-      "title": "Upcoming Events"
+      "title": "At the club",
+      "all": "All news",
+      "upcoming": "Upcoming",
+      "past": "Past"
+    },
+    "gallery": {
+      "title": "Club life",
+      "all": "View the gallery"
     },
     "testimonials": {
       "title": "What Our Riders Say",
@@ -39,13 +111,14 @@
         "text": "Very welcoming club, two superb coaches, lessons for young and old, varied lessons, great ponies and horses adapted to all levels. Many trail rides and great viewpoints!"
       }
     },
-    "certifications": {
-      "ourLabels": "Our Labels",
-      "ourAffiliation": "Our Affiliation",
-      "proudOfLabels": "Proud of our labels obtained since 2020"
+    "labels": {
+      "title": "Our labels & affiliation",
+      "passSport": "Pass’Sport eligible club"
     },
-    "passSport": {
-      "eligible": "We are eligible for the Pass'Sport program"
+    "visit": {
+      "title": "Come and see us",
+      "lead": "The easiest way: give us a call to arrange a visit or a trial lesson.",
+      "directions": "Directions"
     }
   },
   "calendar": {
@@ -70,7 +143,11 @@
     "ponies": "Ponies",
     "retired": "Retired",
     "other": "Other Animals",
-    "age": "years old"
+    "age": "years old",
+    "eyebrow": "Our horses",
+    "lead": "Ponies, horses and retirees: a herd chosen for every age and level, living outdoors in groups.",
+    "retiredBadge": "Retired",
+    "yearsOld": "years old"
   },
   "contact": {
     "title": "Contact",
@@ -85,18 +162,25 @@
     "visitUs": "Visit us",
     "mapTitle": "Poney Club Desportis location map",
     "openMaps": "Open in Google Maps",
-    "followUs": "Follow Us"
+    "followUs": "Follow Us",
+    "eyebrow": "Contact",
+    "lead": "For registration, a trial lesson or a livery place, the easiest way is to give us a call."
   },
   "footer": {
     "rights": "All rights reserved",
     "contact": "Contact",
-    "address": "Address"
+    "address": "Address",
+    "tagline": "Pony club and livery in Cadenet, in the heart of the Luberon Regional Park, since 2008.",
+    "explore": "Explore",
+    "followUs": "Follow us",
+    "labels": "Labels & affiliation"
   },
   "common": {
     "learnMore": "Learn more",
     "close": "Close",
     "open": "Open",
-    "menu": "Menu"
+    "menu": "Menu",
+    "directions": "Directions"
   },
   "accessibility": {
     "skipToContent": "Skip to main content"
@@ -188,6 +272,33 @@
       "adults40PlusBetween": "Between two certificates: Certificate of negative response to the self-assessment.",
       "source": "Source:",
       "ffeLink": "French Equestrian Federation (FFE) - License FAQ"
+    },
+    "eyebrow": "Lessons & camps",
+    "lead": "Lessons for every age and level, from baby pony at age 3 up to riding levels and competition.",
+    "levelsTitle": "For every age",
+    "documentsTitle": "Documents to download",
+    "scheduleLead": "Group lessons on Wednesdays and Saturdays, private lessons by appointment the rest of the week.",
+    "levels": {
+      "babyPony": {
+        "age": "Age 3-4",
+        "title": "Baby pony",
+        "text": "Discover, groom, play and ride safely for the first time."
+      },
+      "children": {
+        "age": "Age 4-10",
+        "title": "Children",
+        "text": "On our Shetlands, kids learn to ride and to care for their pony."
+      },
+      "teens": {
+        "age": "Levels 1 to 6",
+        "title": "Teens",
+        "text": "Level-based progress: flatwork, jumping, cross-country and club shows."
+      },
+      "adults": {
+        "age": "All levels",
+        "title": "Adults",
+        "text": "Private weekday lessons by appointment, and trail rides on the estate."
+      }
     }
   },
   "leClub": {
@@ -249,12 +360,19 @@
       "bpjepsCM": "BPJEPS equestrian activity Clémence Médail",
       "bfeehBB": "BFEEH Béatrice Bürkle",
       "bfee2BB": "BFEE2 Béatrice Bürkle"
-    }
+    },
+    "eyebrow": "The club",
+    "lead": "Since 2008, horse-friendly riding in the heart of the Vaucluse countryside.",
+    "servicesTitle": "What we do",
+    "estateTitle": "The estate",
+    "welfareTitle": "Welfare comes first",
+    "viewDiploma": "View diploma",
+    "rulesCta": "Read the club rules"
   },
   "pensions": {
     "title": "Full Boarding for Horses and Ponies",
     "wellbeing": "A Commitment to Equine Welfare",
-    "wellbeingText": "At Poney Club Desportis, the welfare of your horses and ponies is our identity. We do everything possible to offer a serene and respectful living environment, where each equine can thrive in complete tranquility. Our approach is based on attentive care, balanced nutrition, and quality facilities, all supervised by a team of passionate professionals. The club is managed by the instructor",
+    "wellbeingText": "At Poney Club Desportis, the welfare of your horses and ponies is our identity. We do everything possible to offer a serene and respectful living environment, where each equine can thrive in complete tranquility. Our approach is based on attentive care, balanced nutrition, and quality facilities, all supervised by a team of passionate professionals. The club is managed by the instructor Béatrice Bürkle.",
     "spaces": "Vast and Natural Spaces",
     "spacesText": "Our boarders benefit from spacious paddocks in small groups or pairs, located on hillsides outside flood zones. These natural spaces allow them to move freely and satisfy their natural needs in a secure and well-maintained environment. In addition, facilities such as the arena, round pen, or cross-country course will allow you to thrive with your equine in nature.",
     "food": "Quality Food and Care",
@@ -271,10 +389,26 @@
       "box": "Our spacious paddocks",
       "parcs": "Our green pastures",
       "hay": "Quality nutrition"
-    }
+    },
+    "eyebrow": "Livery",
+    "lead": "Hillside paddocks, quality hay and an attentive team for your horse’s well-being.",
+    "perMonth": "/ month",
+    "ctaTitle": "Looking for a place for your horse?",
+    "ctaText": "Call us to check availability and visit the facilities."
   },
   "photos": {
     "title": "Photo Gallery",
-    "altText": "Gallery photo"
+    "altText": "Gallery photo",
+    "eyebrow": "Gallery",
+    "lead": "Lessons, camps, trail rides and club celebrations: moments from life at the pony club."
+  },
+  "news": {
+    "eyebrow": "News",
+    "title": "News and Events",
+    "lead": "Camps, shows, open days and club celebrations: everything happening at Poney Club Desportis.",
+    "upcoming": "Upcoming Events",
+    "past": "Past Events",
+    "agenda": "Calendar",
+    "noUpcoming": "No events announced yet. Check back soon or follow us on Facebook and Instagram."
   }
 }

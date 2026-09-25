@@ -122,7 +122,7 @@ const Calendar = ({ events }: CalendarProps) => {
     return (
       <button
         title={tooltipText}
-        className={`bg-[var(--deep-burgundy)] text-[var(--ivory)] p-1 rounded max-w-full overflow-hidden text-ellipsis break-words ${
+        className={`bg-[var(--wine)] text-paper p-1 max-w-full overflow-hidden text-ellipsis break-words ${
           past ? 'opacity-60 grayscale' : ''
         }`}
       >
@@ -138,7 +138,7 @@ const Calendar = ({ events }: CalendarProps) => {
     if (isToday(date)) {
       return {
         style: {
-          backgroundColor: 'rgba(144, 0, 30, 0.1)',
+          backgroundColor: 'rgba(201, 180, 138, 0.25)',
           fontWeight: 'bold',
         },
       };
@@ -147,7 +147,7 @@ const Calendar = ({ events }: CalendarProps) => {
     if (currentView === "agenda") {
       return {
         style: {
-          backgroundColor: "var(--deep-burgundy)",
+          backgroundColor: "var(--wine)",
           color: "white",
         },
       };
@@ -163,7 +163,7 @@ const Calendar = ({ events }: CalendarProps) => {
     const past = isPastEvent(end);
     
     const baseStyle = {
-      backgroundColor: past ? "rgba(101, 0, 21, 0.6)" : "var(--deep-burgundy)",
+      backgroundColor: past ? "rgba(110, 15, 30, 0.6)" : "var(--wine)",
       border: "none",
       opacity: past ? 0.6 : 1,
     };
@@ -222,7 +222,51 @@ const Calendar = ({ events }: CalendarProps) => {
     
     /* Highlight today's date */
     .rbc-today {
-      background-color: rgba(144, 0, 30, 0.1) !important;
+      background-color: rgba(201, 180, 138, 0.25) !important;
+    }
+
+    /* Editorial look for react-big-calendar chrome */
+    .rbc-toolbar .rbc-toolbar-label {
+      font-family: var(--font-serif), serif;
+      font-size: 1.75rem;
+      font-weight: 300;
+      text-transform: capitalize;
+    }
+    .rbc-toolbar button {
+      border-radius: 0 !important;
+      border-color: rgba(31, 26, 23, 0.2);
+      color: var(--ink);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.6rem 1rem;
+    }
+    .rbc-toolbar button:hover,
+    .rbc-toolbar button:focus {
+      background-color: rgba(31, 26, 23, 0.05);
+      border-color: var(--ink);
+    }
+    .rbc-toolbar button.rbc-active,
+    .rbc-toolbar button.rbc-active:hover {
+      background-color: var(--ink);
+      border-color: var(--ink);
+      color: var(--paper);
+      box-shadow: none;
+    }
+    .rbc-month-view, .rbc-time-view, .rbc-agenda-view table.rbc-agenda-table {
+      background-color: #fff;
+      border-color: rgba(31, 26, 23, 0.12);
+    }
+    .rbc-header {
+      padding: 0.6rem 0.25rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .rbc-off-range-bg {
+      background-color: var(--paper);
     }
   `;
 
@@ -234,10 +278,10 @@ const Calendar = ({ events }: CalendarProps) => {
       <div className="flex justify-end gap-2 mb-4" role="group" aria-label={locale === 'fr' ? 'Sélection de la vue du calendrier' : 'Calendar view selection'}>
         <button
           onClick={() => setUserViewPreference('month')}
-          className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+          className={`flex min-h-11 items-center gap-2 border px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] transition-colors ${
             shouldShowMonthView
-              ? 'bg-[var(--deep-burgundy)] text-white'
-              : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              ? 'border-ink bg-ink text-paper'
+              : 'border-ink/20 hover:border-ink'
           }`}
           aria-label={t('viewMonth')}
           aria-pressed={shouldShowMonthView}
@@ -247,10 +291,10 @@ const Calendar = ({ events }: CalendarProps) => {
         </button>
         <button
           onClick={() => setUserViewPreference('list')}
-          className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+          className={`flex min-h-11 items-center gap-2 border px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] transition-colors ${
             !shouldShowMonthView
-              ? 'bg-[var(--deep-burgundy)] text-white'
-              : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              ? 'border-ink bg-ink text-paper'
+              : 'border-ink/20 hover:border-ink'
           }`}
           aria-label={t('viewAgenda')}
           aria-pressed={!shouldShowMonthView}

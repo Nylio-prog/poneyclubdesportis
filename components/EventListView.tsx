@@ -96,9 +96,9 @@ export default function EventListView({ events, locale, onEventClick }: EventLis
           <button
             key={event.id ?? `${event.startDate}-${event.title}`}
             onClick={() => onEventClick(event)}
-            className={`w-full text-left bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200 overflow-hidden ${
+            className={`w-full overflow-hidden bg-white text-left ring-1 ring-ink/10 transition-all duration-200 hover:ring-ink/40 ${
               past ? 'opacity-60 grayscale' : ''
-            } ${today ? 'ring-2 ring-[var(--vivid-burgundy)]' : ''}`}
+            } ${today ? 'ring-2 ring-[var(--wine)]' : ''}`}
             style={{ minHeight: '44px' }} // Touch-friendly minimum height
           >
             <div className="flex flex-col sm:flex-row">
@@ -117,7 +117,7 @@ export default function EventListView({ events, locale, onEventClick }: EventLis
 
               {/* Event details */}
               <div className="flex-1 p-4">
-                <h3 className="font-bold text-lg mb-2 text-gray-900">
+                <h3 className="mb-2 text-xl">
                   {title}
                 </h3>
 
@@ -152,7 +152,7 @@ export default function EventListView({ events, locale, onEventClick }: EventLis
 
                 {/* Today indicator */}
                 {today && (
-                  <span className="inline-block mt-2 text-xs font-semibold text-[var(--vivid-burgundy)]">
+                  <span className="inline-block mt-2 text-xs font-semibold text-[var(--wine)]">
                     {locale === 'fr' ? "Aujourd'hui" : 'Today'}
                   </span>
                 )}

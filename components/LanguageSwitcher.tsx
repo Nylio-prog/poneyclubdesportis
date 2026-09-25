@@ -7,9 +7,11 @@ import { usePathname, useRouter } from '@/lib/i18n/routing';
 
 interface LanguageSwitcherProps {
   className?: string;
+  /** "light" for use over photos or dark backgrounds, "dark" on paper. */
+  tone?: 'light' | 'dark';
 }
 
-export default function LanguageSwitcher({ className = '' }: LanguageSwitcherProps) {
+export default function LanguageSwitcher({ className = '', tone = 'dark' }: LanguageSwitcherProps) {
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
@@ -58,13 +60,14 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-center space-x-2 px-3 py-2 rounded-lg bg-[var(--ivory)]/10 hover:bg-[var(--ivory)]/20 transition-colors duration-200"
+        className={`flex h-11 items-center justify-center gap-1.5 rounded-full border px-3 text-xs font-semibold uppercase tracking-[0.15em] transition-colors duration-200 ${
+          tone === 'light' ? 'border-paper/50 hover:bg-paper/10' : 'border-ink/20 hover:bg-ink/5'
+        }`}
         aria-label="Change language"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
-        <span className="text-sm font-bold">{localeFlags[locale as keyof typeof localeFlags]}</span>
-        <span className="hidden sm:inline text-sm font-medium">{localeNames[locale as keyof typeof localeNames]}</span>
+        <span>{localeFlags[locale as keyof typeof localeFlags]}</span>
         <svg
           className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
@@ -85,18 +88,18 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
             onClick={() => setIsOpen(false)}
             aria-hidden="true"
           />
-          <div className="absolute right-0 mt-2 w-48 rounded-lg shadow-lg bg-[var(--deep-burgundy)] border border-[var(--ivory)]/20 z-20">
+          <div className="absolute right-0 z-20 mt-2 w-48 border border-ink/10 bg-paper text-ink shadow-xl">
             <div className="py-1">
               {locales.map((loc) => (
                 <button
                   type="button"
                   key={loc}
                   onClick={() => handleLocaleChange(loc)}
-                  className={`w-full flex items-center space-x-3 px-4 py-2 text-sm hover:bg-[var(--ivory)]/10 transition-colors ${
-                    locale === loc ? 'bg-[var(--ivory)]/5' : ''
+                  className={`flex min-h-11 w-full items-center gap-3 px-4 py-2 text-sm transition-colors hover:bg-ink/5 ${
+                    locale === loc ? 'text-wine' : ''
                   }`}
                 >
-                  <span className="text-sm font-bold">{localeFlags[loc]}</span>
+                  <span className="text-xs font-semibold tracking-[0.15em]">{localeFlags[loc]}</span>
                   <span className="font-medium">{localeNames[loc]}</span>
                   {locale === loc && (
                     <svg

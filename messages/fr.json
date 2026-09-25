@@ -12,7 +12,72 @@
   "home": {
     "hero": {
       "title": "Bienvenue au Poney Club Desportis",
-      "newYear": "Joyeuse Année {year} !"
+      "newYear": "Joyeuse Année {year} !",
+      "kicker": "Cadenet · Parc naturel du Luberon",
+      "headline": "L’équitation, grandeur nature.",
+      "lead": "Un poney club familial niché dans 27 hectares de collines et de pinèdes. Cours dès 3 ans, stages, balades et pension, dans le respect du cheval.",
+      "cta": "Découvrir les cours",
+      "imageAlt": "Deux cavalières au pas dans la carrière du Poney Club Desportis"
+    },
+    "intro": {
+      "eyebrow": "Depuis 2008",
+      "lead": "Au pas, au trot, au cœur du Luberon.",
+      "aside": "Nos poneys et chevaux vivent en groupe, au grand air, et profitent d’une retraite paisible au club quand ils cessent de travailler."
+    },
+    "stats": {
+      "founded": {
+        "value": "2008",
+        "label": "Année de création"
+      },
+      "area": {
+        "value": "27 ha",
+        "label": "De nature préservée"
+      },
+      "age": {
+        "value": "3 ans",
+        "label": "Âge minimum pour monter"
+      },
+      "labels": {
+        "value": "4",
+        "label": "Labels & affiliation"
+      }
+    },
+    "offers": {
+      "title": "Ce que nous proposons",
+      "lead": "Du premier contact avec un poney jusqu’à la compétition, et pour votre propre cheval.",
+      "lessons": {
+        "kicker": "Dès 3 ans",
+        "title": "Cours",
+        "text": "Baby poney, enfants 4-10 ans, ados du galop 1 au galop 6, cours compétition et cours particuliers en semaine."
+      },
+      "camps": {
+        "kicker": "Vacances scolaires",
+        "title": "Stages",
+        "text": "Stages shetlands pour les plus jeunes, préparation et validation des galops pendant les vacances."
+      },
+      "rides": {
+        "kicker": "Dans le domaine",
+        "title": "Balades",
+        "text": "Chemins balisés en forêt, parcours de cross et points de vue sur la colline de Cadenet."
+      },
+      "boarding": {
+        "kicker": "Dès 240 € / mois",
+        "title": "Pension",
+        "text": "Paddocks spacieux en petit groupe ou à deux, hors zone inondable, foin de haute qualité produit localement."
+      }
+    },
+    "domain": {
+      "title": "Un domaine de 27 hectares",
+      "lead": "Des installations pensées pour progresser en sécurité, et des chemins pour s’évader.",
+      "facilities": [
+        "Carrière de sable 60 × 30 m",
+        "Rond de longe de 18 m",
+        "Parcours de cross",
+        "Chemins de balade en forêt",
+        "Paddocks en colline",
+        "Douche pour chevaux"
+      ],
+      "imageAlt": "Vue aérienne du domaine et de la carrière"
     },
     "about": {
       "title": "Poney Club à Cadenet",
@@ -22,7 +87,14 @@
       "description4": "Le Poney Club Desportis, c'est bien plus qu'un simple centre équestre. C'est un espace où respect, sécurité et plaisir de l'équitation se rencontrent pour offrir une expérience inoubliable, que ce soit pour une balade, un cours, ou la pension de votre cheval."
     },
     "events": {
-      "title": "Évènements planifiés"
+      "title": "Au club",
+      "all": "Toutes les actualités",
+      "upcoming": "À venir",
+      "past": "Passé"
+    },
+    "gallery": {
+      "title": "La vie du club",
+      "all": "Voir la galerie"
     },
     "testimonials": {
       "title": "Ce que nos cavaliers disent",
@@ -39,13 +111,14 @@
         "text": "Club très accueillant, deux superbes coachs, des cours pour les petits comme pour les grands, des cours variés, des super poneys et chevaux adaptés à tous les niveaux. De nombreuses balades et super point de vue !"
       }
     },
-    "certifications": {
-      "ourLabels": "Nos Labels",
-      "ourAffiliation": "Notre affiliation",
-      "proudOfLabels": "Fiers de nos labels obtenus depuis 2020"
+    "labels": {
+      "title": "Nos labels & affiliation",
+      "passSport": "Club éligible au Pass’Sport"
     },
-    "passSport": {
-      "eligible": "Nous sommes éligibles au dispositif Pass'Sport"
+    "visit": {
+      "title": "Venez nous voir",
+      "lead": "Le plus simple : un coup de fil pour convenir d’une visite ou d’un cours d’essai.",
+      "directions": "Itinéraire"
     }
   },
   "calendar": {
@@ -70,7 +143,11 @@
     "ponies": "Poneys",
     "retired": "Retraités",
     "other": "Autres animaux",
-    "age": "ans"
+    "age": "ans",
+    "eyebrow": "Cavalerie",
+    "lead": "Poneys, chevaux et retraités : une cavalerie choisie pour tous les âges et tous les niveaux, qui vit en groupe au grand air.",
+    "retiredBadge": "Retraité",
+    "yearsOld": "ans"
   },
   "contact": {
     "title": "Contact",
@@ -85,18 +162,25 @@
     "visitUs": "Rendez-nous visite",
     "mapTitle": "Carte de localisation du Poney Club Desportis",
     "openMaps": "Ouvrir dans Google Maps",
-    "followUs": "Suivez-nous"
+    "followUs": "Suivez-nous",
+    "eyebrow": "Contact",
+    "lead": "Pour une inscription, un cours d’essai ou une place en pension, le plus simple est de nous appeler."
   },
   "footer": {
     "rights": "Tous droits réservés",
     "contact": "Contact",
-    "address": "Adresse"
+    "address": "Adresse",
+    "tagline": "Poney club et pension à Cadenet, au cœur du Parc naturel du Luberon, depuis 2008.",
+    "explore": "Explorer",
+    "followUs": "Suivez-nous",
+    "labels": "Labels & affiliation"
   },
   "common": {
     "learnMore": "En savoir plus",
     "close": "Fermer",
     "open": "Ouvrir",
-    "menu": "Menu"
+    "menu": "Menu",
+    "directions": "Itinéraire"
   },
   "accessibility": {
     "skipToContent": "Aller au contenu principal"
@@ -188,6 +272,33 @@
       "adults40PlusBetween": "Entre deux certificats : Attestation de réponse négative à l'auto-questionnaire.",
       "source": "Source :",
       "ffeLink": "Fédération Française d'Equitation (FFE) - FAQ sur la licence"
+    },
+    "eyebrow": "Cours & stages",
+    "lead": "Des cours adaptés à chaque âge et chaque niveau, du baby poney dès 3 ans jusqu’aux galops et à la compétition.",
+    "levelsTitle": "Pour chaque âge",
+    "documentsTitle": "Documents à télécharger",
+    "scheduleLead": "Cours collectifs le mercredi et le samedi, cours particuliers sur réservation le reste de la semaine.",
+    "levels": {
+      "babyPony": {
+        "age": "3-4 ans",
+        "title": "Baby poney",
+        "text": "Découvrir, brosser, jouer et oser monter en toute sécurité."
+      },
+      "children": {
+        "age": "4-10 ans",
+        "title": "Enfants",
+        "text": "Sur nos shetlands, on apprend à monter et à prendre soin de son poney."
+      },
+      "teens": {
+        "age": "Galops 1 à 6",
+        "title": "Ados",
+        "text": "Progression par niveau : dressage, obstacle, cross et concours internes."
+      },
+      "adults": {
+        "age": "Tous niveaux",
+        "title": "Adultes",
+        "text": "Cours particuliers en semaine, sur réservation, et balades dans le domaine."
+      }
     }
   },
   "leClub": {
@@ -249,12 +360,19 @@
       "bpjepsCM": "BPJEPS activité équestre Clémence Médail",
       "bfeehBB": "BFEEH Béatrice Bürkle",
       "bfee2BB": "BFEE2 Béatrice Bürkle"
-    }
+    },
+    "eyebrow": "Le club",
+    "lead": "Depuis 2008, une équitation respectueuse du cheval au cœur de la campagne vauclusienne.",
+    "servicesTitle": "Nos activités",
+    "estateTitle": "Le domaine",
+    "welfareTitle": "Le bien-être avant tout",
+    "viewDiploma": "Voir le diplôme",
+    "rulesCta": "Lire le règlement intérieur"
   },
   "pensions": {
     "title": "Pension Complète pour Chevaux et Poneys",
     "wellbeing": "Un Engagement pour le Bien-être Équin",
-    "wellbeingText": "Au Poney Club Desportis, le bien-être de vos chevaux et poneys est notre identité. Nous mettons tout en œuvre pour offrir un cadre de vie serein et respectueux, où chaque équidé peut s'épanouir en toute tranquillité. Notre approche repose sur des soins attentifs, une alimentation équilibrée, et des installations de qualité, le tout encadré par une équipe de professionnels passionnés. Le club est géré par la monitrice",
+    "wellbeingText": "Au Poney Club Desportis, le bien-être de vos chevaux et poneys est notre identité. Nous mettons tout en œuvre pour offrir un cadre de vie serein et respectueux, où chaque équidé peut s'épanouir en toute tranquillité. Notre approche repose sur des soins attentifs, une alimentation équilibrée, et des installations de qualité, le tout encadré par une équipe de professionnels passionnés. Le club est géré par la monitrice Béatrice Bürkle.",
     "spaces": "Des Espaces Vastes et Naturels",
     "spacesText": "Nos pensionnaires bénéficient de paddocks spacieux en petit groupe ou à deux, situés en colline hors des zones inondables. Ces espaces naturels leur permettent de se déplacer librement et de satisfaire leurs besoins naturels dans un environnement sécurisé et bien entretenu. De plus, les installations comme la carrière, le rond de longe, ou bien le cross permettront de s'épanouir avec son équidé dans la nature.",
     "food": "Une Alimentation et des Soins de Qualité",
@@ -271,10 +389,26 @@
       "box": "Nos paddocks spacieux",
       "parcs": "Nos prairies verdoyantes",
       "hay": "Alimentation de qualité"
-    }
+    },
+    "eyebrow": "Pension",
+    "lead": "Des paddocks en colline, un foin de qualité et une équipe attentive pour le bien-être de votre cheval.",
+    "perMonth": "/ mois",
+    "ctaTitle": "Une place pour votre cheval ?",
+    "ctaText": "Appelez-nous pour connaître les disponibilités et visiter les installations."
   },
   "photos": {
     "title": "Galerie Photo",
-    "altText": "Photo de galerie"
+    "altText": "Photo de galerie",
+    "eyebrow": "Galerie",
+    "lead": "Cours, stages, balades et fêtes du club : quelques moments de la vie au poney club."
+  },
+  "news": {
+    "eyebrow": "Actualités",
+    "title": "Actualités et Événements",
+    "lead": "Stages, concours, portes ouvertes et fêtes du club : tout ce qui se passe au Poney Club Desportis.",
+    "upcoming": "Événements à venir",
+    "past": "Événements passés",
+    "agenda": "Agenda",
+    "noUpcoming": "Aucun événement annoncé pour le moment. Revenez bientôt ou suivez-nous sur Facebook et Instagram."
   }
 }

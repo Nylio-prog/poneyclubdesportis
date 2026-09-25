@@ -1,117 +1,80 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import Image from "next/image";
 import { Link } from "@/lib/i18n/routing";
 import { useTranslations } from 'next-intl';
-
-const FacebookIcon = ({ size = 32 }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-  </svg>
-);
-
-const InstagramIcon = ({ size = 32 }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
-    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-  </svg>
-);
+import { club, labels, navItems } from "@/lib/site";
 
 const Footer = () => {
   const t = useTranslations('footer');
-  
+  const tNav = useTranslations('nav');
+  const tCommon = useTranslations('common');
+
   return (
-    <footer className="bg-[var(--deep-burgundy)] text-[var(--ivory)] py-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
-          {/* Club Info */}
-          <div className="text-center md:text-left">
-            <h2 className="text-xl font-bold mb-4">Poney Club Desportis</h2>
-            <div className="flex justify-center md:justify-start space-x-4">
-              <Link
-                href="https://www.facebook.com/p/Poney-Club-Desportis-100027924560857/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[var(--vivid-burgundy)] transition-colors"
-                aria-label="Facebook"
-              >
-                <FacebookIcon size={32} />
-              </Link>
-              <Link
-                href="https://www.instagram.com/poneyclubdesportis/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[var(--vivid-burgundy)] transition-colors"
-                aria-label="Instagram"
-              >
-                <InstagramIcon size={32} />
-              </Link>
-            </div>
+    <footer className="bg-ink text-paper">
+      <div className="mx-auto max-w-7xl px-5 pb-10 pt-20 md:px-10">
+        <div className="grid gap-12 md:grid-cols-12">
+          {/* Club */}
+          <div className="md:col-span-4">
+            <p className="font-serif text-3xl font-light">{club.name}</p>
+            <p className="mt-4 max-w-xs text-paper/60">{t('tagline')}</p>
+            <p className="mt-8 flex gap-6 text-sm">
+              <a href={club.facebook} target="_blank" rel="noopener noreferrer" className="editorial-link hover:text-sand">
+                Facebook
+              </a>
+              <a href={club.instagram} target="_blank" rel="noopener noreferrer" className="editorial-link hover:text-sand">
+                Instagram
+              </a>
+            </p>
           </div>
 
-          {/* Contact Info */}
-          <div className="text-center md:text-left">
-            <h3 className="text-lg font-semibold mb-4">{t('contact')}</h3>
-            <div className="space-y-2">
-              <div className="flex items-center justify-center md:justify-start">
-                <Phone size={16} className="mr-2 flex-shrink-0" aria-hidden="true" />
-                <Link href="tel:+33642878958" className="hover:underline">
-                  +33 6 42 87 89 58
-                </Link>
-              </div>
-              <div className="flex items-center justify-center md:justify-start">
-                <Mail size={16} className="mr-2 flex-shrink-0" aria-hidden="true" />
-                <Link
-                  href="mailto:poneyclub.desportis@free.fr"
-                  className="hover:underline break-all"
-                >
-                  poneyclub.desportis@free.fr
-                </Link>
-              </div>
-            </div>
+          {/* Navigation */}
+          <div className="md:col-span-3">
+            <h2 className="eyebrow font-sans text-sand">{t('explore')}</h2>
+            <ul className="mt-5 grid grid-cols-2 gap-x-6 gap-y-3 md:grid-cols-1">
+              {navItems.map(({ href, key }) => (
+                <li key={href}>
+                  <Link href={href} className="text-paper/80 hover:text-paper hover:underline hover:underline-offset-4">
+                    {tNav(key)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Address */}
-          <div className="text-center md:text-left">
-            <h3 className="text-lg font-semibold mb-4">{t('address')}</h3>
-            <div className="flex items-start justify-center md:justify-start">
-              <MapPin size={16} className="mr-2 flex-shrink-0 mt-1" aria-hidden="true" />
-              <address className="not-italic">
-                1070, Chemin Vidau<br />
-                84160 Cadenet<br />
-                France
-              </address>
-            </div>
+          {/* Contact */}
+          <div className="md:col-span-5">
+            <h2 className="eyebrow font-sans text-sand">{t('contact')}</h2>
+            <a href={club.phoneHref} className="mt-5 block font-serif text-3xl font-light hover:text-sand md:text-4xl">
+              {club.phone}
+            </a>
+            <a href={club.emailHref} className="mt-3 block break-all text-paper/80 hover:text-paper hover:underline hover:underline-offset-4">
+              {club.email}
+            </a>
+            <address className="mt-6 not-italic text-paper/60">
+              {club.street}
+              <br />
+              {club.city}, {club.country}
+            </address>
+            <a href={club.mapsHref} target="_blank" rel="noopener noreferrer" className="editorial-link mt-6 hover:text-sand">
+              {tCommon('directions')}&nbsp;↗
+            </a>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-8 pt-6 border-t border-[var(--ivory)]/20 text-center text-sm">
-          <p>
-            &copy; {new Date().getFullYear()} Poney Club Desportis. {t('rights')}
-          </p>
+        {/* Labels */}
+        <div className="mt-16 flex flex-col gap-6 border-t border-paper/15 pt-10 md:flex-row md:items-center md:justify-between">
+          <p className="eyebrow font-sans text-paper/50">{t('labels')}</p>
+          <ul className="flex flex-wrap items-center gap-3">
+            {labels.map((label) => (
+              <li key={label.name} className="flex h-14 w-14 items-center justify-center rounded-full bg-paper p-2">
+                <Image src={label.src} alt={label.name} width={40} height={40} className="h-full w-full object-contain mix-blend-multiply" />
+              </li>
+            ))}
+          </ul>
         </div>
+
+        <p className="mt-10 text-sm text-paper/50">
+          &copy; {new Date().getFullYear()} {club.name}. {t('rights')}
+        </p>
       </div>
     </footer>
   );

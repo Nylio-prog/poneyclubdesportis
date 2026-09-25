@@ -4,6 +4,12 @@ import { Locale, locales } from './i18n/config';
 
 const SITE_URL = 'https://poneyclubdesportis-cadenet.fr';
 
+/**
+ * Only the production deployment should be indexed. Vercel preview deployments
+ * (e.g. the redesign preview on the dev branch) set VERCEL_ENV to "preview".
+ */
+export const isIndexable = !process.env.VERCEL_ENV || process.env.VERCEL_ENV === 'production';
+
 interface PageMetadataParams {
   locale: Locale;
   page: 'home' | 'club' | 'photos' | 'cavalerie' | 'actualites' | 'cours' | 'pensions' | 'contact';
@@ -70,11 +76,11 @@ export async function generatePageMetadata({
       images: [ogImage],
     },
     robots: {
-      index: true,
-      follow: true,
+      index: isIndexable,
+      follow: isIndexable,
       googleBot: {
-        index: true,
-        follow: true,
+        index: isIndexable,
+        follow: isIndexable,
         'max-video-preview': -1,
         'max-image-preview': 'large',
         'max-snippet': -1,

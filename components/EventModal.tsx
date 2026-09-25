@@ -72,12 +72,12 @@ export default function EventModal({ isOpen, onClose, event, locale }: EventModa
       aria-labelledby="event-modal-title"
     >
       <div 
-        className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+        className="max-h-[90vh] w-full max-w-2xl overflow-y-auto bg-paper shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header with close button */}
-        <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-start">
-          <h2 id="event-modal-title" className="text-2xl font-bold text-gray-900 pr-8">{title}</h2>
+        <div className="sticky top-0 border-b border-ink/10 bg-paper px-6 py-4 flex justify-between items-start">
+          <h2 id="event-modal-title" className="pr-8 text-3xl">{title}</h2>
           <button
             onClick={onClose}
             className="flex-shrink-0 p-2 hover:bg-gray-100 rounded-full transition-colors"
@@ -91,7 +91,7 @@ export default function EventModal({ isOpen, onClose, event, locale }: EventModa
         <div className="p-6">
           {/* Event image */}
           {event.image && (
-            <div className="relative w-full h-64 mb-6 rounded-lg overflow-hidden">
+            <div className="relative mb-6 h-64 w-full overflow-hidden">
               <ResponsiveImage
                 src={event.image}
                 alt={title}

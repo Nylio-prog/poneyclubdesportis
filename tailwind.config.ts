@@ -63,6 +63,15 @@ const config = {
           DEFAULT: "#fffff0",
           dark: "#f5f5dc",
         },
+        // Editorial palette (hex so opacity modifiers like text-ink/70 work)
+        paper: "#F6F1E7",
+        ink: "#1F1A17",
+        wine: "#6E0F1E",
+        sand: "#C9B48A",
+      },
+      fontFamily: {
+        serif: ["var(--font-serif)", "Georgia", "serif"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       // Spacing Scale - 8px Grid System
       spacing: {

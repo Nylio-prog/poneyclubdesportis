@@ -53,9 +53,9 @@ test.describe('Basic Website Functionality', () => {
   });
 
   test('should only show calendar-enabled events in the calendar', async ({ page }) => {
-    await page.goto('/en');
+    await page.goto('/en/actualites');
 
-    const calendarSection = page.getByRole('heading', { name: 'Upcoming Events' }).locator('..');
+    const calendarSection = page.getByRole('heading', { name: 'Calendar', exact: true }).locator('..');
     const calendar = calendarSection.locator('.rbc-calendar');
     await expect(calendar).toBeVisible();
 
