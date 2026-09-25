@@ -19,6 +19,13 @@ import ring from '@/public/photos/IMG_5981.jpeg';
 import christmas from '@/public/photos/IMG_6056.jpeg';
 import competition from '@/public/photos/IMG-20250216-WA0000.jpg';
 import ponyJump from '@/public/photos/IMG-20250216-WA0001.jpg';
+import beaJump from '@/public/cours/bea_jump.jpg';
+import beaEthology from '@/public/cours/bea_ethology.jpg';
+import logoFfe from '@/public/logos/Logo_FFE.jpg';
+import logoWelfare from '@/public/logos/Logo_bien_etre_animal.png';
+import logoPoneyDeFrance from '@/public/logos/Logo_poney_de_france.png';
+import logoQuality from '@/public/logos/Logo_qualite.png';
+import logoPassSport from '@/public/logos/Logo_pass_sport.png';
 
 export const club = {
   name: 'Poney Club Desportis',
@@ -58,15 +65,22 @@ export const photos = {
   christmas,
   competition,
   ponyJump,
+  beaJump,
+  beaEthology,
 } satisfies Record<string, StaticImageData>;
 
 export const labels = [
-  { src: '/logos/Logo_FFE.jpg', name: "Fédération Française d'Équitation" },
-  { src: '/logos/Logo_bien_etre_animal.png', name: 'Bien-être animal' },
-  { src: '/logos/Logo_poney_de_france.png', name: 'Poney de France' },
-  { src: '/logos/Logo_qualite.png', name: "École Française d'Équitation" },
-  { src: '/logos/Logo_passport.jpg', name: "Pass'Sport" },
+  { image: logoFfe, name: "Fédération Française d'Équitation" },
+  { image: logoWelfare, name: 'Bien-être animal' },
+  { image: logoPoneyDeFrance, name: 'Poney de France' },
+  { image: logoQuality, name: "École Française d'Équitation" },
+  { image: logoPassSport, name: 'pass Sport' },
 ];
+
+/** Width that keeps a label's aspect ratio at the given display height (for crisp next/image srcsets). */
+export function widthForHeight(image: StaticImageData, height: number): number {
+  return Math.round((height * image.width) / image.height);
+}
 
 export const navItems = [
   { href: '/le-club', key: 'club' },

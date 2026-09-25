@@ -2,7 +2,7 @@ import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import PricingAndDocuments from "@/components/PricingAndDocuments";
 import { useTranslations } from 'next-intl';
-import { photos } from "@/lib/site";
+import { club, photos } from "@/lib/site";
 
 type Activity = string;
 type HourSchedule = Partial<Record<(typeof hours)[number], Activity>>;
@@ -90,7 +90,7 @@ export default function PricesSchedulesPage() {
     { key: 'babyPony', image: photos.babyPony },
     { key: 'children', image: photos.kidsLine },
     { key: 'teens', image: photos.competition },
-    { key: 'adults', image: photos.ring },
+    { key: 'adults', image: photos.beaJump },
   ] as const;
 
   return (
@@ -121,6 +121,24 @@ export default function PricesSchedulesPage() {
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* Groundwork & horsemanship */}
+      <section className="mx-auto max-w-7xl px-5 pb-24 md:px-10 md:pb-32">
+        <div className="grid items-center gap-8 border-t border-ink/15 pt-16 md:grid-cols-12 md:gap-12 md:pt-24">
+          <div className="relative aspect-[4/5] overflow-hidden md:col-span-5">
+            <Image src={photos.beaEthology} alt="" fill sizes="(max-width: 768px) 100vw, 40vw" quality={75} placeholder="blur" className="object-cover" />
+          </div>
+          <div className="md:col-span-6 md:col-start-7">
+            <p className="eyebrow text-wine">{t('groundwork.eyebrow')}</p>
+            <h2 className="mt-4">{t('groundwork.title')}</h2>
+            <p className="mt-8 font-serif text-2xl font-light md:text-3xl">{t('groundwork.question')}</p>
+            <p className="mt-5 text-lg leading-relaxed text-ink/75">{t('groundwork.text')}</p>
+            <a href={club.phoneHref} className="editorial-link mt-8">
+              {t('groundwork.cta')} · {club.phone}
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* Weekly schedule */}

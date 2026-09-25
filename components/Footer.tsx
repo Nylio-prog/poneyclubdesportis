@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Link } from "@/lib/i18n/routing";
 import { useTranslations } from 'next-intl';
-import { club, labels, navItems } from "@/lib/site";
+import { club, labels, navItems, widthForHeight } from "@/lib/site";
 
 const Footer = () => {
   const t = useTranslations('footer');
@@ -65,8 +65,8 @@ const Footer = () => {
           <p className="eyebrow font-sans text-paper/50">{t('labels')}</p>
           <ul className="flex flex-wrap items-center gap-3">
             {labels.map((label) => (
-              <li key={label.name} className="flex h-14 w-14 items-center justify-center rounded-full bg-paper p-2">
-                <Image src={label.src} alt={label.name} width={40} height={40} className="h-full w-full object-contain mix-blend-multiply" />
+              <li key={label.name} className="flex h-14 items-center rounded-full bg-paper px-4">
+                <Image src={label.image} alt={label.name} width={widthForHeight(label.image, 36)} height={36} className="h-9 w-auto object-contain mix-blend-multiply" />
               </li>
             ))}
           </ul>

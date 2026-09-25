@@ -48,7 +48,7 @@
       "lessons": {
         "kicker": "Dès 3 ans",
         "title": "Cours",
-        "text": "Baby poney, enfants 4-10 ans, ados du galop 1 au galop 6, cours compétition et cours particuliers en semaine."
+        "text": "Baby poney, enfants 4-10 ans, ados du galop 1 au galop 6, cours compétition, cours particuliers, travail à pied et éthologie."
       },
       "camps": {
         "kicker": "Vacances scolaires",
@@ -113,7 +113,7 @@
     },
     "labels": {
       "title": "Nos labels & affiliation",
-      "passSport": "Club éligible au Pass’Sport"
+      "passSport": "Club éligible au pass Sport"
     },
     "visit": {
       "title": "Venez nous voir",
@@ -302,6 +302,13 @@
         "title": "Adultes",
         "text": "Cours particuliers en semaine, sur réservation, et balades dans le domaine."
       }
+    },
+    "groundwork": {
+      "eyebrow": "Cavaliers & propriétaires",
+      "title": "Cours à pied & éthologie",
+      "question": "Des difficultés avec votre cheval ?",
+      "text": "Peur, manque de confiance, cheval qui tire, refuse ou s’énerve : le travail à pied aide à comprendre son cheval et à se faire comprendre de lui, pour retrouver une relation sereine, au sol comme en selle.",
+      "cta": "En parler avec nous"
     }
   },
   "leClub": {

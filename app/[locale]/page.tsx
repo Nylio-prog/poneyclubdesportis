@@ -10,7 +10,7 @@ import {
   getFeaturedEvents,
 } from "@/lib/events";
 import type { Locale } from "@/lib/i18n/config";
-import { club, labels, photos } from "@/lib/site";
+import { club, labels, photos, widthForHeight } from "@/lib/site";
 
 const offerKeys = ['lessons', 'camps', 'rides', 'boarding'] as const;
 const offerMedia = {
@@ -22,11 +22,11 @@ const offerMedia = {
 const statKeys = ['founded', 'area', 'age', 'labels'] as const;
 const testimonialKeys = ['testimonial1', 'testimonial2', 'testimonial3'] as const;
 const gallery = [
-  { src: photos.jump, className: 'col-span-2 row-span-2 aspect-square md:aspect-auto' },
-  { src: photos.shetlands, className: 'aspect-square' },
-  { src: photos.hug, className: 'aspect-square' },
-  { src: photos.groundWork, className: 'aspect-square' },
-  { src: photos.christmas, className: 'aspect-square' },
+  { src: photos.jump, className: 'col-span-2 row-span-2 aspect-square md:aspect-auto', sizes: '(max-width: 768px) 100vw, 50vw' },
+  { src: photos.shetlands, className: 'aspect-square', sizes: '(max-width: 768px) 50vw, 25vw' },
+  { src: photos.hug, className: 'aspect-square', sizes: '(max-width: 768px) 50vw, 25vw' },
+  { src: photos.groundWork, className: 'aspect-square', sizes: '(max-width: 768px) 50vw, 25vw' },
+  { src: photos.christmas, className: 'aspect-square', sizes: '(max-width: 768px) 50vw, 25vw' },
 ];
 
 export default function Accueil() {
@@ -190,7 +190,7 @@ export default function Accueil() {
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:grid-rows-2 md:gap-4">
           {gallery.map((item, index) => (
             <div key={index} className={`relative overflow-hidden ${item.className}`}>
-              <Image src={item.src} alt="" fill sizes="(max-width: 768px) 50vw, 25vw" quality={60} placeholder="blur" className="object-cover transition duration-700 hover:scale-105" />
+              <Image src={item.src} alt="" fill sizes={item.sizes} quality={75} placeholder="blur" className="object-cover transition duration-700 hover:scale-105" />
             </div>
           ))}
         </div>
@@ -228,7 +228,7 @@ export default function Accueil() {
           <ul className="flex flex-wrap items-center justify-center gap-8">
             {labels.map((label) => (
               <li key={label.name}>
-                <Image src={label.src} alt={label.name} width={64} height={64} className="h-14 w-auto object-contain mix-blend-multiply grayscale transition hover:grayscale-0" />
+                <Image src={label.image} alt={label.name} width={widthForHeight(label.image, 56)} height={56} className="h-14 w-auto object-contain mix-blend-multiply grayscale transition hover:grayscale-0" />
               </li>
             ))}
           </ul>

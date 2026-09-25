@@ -48,7 +48,7 @@
       "lessons": {
         "kicker": "From age 3",
         "title": "Lessons",
-        "text": "Baby pony, children 4-10, teens from level 1 to 6, competition classes and private weekday lessons."
+        "text": "Baby pony, children 4-10, teens from level 1 to 6, competition classes, private lessons, groundwork and horsemanship."
       },
       "camps": {
         "kicker": "School holidays",
@@ -113,7 +113,7 @@
     },
     "labels": {
       "title": "Our labels & affiliation",
-      "passSport": "Pass’Sport eligible club"
+      "passSport": "pass Sport eligible club"
     },
     "visit": {
       "title": "Come and see us",
@@ -302,6 +302,13 @@
         "title": "Adults",
         "text": "Private weekday lessons by appointment, and trail rides on the estate."
       }
+    },
+    "groundwork": {
+      "eyebrow": "Riders & owners",
+      "title": "Groundwork & horsemanship",
+      "question": "Having trouble with your horse?",
+      "text": "Fear, lack of confidence, a horse that pulls, refuses or gets tense: groundwork helps you understand your horse and be understood in return, for a calm relationship on the ground and in the saddle.",
+      "cta": "Talk to us about it"
     }
   },
   "leClub": {
