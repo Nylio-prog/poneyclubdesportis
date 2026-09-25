@@ -243,15 +243,13 @@
       "teens": "Teens",
       "teensLevel1": "Teens level 1-2",
       "teensLevel2": "Teens level 2-3",
-      "teensLevel3": "Teens level 2-3-4",
       "teensLevel4": "Teens level 3-4",
       "teensLevel5": "Teens level 4-5-6",
       "competition": "Competition class",
-      "childrenTeens": "Teens level 3-4 / Children 4-10 years",
-      "childrenTeens2": "Teens level 2-3 / Children 4-10 years",
       "teensChildren": "Teens level 4-5-6 / Children 4-10 years",
       "childrenCompetition": "Children 4-10 years / Competition class",
-      "teensBaby": "Teens level 4-5-6 / Baby pony"
+      "teensGalop1": "Teens level 1",
+      "teensGalop45": "Teens level 4-5"
     },
     "pricing": {
       "title": "Our Rates and Registration",

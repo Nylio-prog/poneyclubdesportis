@@ -243,15 +243,13 @@
       "teens": "Ado",
       "teensLevel1": "Ado galop 1-2",
       "teensLevel2": "Ado galop 2-3",
-      "teensLevel3": "Ado galop 2-3-4",
       "teensLevel4": "Ado galop 3-4",
       "teensLevel5": "Ado galop 4-5-6",
       "competition": "Cours compétition",
-      "childrenTeens": "Ado galop 3-4 / Enfant 4-10 ans",
-      "childrenTeens2": "Ado galop 2-3 / Enfant 4-10 ans",
       "teensChildren": "Ado galop 4-5-6 / Enfant 4-10 ans",
       "childrenCompetition": "Enfant 4-10 ans / Cours compétition",
-      "teensBaby": "Ado galop 4-5-6 / Baby poney"
+      "teensGalop1": "Ado galop 1",
+      "teensGalop45": "Ado galop 4-5"
     },
     "pricing": {
       "title": "Nos tarifs et inscription",

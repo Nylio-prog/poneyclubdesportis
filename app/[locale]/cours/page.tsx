@@ -53,9 +53,10 @@ export default function PricesSchedulesPage() {
     [t('days.wednesday')]: {
       "9h30-10h30": t('activities.children'),
       "10h30-11h30": t('activities.babyPony'),
-      "14h00-15h00": t('activities.childrenTeens'),
-      "15h00-16h00": t('activities.childrenTeens2'),
-      "16h00-17h00": t('activities.teensLevel1'),
+      "14h00-15h00": t('activities.children'),
+      "15h00-16h00": t('activities.teensLevel2'),
+      "16h00-17h00": t('activities.teensGalop1'),
+      "17h00-18h00": t('activities.teensLevel4'),
     },
     [t('days.thursday')]: {
       "9h30-10h30": t('activities.private'),
@@ -77,10 +78,10 @@ export default function PricesSchedulesPage() {
     },
     [t('days.saturday')]: {
       "9h30-10h30": t('activities.childrenCompetition'),
-      "10h30-11h30": t('activities.teensLevel3'),
-      "11h30-12h30": t('activities.teensBaby'),
+      "10h30-11h30": t('activities.teensLevel2'),
+      "11h30-12h30": t('activities.teensGalop45'),
       "14h00-15h00": t('activities.teensChildren'),
-      "15h00-16h00": t('activities.teensLevel2'),
+      "15h00-16h00": t('activities.teensLevel4'),
       "16h00-17h00": t('activities.teensLevel1'),
     },
   };
