@@ -5,10 +5,12 @@ import { Locale, locales } from './i18n/config';
 const SITE_URL = 'https://poneyclubdesportis-cadenet.fr';
 
 /**
- * Only the production deployment should be indexed. Vercel preview deployments
- * (e.g. the redesign preview on the dev branch) set VERCEL_ENV to "preview".
+ * Only the real production site should be indexed. Vercel preview deployments set
+ * VERCEL_ENV to "preview"; a separate preview project can also set DISABLE_INDEXING=true.
  */
-export const isIndexable = !process.env.VERCEL_ENV || process.env.VERCEL_ENV === 'production';
+export const isIndexable =
+  process.env.DISABLE_INDEXING !== 'true' &&
+  (!process.env.VERCEL_ENV || process.env.VERCEL_ENV === 'production');
 
 interface PageMetadataParams {
   locale: Locale;
