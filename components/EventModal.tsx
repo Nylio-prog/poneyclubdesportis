@@ -1,36 +1,36 @@
 "use client";
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
 import ResponsiveImage from './ResponsiveImage';
-import { format } from 'date-fns';
-import { fr, enUS } from 'date-fns/locale';
 import { useTranslations } from 'next-intl';
 import type { Locale } from '@/lib/i18n/config';
+import { formatDayKey } from '@/lib/calendar';
 import {
   ClubEvent,
-  getEventDateTime,
   getEventDescription,
   getEventTimeLabel,
   getEventTitle,
 } from '@/lib/events';
 
 interface EventModalProps {
-  isOpen: boolean;
-  onClose: () => void;
   event: ClubEvent | null;
+  onClose: () => void;
   locale: Locale;
 }
 
-export default function EventModal({ isOpen, onClose, event, locale }: EventModalProps) {
+export default function EventModal({ event, onClose, locale }: EventModalProps) {
   const t = useTranslations('common');
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const isOpen = event !== null;
 
-  // Close on escape key
+  // Escape to close, lock page scroll, move focus in and give it back on close.
   useEffect(() => {
     if (!isOpen) {
       return;
     }
 
+    const previouslyFocused = document.activeElement as HTMLElement | null;
     const previousOverflow = document.body.style.overflow;
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -40,91 +40,62 @@ export default function EventModal({ isOpen, onClose, event, locale }: EventModa
 
     document.addEventListener('keydown', handleEscape);
     document.body.style.overflow = 'hidden';
+    closeButtonRef.current?.focus();
 
     return () => {
       document.removeEventListener('keydown', handleEscape);
       document.body.style.overflow = previousOverflow;
+      previouslyFocused?.focus();
     };
   }, [isOpen, onClose]);
 
-  if (!isOpen || !event) return null;
+  if (!event) return null;
 
-  const dateLocale = locale === 'fr' ? fr : enUS;
   const title = getEventTitle(event, locale);
   const description = getEventDescription(event, locale);
-
-  // Format dates according to locale
-  const startDate = getEventDateTime(event.startDate);
-  const endDate = getEventDateTime(event.endDate);
-  const isSameDay = event.startDate === event.endDate;
-
-  const dateFormat = locale === 'fr' ? 'dd/MM/yyyy' : 'MM/dd/yyyy';
-
-  const formattedStartDate = format(startDate, dateFormat, { locale: dateLocale });
-  const formattedEndDate = format(endDate, dateFormat, { locale: dateLocale });
+  const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+  const dateLabel = event.startDate === event.endDate
+    ? `${formatDayKey(event.startDate, locale, dateOptions)} · ${getEventTimeLabel(event, locale)}`
+    : `${formatDayKey(event.startDate, locale, dateOptions)} → ${formatDayKey(event.endDate, locale, dateOptions)}`;
 
   return (
-    <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm"
+    <div
+      className="fixed inset-0 z-[60] flex items-end justify-center bg-ink/50 md:items-center md:p-6"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-labelledby="event-modal-title"
     >
-      <div 
-        className="max-h-[90vh] w-full max-w-2xl overflow-y-auto bg-paper shadow-xl"
+      <div
+        className="relative max-h-[92vh] w-full max-w-2xl overflow-y-auto bg-paper shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header with close button */}
-        <div className="sticky top-0 border-b border-ink/10 bg-paper px-6 py-4 flex justify-between items-start">
-          <h2 id="event-modal-title" className="pr-8 text-3xl">{title}</h2>
-          <button
-            onClick={onClose}
-            className="flex-shrink-0 p-2 hover:bg-gray-100 rounded-full transition-colors"
-            aria-label={t('close')}
-          >
-            <X className="w-6 h-6" aria-hidden="true" />
-          </button>
-        </div>
+        <button
+          ref={closeButtonRef}
+          type="button"
+          onClick={onClose}
+          className="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-ink/20 bg-paper transition-colors hover:border-ink"
+          aria-label={t('close')}
+        >
+          <X className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
+        </button>
 
-        {/* Content */}
-        <div className="p-6">
-          {/* Event image */}
-          {event.image && (
-            <div className="relative mb-6 h-64 w-full overflow-hidden">
-              <ResponsiveImage
-                src={event.image}
-                alt={title}
-                fill
-                objectFit="cover"
-                sizes="(max-width: 768px) 100vw, 672px"
-              />
-            </div>
-          )}
-
-          {/* Date and time */}
-          <div className="mb-4 text-gray-600">
-            <p className="font-semibold">
-              {isSameDay ? (
-                <>
-                  {formattedStartDate}
-                  <br />
-                  {getEventTimeLabel(event, locale)}
-                </>
-              ) : (
-                <>
-                  {formattedStartDate} - {formattedEndDate}
-                  <br />
-                  {getEventTimeLabel(event, locale)}
-                </>
-              )}
-            </p>
+        {event.image && (
+          <div className="relative aspect-[16/9] w-full bg-ink/5">
+            <ResponsiveImage
+              src={event.image}
+              alt={title}
+              fill
+              objectFit="cover"
+              sizes="(max-width: 768px) 100vw, 672px"
+            />
           </div>
+        )}
 
-          {/* Description */}
-          <div className="text-gray-700 whitespace-pre-line">
-            {description}
-          </div>
+        <div className="p-6 md:p-10">
+          <p className="eyebrow pr-12 text-wine first-letter:uppercase">{dateLabel}</p>
+          <h2 id="event-modal-title" className="mt-4 pr-12 text-3xl md:text-4xl">{title}</h2>
+          <p className="mt-6 whitespace-pre-line leading-relaxed text-ink/75">{description}</p>
         </div>
       </div>
     </div>

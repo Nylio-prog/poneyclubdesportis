@@ -122,15 +122,18 @@
     }
   },
   "calendar": {
-    "title": "Évènements planifiés",
-    "viewMonth": "Mois",
-    "viewWeek": "Semaine",
-    "viewAgenda": "Agenda",
-    "noEvents": "Aucun événement de prévu sur la période sélectionnée",
-    "next": "Suivant",
-    "previous": "Précédent",
-    "today": "Aujourd'hui",
-    "allDay": "Toute la journée"
+    "title": "Agenda du club",
+    "previousMonth": "Mois précédent",
+    "nextMonth": "Mois suivant",
+    "today": "Aujourd’hui",
+    "thisMonth": "Ce mois-ci",
+    "allMonth": "Tout le mois",
+    "noEvents": "Aucun événement ce mois-ci.",
+    "nextEvent": "Voir le prochain événement",
+    "lastEvent": "Voir le dernier événement",
+    "more": "+ {count} autre(s)",
+    "eventsOn": "Événements du {date}",
+    "details": "Voir le détail"
   },
   "announcement": {
     "title": "Rentrée des cours",

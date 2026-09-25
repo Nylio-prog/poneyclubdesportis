@@ -101,7 +101,9 @@ export default function PricesSchedulesPage() {
         lead={t('lead')}
         image={photos.jump}
         imageAlt={t('imageAlt')}
-        imagePosition="center 45%"
+        // Taller frame so the rider's helmet and the horse's hooves both stay in shot.
+        imageAspect="md:aspect-[16/9]"
+        imagePosition="center 35%"
       />
 
       {/* Levels */}

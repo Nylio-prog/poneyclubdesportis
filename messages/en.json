@@ -122,15 +122,18 @@
     }
   },
   "calendar": {
-    "title": "Upcoming Events",
-    "viewMonth": "Month",
-    "viewWeek": "Week",
-    "viewAgenda": "Agenda",
-    "noEvents": "No events scheduled for the selected period",
-    "next": "Next",
-    "previous": "Previous",
+    "title": "Club calendar",
+    "previousMonth": "Previous month",
+    "nextMonth": "Next month",
     "today": "Today",
-    "allDay": "All day"
+    "thisMonth": "This month",
+    "allMonth": "Whole month",
+    "noEvents": "No events this month.",
+    "nextEvent": "See the next event",
+    "lastEvent": "See the latest event",
+    "more": "+ {count} more",
+    "eventsOn": "Events on {date}",
+    "details": "View details"
   },
   "announcement": {
     "title": "Lessons are back",

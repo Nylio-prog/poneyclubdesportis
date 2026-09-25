@@ -8,6 +8,8 @@ interface PageHeaderProps {
   imageAlt?: string;
   /** CSS object-position for the banner image. */
   imagePosition?: string;
+  /** Tailwind aspect ratio for the banner from the md breakpoint up. */
+  imageAspect?: string;
 }
 
 /** Editorial page opening: eyebrow, large serif title, lead and an optional wide photo. */
@@ -18,6 +20,7 @@ export default function PageHeader({
   image,
   imageAlt = "",
   imagePosition = "center",
+  imageAspect = "md:aspect-[21/9]",
 }: PageHeaderProps) {
   return (
     <header className="mx-auto max-w-7xl px-5 pt-14 md:px-10 md:pt-24">
@@ -31,7 +34,7 @@ export default function PageHeader({
         )}
       </div>
       {image && (
-        <div className="relative mt-12 aspect-[4/3] overflow-hidden md:mt-16 md:aspect-[21/9]">
+        <div className={`relative mt-12 aspect-[4/3] overflow-hidden md:mt-16 ${imageAspect}`}>
           <Image
             src={image}
             alt={imageAlt}

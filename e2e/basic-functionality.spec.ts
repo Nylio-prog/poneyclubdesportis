@@ -56,11 +56,17 @@ test.describe('Basic Website Functionality', () => {
     await page.goto('/en/actualites');
 
     const calendarSection = page.getByRole('heading', { name: 'Calendar', exact: true }).locator('..');
-    const calendar = calendarSection.locator('.rbc-calendar');
-    await expect(calendar).toBeVisible();
+    const monthHeading = calendarSection.getByRole('heading', { level: 3 });
+    await expect(monthHeading).toBeVisible();
 
-    const viewSelector = page.getByRole('group', { name: 'Calendar view selection' });
-    await viewSelector.getByRole('button', { name: 'Agenda', exact: true }).click();
+    // Navigate to July 2026, whatever the current month is.
+    const target = new Date(2026, 6, 1);
+    for (let i = 0; i < 36 && (await monthHeading.textContent())?.trim() !== 'July 2026'; i++) {
+      const shown = new Date(`1 ${(await monthHeading.textContent())?.trim()}`);
+      const direction = shown < target ? 'Next month' : 'Previous month';
+      await calendarSection.getByRole('button', { name: direction }).click();
+    }
+    await expect(monthHeading).toHaveText('July 2026');
 
     await expect(
       calendarSection.getByText('Summer Half-Board Package - July and August', { exact: true })
@@ -68,11 +74,17 @@ test.describe('Basic Website Functionality', () => {
     await expect(
       calendarSection.getByText('Galop Preparation and Assessment Courses', { exact: true })
     ).toHaveCount(0);
-    const defaultVisibleEvent = calendarSection.getByText(
-      "Children's Shetland Courses - Summer Holidays",
-      { exact: true }
-    );
-    await expect(defaultVisibleEvent).toBeVisible();
+    const calendarEvent = calendarSection
+      .getByRole('button', { name: /Children's Shetland Courses - Summer Holidays/ })
+      .last();
+    await expect(calendarEvent).toBeVisible();
+
+    // Opening an event shows its details in a dialog.
+    await calendarEvent.click();
+    const dialog = page.getByRole('dialog');
+    await expect(dialog).toContainText("Children's Shetland Courses - Summer Holidays");
+    await page.keyboard.press('Escape');
+    await expect(dialog).toHaveCount(0);
 
     await page.goto('/en/actualites');
     await expect(
