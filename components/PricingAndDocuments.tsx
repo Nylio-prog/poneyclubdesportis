@@ -1,116 +1,105 @@
-'use client';
-
-import Link from "next/link";
 import { useTranslations } from 'next-intl';
 
-interface PDFLinkProps {
+interface DocumentLinkProps {
   href: string;
   text: string;
 }
 
-const PDFLink: React.FC<PDFLinkProps> = ({ href, text }) => (
-  <Link
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="font-bold text-[var(--deep-burgundy)] hover:underline block mb-2"
-  >
-    {text}
-  </Link>
+const DocumentLink = ({ href, text }: DocumentLinkProps) => (
+  <li>
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex items-center justify-between gap-6 border-b border-ink/15 py-5 transition-colors hover:text-wine"
+    >
+      <span className="text-lg">{text}</span>
+      <span className="shrink-0 text-xs font-semibold uppercase tracking-[0.15em] text-ink/50 group-hover:text-wine">
+        PDF ↗
+      </span>
+    </a>
+  </li>
 );
 
-const PricingAndDocuments: React.FC = () => {
+const PricingAndDocuments = () => {
   const t = useTranslations('cours');
-  
-  const pricingDocuments: PDFLinkProps[] = [
+
+  const pricingDocuments: DocumentLinkProps[] = [
     { href: "/cours/tarifs.pdf", text: t('pricing.viewRates') },
-    {
-      href: "/cours/fiche_adhesion.pdf",
-      text: t('pricing.viewMembership'),
-    },
+    { href: "/cours/fiche_adhesion.pdf", text: t('pricing.viewMembership') },
   ];
 
-  const licenseDocuments: PDFLinkProps[] = [
-    {
-      href: "/cours/ffe_autoquestionnaire_majeurs.pdf",
-      text: t('license.viewAdults'),
-    },
-    {
-      href: "/cours/ffe_autoquestionnaire_mineurs.pdf",
-      text: t('license.viewMinors'),
-    },
+  const licenseDocuments: DocumentLinkProps[] = [
+    { href: "/cours/ffe_autoquestionnaire_majeurs.pdf", text: t('license.viewAdults') },
+    { href: "/cours/ffe_autoquestionnaire_mineurs.pdf", text: t('license.viewMinors') },
   ];
 
   return (
-    <div className="space-y-8">
-      <section>
-        <h2 className="text-2xl font-bold mb-4">{t('pricing.title')}</h2>
-        {pricingDocuments.map((doc, index) => (
-          <PDFLink key={index} {...doc} />
-        ))}
-      </section>
+    <section className="bg-ink/[0.03]">
+      <div className="mx-auto max-w-7xl px-5 py-24 md:px-10">
+        <h2>{t('documentsTitle')}</h2>
 
-      <section className="py-4 rounded-lg">
-        <h2 className="text-2xl font-bold mb-4">
-          {t('license.title')}
-        </h2>
-
-        <div className="mb-6">
-          <h3 className="text-xl font-semibold mb-2">
-            {t('license.questionnairesTitle')}
-          </h3>
-          {licenseDocuments.map((doc, index) => (
-            <PDFLink key={index} {...doc} />
-          ))}
+        <div className="mt-14 grid gap-16 md:grid-cols-2">
+          <div>
+            <h3 className="text-2xl">{t('pricing.title')}</h3>
+            <ul className="mt-4 border-t border-ink/15">
+              {pricingDocuments.map((doc) => (
+                <DocumentLink key={doc.href} {...doc} />
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-2xl">{t('license.questionnairesTitle')}</h3>
+            <ul className="mt-4 border-t border-ink/15">
+              {licenseDocuments.map((doc) => (
+                <DocumentLink key={doc.href} {...doc} />
+              ))}
+            </ul>
+          </div>
         </div>
 
-        <div>
-          <h3 className="text-xl font-semibold mb-2">{t('license.medicalTitle')}</h3>
-          <p className="mb-4">
-            {t('license.medicalIntro')}
-          </p>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>
-              <strong>{t('license.minors')}</strong> {t('license.minorsText')}
-            </li>
-            <li>
-              <strong>{t('license.adultsUnder40')}</strong>
-              <ul className="list-circle pl-6 mt-1">
-                <li>
-                  {t('license.adultsUnder40First')}
-                </li>
-                <li>
-                  {t('license.adultsUnder40Renewal')}
-                </li>
-              </ul>
-            </li>
-            <li>
-              <strong>{t('license.adults40Plus')}</strong>
-              <ul className="list-circle pl-6 mt-1">
-                <li>
-                  {t('license.adults40PlusFirst')}
-                </li>
-                <li>
-                  {t('license.adults40PlusBetween')}
-                </li>
-              </ul>
-            </li>
-          </ul>
+        <div className="mt-20 grid gap-10 border-t border-ink/15 pt-12 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <p className="eyebrow text-wine">{t('license.title')}</p>
+            <h3 className="mt-4 text-3xl">{t('license.medicalTitle')}</h3>
+          </div>
+          <div className="md:col-span-8">
+            <p className="text-lg text-ink/75">{t('license.medicalIntro')}</p>
+            <dl className="mt-8 divide-y divide-ink/10 border-y border-ink/10">
+              <div className="grid gap-2 py-5 md:grid-cols-3">
+                <dt className="font-semibold">{t('license.minors')}</dt>
+                <dd className="text-ink/75 md:col-span-2">{t('license.minorsText')}</dd>
+              </div>
+              <div className="grid gap-2 py-5 md:grid-cols-3">
+                <dt className="font-semibold">{t('license.adultsUnder40')}</dt>
+                <dd className="space-y-1 text-ink/75 md:col-span-2">
+                  <p>{t('license.adultsUnder40First')}</p>
+                  <p>{t('license.adultsUnder40Renewal')}</p>
+                </dd>
+              </div>
+              <div className="grid gap-2 py-5 md:grid-cols-3">
+                <dt className="font-semibold">{t('license.adults40Plus')}</dt>
+                <dd className="space-y-1 text-ink/75 md:col-span-2">
+                  <p>{t('license.adults40PlusFirst')}</p>
+                  <p>{t('license.adults40PlusBetween')}</p>
+                </dd>
+              </div>
+            </dl>
+            <p className="mt-6 text-sm italic text-ink/60">
+              {t('license.source')}{" "}
+              <a
+                href="https://www.ffe.com/faq/La-licence"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-wine"
+              >
+                {t('license.ffeLink')}
+              </a>
+            </p>
+          </div>
         </div>
-
-        <p className="text-sm text-gray-600 italic mt-6">
-          {t('license.source')}{" "}
-          <Link
-            href="https://www.ffe.com/faq/La-licence"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[var(--deep-burgundy)] hover:underline"
-          >
-            {t('license.ffeLink')}
-          </Link>
-        </p>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

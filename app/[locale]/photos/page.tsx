@@ -1,4 +1,5 @@
 import ResponsiveImage from "@/components/ResponsiveImage";
+import PageHeader from "@/components/PageHeader";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import photo5975 from '@/public/photos/IMG_5975.jpeg';
 import photo5981 from '@/public/photos/IMG_5981.jpeg';
@@ -42,13 +43,13 @@ export default async function MasonryPhotoGallery({
   const t = await getTranslations('photos');
 
   return (
-    <div className="container mx-auto py-16 px-4">
-      <h1 className="text-4xl font-bold mb-12 text-center">{t('title')}</h1>
-      <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
+    <div className="pb-24">
+      <PageHeader eyebrow={t('eyebrow')} title={t('title')} lead={t('lead')} />
+      <div className="mx-auto mt-14 max-w-7xl columns-1 gap-4 px-5 sm:columns-2 md:mt-20 md:px-10 lg:columns-3">
         {photos.map((photo, index) => (
           <div
             key={photo.src}
-            className="photo-fade-in relative mb-4 break-inside-avoid group"
+            className="photo-fade-in group relative mb-4 break-inside-avoid overflow-hidden"
             style={{
               animationDelay: `${index * 0.1}s`,
             }}
@@ -56,8 +57,9 @@ export default async function MasonryPhotoGallery({
             <ResponsiveImage
               src={photo}
               alt={`${t('altText')} ${index + 1}`}
-              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="h-auto w-full rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105"
+              placeholder="blur"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="h-auto w-full transition-transform duration-700 group-hover:scale-105"
             />
           </div>
         ))}

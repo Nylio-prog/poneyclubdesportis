@@ -1,6 +1,7 @@
 import ResponsiveImage from "@/components/ResponsiveImage";
-import { useLocale } from 'next-intl';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import PageHeader from "@/components/PageHeader";
+import CalendarSection from "@/components/CalendarSection";
+import { useLocale, useTranslations } from 'next-intl';
 import { events } from "@/data/events";
 import { formatDate } from "@/lib/utils";
 import Script from 'next/script';
@@ -8,6 +9,7 @@ import { getEventSchema } from "@/lib/structured-data";
 import { Locale } from "@/lib/i18n/config";
 import {
   ClubEvent,
+  formatEventDay,
   getEventDescription,
   getEventEndDateTime,
   getEventStartDateTime,
@@ -15,44 +17,48 @@ import {
   getEventTitle,
 } from '@/lib/events';
 
-const EventCard: React.FC<{ event: ClubEvent; locale: Locale }> = ({ event, locale }) => {
+const EventCard = ({ event, locale, isPast }: { event: ClubEvent; locale: Locale; isPast: boolean }) => {
   const title = getEventTitle(event, locale);
   const description = getEventDescription(event, locale);
-  
+  const { day, month } = formatEventDay(event, locale);
+
   return (
-    <Card id={event.id} className="overflow-hidden" style={{ scrollMarginTop: '7rem' }}>
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="md:flex">
-          {event.image && (
-            <div className="relative w-full max-w-[500px] min-h-[300px] flex-shrink-0 mb-4 md:mb-0 md:mr-4">
-              <ResponsiveImage
-                src={event.image}
-                alt={title}
-                fill
-                sizes="(max-width: 768px) 100vw, 500px"
-                objectFit="contain"
-              />
-            </div>
-          )}
-          <div className={event.image ? "" : "w-full"}>
-            <p className="text-sm text-gray-500 mb-2">
-              {event.startDate === event.endDate
-                ? `${formatDate(event.startDate, locale)} · ${getEventTimeLabel(event, locale)}`
-                : `${formatDate(event.startDate, locale)} - ${formatDate(event.endDate, locale)}`}
-            </p>
-            <p className="whitespace-pre-line">{description}</p>
-          </div>
+    <article
+      id={event.id}
+      className={`event-card grid gap-6 border-b border-ink/15 py-12 md:grid-cols-12 md:gap-8 ${isPast ? 'opacity-60' : ''}`}
+      style={{ scrollMarginTop: '7rem' }}
+    >
+      <p className="font-serif text-5xl font-light text-wine md:col-span-2">
+        {day}
+        <span className="mt-1 block text-lg uppercase tracking-[0.1em] text-ink/60">{month}</span>
+      </p>
+      <div className={event.image ? "md:col-span-6" : "md:col-span-9"}>
+        <h3>{title}</h3>
+        <p className="mt-3 text-xs font-semibold uppercase tracking-[0.15em] text-ink/60">
+          {event.startDate === event.endDate
+            ? `${formatDate(event.startDate, locale)} · ${getEventTimeLabel(event, locale)}`
+            : `${formatDate(event.startDate, locale)} - ${formatDate(event.endDate, locale)}${event.startHour ? ` · ${getEventTimeLabel(event, locale)}` : ''}`}
+        </p>
+        <p className="mt-5 whitespace-pre-line leading-relaxed text-ink/75">{description}</p>
+      </div>
+      {event.image && (
+        <div className="relative aspect-[4/3] overflow-hidden bg-ink/5 md:col-span-4">
+          <ResponsiveImage
+            src={event.image}
+            alt={title}
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            objectFit="cover"
+          />
         </div>
-      </CardContent>
-    </Card>
+      )}
+    </article>
   );
 };
 
 export default function ActualitesPage() {
   const locale = useLocale() as Locale;
+  const t = useTranslations('news');
   const currentDate = new Date();
   const sortedEvents = [...events].sort(
     (a, b) =>
@@ -66,6 +72,10 @@ export default function ActualitesPage() {
   const pastEvents = sortedEvents.filter(
     (event) => getEventEndDateTime(event) < currentDate
   );
+
+  // Most recent past events first; older ones are folded away to keep the page short.
+  const recentPastEvents = [...pastEvents].reverse().slice(0, 6);
+  const olderPastEvents = [...pastEvents].reverse().slice(6);
 
   // Generate structured data for upcoming events
   const eventSchemas = upcomingEvents.map((event) => getEventSchema(event, locale));
@@ -82,41 +92,56 @@ export default function ActualitesPage() {
           }}
         />
       ))}
-      <div className="min-h-screen py-16 px-4">
-        <h1 className="text-4xl font-bold mb-8 text-center">
-          {locale === 'fr' ? 'Actualités et Événements' : 'News and Events'}
-        </h1>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-semibold mb-4">
-            {locale === 'fr' ? 'Événements à venir' : 'Upcoming Events'}
-          </h2>
-          <div className="grid gap-6 mb-12">
-            {upcomingEvents.map((event) => (
+      <div className="pb-24">
+        <PageHeader eyebrow={t('eyebrow')} title={t('title')} lead={t('lead')} />
+
+        <section className="mx-auto max-w-7xl px-5 pt-20 md:px-10 md:pt-28">
+          <h2 className="border-b border-ink/15 pb-6">{t('upcoming')}</h2>
+          {upcomingEvents.length > 0 ? (
+            upcomingEvents.map((event) => (
               <EventCard
                 key={event.id ?? `${event.startDate}-${event.title}`}
                 event={event}
                 locale={locale}
+                isPast={false}
+              />
+            ))
+          ) : (
+            <p className="border-b border-ink/15 py-12 font-serif text-2xl font-light text-ink/70">{t('noUpcoming')}</p>
+          )}
+        </section>
+
+        <CalendarSection title={t('agenda')} />
+
+        {pastEvents.length > 0 && (
+          <section className="mx-auto max-w-7xl px-5 pt-20 md:px-10 md:pt-28">
+            <h2 className="border-b border-ink/15 pb-6">{t('past')}</h2>
+            {recentPastEvents.map((event) => (
+              <EventCard
+                key={event.id ?? `${event.startDate}-${event.title}`}
+                event={event}
+                locale={locale}
+                isPast
               />
             ))}
-          </div>
-
-          {pastEvents.length > 0 && (
-            <>
-              <h2 className="text-2xl font-semibold mb-4">
-                {locale === 'fr' ? 'Événements passés' : 'Past Events'}
-              </h2>
-              <div className="grid gap-6 opacity-60">
-                {pastEvents.reverse().map((event) => (
+            {olderPastEvents.length > 0 && (
+              <details className="group">
+                <summary className="editorial-link mt-10 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                  <span className="group-open:hidden">{t('showOlder', { count: olderPastEvents.length })} ↓</span>
+                  <span className="hidden group-open:inline">{t('past')} ↑</span>
+                </summary>
+                {olderPastEvents.map((event) => (
                   <EventCard
                     key={event.id ?? `${event.startDate}-${event.title}`}
                     event={event}
                     locale={locale}
+                    isPast
                   />
                 ))}
-              </div>
-            </>
-          )}
-        </div>
+              </details>
+            )}
+          </section>
+        )}
       </div>
     </>
   );

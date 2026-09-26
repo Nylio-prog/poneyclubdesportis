@@ -1,120 +1,97 @@
-import ResponsiveImage from "@/components/ResponsiveImage";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import Image from "next/image";
 import { useTranslations } from 'next-intl';
+import PageHeader from "@/components/PageHeader";
+import { club, photos } from "@/lib/site";
 
 export default function PensionsPage() {
   const t = useTranslations('pensions');
-  
+
   const prix = [
-    { service: t('services.groupNatural'), prix: "240€" },
-    { service: t('services.groupBuilt'), prix: "260€" },
-    { service: t('services.individual'), prix: "300€" },
+    { service: t('services.groupNatural'), prix: "240 €" },
+    { service: t('services.groupBuilt'), prix: "260 €" },
+    { service: t('services.individual'), prix: "300 €" },
+  ];
+
+  const sections = [
+    { title: t('wellbeing'), text: t('wellbeingText'), image: photos.greeting, alt: t('imageAlt.care'), position: 'center 20%' },
+    { title: t('spaces'), text: t('spacesText'), image: photos.aerial, alt: t('imageAlt.estate'), position: 'center' },
+    { title: t('food'), text: t('foodText'), image: photos.hay, alt: t('imageAlt.hay'), position: 'center' },
   ];
 
   return (
-    <div className="min-h-screen py-16 px-4">
-      <h1 className="text-4xl font-bold mb-12 text-center">
-        {t('title')}
-      </h1>
+    <div className="pb-24">
+      <PageHeader
+        eyebrow={t('eyebrow')}
+        title={t('title')}
+        lead={t('lead')}
+        image={photos.paddocks}
+        imageAlt={t('imageAlt.parcs')}
+      />
 
-      <div className="max-w-6xl mx-auto">
-        <section className="flex flex-col md:flex-row items-center mb-16 rounded-lg shadow-lg overflow-hidden">
-          <div className="md:w-1/2 p-8">
-            <h2 className="text-2xl font-bold mb-4">
-              {t('wellbeing')}
-            </h2>
-            <p className="mb-4 leading-relaxed">
-              {t('wellbeingText')}
-            </p>
-          </div>
-          <div className="md:w-1/2">
-            <ResponsiveImage
-              src="/pensions/box.jpg"
-              alt={t('imageAlt.box')}
-              width={600}
-              height={400}
-              sizes="(max-width: 768px) 100vw, 50vw"
-              objectFit="cover"
-            />
-          </div>
-        </section>
+      <section className="mx-auto max-w-7xl px-5 py-24 md:px-10 md:py-32">
+        <ol className="space-y-24 md:space-y-32">
+          {sections.map((section, index) => (
+            <li key={section.title} className="grid items-center gap-8 md:grid-cols-12 md:gap-12">
+              <div className={`relative aspect-[4/3] overflow-hidden md:col-span-6 ${index % 2 ? 'md:order-2 md:col-start-7' : ''}`}>
+                <Image src={section.image} alt={section.alt} fill sizes="(max-width: 768px) 100vw, 50vw" quality={60} placeholder="blur" className="object-cover" style={{ objectPosition: section.position }} />
+              </div>
+              <div className={`md:col-span-5 ${index % 2 ? 'md:order-1' : 'md:col-start-8'}`}>
+                <span className="font-serif text-6xl font-light text-sand" aria-hidden="true">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <h2 className="mt-4 text-4xl md:text-5xl">{section.title}</h2>
+                <p className="mt-5 text-lg leading-relaxed text-ink/75">{section.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
 
-        <section className="flex flex-col md:flex-row-reverse items-center mb-16 rounded-lg shadow-lg overflow-hidden">
-          <div className="md:w-1/2 p-8">
-            <h2 className="text-2xl font-bold mb-4">
-              {t('spaces')}
-            </h2>
-            <p className="mb-4 leading-relaxed">
-              {t('spacesText')}
-            </p>
+      {/* Pricing */}
+      <section className="bg-ink text-paper">
+        <div className="mx-auto grid max-w-7xl gap-12 px-5 py-24 md:grid-cols-12 md:px-10 md:py-32">
+          <div className="md:col-span-5">
+            <h2>{t('pricing')}</h2>
+            <p className="mt-6 text-lg text-paper/70">{t('ctaText')}</p>
           </div>
-          <div className="md:w-1/2">
-            <ResponsiveImage
-              src="/pensions/parcs.jpg"
-              alt={t('imageAlt.parcs')}
-              width={600}
-              height={400}
-              sizes="(max-width: 768px) 100vw, 50vw"
-              objectFit="cover"
-            />
-          </div>
-        </section>
-
-        <section className="flex flex-col md:flex-row items-center mb-16 rounded-lg shadow-lg overflow-hidden">
-          <div className="md:w-1/2 p-8">
-            <h2 className="text-2xl font-bold mb-4">
-              {t('food')}
-            </h2>
-            <p className="mb-4 leading-relaxed">
-              {t('foodText')}
-            </p>
-          </div>
-          <div className="md:w-1/2">
-            <ResponsiveImage
-              src="/pensions/hay.jpg"
-              alt={t('imageAlt.hay')}
-              width={600}
-              height={400}
-              sizes="(max-width: 768px) 100vw, 50vw"
-              objectFit="cover"
-            />
-          </div>
-        </section>
-
-        <section className="bg-white rounded-lg py-8">
-          <h2 className="text-2xl font-bold mb-4 pl-8">
-            {t('pricing')}
-          </h2>
-          <div className="overflow-x-auto">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>{t('service')}</TableHead>
-                  <TableHead>{t('pricePerMonth')}</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {prix.map((item, index) => (
-                  <TableRow
-                    key={index}
-                    className="hover:bg-green-50 transition-colors duration-200"
-                  >
-                    <TableCell>{item.service}</TableCell>
-                    <TableCell>{item.prix}</TableCell>
-                  </TableRow>
+          <div className="md:col-span-6 md:col-start-7">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b border-paper/30 text-left text-xs font-semibold uppercase tracking-[0.15em] text-paper/60">
+                  <th scope="col" className="pb-4 font-semibold">{t('service')}</th>
+                  <th scope="col" className="pb-4 text-right font-semibold">{t('pricePerMonth')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {prix.map((item) => (
+                  <tr key={item.service} className="border-b border-paper/15">
+                    <td className="py-6 pr-6 text-lg">{item.service}</td>
+                    <td className="whitespace-nowrap py-6 text-right font-serif text-4xl text-sand">
+                      {item.prix}
+                      <span className="ml-1 font-sans text-xs text-paper/60">{t('perMonth')}</span>
+                    </td>
+                  </tr>
                 ))}
-              </TableBody>
-            </Table>
+              </tbody>
+            </table>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      {/* Call to action */}
+      <section className="mx-auto max-w-7xl px-5 pt-24 md:px-10 md:pt-32">
+        <div className="grid gap-10 md:grid-cols-2 md:items-end">
+          <h2 className="text-5xl md:text-7xl">{t('ctaTitle')}</h2>
+          <div className="space-y-6">
+            <a href={club.phoneHref} className="block font-serif text-4xl text-wine hover:underline md:text-5xl">
+              {club.phone}
+            </a>
+            <a href={club.emailHref} className="block break-all text-lg underline-offset-4 hover:underline">
+              {club.email}
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

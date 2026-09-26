@@ -95,45 +95,44 @@ const MobileNav = ({ isOpen, onClose, currentPath, navItems }: MobileNavProps) =
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop with blur effect */}
+          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+            className="fixed inset-0 z-40 bg-ink/40"
             onClick={onClose}
             aria-hidden="true"
           />
 
-          {/* Slide-in menu */}
+          {/* Full-height editorial panel */}
           <motion.div
             ref={menuRef}
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
-            className="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-[var(--deep-burgundy)] text-[var(--ivory)] z-50 shadow-2xl overflow-y-auto"
+            className="fixed bottom-0 right-0 top-0 z-50 w-full max-w-md overflow-y-auto bg-paper text-ink shadow-2xl"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation menu"
             id="mobile-navigation"
           >
-            {/* Close button */}
-            <div className="flex justify-end p-4 border-b border-[var(--ivory)]/10">
+            <div className="flex items-center justify-between border-b border-ink/10 px-6 py-4">
+              <span className="eyebrow text-wine">Poney Club Desportis</span>
               <button
                 ref={firstFocusableRef}
                 onClick={onClose}
-                className="p-2 rounded-lg hover:bg-[var(--ivory)]/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[var(--ivory)] focus:ring-offset-2 focus:ring-offset-[var(--deep-burgundy)]"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-ink/20 transition-colors hover:bg-ink/5"
                 aria-label="Close menu"
               >
-                <X className="w-6 h-6" />
+                <X className="h-5 w-5" strokeWidth={1.5} />
               </button>
             </div>
 
-            {/* Navigation items */}
-            <nav className="p-6">
-              <ul className="space-y-2">
+            <nav className="px-6 py-6">
+              <ul className="divide-y divide-ink/10">
                 {navItems.map(({ href, label }, index) => {
                   const isLast = index === navItems.length - 1;
                   return (
@@ -141,14 +140,16 @@ const MobileNav = ({ isOpen, onClose, currentPath, navItems }: MobileNavProps) =
                       <Link
                         ref={isLast ? lastFocusableRef : undefined}
                         href={href}
-                        className={`block py-3 px-4 rounded-lg text-lg transition-all duration-200 min-h-[44px] flex items-center ${
-                          isActive(href)
-                            ? "bg-[var(--ivory)]/20 font-semibold"
-                            : "hover:bg-[var(--ivory)]/10"
-                        } focus:outline-none focus:ring-2 focus:ring-[var(--ivory)] focus:ring-offset-2 focus:ring-offset-[var(--deep-burgundy)]`}
+                        aria-current={isActive(href) ? "page" : undefined}
+                        className={`flex min-h-[44px] items-center justify-between py-4 font-serif text-3xl font-light transition-colors hover:text-wine ${
+                          isActive(href) ? "text-wine" : ""
+                        }`}
                         onClick={onClose}
                       >
                         {label}
+                        <span className="text-base text-sand" aria-hidden="true">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
                       </Link>
                     </li>
                   );

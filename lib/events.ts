@@ -56,3 +56,31 @@ export function getEventDescription(event: ClubEvent, locale: Locale): string {
     ? event.descriptionEn
     : event.description;
 }
+
+/**
+ * Upcoming events first (soonest first), topped up with the most recent past events.
+ */
+export function getFeaturedEvents(
+  allEvents: ClubEvent[],
+  count = 3,
+  now = new Date(),
+): ClubEvent[] {
+  const visible = allEvents.filter((event) => event.showInCalendar !== false);
+  const upcoming = visible
+    .filter((event) => getEventEndDateTime(event) >= now)
+    .sort((a, b) => getEventStartDateTime(a).getTime() - getEventStartDateTime(b).getTime());
+  const past = visible
+    .filter((event) => getEventEndDateTime(event) < now)
+    .sort((a, b) => getEventStartDateTime(b).getTime() - getEventStartDateTime(a).getTime());
+
+  return [...upcoming, ...past].slice(0, count);
+}
+
+export function formatEventDay(event: ClubEvent, locale: Locale): { day: string; month: string } {
+  const start = getEventStartDateTime(event);
+  const intlLocale = locale === 'fr' ? 'fr-FR' : 'en-GB';
+  return {
+    day: new Intl.DateTimeFormat(intlLocale, { day: '2-digit' }).format(start),
+    month: new Intl.DateTimeFormat(intlLocale, { month: 'short' }).format(start).replace('.', ''),
+  };
+}
