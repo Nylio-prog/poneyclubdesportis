@@ -417,6 +417,7 @@
     "upcoming": "Événements à venir",
     "past": "Événements passés",
     "agenda": "Agenda",
-    "noUpcoming": "Aucun événement annoncé pour le moment. Revenez bientôt ou suivez-nous sur Facebook et Instagram."
+    "noUpcoming": "Aucun événement annoncé pour le moment. Revenez bientôt ou suivez-nous sur Facebook et Instagram.",
+    "showOlder": "Voir les {count} événements plus anciens"
   }
 }

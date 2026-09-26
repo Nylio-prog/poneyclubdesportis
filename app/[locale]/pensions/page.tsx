@@ -13,9 +13,9 @@ export default function PensionsPage() {
   ];
 
   const sections = [
-    { title: t('wellbeing'), text: t('wellbeingText'), image: photos.greeting, alt: t('imageAlt.care') },
-    { title: t('spaces'), text: t('spacesText'), image: photos.aerial, alt: t('imageAlt.estate') },
-    { title: t('food'), text: t('foodText'), image: photos.hay, alt: t('imageAlt.hay') },
+    { title: t('wellbeing'), text: t('wellbeingText'), image: photos.greeting, alt: t('imageAlt.care'), position: 'center 20%' },
+    { title: t('spaces'), text: t('spacesText'), image: photos.aerial, alt: t('imageAlt.estate'), position: 'center' },
+    { title: t('food'), text: t('foodText'), image: photos.hay, alt: t('imageAlt.hay'), position: 'center' },
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function PensionsPage() {
           {sections.map((section, index) => (
             <li key={section.title} className="grid items-center gap-8 md:grid-cols-12 md:gap-12">
               <div className={`relative aspect-[4/3] overflow-hidden md:col-span-6 ${index % 2 ? 'md:order-2 md:col-start-7' : ''}`}>
-                <Image src={section.image} alt={section.alt} fill sizes="(max-width: 768px) 100vw, 50vw" quality={60} placeholder="blur" className="object-cover" />
+                <Image src={section.image} alt={section.alt} fill sizes="(max-width: 768px) 100vw, 50vw" quality={60} placeholder="blur" className="object-cover" style={{ objectPosition: section.position }} />
               </div>
               <div className={`md:col-span-5 ${index % 2 ? 'md:order-1' : 'md:col-start-8'}`}>
                 <span className="font-serif text-6xl font-light text-sand" aria-hidden="true">

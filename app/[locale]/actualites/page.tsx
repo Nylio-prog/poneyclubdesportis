@@ -73,6 +73,10 @@ export default function ActualitesPage() {
     (event) => getEventEndDateTime(event) < currentDate
   );
 
+  // Most recent past events first; older ones are folded away to keep the page short.
+  const recentPastEvents = [...pastEvents].reverse().slice(0, 6);
+  const olderPastEvents = [...pastEvents].reverse().slice(6);
+
   // Generate structured data for upcoming events
   const eventSchemas = upcomingEvents.map((event) => getEventSchema(event, locale));
 
@@ -112,7 +116,7 @@ export default function ActualitesPage() {
         {pastEvents.length > 0 && (
           <section className="mx-auto max-w-7xl px-5 pt-20 md:px-10 md:pt-28">
             <h2 className="border-b border-ink/15 pb-6">{t('past')}</h2>
-            {pastEvents.reverse().map((event) => (
+            {recentPastEvents.map((event) => (
               <EventCard
                 key={event.id ?? `${event.startDate}-${event.title}`}
                 event={event}
@@ -120,6 +124,22 @@ export default function ActualitesPage() {
                 isPast
               />
             ))}
+            {olderPastEvents.length > 0 && (
+              <details className="group">
+                <summary className="editorial-link mt-10 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                  <span className="group-open:hidden">{t('showOlder', { count: olderPastEvents.length })} ↓</span>
+                  <span className="hidden group-open:inline">{t('past')} ↑</span>
+                </summary>
+                {olderPastEvents.map((event) => (
+                  <EventCard
+                    key={event.id ?? `${event.startDate}-${event.title}`}
+                    event={event}
+                    locale={locale}
+                    isPast
+                  />
+                ))}
+              </details>
+            )}
           </section>
         )}
       </div>

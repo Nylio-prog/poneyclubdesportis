@@ -82,6 +82,15 @@ export function widthForHeight(image: StaticImageData, height: number): number {
   return Math.round((height * image.width) / image.height);
 }
 
+/**
+ * Exact pixel size for a logo shown at a fixed height. Passing the same numbers as attributes and
+ * inline style keeps next/image from warning about a rounded, CSS-modified width.
+ */
+export function logoSize(image: StaticImageData, height: number) {
+  const width = widthForHeight(image, height);
+  return { width, height, style: { width: `${width}px`, height: `${height}px` } };
+}
+
 export const navItems = [
   { href: '/le-club', key: 'club' },
   { href: '/cours', key: 'lessons' },

@@ -417,6 +417,7 @@
     "upcoming": "Upcoming Events",
     "past": "Past Events",
     "agenda": "Calendar",
-    "noUpcoming": "No events announced yet. Check back soon or follow us on Facebook and Instagram."
+    "noUpcoming": "No events announced yet. Check back soon or follow us on Facebook and Instagram.",
+    "showOlder": "Show {count} older events"
   }
 }

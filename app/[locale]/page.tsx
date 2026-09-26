@@ -10,7 +10,7 @@ import {
   getFeaturedEvents,
 } from "@/lib/events";
 import type { Locale } from "@/lib/i18n/config";
-import { club, labels, photos, widthForHeight } from "@/lib/site";
+import { club, labels, logoSize, photos } from "@/lib/site";
 
 const offerKeys = ['lessons', 'camps', 'rides', 'boarding'] as const;
 const offerMedia = {
@@ -228,7 +228,7 @@ export default function Accueil() {
           <ul className="flex flex-wrap items-center justify-center gap-8">
             {labels.map((label) => (
               <li key={label.name}>
-                <Image src={label.image} alt={label.name} width={widthForHeight(label.image, 56)} height={56} className="h-14 w-auto object-contain mix-blend-multiply grayscale transition hover:grayscale-0" />
+                <Image src={label.image} alt={label.name} {...logoSize(label.image, 56)} className="object-contain mix-blend-multiply grayscale transition hover:grayscale-0" />
               </li>
             ))}
           </ul>

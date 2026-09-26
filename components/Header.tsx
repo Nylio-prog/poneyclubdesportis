@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Link, usePathname } from "@/lib/i18n/routing";
 import { useTranslations } from 'next-intl';
 import { useState } from "react";
-import { navItems } from "@/lib/site";
+import { logoSize, navItems } from "@/lib/site";
 import LanguageSwitcher from "./LanguageSwitcher";
 import MobileNav from "./mobile/MobileNav";
 import logoFfe from "@/public/logos/Logo_FFE_transparent.png";
@@ -47,7 +47,7 @@ const Header = () => {
                 : "flex items-center border-l border-ink/15 pl-3 md:pl-4"
             }
           >
-            <Image src={logoFfe} alt={t('ffe')} height={28} width={Math.round((28 * logoFfe.width) / logoFfe.height)} className="h-6 w-auto md:h-7" />
+            <Image src={logoFfe} alt={t('ffe')} {...logoSize(logoFfe, 26)} />
           </span>
         </div>
 
