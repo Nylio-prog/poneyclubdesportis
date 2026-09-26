@@ -7,7 +7,8 @@
     "news": "Actualités",
     "lessons": "Cours",
     "boarding": "Pensions",
-    "contact": "Contact"
+    "contact": "Contact",
+    "ffe": "Club affilié à la Fédération Française d’Équitation"
   },
   "home": {
     "hero": {
@@ -327,7 +328,7 @@
     "service2": "Des stages pendant les vacances scolaires",
     "service3": "Des services de pension complète et demi-pension",
     "service4": "Des balades guidées dans le domaine",
-    "facilities": "Nos installations comprennent une grande carrière de sable de 60m x 30m, un rond de longe de 18m, un parcours de cross, une douche fixe, ainsi que de nombreux chemins de balades offrant un cadre naturel et sécurisé pour vos sorties.",
+    "facilities": "Nos installations comprennent une grande carrière de sable de 60m x 30m, un rond de longe de 18m, un parcours de cross, une douche fixe, ainsi que des chemins de balades offrant un cadre naturel et sécurisé pour vos sorties.",
     "welfare": "Le bien-être de nos animaux est notre priorité absolue. Nous leur offrons les meilleurs soins tout au long de leur vie, y compris une retraite paisible lorsqu'ils ne sont plus en activité. Notre foin, produit proche du club et de très haute qualité, garantit une alimentation saine et adaptée à leurs besoins.",
     "conclusion": "Avec des années d'expérience et un cadre idéal, le Poney Club Desportis est le choix de confiance pour tous les passionnés d'équitation, qu'ils soient débutants ou confirmés.",
     "timeline": {
@@ -372,7 +373,8 @@
     "estateTitle": "Le domaine",
     "welfareTitle": "Le bien-être avant tout",
     "viewDiploma": "Voir le diplôme",
-    "rulesCta": "Lire le règlement intérieur"
+    "rulesCta": "Lire le règlement intérieur",
+    "partnerName2": "ASL Nautique"
   },
   "pensions": {
     "title": "Pension Complète pour Chevaux et Poneys",

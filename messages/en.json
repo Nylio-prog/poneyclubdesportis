@@ -7,7 +7,8 @@
     "news": "News",
     "lessons": "Lessons",
     "boarding": "Boarding",
-    "contact": "Contact"
+    "contact": "Contact",
+    "ffe": "Affiliated with the French Equestrian Federation (FFE)"
   },
   "home": {
     "hero": {
@@ -327,7 +328,7 @@
     "service2": "Training courses during school holidays",
     "service3": "Full and half boarding services",
     "service4": "Guided trail rides on the property",
-    "facilities": "Our facilities include a large sand arena of 60m x 30m, an 18m round pen, a cross-country course, a fixed shower, as well as numerous trail paths offering a natural and secure setting for your outings.",
+    "facilities": "Our facilities include a large sand arena of 60m x 30m, an 18m round pen, a cross-country course, a fixed shower, as well as trail paths offering a natural and secure setting for your outings.",
     "welfare": "The welfare of our animals is our absolute priority. We provide them with the best care throughout their lives, including a peaceful retirement when they are no longer active. Our hay, produced near the club and of very high quality, guarantees healthy nutrition adapted to their needs.",
     "conclusion": "With years of experience and an ideal setting, Poney Club Desportis is the trusted choice for all horse riding enthusiasts, whether beginners or experienced riders.",
     "timeline": {
@@ -372,7 +373,8 @@
     "estateTitle": "The estate",
     "welfareTitle": "Welfare comes first",
     "viewDiploma": "View diploma",
-    "rulesCta": "Read the club rules"
+    "rulesCta": "Read the club rules",
+    "partnerName2": "ASL Nautique"
   },
   "pensions": {
     "title": "Full Boarding for Horses and Ponies",

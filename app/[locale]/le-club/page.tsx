@@ -117,7 +117,12 @@ export default function LeClubPage() {
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
             <p className="eyebrow text-wine">{t('partner')}</p>
-            <h2 className="mt-5 text-4xl md:text-5xl">{t('partnerName')}</h2>
+            <h2 className="mt-5 text-4xl md:text-5xl">
+              {t('partnerName')}
+              <span className="mt-3 block font-serif text-2xl italic text-wine md:text-3xl">
+                &amp; {t('partnerName2')}
+              </span>
+            </h2>
             <p className="mt-4 text-ink/70">{t('since')}</p>
           </div>
           <div className="md:col-span-5 md:col-start-8 md:pt-10">

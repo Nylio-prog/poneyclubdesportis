@@ -7,6 +7,7 @@ import { useState } from "react";
 import { navItems } from "@/lib/site";
 import LanguageSwitcher from "./LanguageSwitcher";
 import MobileNav from "./mobile/MobileNav";
+import logoFfe from "@/public/logos/Logo_FFE_transparent.png";
 
 const Header = () => {
   const pathname = usePathname();
@@ -28,14 +29,27 @@ const Header = () => {
       }
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-10 md:py-5" aria-label="Navigation">
-        <Link href="/" className="flex items-center gap-3">
-          <span className={`flex h-11 w-11 items-center justify-center rounded-full ${isOverlay ? "" : "bg-wine"}`}>
-            <Image src="/icon-ivory.png" alt="" width={40} height={40} />
+        <div className="flex items-center gap-3 md:gap-4">
+          <Link href="/" className="flex items-center gap-3">
+            <span className={`flex h-11 w-11 items-center justify-center rounded-full ${isOverlay ? "" : "bg-wine"}`}>
+              <Image src="/icon-ivory.png" alt="" width={40} height={40} />
+            </span>
+            <span className="font-serif text-xl tracking-tight">
+              <span className="hidden sm:inline">Poney Club </span>Desportis
+            </span>
+          </Link>
+          {/* FFE affiliation mark: on a paper badge over the hero photo, behind a thin rule elsewhere */}
+          <span
+            title={t('ffe')}
+            className={
+              isOverlay
+                ? "flex items-center rounded-md bg-paper/95 px-1.5 py-1 shadow-sm"
+                : "flex items-center border-l border-ink/15 pl-3 md:pl-4"
+            }
+          >
+            <Image src={logoFfe} alt={t('ffe')} height={28} width={Math.round((28 * logoFfe.width) / logoFfe.height)} className="h-6 w-auto md:h-7" />
           </span>
-          <span className="font-serif text-xl tracking-tight">
-            <span className="hidden sm:inline">Poney Club </span>Desportis
-          </span>
-        </Link>
+        </div>
 
         {/* Desktop Menu */}
         <div className="hidden items-center gap-8 lg:flex">

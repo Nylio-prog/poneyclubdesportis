@@ -37,7 +37,7 @@ const EventCard = ({ event, locale, isPast }: { event: ClubEvent; locale: Locale
         <p className="mt-3 text-xs font-semibold uppercase tracking-[0.15em] text-ink/60">
           {event.startDate === event.endDate
             ? `${formatDate(event.startDate, locale)} · ${getEventTimeLabel(event, locale)}`
-            : `${formatDate(event.startDate, locale)} - ${formatDate(event.endDate, locale)}`}
+            : `${formatDate(event.startDate, locale)} - ${formatDate(event.endDate, locale)}${event.startHour ? ` · ${getEventTimeLabel(event, locale)}` : ''}`}
         </p>
         <p className="mt-5 whitespace-pre-line leading-relaxed text-ink/75">{description}</p>
       </div>

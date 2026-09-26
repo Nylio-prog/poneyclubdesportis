@@ -450,4 +450,32 @@ export const events: ClubEvent[] = [
       "Join us for the Poney Club Desportis open house on Sunday, September 6 from 2:30pm. Come and discover the club, tour the facilities, meet our team, and find out more about lessons and registration for the new season. We look forward to seeing you!",
     image: "/events/portes_ouvertes.jpg",
   },
+  {
+    id: "stages-shetlands-toussaint-2026-1",
+    title: "Stages shetlands de la Toussaint - 19 et 20 octobre",
+    titleEn: "Autumn Half-Term Shetland Courses - October 19 and 20",
+    startDate: "2026-10-19",
+    endDate: "2026-10-20",
+    startHour: "14:00",
+    endHour: "17:00",
+    description:
+      "Pendant les vacances de la Toussaint, le Poney Club Desportis propose des stages shetlands à la demi-journée, de 14h à 17h, le lundi 19 et le mardi 20 octobre. Au programme : préparation des poneys, jeux, balade et découverte ludique de l'équitation.\n\nD'autres dates suivent les 26, 27 et 28 octobre. Renseignements et inscriptions au 06 42 87 89 58.",
+    descriptionEn:
+      "During the autumn half-term holidays, Poney Club Desportis is offering half-day Shetland courses from 2pm to 5pm on Monday, October 19 and Tuesday, October 20. The program includes pony grooming, games, rides and a fun introduction to horse riding.\n\nMore dates follow on October 26, 27 and 28. Information and registration: +33 6 42 87 89 58.",
+    image: "",
+  },
+  {
+    id: "stages-shetlands-toussaint-2026-2",
+    title: "Stages shetlands de la Toussaint - 26, 27 et 28 octobre",
+    titleEn: "Autumn Half-Term Shetland Courses - October 26, 27 and 28",
+    startDate: "2026-10-26",
+    endDate: "2026-10-28",
+    startHour: "14:00",
+    endHour: "17:00",
+    description:
+      "Pendant les vacances de la Toussaint, le Poney Club Desportis propose des stages shetlands à la demi-journée, de 14h à 17h, le lundi 26, le mardi 27 et le mercredi 28 octobre. Au programme : préparation des poneys, jeux, balade et découverte ludique de l'équitation.\n\nRenseignements et inscriptions au 06 42 87 89 58.",
+    descriptionEn:
+      "During the autumn half-term holidays, Poney Club Desportis is offering half-day Shetland courses from 2pm to 5pm on Monday, October 26, Tuesday, October 27 and Wednesday, October 28. The program includes pony grooming, games, rides and a fun introduction to horse riding.\n\nInformation and registration: +33 6 42 87 89 58.",
+    image: "",
+  },
 ];
