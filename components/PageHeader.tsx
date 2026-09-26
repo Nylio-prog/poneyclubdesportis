@@ -41,7 +41,7 @@ export default function PageHeader({
             fill
             preload
             placeholder="blur"
-            quality={75}
+            quality={85}
             sizes="(max-width: 1280px) 100vw, 1280px"
             className="object-cover"
             style={{ objectPosition: imagePosition }}

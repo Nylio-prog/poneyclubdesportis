@@ -13,8 +13,8 @@ export default function PensionsPage() {
   ];
 
   const sections = [
-    { title: t('wellbeing'), text: t('wellbeingText'), image: photos.box, alt: t('imageAlt.box') },
-    { title: t('spaces'), text: t('spacesText'), image: photos.paddocks, alt: t('imageAlt.parcs') },
+    { title: t('wellbeing'), text: t('wellbeingText'), image: photos.greeting, alt: t('imageAlt.care') },
+    { title: t('spaces'), text: t('spacesText'), image: photos.aerial, alt: t('imageAlt.estate') },
     { title: t('food'), text: t('foodText'), image: photos.hay, alt: t('imageAlt.hay') },
   ];
 
@@ -24,8 +24,8 @@ export default function PensionsPage() {
         eyebrow={t('eyebrow')}
         title={t('title')}
         lead={t('lead')}
-        image={photos.greeting}
-        imagePosition="center 30%"
+        image={photos.paddocks}
+        imageAlt={t('imageAlt.parcs')}
       />
 
       <section className="mx-auto max-w-7xl px-5 py-24 md:px-10 md:py-32">

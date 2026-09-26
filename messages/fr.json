@@ -393,9 +393,10 @@
       "individual": "Individuel ou à 2 avec abris construit"
     },
     "imageAlt": {
-      "box": "Nos paddocks spacieux",
       "parcs": "Nos prairies verdoyantes",
-      "hay": "Alimentation de qualité"
+      "hay": "Alimentation de qualité",
+      "care": "Moment de complicité avec un cheval au club",
+      "estate": "Vue aérienne du domaine en colline"
     },
     "eyebrow": "Pension",
     "lead": "Des paddocks en colline, un foin de qualité et une équipe attentive pour le bien-être de votre cheval.",
