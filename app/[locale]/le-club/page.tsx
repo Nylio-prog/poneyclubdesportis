@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from 'next-intl';
 import PageHeader from "@/components/PageHeader";
-import { photos } from "@/lib/site";
+import { labels, logoSize, photos } from "@/lib/site";
 
 const diplomas = [
   { key: 'bpjepsBB', url: "/le-club/BPJEPS_BB.jpg" },
@@ -97,6 +97,23 @@ export default function LeClubPage() {
         </div>
       </section>
 
+      {/* Labels */}
+      <section className="mx-auto max-w-7xl px-5 pb-24 md:px-10">
+        <div className="flex flex-col items-center gap-8 border-y border-ink/15 bg-white/50 px-6 py-12 md:flex-row md:justify-between md:px-10">
+          <div className="text-center md:text-left">
+            <h2 className="eyebrow font-sans text-ink/60">{t('labels.title')}</h2>
+            <p className="mt-2 text-sm text-ink/60">{t('labels.passSport')}</p>
+          </div>
+          <ul className="flex flex-wrap items-center justify-center gap-8">
+            {labels.map((label) => (
+              <li key={label.name}>
+                <Image src={label.image} alt={label.name} {...logoSize(label.image, 56)} className="object-contain mix-blend-multiply grayscale transition hover:grayscale-0" />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* Rules */}
       <section className="mx-auto max-w-7xl px-5 md:px-10">
         <div className="grid gap-8 border-y border-ink/15 py-16 md:grid-cols-12 md:items-center">
@@ -115,17 +132,15 @@ export default function LeClubPage() {
       {/* Partner */}
       <section className="mx-auto max-w-7xl px-5 py-24 md:px-10 md:py-32">
         <div className="grid gap-10 md:grid-cols-12">
-          <div className="md:col-span-5">
+          <div className="md:col-span-7">
             <p className="eyebrow text-wine">{t('partner')}</p>
-            <h2 className="mt-5 text-4xl md:text-5xl">
-              {t('partnerName')}
-              <span className="mt-3 block font-serif text-2xl italic text-wine md:text-3xl">
-                &amp; {t('partnerName2')}
-              </span>
+            {/* Balanced wrap, and the short name never splits across lines */}
+            <h2 className="mt-5 text-balance text-4xl md:text-5xl">
+              {t('partnerName')} <span className="whitespace-nowrap">({t('partnerName2')})</span>
             </h2>
             <p className="mt-4 text-ink/70">{t('since')}</p>
           </div>
-          <div className="md:col-span-5 md:col-start-8 md:pt-10">
+          <div className="md:col-span-4 md:col-start-9 md:pt-10">
             <address className="not-italic text-lg">
               79 Rue Denis Papin
               <br />
