@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from 'next-intl';
 import PageHeader from "@/components/PageHeader";
-import { photos } from "@/lib/site";
+import { labels, logoSize, photos } from "@/lib/site";
 
 const diplomas = [
   { key: 'bpjepsBB', url: "/le-club/BPJEPS_BB.jpg" },
@@ -91,6 +91,23 @@ export default function LeClubPage() {
                   <p className="mt-4 font-medium leading-snug">{t(`diplomas.${diploma.key}`)}</p>
                   <p className="mt-1 text-xs font-semibold uppercase tracking-[0.15em] text-wine">{t('viewDiploma')}&nbsp;↗</p>
                 </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Labels */}
+      <section className="mx-auto max-w-7xl px-5 pb-24 md:px-10">
+        <div className="flex flex-col items-center gap-8 border-y border-ink/15 bg-white/50 px-6 py-12 md:flex-row md:justify-between md:px-10">
+          <div className="text-center md:text-left">
+            <h2 className="eyebrow font-sans text-ink/60">{t('labels.title')}</h2>
+            <p className="mt-2 text-sm text-ink/60">{t('labels.passSport')}</p>
+          </div>
+          <ul className="flex flex-wrap items-center justify-center gap-8">
+            {labels.map((label) => (
+              <li key={label.name}>
+                <Image src={label.image} alt={label.name} {...logoSize(label.image, 56)} className="object-contain mix-blend-multiply grayscale transition hover:grayscale-0" />
               </li>
             ))}
           </ul>

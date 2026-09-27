@@ -112,10 +112,6 @@
         "text": "Very welcoming club, two superb coaches, lessons for young and old, varied lessons, great ponies and horses adapted to all levels. Many trail rides and great viewpoints!"
       }
     },
-    "labels": {
-      "title": "Our labels & affiliation",
-      "passSport": "pass Sport eligible club"
-    },
     "visit": {
       "title": "Come and see us",
       "lead": "The easiest way: give us a call to arrange a visit or a trial lesson.",
@@ -373,6 +369,10 @@
     "estateTitle": "The estate",
     "welfareTitle": "Welfare comes first",
     "viewDiploma": "View diploma",
+    "labels": {
+      "title": "Our labels & affiliation",
+      "passSport": "pass Sport eligible club"
+    },
     "rulesCta": "Read the club rules",
     "partnerName2": "ASL Nautique"
   },

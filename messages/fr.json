@@ -112,10 +112,6 @@
         "text": "Club très accueillant, deux superbes coachs, des cours pour les petits comme pour les grands, des cours variés, des super poneys et chevaux adaptés à tous les niveaux. De nombreuses balades et super point de vue !"
       }
     },
-    "labels": {
-      "title": "Nos labels & affiliation",
-      "passSport": "Club éligible au pass Sport"
-    },
     "visit": {
       "title": "Venez nous voir",
       "lead": "Le plus simple : un coup de fil pour convenir d’une visite ou d’un cours d’essai.",
@@ -373,6 +369,10 @@
     "estateTitle": "Le domaine",
     "welfareTitle": "Le bien-être avant tout",
     "viewDiploma": "Voir le diplôme",
+    "labels": {
+      "title": "Nos labels & affiliation",
+      "passSport": "Club éligible au pass Sport"
+    },
     "rulesCta": "Lire le règlement intérieur",
     "partnerName2": "ASL Nautique"
   },

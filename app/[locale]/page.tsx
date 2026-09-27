@@ -10,7 +10,7 @@ import {
   getFeaturedEvents,
 } from "@/lib/events";
 import type { Locale } from "@/lib/i18n/config";
-import { club, labels, logoSize, photos } from "@/lib/site";
+import { club, photos } from "@/lib/site";
 
 const offerKeys = ['lessons', 'camps', 'rides', 'boarding'] as const;
 const offerMedia = {
@@ -215,23 +215,6 @@ export default function Accueil() {
               </figure>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Labels */}
-      <section className="border-y border-ink/15 bg-white/50">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 px-5 py-12 md:flex-row md:justify-between md:px-10">
-          <div>
-            <h2 className="eyebrow font-sans text-ink/60">{t('labels.title')}</h2>
-            <p className="mt-2 text-sm text-ink/60">{t('labels.passSport')}</p>
-          </div>
-          <ul className="flex flex-wrap items-center justify-center gap-8">
-            {labels.map((label) => (
-              <li key={label.name}>
-                <Image src={label.image} alt={label.name} {...logoSize(label.image, 56)} className="object-contain mix-blend-multiply grayscale transition hover:grayscale-0" />
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
