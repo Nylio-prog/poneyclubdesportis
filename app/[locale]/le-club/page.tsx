@@ -132,14 +132,15 @@ export default function LeClubPage() {
       {/* Partner */}
       <section className="mx-auto max-w-7xl px-5 py-24 md:px-10 md:py-32">
         <div className="grid gap-10 md:grid-cols-12">
-          <div className="md:col-span-5">
+          <div className="md:col-span-7">
             <p className="eyebrow text-wine">{t('partner')}</p>
-            <h2 className="mt-5 text-4xl md:text-5xl">
-              {t('partnerName')} ({t('partnerName2')})
+            {/* Balanced wrap, and the short name never splits across lines */}
+            <h2 className="mt-5 text-balance text-4xl md:text-5xl">
+              {t('partnerName')} <span className="whitespace-nowrap">({t('partnerName2')})</span>
             </h2>
             <p className="mt-4 text-ink/70">{t('since')}</p>
           </div>
-          <div className="md:col-span-5 md:col-start-8 md:pt-10">
+          <div className="md:col-span-4 md:col-start-9 md:pt-10">
             <address className="not-italic text-lg">
               79 Rue Denis Papin
               <br />
